@@ -11,7 +11,7 @@
     "test:golden": "tsx packages/engine/scripts/golden.ts",
     "test:rls": "bash scripts/test-rls.sh",
     "typecheck": "pnpm -r typecheck",
-    "fixtures": "python3 -I scripts/extract_fixtures.py",
+    "fixtures": "python3 -I scripts/extract_fixtures.py && python3 -I scripts/make_upload_fixtures.py",
     "dev": "pnpm --filter @bmg/web dev",
     "build": "pnpm --filter @bmg/web build",
     "snapshot:diff": "tsx packages/engine/scripts/snapshot-diff.ts",

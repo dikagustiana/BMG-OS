@@ -7,6 +7,7 @@ Project **BMG-OS** (ref `btccexwuukrpushmharq`, ap-northeast-2, Postgres 17). Ti
   - `20261015000200_master.sql` — tabel master PRD §4.1, guard versi standar, RLS per peran.
   - `20261015000300_master_seed.sql` — seed master dari WP (dibangkitkan `scripts/extract_fixtures.py --seed-sql`).
   - `20261015000400_apply_upload.sql` — `apply_upload()`: commit upload atomik (semua tabel target lewat `apply_changes` + status `committed` dalam satu transaksi), hanya pengunggah atau Admin.
+  - `20261015000500_b1_inputs.sql` — 11 tabel input bulanan PRD §4.2 (GL, tag voucher, payroll, Inventory Valuation, Sales by Item, Average Price, kartu CoGM, driver, angka LK), RLS per kind, guard kunci BP, `upload_tables()` diperluas.
 - `tests/rls_roles.sql` — tes peran × tabel (selalu rollback; gagal bila ada ekspektasi meleset). `pnpm test:rls` (DB lokal saja).
 - `tests/_stub_supabase.sql` — permukaan Supabase minimal untuk menguji migrasi di PostgreSQL biasa bila Docker tidak tersedia.
 

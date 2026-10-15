@@ -15,6 +15,10 @@ export function readWorkbook(data: ArrayBuffer | Uint8Array, fileName = ""): She
     : XLSX.read(bytes, { type: "array", cellDates: false, cellNF: false, cellText: false, dense: false });
   return wb.SheetNames.map((name) => {
     const ws = wb.Sheets[name];
+    // error cells (#DIV/0!, #REF!, …) carry a numeric code in .v; keep their text so they never read as numbers
+    for (const [ref, c] of Object.entries(ws)) {
+      if (!ref.startsWith("!") && (c as XLSX.CellObject).t === "e") ws[ref] = { t: "s", v: (c as XLSX.CellObject).w ?? "#ERROR" };
+    }
     const rows = XLSX.utils.sheet_to_json<Cell[]>(ws, { header: 1, raw: true, defval: null, blankrows: true }) as Cell[][];
     return { name, rows };
   });

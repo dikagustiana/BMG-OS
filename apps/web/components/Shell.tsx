@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ROLE_LABEL } from "@/lib/roles";
-import { navFor } from "@/lib/modules";
+import { hrefFor, navFor } from "@/lib/modules";
 import type { AppCtx } from "@/lib/page";
 
 /** App chrome: brand, viewer, module nav (only modules that are on and allowed for the role), admin group. */
@@ -25,7 +25,7 @@ export function Shell({ ctx, active, children, banner }: { ctx: AppCtx; active: 
       <nav className="nav">
         <Link href="/" className={active === "home" ? "on" : ""}>Beranda</Link>
         {items.map((n) => (
-          <Link key={n.href} href={n.href} className={active === n.href ? "on" : ""}>{n.label}</Link>
+          <Link key={n.href} href={hrefFor(n.href, ctx.month)} className={active === n.href ? "on" : ""}>{n.label}</Link>
         ))}
         {audit ? (
           <>

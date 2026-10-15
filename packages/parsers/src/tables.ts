@@ -2,9 +2,8 @@
  * Tabular uploads (PRD v1 §5). Header rows are detected from column-name aliases (Indonesian and English
  * Accurate labels and the BMG templates' own headers); the wizard can override the detected column for any field.
  *
- * Fase 0 ships the generic machinery only: `KINDS` is empty and every parser is added with its own fixture in Fase 1
- * (gl_month, gl_voucher_tag, payroll_month, inventory_valuation, sales_by_item, average_price, cogm_card, fs_control,
- * budget_bp, std_master) and later phases (sales_forecast, material_price, plant_daily).
+ * The kinds themselves (one file each, with their own fixture) are in ./kinds; Fase 1 registers the B1 kinds, later
+ * phases add sales_forecast, material_price and plant_daily.
  */
 import type { Role } from "@bmg/engine";
 import type { Sheet } from "./workbook";
@@ -41,19 +40,6 @@ export interface KindDef {
 export const F = (field: string, label: string, type: FieldDef["type"], aliases: string[], required = false): FieldDef => ({
   field, label, type, aliases: [label, field, ...aliases], required,
 });
-
-/** Registered upload kinds. Empty in Fase 0. */
-export const KINDS: KindDef[] = [];
-
-export function kindDef(kind: UploadKind, kinds: KindDef[] = KINDS): KindDef {
-  const k = kinds.find((x) => x.kind === kind);
-  if (!k) throw new Error(`Jenis upload belum tersedia: ${kind}`);
-  return k;
-}
-
-export function kindsForRole(role: Role, kinds: KindDef[] = KINDS): KindDef[] {
-  return kinds.filter((k) => k.roles.includes(role));
-}
 
 export type Mapping = Record<string, number | null>;
 

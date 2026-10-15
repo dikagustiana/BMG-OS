@@ -4,7 +4,7 @@ Tiga bagian: **§A** masalah data/model D1–D12 (PRD §1) dan penanganannya; **
 
 ---
 
-## §A. D1–D12 — status Fase 0
+## §A. D1–D12 — status Fase 0 (+ catatan Fase 1)
 
 Setiap masalah punya penanda: skrip/tabel yang menyimpannya, kontrol yang akan menandainya (PRD §4.6), atau catatan. Kontrol B01–B45 dihitung mulai fase modulnya; di Fase 0 yang ada adalah tempat datanya.
 
@@ -19,9 +19,9 @@ Setiap masalah punya penanda: skrip/tabel yang menyimpannya, kontrol yang akan m
 | D7 | Sheet ASUMSI dirujuk tetapi tidak ada di Sep26_4 | Tabel `assumption`: 14 butir ASUMSI dari `WP Costing BMG Agu26.xlsx` + 8 default PRD (kupas_thr_bpjs 0, cng 22,2967, nrv_kw2 9.777,27, fg_target_days 7, variance_alert_pct 0,02, …) | — (dokumentasi) | Terisi lewat seed `20261015000300_master_seed.sql` |
 | D8 | BUDGET di WP kosong; BP v1 berbeda klasifikasi | `budget_pool_map` (draft 21 baris dari BP bagian 4.1 + 4.3, `confirmed = false`); `fixtures/budget-v1/budget_pool_map.json` | B42–B43 (Fase 4) | Draft; perlu konfirmasi Finance sebelum Fase 4 |
 | D9 | BP v1: laba jual aset 60 jt/bulan hardcode; pajak Sep–Des 2026 kosong; Lain-lain tidak membayar FCC | `budget_version 'BP Okt-26 v1'` status `locked` dengan catatan D9 | — | Dibekukan as-is (Q4); v2 oleh manusia |
-| D10 | COA berubah Okt-26 (5101-002 → 111..144; varian 5101-201..207, 301..303) | `coa_pool_map`: 21 akun Sep-26 `confirmed = true` (berlaku s.d. 30 Sep 2026) + 41 akun Okt-26 `confirmed = false` | B44 memblok upload GL Okt bila ada akun tanpa mapping aktif (Fase 1) | Draft Okt-26 dari kolom E "akun baru"; pola 5101-1XY perlu konfirmasi (§B B-007) |
-| D11 | Driver Grup D untuk UU diturunkan dari rasio kWh, bukan jam mesin aktual | `driver_month.estimated` (Fase 1); sel BIAYA BERSAMA D171 = 27,15 jam (bukan bilangan bulat) di fixture | Tampil di kewajaran (Fase 4) | Q16 default |
-| D12 | Tautan budget di WP memakai nomor baris Model Details (MD411…) | `budget_line.driver_code = <produk>|<komponen>|<YYYY-MM>`; `bp_row` hanya untuk jejak | Unik per versi (index `budget_line_driver_key`) | Ekstraktor BP menghasilkan 1.034 baris × bulan, kode unik (diuji) |
+| D10 | COA berubah Okt-26 (5101-002 → 111..144; varian 5101-201..207, 301..303) | `coa_pool_map`: 21 akun Sep-26 `confirmed = true` (berlaku s.d. 30 Sep 2026) + 41 akun Okt-26 `confirmed = false` | B44 memblok upload GL Okt bila ada akun tanpa mapping aktif (Fase 1) | Draft Okt-26 dari kolom E "akun baru"; pola 5101-1XY perlu konfirmasi (§B B-007). **Fase 1:** B44 aktif (`engine/controls.ts`): commit GL diblok bila ada akun tanpa mapping, mapping draft = PERIKSA; akun dari upload yang tertahan tampil di Input bulanan → Mapping akun (tambah/konfirmasi). Diuji e2e dengan GL Okt contoh. |
+| D11 | Driver Grup D untuk UU diturunkan dari rasio kWh, bukan jam mesin aktual | `driver_month.estimated` (Fase 1); sel BIAYA BERSAMA D171 = 27,15 jam (bukan bilangan bulat) di fixture | Tampil di kewajaran (Fase 4) | Q16 default. **Fase 1:** kolom `driver_month.estimated` ada; fixture `cogm_card.xlsx` menandai UU `machine_hour` = estimasi (diuji). |
+| D12 | Tautan budget di WP memakai nomor baris Model Details (MD411…) | `budget_line.driver_code = <produk>|<komponen>|<YYYY-MM>`; `bp_row` hanya untuk jejak | Unik per versi (index `budget_line_driver_key`) | Ekstraktor BP menghasilkan 1.034 baris × bulan, kode unik (diuji). **Fase 1:** parser `budget_bp` (TS) = ekstraktor Python baris per baris (golden `fixtures/budget-v1`); impor lokal 23.024 baris, 23.024 kode unik, versi terkunci. |
 
 ---
 
@@ -35,11 +35,14 @@ Fase 0 tidak menghitung angka; semua 50 target PRD §8 cocok dengan sel WP (`doc
 | B-002 | CEM-CEM ORI!E109 (dan sheet SKU lain) | Saldo awal FG Sep dirujuk ke "Agu26_4"; FCC!E196/E201/E202 merujuk "Agu26_3". | Tiga versi Agu dipakai di WP Sep (3, 4, 6). | Golden Sep tidak terpengaruh (nilai awal ada di sel Sep). Roll-forward FCC diverifikasi otomatis: Agu26_3 FCC!E78 = Sep FCC!C196 (±Rp 0,01). |
 | B-003 | Sep FCC!C196 vs Agu26_3 FCC!E78 | 7.910.432,18636064 vs 7.910.432,186360638 (selisih 2e-9). | Nilai ditempel (paste value) dengan presisi tampilan. | Ekstraktor membandingkan pada Rp 0,01. Tidak berdampak. |
 | B-004 | Catatan sheet SKU "NRV KW 2 (FCC C208)" | NRV ada di **FCC!C209** (C208 = kg KW 2 tawar terjual 5.957). | Rujukan teks basi setelah baris disisipkan. | `product.kw2_nrv_per_kg` FCC diambil dari FCC!C209 = 9.777,27118088893 (sama dengan FCC!D74). |
-| B-005 | BP "Business Plan - Model Details" kolom I | Satuan berlabel "IDR Mil" / "IDR Mio" tetapi sel berisi **Rupiah penuh** (Q76 pendapatan Agu-26 = 9.793.125.452 = BRIDGE GP C7 9.793,125 jt). | Label satuan salah di BP. | Ekstraktor: `maps_to = amount`, nilai = sel apa adanya (tidak dikali 1.000.000). Komentar kolom `budget_line.amount` di `20261015000200_master.sql` ("IDR Mil × 1.000.000") keliru — berkas migrasi tidak diubah; yang berlaku catatan ini. Cek ulang saat impor `budget_bp` Fase 1. |
+| B-005 | BP "Business Plan - Model Details" kolom I | Satuan berlabel "IDR Mil" / "IDR Mio" tetapi sel berisi **Rupiah penuh** (Q76 pendapatan Agu-26 = 9.793.125.452 = BRIDGE GP C7 9.793,125 jt). | Label satuan salah di BP. | Ekstraktor: `maps_to = amount`, nilai = sel apa adanya (tidak dikali 1.000.000). Komentar kolom `budget_line.amount` di `20261015000200_master.sql` ("IDR Mil × 1.000.000") keliru — berkas migrasi tidak diubah; yang berlaku catatan ini. **Fase 1:** parser `budget_bp` memakai aturan yang sama (amount = sel). |
 | B-006 | WP Jul26 | Tidak ada di `reference/`. | Standar v1 (Q6) dan pita rasio 3 bulan (B33) butuh 3 bulan. | Default: standar v1 = rata-rata Agu–Sep (PLAN §0). **Untuk Dika:** konfirmasi ke PPIC apakah WP Jul26 ada (sebelum Fase 2/5a). |
 | B-007 | BIAYA BERSAMA!E7:E10 (akun baru Okt-26) | Hanya daftar nomor ("5101-111/121/131/141"), tanpa nama/arti. | Pola dibaca sebagai 5101-1XY: X = kelompok urut bagian 2 (1 operator → A, 2 support → B, 3 kupas → Kupas, 4 staf → B); Y = 1 upah, 2 THR, 3 bonus, 4 BPJS. 5101-201..207 = pemakaian per jenis bahan (REKON & KONTROL!A34). | `coa_pool_map` Okt-26 `confirmed = false`. **Untuk Dika:** konfirmasi nama akun di Accurate sebelum upload GL Okt (PLAN "Yang harus dilakukan manusia"). |
 | B-008 | REKON MATERIAL kolom O | Kode Accurate (BB-…) hanya tertulis di catatan "saldo akhir: Inventory Valuation BB-004"; 14 dari 54 item tanpa kode. | Item tanpa transaksi bulan ini tidak punya baris IV. | `material_item.code` nullable, kunci alami = `name` (nama Average Price). Kode dilengkapi dari upload Inventory Valuation (Fase 1). |
 | B-009 | SKU FG-138 Maicih Basreng L0 | Produksi Sep 0 kg / 0 bag → `kg_per_unit` tidak bisa diturunkan. | — | `kg_per_unit = null`; satuan `bag` ikut saudara grup. Isi dari master Accurate saat tersedia. |
+| B-011 | File sumber Fase 1 (PLAN §0: `CoGM SEPTEMBER 2026 R1.xlsx`, GL Accurate Sep per voucher, Inventory Valuation 1 Agu–30 Sep 2026, LK Sep-26 IS/BS + Sales by Item) | **Tidak ada** di `reference/` (hanya WP Sep26_4, Agu26_3, Agu26, BP v1). | Tata letak ekspor Accurate dan kartu CoGM asli belum bisa diuji. Angka Sep-nya ada di WP (sel input biru dengan catatan sumber). | Fixture upload `fixtures/uploads/2026-09/` disintesis dari sel WP (`scripts/make_upload_fixtures.py`, sumber per baris). Parser mengenali header dari alias (label Accurate ID/EN), dan wizard bisa memetakan ulang kolom. `cogm_card` memakai template BMG 3 sheet, bukan tata letak kartu lama. **Untuk Dika:** taruh keempat file asli di `reference/`. Sesi berikutnya menambah fixture dari file asli, dan parser kartu CoGM asli bila template tidak dipakai. |
+| B-012 | Impor BP lewat API | Satu transaksi 23.024 baris melewati `statement_timeout` 8 s peran `authenticated` (diuji lokal: "canceling statement due to statement timeout"). | Batas API Supabase. Mengubah peran dilarang gerbang D. | `budget_line` ditulis bertahap (2.500 baris per transaksi), lalu `apply_upload` mengunci versi (`imported_at`). Versi baru dianggap ada setelah `imported_at` terisi. Bila tahap gagal, upload tetap `planned`, dan commit ulang hanya menambah baris yang belum ada (`driver_code`). Lokal: total ±95 detik. Di remote (compute lebih kecil) bisa lebih lama, tetapi tiap tahap jauh di bawah 8 s (2.000 baris ≈ 0,6 s lokal). |
+| B-013 | FCC!C211 "Pendapatan FCC premium IFM + KW 2 tawar" | WP hanya mencatat jumlah FG-001 + 2nd Grade Tawar (FG-015); pemisahan per item ada di LK Sales by Item yang tidak tersedia. | — | Fixture: FG-015 = kg × NRV (sintetis), FG-001 = sisanya; total = LK. Engine (Fase 2+) memakai jumlah keduanya seperti WP. Ganti dengan Sales by Item asli (B-011). |
 | B-010 | `cdn.sheetjs.com` (SheetJS 0.20.3) | Host diblokir kebijakan jaringan sesi cloud ini (403 di proxy). | — | `package.json`/lockfile tetap SheetJS 0.20.3 dari CDN (sama dengan KGR; CI dan Vercel bisa mengunduh). Verifikasi lokal sesi ini memakai `xlsx@0.18.5` (API sama) yang **tidak** di-commit. **Untuk Dika:** izinkan `cdn.sheetjs.com` di network environment agar sesi berikutnya bisa `pnpm install --frozen-lockfile`. |
 
 ---
@@ -70,6 +73,29 @@ Format: ID — keputusan — default — di mana diubah — dampak kalau berubah
 | Q20 | Minggu dimulai | Senin (`assumption.week_start_dow = 1`) | `assumption` | Pemotongan minggu dan biaya tetap per hari |
 
 Q7 (jam operator Lain-lain per kelompok) dan Q8 (template xlsx lalu form web; flag `b5_forms`) belum dipakai di Fase 0; flag `b5_forms` sudah ada (off).
+
+### Keputusan Fase 1
+
+| ID | Keputusan | Default yang dipakai | Di mana diubah | Dampak kalau berubah |
+| --- | --- | --- | --- | --- |
+| K-01 | Siapa membaca input bulanan mentah (§4.2) | admin, finance, cost_accounting. Peran lain dan management tidak (payroll per kelompok sensitif); management membaca data mart | Policy `<tabel>_select` di migrasi baru | Halaman Input bulanan dan RLS |
+| K-02 | Akun B01 ("16 akun" LK) | Akun GL bulan itu yang mapping aktifnya pool konversi (A, KUPAS, B–E, THR, BPJS, PAYROLL_SPLIT) **dan** berawalan `5101-` atau `6500-006/007` | `engine/controls.ts` (`isConversionAccount`) | COA baru di luar pola ini perlu ditambah ke daftar |
+| K-03 | Akun B02 | Akun ber-mapping `PAYROLL_SPLIT` (Sep-26: 5101-002) vs Σ `payroll_journal` | `engine/controls.ts` | Okt-26: 5101-002 dipecah ke 5101-1X1 (pool A/B/Kupas). B02 menjadi BELUM DIISI sampai aturannya diputuskan bersama mapping Okt (B-007) |
+| K-04 | Cakupan B44 | Akun berawalan 5, `6500-006/007`, dan akun bertag voucher | `engine/controls.ts` (`mappingGaps`) | Akun opex tanpa tag tidak perlu mapping |
+| K-05 | Upload bulanan = set lengkap bulan itu | Baris bulan yang tidak ada di file dihapus (soft). Bagian file yang kosong (mis. sheet Jurnal hilang) tidak menghapus apa pun | `apps/web/lib/upload-handlers.ts` | — |
+| K-06 | Versi standar dari upload | Selalu draft baru; kode yang sudah ada ditolak (tidak ditimpa); kapasitas hanya PPIC/Admin | handler `std_master` | — |
+| K-07 | Versi budget dari upload | Nama versi = periode; versi yang sudah diimpor (`imported_at`) tidak bisa diubah (guard DB) | handler `budget_bp`, `private.tg_budget_line_guard` | Revisi BP = versi baru (D9) |
+
+### Deviasi skema dari PRD §4 (Fase 1)
+
+| ID | Deviasi | Alasan | Di mana diubah |
+| --- | --- | --- | --- |
+| S-09 | `cogm_card.row_kind` + `output`, `output_fg`, `sample_fg`, `input_fcc_premium`, `input_kw2_fcc`, `input_kw2_ubi` | Kartu Lain-lain (LAIN-LAIN bagian 2, sheet SKU) mencatat output dan input antarproduk, kg dan satuan FG | Migrasi baru bila enum berubah |
+| S-10 | `inventory_valuation`: `item_name`, `value_out_transfer` | Rincian Valuasi Accurate punya nilai transfer; nama dipakai rekon | — |
+| S-11 | `average_price`: `item_name` (kunci = nama Average Price), `item_code` diisi dari `material_item` bila cocok | Sama dengan `material_item` (S-03, B-008) | — |
+| S-12 | `gl_voucher_tag.target_line` | Ongkos kirim singkong masuk material **FCC** (BIAYA BERSAMA C153) | — |
+| S-13 | `sales_by_item.unit`, `item_code` nullable | SKU Lain-lain dijual per bag; "produk tanpa kartu" tidak punya kode | — |
+| S-14 | `cogm_material`: `material_group` (kelompok kartu: Raw materials, Oil, CNG, Material-others, FCC, KW2, KW2UBI, EXT), `item_code` kosong | Nama material kartu berbeda dari nama Average Price; pemetaan item → master dibuat di Fase 2 | — |
 
 ### Deviasi skema dari PRD §4 (Fase 0)
 

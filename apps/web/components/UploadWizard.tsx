@@ -4,6 +4,7 @@ import type { UploadKind } from "@bmg/parsers";
 import { supabaseBrowser } from "@/lib/supabase-browser";
 import { commit, discard, stage } from "@/app/actions/upload";
 import type { StageResult } from "@/lib/upload";
+import { storagePrefix } from "@/lib/period";
 
 type Kind = { kind: UploadKind; label: string; description: string; target: string; source: string };
 
@@ -26,7 +27,7 @@ export function UploadWizard({ period, kinds }: { period: string; kinds: Kind[] 
   const preview = () => run(async () => {
     if (!file || !kind) { setMsg({ error: "Pilih jenis dan file dulu" }); return; }
     if (file.size > 25 * 1024 * 1024) { setMsg({ error: "File > 25 MB" }); return; }
-    const p = `${period}/${crypto.randomUUID()}/${file.name.replace(/[^\w.\- ]+/g, "_")}`;
+    const p = `${storagePrefix(period)}/${crypto.randomUUID()}/${file.name.replace(/[^\w.\- ]+/g, "_")}`;
     const up = await supabaseBrowser().storage.from("uploads").upload(p, file, { contentType: file.type || "application/octet-stream" });
     if (up.error) { setMsg({ error: `Upload ke storage gagal: ${up.error.message}` }); return; }
     setPath(p);
@@ -82,7 +83,10 @@ export function UploadWizard({ period, kinds }: { period: string; kinds: Kind[] 
         <>
           <div className="card">
             <h2>2. Pratinjau — {res.fileName}</h2>
-            <p className="muted">SHA-256 {res.sha.slice(0, 16)}… · sheet &quot;{res.parse.sheet}&quot;, judul kolom baris {res.parse.headerRow}, {res.parse.rowCount} baris terbaca</p>
+            <p className="muted">Periode {res.period} · SHA-256 {res.sha.slice(0, 16)}… · sheet &quot;{res.parse.sheet}&quot;, judul kolom baris {res.parse.headerRow}, {res.parse.rowCount} baris terbaca</p>
+            {res.blockers.length ? (
+              <div className="msg err"><b>Belum bisa disimpan:</b><ul>{res.blockers.map((b) => <li key={b}>{b}</li>)}</ul></div>
+            ) : null}
             {res.parse.issues.length ? <ul className="alerts">{res.parse.issues.map((i) => <li key={i}>{i}</li>)}</ul> : null}
           </div>
           <div className="card">
@@ -111,7 +115,7 @@ export function UploadWizard({ period, kinds }: { period: string; kinds: Kind[] 
               </tbody>
             </table>
             <div className="row" style={{ marginTop: 8 }}>
-              <button className="b" onClick={doCommit} disabled={pending || (totals !== undefined && totals.i + totals.u + totals.d === 0)}>{pending ? "Menyimpan…" : "Simpan ke database"}</button>
+              <button className="b" onClick={doCommit} disabled={pending || res.blockers.length > 0 || (totals !== undefined && totals.i + totals.u + totals.d === 0)}>{pending ? "Menyimpan…" : "Simpan ke database"}</button>
               <button className="b sec" onClick={cancel} disabled={pending}>Batalkan</button>
             </div>
           </div>

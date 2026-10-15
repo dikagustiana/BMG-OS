@@ -44,7 +44,8 @@ if (process.argv.includes("--update")) {
     const a = JSON.parse(now) as { fixtures: Record<string, string>; modules: Record<string, unknown> };
     const b = JSON.parse(base) as { fixtures: Record<string, string>; modules: Record<string, unknown> };
     const keys = new Set([...Object.keys(a.fixtures), ...Object.keys(b.fixtures)]);
-    const changed = [...keys].filter((k) => a.fixtures[k] !== b.fixtures[k]).map((k) => `fixture ${k}`);
+    const changed = [...keys].filter((k) => a.fixtures[k] !== b.fixtures[k])
+      .map((k) => (k in b.fixtures ? `fixture ${k}` : `fixture ${k} (baru — jalankan snapshot:update bila memang ditambahkan fase ini)`));
     const mk = new Set([...Object.keys(a.modules), ...Object.keys(b.modules)]);
     for (const k of mk) {
       if (!(k in b.modules)) changed.push(`module ${k} (baru — jalankan snapshot:update bila memang ditambahkan fase ini)`);
