@@ -1,4 +1,4 @@
--- Role test at the database level (PRD v1 §2, prompt rule 5). Impersonates test users through JWT claims, checks every
+-- Role test at the database level (PRD v1 §2, prompt rule 5; B1 inputs from Fase 1). Impersonates test users through JWT claims, checks every
 -- role × table write rule, the read rules, the standard-version guards, uploads, flags, audit and the login allow-list.
 -- Always rolls back. Fails (non-zero exit with psql -v ON_ERROR_STOP=1) when any expectation is not met.
 --   psql "$LOCAL_DB_URL" -v ON_ERROR_STOP=1 -f supabase/tests/rls_roles.sql
@@ -27,7 +27,13 @@ declare
     "budget_version": ["admin","finance"], "budget_line": ["admin","finance"], "budget_pool_map": ["admin","finance"],
     "std_version": ["admin","finance","ppic"], "bom_line": ["admin","finance","ppic"], "output_mix": ["admin","finance","ppic"],
     "routing": ["admin","finance","ppic"], "rate_card": ["admin","finance","ppic"], "capacity": ["admin","ppic"],
-    "product": ["admin","finance"]}'::jsonb;
+    "product": ["admin","finance"],
+    "gl_month": ["admin","finance"], "gl_voucher_tag": ["admin","finance"], "payroll_month": ["admin","finance"],
+    "payroll_journal": ["admin","finance"], "inventory_valuation": ["admin","finance"], "sales_by_item": ["admin","finance"],
+    "average_price": ["admin","finance"], "fs_control": ["admin","finance"],
+    "cogm_card": ["admin","cost_accounting"], "cogm_material": ["admin","cost_accounting"], "driver_month": ["admin","cost_accounting"]}'::jsonb;
+  -- B1 inputs (must match 20261015000500_b1_inputs.sql): read by the WP preparers only
+  input_readers text[] := array['admin','finance','cost_accounting'];
   ins text;
   upd text;
   up_fin uuid;
@@ -49,6 +55,17 @@ begin
   foreach r in array roles loop
     insert into public.std_version (code, effective_from) values ('TD_' || r, '2026-10-05');
   end loop;
+  insert into public.gl_month (month, account, net, line_key) values ('2026-09-01', '5101-006', 1, 'setup');
+  insert into public.gl_voucher_tag (month, voucher, account, amount, tag, target_pool, line_key) values ('2026-09-01', 'V', '6500-001', 1, 'reklas_opex', 'E', 'setup');
+  insert into public.payroll_month (month, payroll_group_code, amount, line_key) values ('2026-09-01', 'SUPPORT_QC', 1, 'setup');
+  insert into public.payroll_journal (month, kind, amount, line_key) values ('2026-09-01', 'gaji_staf', 1, 'setup');
+  insert into public.inventory_valuation (month, item_code, line_key) values ('2026-09-01', 'BB-SETUP', 'setup');
+  insert into public.sales_by_item (month, item_name, amount, line_key) values ('2026-09-01', 'setup', 1, 'setup');
+  insert into public.average_price (month, item_name, price, line_key) values ('2026-09-01', 'setup', 1, 'setup');
+  insert into public.cogm_card (month, line, row_kind, qty, line_key) values ('2026-09-01', 'FCC', 'input', 1, 'setup');
+  insert into public.cogm_material (month, line, item_name, value_card, line_key) values ('2026-09-01', 'FCC', 'setup', 1, 'setup');
+  insert into public.driver_month (month, line, driver, value, line_key) values ('2026-09-01', 'FCC', 'kwh', 1, 'setup');
+  insert into public.fs_control (month, key, amount, line_key) values ('2026-09-01', 'cogs', 1, 'setup');
 
   ---------------------------------------------------------------- master tables: insert / update per role
   foreach r in array roles loop
@@ -74,6 +91,17 @@ begin
         when 'routing'         then format('insert into public.routing (std_version_id, product, dept) values (%L, ''FCC'', ''t'')', tv)
         when 'rate_card'       then format('insert into public.rate_card (std_version_id, pool, driver) values (%L, ''A'', ''man_hour'')', tv)
         when 'capacity'        then format('insert into public.capacity (week_start, dept) values (''2026-10-05'', %L)', 't_' || r)
+        when 'gl_month'            then format('insert into public.gl_month (month, account, net, line_key) values (''2026-09-01'', ''5101-006'', 1, %L)', 'T|' || r)
+        when 'gl_voucher_tag'      then format('insert into public.gl_voucher_tag (month, voucher, account, amount, tag, target_pool, line_key) values (''2026-09-01'', ''V'', ''6500-001'', 1, ''reklas_opex'', ''E'', %L)', 'T|' || r)
+        when 'payroll_month'       then format('insert into public.payroll_month (month, payroll_group_code, amount, line_key) values (''2026-09-01'', ''SUPPORT_QC'', 1, %L)', 'T|' || r)
+        when 'payroll_journal'     then format('insert into public.payroll_journal (month, kind, amount, line_key) values (''2026-09-01'', ''gaji_staf'', 1, %L)', 'T|' || r)
+        when 'inventory_valuation' then format('insert into public.inventory_valuation (month, item_code, line_key) values (''2026-09-01'', ''BB-T'', %L)', 'T|' || r)
+        when 'sales_by_item'       then format('insert into public.sales_by_item (month, item_name, amount, line_key) values (''2026-09-01'', ''t'', 1, %L)', 'T|' || r)
+        when 'average_price'       then format('insert into public.average_price (month, item_name, price, line_key) values (''2026-09-01'', ''t'', 1, %L)', 'T|' || r)
+        when 'cogm_card'           then format('insert into public.cogm_card (month, line, row_kind, qty, line_key) values (''2026-09-01'', ''FCC'', ''input'', 1, %L)', 'T|' || r)
+        when 'cogm_material'       then format('insert into public.cogm_material (month, line, item_name, value_card, line_key) values (''2026-09-01'', ''FCC'', ''t'', 1, %L)', 'T|' || r)
+        when 'driver_month'        then format('insert into public.driver_month (month, line, driver, value, line_key) values (''2026-09-01'', ''FCC'', ''kwh'', 1, %L)', 'T|' || r)
+        when 'fs_control'          then format('insert into public.fs_control (month, key, amount, line_key) values (''2026-09-01'', ''cogs'', 1, %L)', 'T|' || r)
       end;
       if ins is not null then
         begin
@@ -102,6 +130,7 @@ begin
         when 'routing'         then 'update public.routing set hours_per_ton = 1 where dept = ''setup'''
         when 'rate_card'       then format('update public.rate_card set rate_variable = 1 where std_version_id = %L', draft)
         when 'capacity'        then 'update public.capacity set headcount = 1 where dept = ''setup'''
+        else format('update public.%I set line_key = line_key where line_key = ''setup''', t.tbl)
       end;
       begin
         execute upd;
@@ -123,6 +152,12 @@ begin
     insert into rls_result values (n = 3, format('%s read product', r), 'rows=' || n);
     select count(*) into n from public.coa_pool_map;
     insert into rls_result values (n >= 62, format('%s read coa_pool_map', r), 'rows=' || n);
+    -- B1 inputs: only the WP preparers read them
+    foreach ins in array array['gl_month','gl_voucher_tag','payroll_month','payroll_journal','inventory_valuation',
+        'sales_by_item','average_price','cogm_card','cogm_material','driver_month','fs_control'] loop
+      execute format('select count(*) from public.%I', ins) into n;
+      insert into rls_result values ((n > 0) = (r = any(input_readers)), format('%s read %s', r, ins), 'rows=' || n);
+    end loop;
     -- flags: only Admin changes them
     update public.app_setting set value = 'false' where key = 'b1_ingest';
     get diagnostics n = row_count;
@@ -197,6 +232,34 @@ begin
   insert into rls_result values (n = 1, 'finance apply_changes soft delete budget_line', 'deleted=' || n);
   select count(*) into n from public.budget_line where driver_code = 'F|1' and deleted_at is not null and deleted_by = 't-finance@x.test';
   insert into rls_result values (n = 1, 'soft delete stamps deleted_by', 'rows=' || n);
+  execute 'reset role';
+
+  ---------------------------------------------------------------- BP lock: lines frozen once the locked version is imported
+  insert into public.budget_version (name, status) values ('T BP lock', 'locked') returning id into tv;
+  perform set_config('request.jwt.claims', '{"email":"t-finance@x.test","role":"authenticated"}', true);
+  execute 'set local role authenticated';
+  insert into public.budget_line (budget_version_id, month, component, driver_code) values (tv, '2026-10-01', 'l', 'L|1');
+  update public.budget_version set imported_at = now() where id = tv;
+  get diagnostics n = row_count;
+  insert into rls_result values (n = 1, 'finance imports into locked version (imported_at set)', 'rows=' || n);
+  begin
+    insert into public.budget_line (budget_version_id, month, component, driver_code) values (tv, '2026-10-01', 'l', 'L|2');
+    insert into rls_result values (false, 'budget_line insert after import', 'allowed');
+  exception when others then
+    insert into rls_result values (sqlstate = '42501', 'budget_line insert after import', 'denied: ' || sqlerrm);
+  end;
+  begin
+    update public.budget_line set component = 'x' where budget_version_id = tv;
+    insert into rls_result values (false, 'budget_line update after import', 'allowed');
+  exception when others then
+    insert into rls_result values (true, 'budget_line update after import', 'denied');
+  end;
+  begin
+    update public.budget_version set status = 'draft' where id = tv;
+    insert into rls_result values (false, 'unlock imported budget version', 'allowed');
+  exception when others then
+    insert into rls_result values (true, 'unlock imported budget version', 'denied');
+  end;
   execute 'reset role';
 
   ---------------------------------------------------------------- apply_upload: one transaction per upload, uploader or Admin only
