@@ -173,7 +173,7 @@ Q1, Q2, Q3, Q4, Q6, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q20 �
 
 ## Fase 1 — B1 ingest bulanan
 
-Branch `v1/f1-ingest` (ditumpuk di atas `v1/f0-foundation`, PLAN "stacked") · PR: lihat `docs/v1/F1-summary.md` · design `docs/v1/F1-design.md` · ringkasan `docs/v1/F1-summary.md` · golden `docs/v1/golden-f1.md`
+Branch `v1/f1-ingest` (ditumpuk di atas `v1/f0-foundation`, PLAN "stacked") · PR https://github.com/dikagustiana/BMG-OS/pull/2 · design `docs/v1/F1-design.md` · ringkasan `docs/v1/F1-summary.md` · golden `docs/v1/golden-f1.md`
 
 ### Commit
 

@@ -2,7 +2,7 @@
 
 Fase 1 (B1 ingest bulanan) dari `docs/PLAN-v1-bmg-platform.md` — **selesai**.
 
-- **Branch / PR:** `v1/f1-ingest` → basis `v1/f0-foundation` (ditumpuk; pindah ke `main` setelah PR Fase 0 di-merge). PR: lihat bagian akhir ringkasan ini. Claude tidak me-merge.
+- **Branch / PR:** `v1/f1-ingest` → basis `v1/f0-foundation` (ditumpuk; pindah ke `main` setelah PR Fase 0 di-merge). PR: https://github.com/dikagustiana/BMG-OS/pull/2 (tidak di-merge oleh Claude).
 - **Bukti lengkap:** `docs/v1/README.md` (Fase 1) · design `docs/v1/F1-design.md` · golden `docs/v1/golden-f1.md` · keputusan/selisih `docs/open-questions.md` (B-011…B-013, K-01…K-07, S-09…S-14).
 
 ## DoD Fase 1 (PLAN) dan acceptance PRD §8 "B1"

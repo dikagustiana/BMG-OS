@@ -2,7 +2,7 @@
 
 ## v1 F1 — B1 ingest bulanan (2026-10-15)
 
-Branch `v1/f1-ingest` (ditumpuk di atas `v1/f0-foundation`). Lihat `docs/v1/F1-design.md`, `docs/v1/README.md` (bukti Fase 1), `docs/v1/F1-summary.md`.
+PR: https://github.com/dikagustiana/BMG-OS/pull/2 (`v1/f1-ingest`, ditumpuk di atas `v1/f0-foundation`). Lihat `docs/v1/F1-design.md`, `docs/v1/README.md` (bukti Fase 1), `docs/v1/F1-summary.md`.
 
 ### Ditambahkan
 - Migrasi `20261015000500_b1_inputs`: 11 tabel input bulanan PRD §4.2 (`gl_month`, `gl_voucher_tag`, `payroll_month`, `payroll_journal`, `inventory_valuation`, `sales_by_item`, `average_price`, `cogm_card`, `cogm_material`, `driver_month`, `fs_control`) dengan `line_key` unik per bulan, stamp, audit, RLS (baca: admin/finance/cost_accounting; tulis per kind). Guard BP: versi terkunci setelah `imported_at`. `upload_tables()` diperluas.
