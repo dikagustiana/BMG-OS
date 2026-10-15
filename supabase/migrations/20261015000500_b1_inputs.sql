@@ -240,7 +240,8 @@ end $$;
 
 -------------------------------------------------------------------------------- BP lock (Q4)
 -- A BP version's lines change only while the version is draft, or locked but not yet imported (the budget_bp upload
--- fills the lines, then sets imported_at in the same transaction). After that the version is frozen.
+-- fills the lines — in chunks when large, B-012 — then sets imported_at in its final transaction). After that the
+-- version is frozen; a version without imported_at is not used by the engine.
 create or replace function private.tg_budget_line_guard() returns trigger
 language plpgsql set search_path = '' as $$
 declare st text; imp timestamptz;
