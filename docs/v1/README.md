@@ -6,7 +6,7 @@ Satu bagian per fase (PLAN v1 "Bukti per fase"): commit, migrasi, output verifik
 
 ## Fase 0 — fondasi, fixture, keputusan data
 
-Branch `v1/f0-foundation` · design `docs/v1/F0-design.md` · ringkasan `docs/v1/F0-summary.md` · golden `docs/v1/golden-f0.md`
+Branch `v1/f0-foundation` · PR https://github.com/dikagustiana/BMG-OS/pull/1 · design `docs/v1/F0-design.md` · ringkasan `docs/v1/F0-summary.md` · golden `docs/v1/golden-f0.md`
 
 ### Commit
 

@@ -2,7 +2,7 @@
 
 ## v1 F0 — fondasi, fixture, keputusan data (2026-10-15)
 
-PR: Fase 0 (`v1/f0-foundation`). Lihat `docs/v1/F0-design.md`, `docs/v1/README.md` (bukti), `docs/v1/F0-summary.md`.
+PR: https://github.com/dikagustiana/BMG-OS/pull/1 (`v1/f0-foundation`). Lihat `docs/v1/F0-design.md`, `docs/v1/README.md` (bukti), `docs/v1/F0-summary.md`.
 
 ### Ditambahkan
 - Monorepo pnpm dari skeleton KGR (baca saja; tanpa riwayat, migrasi, fixture, engine/halaman domain KGR): `@bmg/engine` (decimal, tanggal + helper bulan, format, snapshot kanonik SHA-256, golden), `@bmg/parsers` (SheetJS, deteksi header generik, registry jenis upload kosong), `@bmg/web` (login allow-list, 10 peran PRD §2, flag modul `lib/modules.ts`, `/admin/modul`, `/admin/pengguna`, `/admin/audit`, `/akun`, wizard upload generik, PDF generik).

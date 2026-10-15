@@ -2,7 +2,7 @@
 
 Fase 0 (fondasi, fixture, keputusan data) dari `docs/PLAN-v1-bmg-platform.md` — **selesai**.
 
-- **Branch / PR:** `v1/f0-foundation` → `main` · PR: lihat bagian "PR" di bawah (dibuka di akhir sesi; tidak di-merge).
+- **Branch / PR:** `v1/f0-foundation` → `main` · PR: https://github.com/dikagustiana/BMG-OS/pull/1 (tidak di-merge oleh Claude).
 - **Bukti lengkap:** `docs/v1/README.md` (Fase 0) · design: `docs/v1/F0-design.md` · golden: `docs/v1/golden-f0.md` · keputusan/selisih: `docs/open-questions.md`.
 
 ## DoD Fase 0 (PLAN) dan acceptance PRD §8 "Fase 0"
