@@ -1,0 +1,420 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Agu26_3.xlsx",
+  "sha256": "06ab1c61bfb85373844fbf503c13567071d2b7c2b864333706acf4d8ec8e38d5"
+ },
+ "sheets": {
+  "RINGKASAN": {
+   "header": {
+    "title": "RINGKASAN WP COSTING",
+    "first_row": 1,
+    "rows": [
+     {
+      "r": 1,
+      "c": {
+       "A": "RINGKASAN WP COSTING"
+      }
+     },
+     {
+      "r": 3,
+      "c": {
+       "A": "Status kontrol semua sheet",
+       "C": "LULUS"
+      }
+     }
+    ],
+    "last_row": 3
+   },
+   "1": {
+    "title": "1. Biaya produksi dan HPP per produk (Rp juta; Rp/kg per kg produksi)",
+    "first_row": 5,
+    "rows": [
+     {
+      "r": 5,
+      "c": {
+       "A": "1. Biaya produksi dan HPP per produk (Rp juta; Rp/kg per kg produksi)"
+      }
+     },
+     {
+      "r": 6,
+      "c": {
+       "A": "Pos",
+       "B": "FCC",
+       "C": "Ubi Ungu",
+       "D": "Ubi Orange",
+       "E": "Lain-lain",
+       "F": "Total"
+      }
+     },
+     {
+      "r": 7,
+      "c": {
+       "A": "Produksi (kg)",
+       "B": "338754",
+       "C": "13376",
+       "D": "7403",
+       "E": "17571.48",
+       "F": "377104.48"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 8,
+      "c": {
+       "A": "Total biaya produksi",
+       "B": "7327.44069821083",
+       "C": "465.3097146461213",
+       "D": "238.9344308886281",
+       "E": "355.581963504226",
+       "F": "8387.266807249805"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 9,
+      "c": {
+       "A": "Biaya produksi per kg (Rp)",
+       "B": "21630.565833055345",
+       "C": "34786.91048490739",
+       "D": "32275.352004407414",
+       "E": "20236.31267851234",
+       "F": "22241.2282326898"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 10,
+      "c": {
+       "A": "HPP",
+       "B": "6925.004969208172",
+       "C": "250.83101805142473",
+       "D": "238.9344308886281",
+       "E": "355.581963504226",
+       "F": "7770.352381652451"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 11,
+      "c": {
+       "A": "Pendapatan (total = GL)",
+       "B": "8672.09770245",
+       "C": "349.70925",
+       "D": "354.6037",
+       "E": "416.71479961",
+       "F": "9793.12545206"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 12,
+      "c": {
+       "A": "Margin kotor (%)",
+       "B": "0.20146137568863506",
+       "C": "0.2827441137132497",
+       "D": "0.32619306880151533",
+       "E": "0.14670185979232733",
+       "F": "0.2065503071832961"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     }
+    ],
+    "last_row": 12
+   },
+   "2": {
+    "title": "2. FCC, UU, UO: Rp/kg aktual vs budget dan penyebab selisih (Rp/kg)",
+    "first_row": 14,
+    "rows": [
+     {
+      "r": 14,
+      "c": {
+       "A": "2. FCC, UU, UO: Rp/kg aktual vs budget dan penyebab selisih (Rp/kg)"
+      }
+     },
+     {
+      "r": 15,
+      "c": {
+       "A": "Produk",
+       "B": "Rp/kg aktual",
+       "C": "Rp/kg budget",
+       "D": "Selisih",
+       "E": "Harga / belanja",
+       "F": "Pemakaian / yield",
+       "G": "Volume",
+       "H": "Metode alokasi",
+       "I": "Bulan budget"
+      }
+     },
+     {
+      "r": 16,
+      "c": {
+       "A": "FCC",
+       "B": "21630.56583305534",
+       "C": "24247.024313390633",
+       "D": "-2616.458480335288",
+       "E": "-975.2996894304936",
+       "F": "-783.9697734516874",
+       "G": "-571.1379848989752",
+       "H": "-286.0510325541332",
+       "I": "Okt-26"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 17,
+      "c": {
+       "A": "UU",
+       "B": "34786.910484907385",
+       "C": "35657.07097633822",
+       "D": "-870.1604914308307",
+       "E": "1410.2108622849032",
+       "F": "-1899.4098251957553",
+       "G": "-2805.8809960376752",
+       "H": "2424.919467517699",
+       "I": "Okt-26"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 18,
+      "c": {
+       "A": "UO",
+       "B": "32275.352004407414",
+       "C": "33916.193592188036",
+       "D": "-1640.84158778062",
+       "E": "977.2767095231048",
+       "F": "-3689.6167207619856",
+       "G": "-1144.7470404024107",
+       "H": "2216.24546386067",
+       "I": "Okt-26"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     }
+    ],
+    "last_row": 18
+   },
+   "3": {
+    "title": "3. Biaya yang tidak terlihat di margin (memo)",
+    "first_row": 21,
+    "rows": [
+     {
+      "r": 21,
+      "c": {
+       "A": "3. Biaya yang tidak terlihat di margin (memo)"
+      }
+     },
+     {
+      "r": 22,
+      "c": {
+       "A": "Pos",
+       "B": "FCC",
+       "C": "Ubi Ungu",
+       "D": "Ubi Orange",
+       "F": "Catatan"
+      }
+     },
+     {
+      "r": 23,
+      "c": {
+       "A": "Biaya waste (kerugian normal) yang terserap ke HPP (Rp jt)",
+       "B": "207.1094972428967",
+       "C": "0",
+       "D": "0"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 24,
+      "c": {
+       "A": "KW 2 dikreditkan pada NRV (Rp jt)",
+       "B": "134.48636509312726",
+       "C": "0",
+       "D": "0"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 25,
+      "c": {
+       "A": "Kenaikan WIP + FG (Rp jt)",
+       "B": "#REF!",
+       "C": "214.47869659469652",
+       "D": "#REF!"
+      },
+      "n": [
+       "C"
+      ],
+      "e": [
+       "B",
+       "D"
+      ]
+     },
+     {
+      "r": 26,
+      "c": {
+       "A": "Biaya jam operator tidak terpakai untuk produk (Rp jt; % jam)",
+       "B": "61.206617530748595",
+       "C": "0.0940748684271713"
+      },
+      "n": [
+       "B",
+       "C"
+      ]
+     }
+    ],
+    "last_row": 26
+   },
+   "4": {
+    "title": "4. Rekonsiliasi ke GL (Rp juta)",
+    "first_row": 28,
+    "rows": [
+     {
+      "r": 28,
+      "c": {
+       "A": "4. Rekonsiliasi ke GL (Rp juta)"
+      }
+     },
+     {
+      "r": 29,
+      "c": {
+       "A": "Total HPP kartu baru",
+       "B": "7770.352381652451"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 30,
+      "c": {
+       "A": "Varian material (GL − kartu)",
+       "B": "203.7305353564816"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 31,
+      "c": {
+       "A": "Selisih kenaikan persediaan kartu baru vs GL",
+       "B": "-152.22699645487688"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 32,
+      "c": {
+       "A": "Kenaikan persediaan KW 2 pada NRV",
+       "B": "20.289793154580703"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 33,
+      "c": {
+       "A": "Jam menganggur dibebankan ke periode",
+       "B": "0"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 34,
+      "c": {
+       "A": "HPP menurut GL",
+       "B": "7842.14571370864"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 35,
+      "c": {
+       "A": "Cek (harus nol)",
+       "B": "0"
+      },
+      "n": [
+       "B"
+      ]
+     }
+    ],
+    "last_row": 35
+   }
+  }
+ }
+}

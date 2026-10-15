@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  app:
+    name: typecheck · test · golden · snapshot · build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Unit and rule tests
+        run: pnpm test
+      - name: Golden (±Rp 1 per WP cell)
+        run: pnpm test:golden -- --fixture month-2026-09 --phase ci
+      - name: Snapshot unchanged
+        run: pnpm snapshot:diff
+      - name: Web app builds
+        run: pnpm build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+
+  fixtures:
+    name: fixtures reproducible from reference/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl==3.1.5
+      - run: python3 -I scripts/extract_fixtures.py --check
+
+  db:
+    name: migrations + RLS (local Supabase)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Migrations are additive only (gate D item 4)
+        run: python3 -I scripts/check_migration.py supabase/migrations/*.sql
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 2.54.11
+      - name: Start local Supabase (applies supabase/migrations)
+        run: supabase start -x studio,imgproxy,mailpit,edge-runtime,logflare,vector,supavisor,realtime
+      - name: Migrations are idempotent (apply every file a second time)
+        run: |
+          for f in supabase/migrations/*.sql; do
+            psql "postgresql://postgres:postgres@127.0.0.1:54322/postgres" -q -v ON_ERROR_STOP=1 -f "$f"
+          done
+      - name: RLS role test
+        run: psql "postgresql://postgres:postgres@127.0.0.1:54322/postgres" -v ON_ERROR_STOP=1 -f supabase/tests/rls_roles.sql

@@ -1,0 +1,25 @@
+{
+  "name": "@bmg/parsers",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Parser upload BMG-OS (PRD v1 §5): satu parser per upload kind, deteksi header generik. Fase 0: kerangka tanpa parser domain.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@bmg/engine": "workspace:*",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

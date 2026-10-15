@@ -1,0 +1,57 @@
+name: Backup database
+
+# Daily logical backup of the BMG-OS database (PRD v1 §7). Supabase Pro keeps its own daily backups; this is the
+# independent copy Dika runs before applying migrations of Fase ≥ 2 (PLAN §0).
+# Secrets (GitHub → Settings → Secrets and variables → Actions), set by Dika, never committed:
+#   SUPABASE_DB_URL     postgres connection string of project btccexwuukrpushmharq (Session pooler, IPv4)
+#   BACKUP_PASSPHRASE   passphrase for the gpg-encrypted artifact
+# The dump (schemas public + private, no owners/privileges) is uploaded as a private workflow artifact for 30 days.
+
+on:
+  schedule:
+    - cron: "17 19 * * *" # 02:17 WIB
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check secrets
+        env:
+          DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          if [ -z "$DB_URL" ] || [ -z "$PASSPHRASE" ]; then
+            echo "::warning::SUPABASE_DB_URL / BACKUP_PASSPHRASE belum diisi — backup dilewati"
+            echo "SKIP=1" >> "$GITHUB_ENV"
+          fi
+      - name: pg_dump (PostgreSQL 17 client)
+        if: env.SKIP != '1'
+        env:
+          DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          STAMP=$(date -u +%Y%m%dT%H%MZ)
+          echo "STAMP=$STAMP" >> "$GITHUB_ENV"
+          docker run --rm -e DB_URL postgres:17 \
+            sh -c 'pg_dump "$DB_URL" --format=custom --no-owner --no-privileges --schema=public --schema=private' \
+            > "bmg-os-$STAMP.dump"
+          test -s "bmg-os-$STAMP.dump"
+      - name: Encrypt
+        if: env.SKIP != '1'
+        env:
+          PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          gpg --batch --yes --pinentry-mode loopback --passphrase "$PASSPHRASE" --symmetric --cipher-algo AES256 \
+            -o "bmg-os-$STAMP.dump.gpg" "bmg-os-$STAMP.dump"
+          rm "bmg-os-$STAMP.dump"
+          sha256sum "bmg-os-$STAMP.dump.gpg"
+      - uses: actions/upload-artifact@v4
+        if: env.SKIP != '1'
+        with:
+          name: bmg-os-db-${{ env.STAMP }}
+          path: bmg-os-*.dump.gpg
+          retention-days: 30
+          if-no-files-found: error

@@ -1,0 +1,2357 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "sheets": {
+  "BIAYA BERSAMA": {
+   "header": {
+    "title": "BIAYA BERSAMA PABRIK – September 2026",
+    "first_row": 1,
+    "rows": [
+     {
+      "r": 1,
+      "c": {
+       "A": "BIAYA BERSAMA PABRIK – September 2026"
+      }
+     }
+    ],
+    "last_row": 1
+   },
+   "1": {
+    "title": "1. Saldo akun biaya pabrik – GL September 2026 (Rp)",
+    "first_row": 5,
+    "rows": [
+     {
+      "r": 5,
+      "c": {
+       "A": "1. Saldo akun biaya pabrik – GL September 2026 (Rp)"
+      }
+     },
+     {
+      "r": 6,
+      "c": {
+       "A": "Kode",
+       "B": "Nama akun",
+       "C": "Sep-26 (Rp)",
+       "D": "Pool",
+       "E": "Akun baru mulai Okt-26",
+       "F": "Sumber"
+      }
+     },
+     {
+      "r": 7,
+      "c": {
+       "A": "5101-002",
+       "B": "COGM - DL - Biaya Upah Langsung Pabrik",
+       "C": "792968930",
+       "D": "Dipecah (bagian 2)",
+       "E": "5101-111/121/131/141",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 8,
+      "c": {
+       "A": "5101-003",
+       "B": "COGM - DL - THR & Bonus Pabrik",
+       "C": "28362872",
+       "D": "Dipecah (bagian 2)",
+       "E": "5101-112/113/122/132/133/142/143",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 9,
+      "c": {
+       "A": "5101-004",
+       "B": "COGM - DL - Pesangon Pabrik",
+       "C": "0",
+       "D": "Grup A",
+       "E": "5101-150",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 10,
+      "c": {
+       "A": "5101-005",
+       "B": "COGM - DL - Biaya Jamsostek Pabrik",
+       "C": "118735319",
+       "D": "Dipecah (bagian 2)",
+       "E": "5101-114/124/134/144",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 11,
+      "c": {
+       "A": "5101-006",
+       "B": "COGM - OHP - Biaya Listrik Pabrik",
+       "C": "46657860",
+       "D": "Grup C",
+       "E": "5101-006",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 12,
+      "c": {
+       "A": "5101-007",
+       "B": "COGM - OHP - Biaya Air Pabrik",
+       "C": "79400",
+       "D": "Grup C",
+       "E": "5101-007",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 13,
+      "c": {
+       "A": "5101-008",
+       "B": "COGM - OHP - Biaya Utilitas Pabrik",
+       "C": "0",
+       "D": "Grup C",
+       "E": "5101-008",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 14,
+      "c": {
+       "A": "5101-009",
+       "B": "COGM - OHP - Biaya Rumah Tangga Pabrik",
+       "C": "33571729.74",
+       "D": "Grup E",
+       "E": "5101-009",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 15,
+      "c": {
+       "A": "5101-010",
+       "B": "COGM - OHP - Biaya Perbaikan & Pemeliharaan Mesin",
+       "C": "130369443.57",
+       "D": "Grup D",
+       "E": "5101-010",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 16,
+      "c": {
+       "A": "5101-011",
+       "B": "COGM - OHP - Biaya Perbaikan & Pemeliharaan Pabrik",
+       "C": "57854667",
+       "D": "Grup E",
+       "E": "5101-011",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 17,
+      "c": {
+       "A": "5101-012",
+       "B": "COGM - OHP - Biaya Perbaikan & Pemeliharaan Inventaris Pabrik",
+       "C": "13265000",
+       "D": "Grup E",
+       "E": "5101-012",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 18,
+      "c": {
+       "A": "5101-013",
+       "B": "COGM - OHP - Biaya Peny. Mesin Gol 1",
+       "C": "16700889.01",
+       "D": "Grup D",
+       "E": "5101-013",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 19,
+      "c": {
+       "A": "5101-014",
+       "B": "COGM - OHP - Biaya Peny. Mesin Gol 2",
+       "C": "137626886.69",
+       "D": "Grup D",
+       "E": "5101-013",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 20,
+      "c": {
+       "A": "5101-016",
+       "B": "COGM - OHP - Biaya Pabrikasi & Pengiriman",
+       "C": "159071091",
+       "D": "Grup E",
+       "E": "5101-016",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 21,
+      "c": {
+       "A": "6500-006",
+       "B": "COGM - OHP - Biaya Peny. Inventaris Pabrik Gol 1",
+       "C": "41091286.18",
+       "D": "Grup E",
+       "E": "5101-017",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 22,
+      "c": {
+       "A": "6500-007",
+       "B": "COGM - OHP - Biaya Peny. Inventaris Pabrik Gol 2",
+       "C": "14533270.83",
+       "D": "Grup E",
+       "E": "5101-017",
+       "F": "GL Accurate Jan–Sep-26 (file GL Feb–Sep), mutasi Sep-26"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 23,
+      "c": {
+       "B": "Total biaya konversi pabrik",
+       "C": "1590888645.02"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 24,
+      "c": {
+       "B": "Referensi: LK Sep-26 sheet Income Statement kolom Sep (16 akun)",
+       "C": "1590888645.02",
+       "F": "Untuk kontrol"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 24
+   },
+   "2": {
+    "title": "2. Rincian upah 5101-002 per kelompok, dan pembagian THR/BPJS (sementara sampai akun payroll baru aktif)",
+    "first_row": 26,
+    "rows": [
+     {
+      "r": 26,
+      "c": {
+       "A": "2. Rincian upah 5101-002 per kelompok, dan pembagian THR/BPJS (sementara sampai akun payroll baru aktif)"
+      }
+     },
+     {
+      "r": 27,
+      "c": {
+       "A": "Kelompok",
+       "B": "Unit / departemen",
+       "C": "Sep-26 (Rp)",
+       "D": "Pool",
+       "F": "Upah GL dibagi porsi rekap (Rp)"
+      }
+     },
+     {
+      "r": 28,
+      "c": {
+       "A": "Operator harian",
+       "B": "Unit I",
+       "C": "387491800",
+       "D": "Grup A",
+       "E": "WP CoGM Sep, Labor!E6:E16 dan J6",
+       "F": "369283781.9789734"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 29,
+      "c": {
+       "A": "Operator harian",
+       "B": "Unit II",
+       "C": "0",
+       "D": "Grup A",
+       "F": "0"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 30,
+      "c": {
+       "A": "Operator harian",
+       "B": "Unit III",
+       "C": "0",
+       "D": "Grup A",
+       "F": "0"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 31,
+      "c": {
+       "A": "Support harian",
+       "B": "QC",
+       "C": "51615000",
+       "D": "Grup B",
+       "F": "49189640.67586647"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 32,
+      "c": {
+       "A": "Support harian",
+       "B": "Formulasi",
+       "C": "0",
+       "D": "Grup B",
+       "F": "0"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 33,
+      "c": {
+       "A": "Support harian",
+       "B": "RnD",
+       "C": "0",
+       "D": "Grup B",
+       "F": "0"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 34,
+      "c": {
+       "A": "Support harian",
+       "B": "Engineering",
+       "C": "32691500",
+       "D": "Grup B",
+       "F": "31155345.115859505"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 35,
+      "c": {
+       "A": "Support harian",
+       "B": "PPIC",
+       "C": "3086900",
+       "D": "Grup B",
+       "F": "2941848.334831584"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 36,
+      "c": {
+       "A": "Support harian",
+       "B": "Gudang",
+       "C": "15499900",
+       "D": "Grup B",
+       "F": "14771568.565569362"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 37,
+      "c": {
+       "A": "Support harian",
+       "B": "HRGA",
+       "C": "40641900",
+       "D": "Grup B",
+       "F": "38732160.36780969"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 38,
+      "c": {
+       "A": "Support harian",
+       "B": "Agro",
+       "C": "0",
+       "D": "Grup B",
+       "F": "0"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 39,
+      "c": {
+       "A": "Borongan kupas",
+       "B": "Kupas singkong",
+       "C": "56241375",
+       "D": "Kupas",
+       "F": "53598624.96108998"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 40,
+      "c": {
+       "A": "Borongan kupas",
+       "B": "Kupas ubi",
+       "C": "0",
+       "D": "Kupas",
+       "F": "0"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 41,
+      "c": {
+       "A": "Staf bulanan pabrik",
+       "B": "Semua departemen pabrik",
+       "C": "165344478",
+       "D": "Grup B",
+       "E": "GL 5101-002 jurnal MJ26090065 (COGS - Manufacturing Overhead + Direct Labour), sama dengan pola Agu MJ26080059",
+       "F": "165344478"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 42,
+      "c": {
+       "B": "Subtotal rekap payroll",
+       "C": "752612853",
+       "F": "725017448"
+      },
+      "n": [
+       "C",
+       "F"
+      ]
+     },
+     {
+      "r": 43,
+      "c": {
+       "B": "GL 5101-002",
+       "C": "792968930"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 44,
+      "c": {
+       "B": "Selisih GL − rekap (info: upah harian GL di bawah rekap + tali asih; upah dibagi di kolom F, tali asih di baris 60)",
+       "C": "40356077"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 46,
+      "c": {
+       "A": "Parameter: kupas ikut THR & BPJS? (1 = ya, 0 = tidak)",
+       "C": "0",
+       "E": "Lihat sheet ASUMSI no. 3"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 47,
+      "c": {
+       "A": "Basis pembagian THR & BPJS (upah GL kolom F; THR sudah dikoreksi bagian 8)",
+       "C": "Upah/gaji pokok",
+       "D": "Porsi",
+       "E": "THR (5101-003)",
+       "F": "BPJS (5101-005)"
+      }
+     },
+     {
+      "r": 48,
+      "c": {
+       "A": "Operator harian",
+       "C": "369283781.9789734",
+       "D": "0.5500051075535198",
+       "E": "34725742.87626035",
+       "F": "65305031.89699649"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 49,
+      "c": {
+       "A": "Support harian",
+       "C": "136790563.0599366",
+       "D": "0.20373358381704074",
+       "E": "12863153.35935523",
+       "F": "24190372.06552957"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 50,
+      "c": {
+       "A": "Staf bulanan pabrik",
+       "C": "165344478",
+       "D": "0.24626130862943943",
+       "E": "15548231.764384422",
+       "F": "29239915.037473943"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 51,
+      "c": {
+       "A": "Borongan kupas",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 52,
+      "c": {
+       "A": "Total",
+       "C": "671418823.03891",
+       "D": "1",
+       "E": "63137128",
+       "F": "118735319"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     }
+    ],
+    "last_row": 52
+   },
+   "3": {
+    "title": "3. Pool biaya pabrik",
+    "first_row": 54,
+    "rows": [
+     {
+      "r": 54,
+      "c": {
+       "A": "3. Pool biaya pabrik"
+      }
+     },
+     {
+      "r": 55,
+      "c": {
+       "A": "Pool",
+       "B": "Komponen",
+       "C": "Sep-26 (Rp)",
+       "D": "Sifat biaya",
+       "E": "Driver alokasi"
+      }
+     },
+     {
+      "r": 56,
+      "c": {
+       "A": "Grup A – DL operator",
+       "B": "Upah harian operator (GL, porsi rekap)",
+       "C": "369283781.9789734",
+       "D": "Semi-variabel",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 57,
+      "c": {
+       "A": "Grup A – DL operator",
+       "B": "THR operator",
+       "C": "34725742.87626035",
+       "D": "Tetap",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 58,
+      "c": {
+       "A": "Grup A – DL operator",
+       "B": "BPJS operator",
+       "C": "65305031.89699649",
+       "D": "Tetap",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 59,
+      "c": {
+       "A": "Grup A – DL operator",
+       "B": "Pesangon pabrik (5101-004)",
+       "C": "0",
+       "D": "Tetap",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 60,
+      "c": {
+       "A": "Grup B – IDL",
+       "B": "Tali asih (GL 5101-002 bulan ini; koreksi bulan jasa di bagian 8)",
+       "C": "67951482",
+       "D": "Tetap",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 61,
+      "c": {
+       "A": "Kupas",
+       "B": "Upah borongan kupas (GL, porsi rekap)",
+       "C": "53598624.96108998",
+       "D": "Variabel",
+       "E": "Kg dikupas"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 62,
+      "c": {
+       "A": "Kupas",
+       "B": "THR & BPJS kupas",
+       "C": "0",
+       "D": "Tetap",
+       "E": "Kg dikupas"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 63,
+      "c": {
+       "A": "Grup B – IDL",
+       "B": "Upah harian support (GL, porsi rekap)",
+       "C": "136790563.0599366",
+       "D": "Semi-variabel",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 64,
+      "c": {
+       "A": "Grup B – IDL",
+       "B": "Gaji staf bulanan pabrik",
+       "C": "165344478",
+       "D": "Tetap",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 65,
+      "c": {
+       "A": "Grup B – IDL",
+       "B": "THR support & staf",
+       "C": "28411385.123739652",
+       "D": "Tetap",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 66,
+      "c": {
+       "A": "Grup B – IDL",
+       "B": "BPJS support & staf",
+       "C": "53430287.10300352",
+       "D": "Tetap",
+       "E": "Man-hour"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 67,
+      "c": {
+       "A": "Grup C – energi & utilitas",
+       "B": "Listrik (5101-006)",
+       "C": "46657860",
+       "D": "Variabel",
+       "E": "kWh"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 68,
+      "c": {
+       "A": "Grup C – energi & utilitas",
+       "B": "Air (5101-007)",
+       "C": "79400",
+       "D": "Variabel",
+       "E": "kWh"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 69,
+      "c": {
+       "A": "Grup C – energi & utilitas",
+       "B": "Utilitas (5101-008)",
+       "C": "0",
+       "D": "Variabel",
+       "E": "kWh"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 70,
+      "c": {
+       "A": "Grup D – mesin",
+       "B": "Pemeliharaan mesin (5101-010)",
+       "C": "130369443.57",
+       "D": "Semi-variabel",
+       "E": "kWh"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 71,
+      "c": {
+       "A": "Grup D – mesin",
+       "B": "Penyusutan mesin Gol 1 (5101-013)",
+       "C": "16700889.01",
+       "D": "Tetap",
+       "E": "kWh"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 72,
+      "c": {
+       "A": "Grup D – mesin",
+       "B": "Penyusutan mesin Gol 2 (5101-014)",
+       "C": "137626886.69",
+       "D": "Tetap",
+       "E": "kWh"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 73,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Rumah tangga pabrik (5101-009)",
+       "C": "33571729.74",
+       "D": "Tetap",
+       "E": "Nilai material"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 74,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Pemeliharaan pabrik (5101-011)",
+       "C": "57854667",
+       "D": "Tetap",
+       "E": "Nilai material"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 75,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Pemeliharaan inventaris pabrik (5101-012)",
+       "C": "13265000",
+       "D": "Tetap",
+       "E": "Nilai material"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 76,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Pabrikasi & pengiriman (5101-016)",
+       "C": "159071091",
+       "D": "Variabel",
+       "E": "Nilai material"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 77,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Penyusutan inventaris pabrik Gol 1 (6500-006)",
+       "C": "41091286.18",
+       "D": "Tetap",
+       "E": "Nilai material"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 78,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Penyusutan inventaris pabrik Gol 2 (6500-007)",
+       "C": "14533270.83",
+       "D": "Tetap",
+       "E": "Nilai material"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 80,
+      "c": {
+       "A": "Ringkasan pool (bagian 3 + penyesuaian bagian 8)",
+       "D": "Tetap",
+       "E": "Variabel + semi"
+      }
+     },
+     {
+      "r": 81,
+      "c": {
+       "A": "Grup A – DL operator",
+       "C": "469314556.7522302",
+       "D": "100030774.77325684",
+       "E": "369283781.9789734"
+      },
+      "n": [
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 82,
+      "c": {
+       "A": "Kupas",
+       "C": "53598624.96108998",
+       "D": "0",
+       "E": "53598624.96108998"
+      },
+      "n": [
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 83,
+      "c": {
+       "A": "Grup B – IDL",
+       "C": "419567213.2866798",
+       "D": "282776650.22674316",
+       "E": "136790563.05993664"
+      },
+      "n": [
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 84,
+      "c": {
+       "A": "Grup C – energi & utilitas",
+       "C": "46737260",
+       "D": "0",
+       "E": "46737260"
+      },
+      "n": [
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 85,
+      "c": {
+       "A": "Grup D – mesin",
+       "C": "313485769.27",
+       "D": "154327775.7",
+       "E": "159157993.57"
+      },
+      "n": [
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 86,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "C": "270063312.92",
+       "D": "269191912.92",
+       "E": "871400"
+      },
+      "n": [
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 87,
+      "c": {
+       "A": "Total pool",
+       "C": "1572766737.19",
+       "D": "806327113.6200001",
+       "E": "766439623.5699999"
+      },
+      "n": [
+       "C",
+       "D",
+       "E"
+      ]
+     }
+    ],
+    "last_row": 87
+   },
+   "4": {
+    "title": "4. Driver alokasi per produk (diambil dari sheet produk)",
+    "first_row": 89,
+    "rows": [
+     {
+      "r": 89,
+      "c": {
+       "A": "4. Driver alokasi per produk (diambil dari sheet produk)"
+      }
+     },
+     {
+      "r": 90,
+      "c": {
+       "A": "Driver",
+       "B": "Satuan",
+       "C": "FCC",
+       "D": "Ubi Ungu",
+       "E": "Ubi Orange",
+       "F": "Lain-lain",
+       "G": "Total",
+       "H": "Sumber"
+      }
+     },
+     {
+      "r": 91,
+      "c": {
+       "A": "Man-hour",
+       "B": "jam",
+       "C": "17722",
+       "D": "91",
+       "E": "1109",
+       "F": "2689.1499",
+       "G": "21611.1499"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 92,
+      "c": {
+       "A": "Kg dikupas",
+       "B": "kg",
+       "C": "215224",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "215224"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 93,
+      "c": {
+       "A": "kWh",
+       "B": "kWh",
+       "C": "32546.2831690667",
+       "D": "25.7823413333333",
+       "E": "458.275338666667",
+       "F": "10118.059200000002",
+       "G": "43148.4000490667"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 94,
+      "c": {
+       "A": "Nilai material",
+       "B": "Rp",
+       "C": "4233644581.4594436",
+       "D": "12447449.363263678",
+       "E": "173600702.19353086",
+       "F": "76673618.51843955",
+       "G": "4496366351.5346775"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 95,
+      "c": {
+       "A": "Volume produksi (metode budget)",
+       "B": "kg",
+       "C": "236923",
+       "D": "467.5",
+       "E": "6715.5",
+       "F": "0",
+       "G": "244106"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 96,
+      "c": {
+       "A": "Porsi"
+      }
+     },
+     {
+      "r": 97,
+      "c": {
+       "A": "  Man-hour",
+       "C": "0.820039659250154",
+       "D": "0.0042107893573955545",
+       "E": "0.05131610326760077",
+       "F": "0.12443344812484966",
+       "G": "1"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 98,
+      "c": {
+       "A": "  Kg dikupas",
+       "C": "1",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "1"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 99,
+      "c": {
+       "A": "  kWh",
+       "C": "0.7542871376935487",
+       "D": "0.0005975271691190081",
+       "E": "0.010620911508782107",
+       "F": "0.23449442362855016",
+       "G": "1"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 100,
+      "c": {
+       "A": "  Nilai material",
+       "C": "0.9415702036855687",
+       "D": "0.0027683352267359566",
+       "E": "0.038609109805805376",
+       "F": "0.01705235128189003",
+       "G": "1"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 101,
+      "c": {
+       "A": "  Volume produksi (metode budget)",
+       "C": "0.9705742587236692",
+       "D": "0.0019151516144625695",
+       "E": "0.027510589661868205",
+       "F": "0",
+       "G": "1"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     }
+    ],
+    "last_row": 101
+   },
+   "5": {
+    "title": "5. Kapasitas tenaga kerja: jam dibayar vs jam yang dipakai produk (PSAK 202: biaya kapasitas menganggur di atas normal adalah beban periode)",
+    "first_row": 103,
+    "rows": [
+     {
+      "r": 103,
+      "c": {
+       "A": "5. Kapasitas tenaga kerja: jam dibayar vs jam yang dipakai produk (PSAK 202: biaya kapasitas menganggur di atas normal adalah beban periode)"
+      }
+     },
+     {
+      "r": 104,
+      "c": {
+       "A": "Pos",
+       "B": "Satuan",
+       "C": "Sep-26",
+       "H": "Sumber"
+      }
+     },
+     {
+      "r": 105,
+      "c": {
+       "A": "Jam kerja operator dibayar (Unit I)",
+       "B": "jam",
+       "C": "24875.9666666666",
+       "H": "WP CoGM Sep, Labor!D6 (jam Unit I)"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 106,
+      "c": {
+       "A": "Jam yang dicatat ke produk",
+       "B": "jam",
+       "C": "21611.1499"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 107,
+      "c": {
+       "A": "Jam tidak terpakai untuk produk",
+       "B": "jam",
+       "C": "3264.8167666666013",
+       "D": "0.13124381498072207"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 108,
+      "c": {
+       "A": "Biaya Grup A per jam dibayar",
+       "B": "Rp/jam",
+       "C": "18866.183696133678"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 109,
+      "c": {
+       "A": "Biaya jam tidak terpakai",
+       "B": "Rp",
+       "C": "61594632.854149304"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 110,
+      "c": {
+       "A": "Parameter: bebankan ke periode? (1 = ya, 0 = tetap diserap produk)",
+       "C": "0",
+       "E": "Keputusan kebijakan kapasitas normal; lihat ASUMSI no. 9"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 111,
+      "c": {
+       "A": "Dibebankan ke periode (tidak masuk kartu produk)",
+       "C": "0"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 111
+   },
+   "6": {
+    "title": "6. Alokasi pool ke produk – aktual (Rp)",
+    "first_row": 113,
+    "rows": [
+     {
+      "r": 113,
+      "c": {
+       "A": "6. Alokasi pool ke produk – aktual (Rp)"
+      }
+     },
+     {
+      "r": 114,
+      "c": {
+       "A": "Pool",
+       "B": "Driver",
+       "C": "FCC",
+       "D": "Ubi Ungu",
+       "E": "Ubi Orange",
+       "F": "Lain-lain",
+       "G": "Total",
+       "H": "Pool dialokasikan",
+       "I": "Cek (harus nol)"
+      }
+     },
+     {
+      "r": 115,
+      "c": {
+       "A": "Grup A – DL operator",
+       "B": "Man-hour",
+       "C": "384856549.2002359",
+       "D": "1976184.740843103",
+       "E": "24083394.25928573",
+       "F": "58398428.55186545",
+       "G": "469314556.7522302",
+       "H": "469314556.7522302",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 116,
+      "c": {
+       "A": "Kupas",
+       "B": "Kg dikupas",
+       "C": "53598624.96108998",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "53598624.96108998",
+       "H": "53598624.96108998",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 117,
+      "c": {
+       "A": "Grup B – IDL",
+       "B": "Man-hour",
+       "C": "344061754.6161456",
+       "D": "1766709.156419662",
+       "E": "21530554.444718737",
+       "F": "52208195.0693958",
+       "G": "419567213.28667974",
+       "H": "419567213.2866798",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 118,
+      "c": {
+       "A": "Grup C – energi & utilitas",
+       "B": "kWh",
+       "C": "35253314.06903919",
+       "D": "27926.782660179055",
+       "E": "496392.3026229416",
+       "F": "10959626.845677692",
+       "G": "46737260",
+       "H": "46737260",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 119,
+      "c": {
+       "A": "Grup D – mesin",
+       "B": "Jam mesin (bagging: kWh) – bagian 10",
+       "C": "214972608.0976878",
+       "D": "1261824.927294265",
+       "E": "22428655.272909626",
+       "F": "74822680.97210826",
+       "G": "313485769.2699999",
+       "H": "313485769.27",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 120,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Nilai material",
+       "C": "254283568.55408388",
+       "D": "747625.7826054519",
+       "E": "10426904.103047859",
+       "F": "4605214.48026283",
+       "G": "270063312.92",
+       "H": "270063312.92",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 121,
+      "c": {
+       "A": "Total",
+       "C": "1287026419.4982824",
+       "D": "5780271.389822661",
+       "E": "78965900.3825849",
+       "F": "200994145.91931003",
+       "G": "1572766737.19",
+       "H": "1572766737.19",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     }
+    ],
+    "last_row": 121
+   },
+   "6b": {
+    "title": "6b. Pembanding: alokasi yang sama dengan metode budget (volume untuk Grup A, B, C) – dipakai untuk efek metode",
+    "first_row": 123,
+    "rows": [
+     {
+      "r": 123,
+      "c": {
+       "A": "6b. Pembanding: alokasi yang sama dengan metode budget (volume untuk Grup A, B, C) – dipakai untuk efek metode"
+      }
+     },
+     {
+      "r": 124,
+      "c": {
+       "A": "Pool",
+       "B": "Driver",
+       "C": "FCC",
+       "D": "Ubi Ungu",
+       "E": "Ubi Orange",
+       "F": "Lain-lain",
+       "G": "Total",
+       "H": "Pool dialokasikan",
+       "I": "Cek (harus nol)"
+      }
+     },
+     {
+      "r": 125,
+      "c": {
+       "A": "Grup A – DL operator",
+       "B": "Volume produksi (metode budget)",
+       "C": "455504628.02802324",
+       "D": "898808.5310548189",
+       "E": "12911120.193152163",
+       "F": "0",
+       "G": "469314556.7522302",
+       "H": "469314556.7522302",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 126,
+      "c": {
+       "A": "Kupas",
+       "B": "Kg dikupas",
+       "C": "53598624.96108998",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "53598624.96108998",
+       "H": "53598624.96108998",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 127,
+      "c": {
+       "A": "Grup B – IDL",
+       "B": "Volume produksi (metode budget)",
+       "C": "407221137.02047485",
+       "D": "803534.825901546",
+       "E": "11542541.440303385",
+       "F": "0",
+       "G": "419567213.2866798",
+       "H": "419567213.2866798",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 128,
+      "c": {
+       "A": "Grup C – energi & utilitas",
+       "B": "Volume produksi (metode budget)",
+       "C": "45361981.4792754",
+       "D": "89508.93894455687",
+       "E": "1285769.5817800465",
+       "F": "0",
+       "G": "46737260",
+       "H": "46737260",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 129,
+      "c": {
+       "A": "Grup D – mesin",
+       "B": "kWh",
+       "C": "236458283.61032853",
+       "D": "187316.26427099764",
+       "E": "3329504.614679155",
+       "F": "73510664.7807213",
+       "G": "313485769.27",
+       "H": "313485769.27",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 130,
+      "c": {
+       "A": "Grup E – pabrik umum",
+       "B": "Nilai material",
+       "C": "254283568.55408388",
+       "D": "747625.7826054519",
+       "E": "10426904.103047859",
+       "F": "4605214.48026283",
+       "G": "270063312.92",
+       "H": "270063312.92",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 131,
+      "c": {
+       "A": "Total",
+       "C": "1452428223.6532757",
+       "D": "2726794.3427773714",
+       "E": "39495839.93296261",
+       "F": "78115879.26098414",
+       "G": "1572766737.19",
+       "H": "1572766737.19",
+       "I": "0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ]
+     }
+    ],
+    "last_row": 131
+   },
+   "7": {
+    "title": "7. Cek sheet ini",
+    "first_row": 133,
+    "rows": [
+     {
+      "r": 133,
+      "c": {
+       "A": "7. Cek sheet ini"
+      }
+     },
+     {
+      "r": 134,
+      "c": {
+       "A": "Cek",
+       "C": "Nilai",
+       "D": "Status"
+      }
+     },
+     {
+      "r": 135,
+      "c": {
+       "A": "Total pool − (GL 16 akun + penyesuaian bagian 8 ke pool dan THR)",
+       "C": "0.00000007450580596923828",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 136,
+      "c": {
+       "A": "Total GL − referensi BP Q173",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 137,
+      "c": {
+       "A": "Alokasi aktual habis",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 138,
+      "c": {
+       "A": "Alokasi pembanding habis",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 139,
+      "c": {
+       "A": "Status sheet",
+       "D": "LULUS"
+      }
+     }
+    ],
+    "last_row": 139
+   },
+   "8": {
+    "title": "8. Penyesuaian di luar saldo 16 akun GL – aturan DL/FOH dan cut-off, September 2026 (Rp; sel biru dari GL)",
+    "first_row": 142,
+    "rows": [
+     {
+      "r": 142,
+      "c": {
+       "A": "8. Penyesuaian di luar saldo 16 akun GL – aturan DL/FOH dan cut-off, September 2026 (Rp; sel biru dari GL)"
+      }
+     },
+     {
+      "r": 143,
+      "c": {
+       "A": "Akun GL",
+       "B": "Uraian",
+       "C": "Sep-26 (Rp)",
+       "D": "Masuk ke",
+       "E": "Sifat biaya",
+       "F": "Jurnal / sumber"
+      }
+     },
+     {
+      "r": 144,
+      "c": {
+       "A": "6500-001",
+       "B": "Penyusutan bangunan (seluruh register FA Bangunan = pabrik)",
+       "C": "62104535.17",
+       "D": "Grup E – pabrik umum",
+       "E": "Tetap",
+       "F": "GL Accurate Sep 2026: MJ26090052"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 145,
+      "c": {
+       "A": "6300-037",
+       "B": "Security pabrik",
+       "C": "38256757",
+       "D": "Grup E – pabrik umum",
+       "E": "Tetap",
+       "F": "GL Accurate Sep 2026: PI26090236"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 146,
+      "c": {
+       "A": "6300-006",
+       "B": "Pemeliharaan gedung pabrik",
+       "C": "2798000",
+       "D": "Grup E – pabrik umum",
+       "E": "Tetap",
+       "F": "GL Accurate Sep 2026: MJ26090008, MJ26090012, MJ26090031, MJ26090043, MJ26090047, MJ26090048, MJ26090057"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 147,
+      "c": {
+       "A": "6300-039",
+       "B": "Seragam produksi & QC",
+       "C": "5716667",
+       "D": "Grup E – pabrik umum",
+       "E": "Tetap",
+       "F": "GL Accurate Sep 2026: MJ26090008, MJ26090016, MJ26090063"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 148,
+      "c": {
+       "A": "6200-002",
+       "B": "THR pabrik yang dibukukan di opex (tertukar)",
+       "C": "63137128",
+       "D": "THR – dibagi di bagian 2",
+       "E": "Tetap",
+       "F": "GL Accurate Sep 2026: MJ26090028"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 149,
+      "c": {
+       "A": "5101-003",
+       "B": "THR kantor yang dibukukan di HPP (tertukar)",
+       "C": "-28362872",
+       "D": "THR – dibagi di bagian 2",
+       "E": "Tetap",
+       "F": "GL Accurate Sep 2026: MJ26090028"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 150,
+      "c": {
+       "A": "5101-002",
+       "B": "Tali asih bulan jasa lain yang dibukukan bulan ini (keluar)",
+       "C": "-32360982",
+       "D": "Grup B – IDL",
+       "E": "Tetap",
+       "F": "GL Accurate Sep 2026: MJ26090010; periode Agustus"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 151,
+      "c": {
+       "A": "5101-002",
+       "B": "Tali asih bulan jasa ini yang dibukukan bulan lain (masuk)",
+       "C": "0",
+       "D": "Grup B – IDL",
+       "E": "Tetap",
+       "F": "Tidak ada transaksi"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 152,
+      "c": {
+       "A": "5101-016",
+       "B": "Ongkos kirim singkong dibukukan bulan ini (keluar dari pool)",
+       "C": "-129411141",
+       "D": "Grup E – pabrik umum",
+       "E": "Variabel",
+       "F": "GL Accurate Sep 2026: PI26090253, PI26090254, PI26090271, PI26090272, PI26090273, PI26090274, PI26090275, PI26090276, PI26090277, PI26090278, PI26090279, PI26090280, PI26090281, PI26090282, PI26090283, PI26090284, PI26090285, PI26090286, PI26090287, PI26090288, PI26090289, PI26090290, PI26090291, PI26090292, PI26090293, PI26090294, PI26090295, PI26090296, PI26090297, PI26090298, PI26090299, PI26090300, PI26090301, PI26090302, PI26090303, PI26090304, PI26090305, PI26090306, PI26090307, PI26090308, PI26090309, PI26090310, PI26090311, PI26090312, PI26090313, PI26090314, PI26090315, PI26090316, PI26090317, PI26090318, PI26090319, PI26090320, PI26090321, PI26090322"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 153,
+      "c": {
+       "A": "5101-016",
+       "B": "Ongkos kirim singkong menurut tanggal kirim bulan ini (ke material FCC)",
+       "C": "41897465",
+       "D": "Material FCC",
+       "E": "Variabel",
+       "F": "GL Accurate Sep 2026: PI26090253, PI26090254, PI26090271, PI26090307, PI26090308, PI26090309, PI26090310, PI26090311, PI26090312, PI26090313, PI26090314, PI26090315, PI26090316, PI26090317, PI26090318, PI26090319, PI26090320, PI26090321, PI26090322 (GL Sep 2026)"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 154,
+      "c": {
+       "A": "5101-016",
+       "B": "Pisau potong Urschel (keluar dari Grup E)",
+       "C": "-28788550",
+       "D": "Grup E – pabrik umum",
+       "E": "Variabel",
+       "F": "GL Accurate Sep 2026: GR26090169, GR26090170, PI26090323, PI26090324"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 155,
+      "c": {
+       "A": "5101-016",
+       "B": "Pisau potong Urschel (masuk Grup D, pemeliharaan mesin)",
+       "C": "28788550",
+       "D": "Grup D – mesin",
+       "E": "Semi-variabel",
+       "F": "GL Accurate Sep 2026: GR26090169, GR26090170, PI26090323, PI26090324"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 156,
+      "c": {
+       "B": "Total penyesuaian (neto)",
+       "C": "23775557.170000017"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 157,
+      "c": {
+       "B": "  ke pool konversi langsung (Grup A–E)",
+       "C": "-52896163.83"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 158,
+      "c": {
+       "B": "  ke THR (dibagi porsi gaji di bagian 2)",
+       "C": "34774256"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 159,
+      "c": {
+       "B": "  ke material FCC (kartu FCC baris ongkos kirim singkong)",
+       "C": "41897465"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 160,
+      "c": {
+       "B": "THR yang dibagi di bagian 2 (GL 5101-003 + koreksi)",
+       "C": "63137128"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 160
+   },
+   "9": {
+    "title": "9. GL 5101-002 per jurnal (Rp; sel biru dari GL)",
+    "first_row": 162,
+    "rows": [
+     {
+      "r": 162,
+      "c": {
+       "A": "9. GL 5101-002 per jurnal (Rp; sel biru dari GL)"
+      }
+     },
+     {
+      "r": 163,
+      "c": {
+       "A": "Komponen",
+       "C": "Sep-26 (Rp)",
+       "D": "Dipakai di",
+       "F": "Jurnal"
+      }
+     },
+     {
+      "r": 164,
+      "c": {
+       "A": "Upah harian (jurnal upah langsung)",
+       "C": "559672970",
+       "D": "Bagian 2 kolom F (dibagi porsi rekap)",
+       "F": "GL Accurate Sep 2026: MJ26090061"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 165,
+      "c": {
+       "A": "Gaji staf pabrik (jurnal COGS)",
+       "C": "165344478",
+       "D": "Bagian 2 baris staf (C41)",
+       "F": "GL Accurate Sep 2026: MJ26090065"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 166,
+      "c": {
+       "A": "Tali asih (jurnal tali asih)",
+       "C": "67951482",
+       "D": "Bagian 3 baris tali asih; cut-off di bagian 8",
+       "F": "GL Accurate Sep 2026: MJ26090010, MJ26090026"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 167,
+      "c": {
+       "A": "Total = GL 5101-002",
+       "C": "792968930"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 167
+   },
+   "10": {
+    "title": "10. Driver Grup D – jam mesin proses goreng; porsi bagging dari kWh",
+    "first_row": 169,
+    "rows": [
+     {
+      "r": 169,
+      "c": {
+       "A": "10. Driver Grup D – jam mesin proses goreng; porsi bagging dari kWh"
+      }
+     },
+     {
+      "r": 170,
+      "c": {
+       "A": "Pos",
+       "B": "Satuan",
+       "C": "FCC",
+       "D": "Ubi Ungu",
+       "E": "Ubi Orange",
+       "F": "Lain-lain",
+       "G": "Total",
+       "H": "Sumber"
+      }
+     },
+     {
+      "r": 171,
+      "c": {
+       "A": "Jam mesin (proses goreng)",
+       "B": "jam",
+       "C": "4626.07",
+       "D": "27.153647588234122",
+       "E": "482.65",
+       "F": "49.34",
+       "G": "5185.2136475882335",
+       "H": "FCC: kartu CoGM SEPTEMBER 2026 R1.xlsx, sheet tersembunyi FCC, tabel MESIN HOURS kolom L (4 mesin). UU: ESTIMASI = kWh UU × (jam mesin UO ÷ kWh UO), lini sama, jam mesin UU tidak dicatat. UO: kartu CoGM SEPTEMBER 2026 R1.xlsx, sheet tersembunyi UU UO IFM, kolom JAM MESIN, 5 baris mesin. Lain-lain = Ubi putih ACE: kartu CoGM SEPTEMBER 2026 R1.xlsx, sheet tersembunyi LAPORAN UBI ACE, kolom JAM MESIN, 2 baris mesin."
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 172,
+      "c": {
+       "A": "kWh bagging (Lain-lain tanpa Ubi putih ACE)",
+       "B": "kWh",
+       "F": "9983.0606",
+       "G": "9983.0606",
+       "H": "LAIN-LAIN kolom I (driver kWh) dikurangi baris Ubi putih ACE"
+      },
+      "n": [
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 173,
+      "c": {
+       "A": "Porsi bagging dari total kWh pabrik",
+       "G": "0.23136571897562014"
+      },
+      "n": [
+       "G"
+      ]
+     },
+     {
+      "r": 174,
+      "c": {
+       "A": "Porsi Grup D",
+       "C": "0.6857491764244505",
+       "D": "0.004025142609288514",
+       "E": "0.07154600773469945",
+       "F": "0.23867967323156145",
+       "G": "1"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 175,
+      "c": {
+       "A": "Grup D teralokasi (Rp)",
+       "C": "214972608.0976878",
+       "D": "1261824.927294265",
+       "E": "22428655.272909626",
+       "F": "74822680.97210826",
+       "G": "313485769.2699999"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 176,
+      "c": {
+       "A": "  di dalamnya Lain-lain bagging (dibagi kWh di LAIN-LAIN dan sheet SKU)",
+       "F": "72529860.39577891"
+      },
+      "n": [
+       "F"
+      ]
+     },
+     {
+      "r": 177,
+      "c": {
+       "A": "  di dalamnya Ubi putih ACE (jam mesin)",
+       "F": "2292820.5763293505"
+      },
+      "n": [
+       "F"
+      ]
+     }
+    ],
+    "last_row": 177
+   },
+   "11": {
+    "title": "11. Cek bagian 8–10",
+    "first_row": 179,
+    "rows": [
+     {
+      "r": 179,
+      "c": {
+       "A": "11. Cek bagian 8–10"
+      }
+     },
+     {
+      "r": 180,
+      "c": {
+       "A": "Cek",
+       "C": "Nilai",
+       "D": "Status"
+      }
+     },
+     {
+      "r": 181,
+      "c": {
+       "A": "GL 5101-002 = upah harian + staf + tali asih (bagian 9)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 182,
+      "c": {
+       "A": "Semua baris bagian 8 punya tujuan (pool / THR / material)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 183,
+      "c": {
+       "A": "Gaji staf bagian 2 (C41) = jurnal staf bagian 9",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 184,
+      "c": {
+       "A": "Porsi Grup D berjumlah 1",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 185,
+      "c": {
+       "A": "Grup D teralokasi = pool Grup D",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 186,
+      "c": {
+       "A": "Status bagian 8–11",
+       "D": "LULUS"
+      }
+     }
+    ],
+    "last_row": 186
+   }
+  }
+ }
+}

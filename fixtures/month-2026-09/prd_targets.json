@@ -1,0 +1,455 @@
+{
+ "source": "docs/PRD-v1-bmg-platform.md §8",
+ "targets": [
+  {
+   "id": "B2.pool_total",
+   "label": "Total pool konversi",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C87",
+   "expected": "1572766737.19",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.pool_A",
+   "label": "Pool Grup A",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C81",
+   "expected": "469314556.75",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.pool_KUPAS",
+   "label": "Pool Kupas",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C82",
+   "expected": "53598624.96",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.pool_B",
+   "label": "Pool Grup B",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C83",
+   "expected": "419567213.29",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.pool_C",
+   "label": "Pool Grup C",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C84",
+   "expected": "46737260",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.pool_D",
+   "label": "Pool Grup D",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C85",
+   "expected": "313485769.27",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.pool_E",
+   "label": "Pool Grup E",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C86",
+   "expected": "270063312.92",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.pool_fixed",
+   "label": "Pool tetap",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "D87",
+   "expected": "806327113.62",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.alloc_FCC",
+   "label": "Alokasi ke FCC",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C121",
+   "expected": "1287026419.50",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.alloc_UU",
+   "label": "Alokasi ke UU",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "D121",
+   "expected": "5780271.39",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.alloc_UO",
+   "label": "Alokasi ke UO",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "E121",
+   "expected": "78965900.38",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.alloc_LAIN",
+   "label": "Alokasi ke Lain-lain",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "F121",
+   "expected": "200994145.92",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.fcc_cost",
+   "label": "FCC biaya produksi",
+   "sheet": "FCC",
+   "cell": "E66",
+   "expected": "5562568465.96",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.fcc_cost_per_kg",
+   "label": "FCC biaya produksi per kg",
+   "sheet": "FCC",
+   "cell": "F66",
+   "expected": "23478.381",
+   "tolerance": "0.001",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.fcc_rate",
+   "label": "FCC biaya rata-rata tertimbang per kg",
+   "sheet": "FCC",
+   "cell": "D76",
+   "expected": "23928.4692",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.fcc_hpp",
+   "label": "FCC HPP",
+   "sheet": "FCC",
+   "cell": "E104",
+   "expected": "5106312148.26",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.fcc_transfer",
+   "label": "FCC transfer ke Lain-lain",
+   "sheet": "FCC",
+   "cell": "E91",
+   "expected": "551835128.88",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.uu_hpp",
+   "label": "UU HPP",
+   "sheet": "UU",
+   "cell": "E98",
+   "expected": "232706417.35",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.uo_hpp",
+   "label": "UO HPP (PRD: 252.566.6xx)",
+   "sheet": "UO",
+   "cell": "E94",
+   "expected": "252566650",
+   "tolerance": "50",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.others_cost",
+   "label": "Lain-lain biaya produksi",
+   "sheet": "LAIN-LAIN",
+   "cell": "G68",
+   "expected": "870978077.67",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.cemcem_ori_cost",
+   "label": "Cem-cem ORI biaya produksi",
+   "sheet": "LAIN-LAIN",
+   "cell": "G47",
+   "expected": "318461224.94",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B2.others_hpp",
+   "label": "HPP Lain-lain",
+   "sheet": "LAIN-LAIN",
+   "cell": "G93",
+   "expected": "871581725.61",
+   "tolerance": "1",
+   "source": "PRD §8 B2"
+  },
+  {
+   "id": "B3.hpp_card",
+   "label": "HPP kartu (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "B29",
+   "expected": "6463.1669",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.hpp_gl",
+   "label": "HPP GL (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "B34",
+   "expected": "6375.4123",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.recon_material",
+   "label": "Rekon: varian material (Rp jt)",
+   "sheet": "REKON & KONTROL",
+   "cell": "C38",
+   "expected": "-121.1482",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.recon_inv_wp",
+   "label": "Rekon: kenaikan persediaan WP (Rp jt)",
+   "sheet": "REKON & KONTROL",
+   "cell": "C39",
+   "expected": "-326.5394",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.recon_inv_gl",
+   "label": "Rekon: − kenaikan persediaan GL (Rp jt)",
+   "sheet": "REKON & KONTROL",
+   "cell": "C40",
+   "expected": "409.3055",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.recon_kw2",
+   "label": "Rekon: KW 2 pada NRV (Rp jt)",
+   "sheet": "REKON & KONTROL",
+   "cell": "C41",
+   "expected": "-25.5969",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.recon_b8",
+   "label": "Rekon: − penyesuaian bagian 8 (Rp jt)",
+   "sheet": "REKON & KONTROL",
+   "cell": "C42",
+   "expected": "-23.7756",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.recon_idle",
+   "label": "Rekon: jam menganggur (Rp jt)",
+   "sheet": "REKON & KONTROL",
+   "cell": "C43",
+   "expected": "0",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.recon_residual",
+   "label": "Rekon: sisa (≤ Rp 0,001 jt)",
+   "sheet": "RINGKASAN",
+   "cell": "B35",
+   "expected": "0",
+   "tolerance": "0.001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_1106_001_wp",
+   "label": "1106-001 WP (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "B46",
+   "expected": "826.0313",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_1106_001_gl",
+   "label": "1106-001 GL (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "C46",
+   "expected": "947.1795",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_1106_001_expl",
+   "label": "1106-001 dijelaskan (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "F46",
+   "expected": "-121.1482",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_wip_wp",
+   "label": "WIP WP (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "B47",
+   "expected": "51.9846",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_wip_gl",
+   "label": "WIP GL (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "C47",
+   "expected": "297.8507",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_wip_expl",
+   "label": "WIP dijelaskan (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "F47",
+   "expected": "-245.8661",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_fg_wp",
+   "label": "FG WP (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "B48",
+   "expected": "14.1713",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_fg_gl",
+   "label": "FG GL (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "C48",
+   "expected": "286.5366",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.bs_fg_expl",
+   "label": "FG dijelaskan (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "F48",
+   "expected": "-272.3654",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.k2_wip_close",
+   "label": "REKON PERSEDIAAN K2 WIP akhir",
+   "sheet": "REKON PERSEDIAAN",
+   "cell": "H58",
+   "expected": "225691966.25",
+   "tolerance": "1",
+   "source": "PRD §8 B3"
+  },
+  {
+   "id": "B3.b21_card",
+   "label": "B21 FG masuk kartu (kg)",
+   "sheet": "FCC",
+   "cell": "B87",
+   "expected": "221027",
+   "tolerance": "0.01",
+   "source": "PRD §8 B3 / D4"
+  },
+  {
+   "id": "B3.b21_accurate",
+   "label": "B21 FG masuk Accurate (kg)",
+   "sheet": "FCC",
+   "cell": "C206",
+   "expected": "211979.5",
+   "tolerance": "0.01",
+   "source": "PRD §8 B3 / D4"
+  },
+  {
+   "id": "B3.b22_card",
+   "label": "B22 transfer kartu (kg)",
+   "sheet": "FCC",
+   "cell": "B91",
+   "expected": "23115.5",
+   "tolerance": "0.01",
+   "source": "PRD §8 B3 / D4"
+  },
+  {
+   "id": "B3.b22_accurate",
+   "label": "B22 transfer Accurate (kg)",
+   "sheet": "FCC",
+   "cell": "C207",
+   "expected": "14058",
+   "tolerance": "0.01",
+   "source": "PRD §8 B3 / D4"
+  },
+  {
+   "id": "B4.bridge_aug_pp",
+   "label": "Margin GL Agu (pp)",
+   "sheet": "BRIDGE GP",
+   "cell": "C117",
+   "expected": "19.9219",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B4"
+  },
+  {
+   "id": "B4.bridge_sep_pp",
+   "label": "Margin GL Sep (pp)",
+   "sheet": "BRIDGE GP",
+   "cell": "C135",
+   "expected": "14.5657",
+   "tolerance": "0.0001",
+   "source": "PRD §8 B4"
+  },
+  {
+   "id": "CTX.production_kg",
+   "label": "Produksi total (kg)",
+   "sheet": "RINGKASAN",
+   "cell": "F7",
+   "expected": "289759.42",
+   "tolerance": "0.01",
+   "source": "PRD §1"
+  },
+  {
+   "id": "CTX.revenue_jt",
+   "label": "Pendapatan (Rp jt)",
+   "sheet": "RINGKASAN",
+   "cell": "F11",
+   "expected": "7462.3602",
+   "tolerance": "0.0001",
+   "source": "PRD §1"
+  },
+  {
+   "id": "CTX.idle_hours",
+   "label": "Jam menganggur Unit I",
+   "sheet": "BIAYA BERSAMA",
+   "cell": "C107",
+   "expected": "3264.8168",
+   "tolerance": "0.0001",
+   "source": "PRD §1"
+  }
+ ]
+}

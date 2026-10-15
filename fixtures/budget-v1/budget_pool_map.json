@@ -1,0 +1,156 @@
+{
+ "source": {
+  "file": "BMG_Business_Plan_-_Oct26_to_Dec27.xlsx",
+  "sha256": "19b230326591252bbfb5baf58862730c1edf56e585f87ae94d6c6629e70c8b5d",
+  "rule": "draft: baris bagian 4.1 dan 4.3 yang labelnya memuat 'Grup A…E'"
+ },
+ "rows": [
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.4.1.1_manpower_cost_basic_salary_grup_a.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > 4.1.1 / Manpower Cost / Basic Salary / Grup A",
+   "pool": "A",
+   "fixed_pct": null,
+   "bp_row": 93
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.total_grup_b.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Total / Grup B",
+   "pool": "B",
+   "fixed_pct": null,
+   "bp_row": 144
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_air_pabrik_grup_c.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Air Pabrik / Grup C",
+   "pool": "C",
+   "fixed_pct": null,
+   "bp_row": 152
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_utilitas_pabrik_grup_c.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Utilitas Pabrik / Grup C",
+   "pool": "C",
+   "fixed_pct": null,
+   "bp_row": 153
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.total_grup_e.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Total / Grup E",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 156
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_perbaikan_dan_pemeliharaan_mesin_grup_d.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Perbaikan & Pemeliharaan Mesin / Grup D",
+   "pool": "D",
+   "fixed_pct": null,
+   "bp_row": 158
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_perbaikan_dan_pemeliharaan_pabrik_grup_e.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Perbaikan & Pemeliharaan Pabrik / Grup E",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 159
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_perbaikan_dan_pemeliharaan_inventaris_pabrik_grup_e.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Perbaikan & Pemeliharaan Inventaris Pabrik / Grup E",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 160
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_peny._mesin_gol_1_proyeksi_dari_register_fa_r6_grup_d.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Peny. Mesin Gol 1 - proyeksi dari Register FA (R6) / Grup D",
+   "pool": "D",
+   "fixed_pct": null,
+   "bp_row": 162
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_peny._mesin_gol_2_proyeksi_dari_register_fa_r6_grup_d.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Peny. Mesin Gol 2 - proyeksi dari Register FA (R6) / Grup D",
+   "pool": "D",
+   "fixed_pct": null,
+   "bp_row": 163
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_peny._inventaris_pabrik_gol_1_proyeksi_dari_register_fa_r6_grup_e.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Peny. Inventaris Pabrik Gol 1 - proyeksi dari Register FA (R6) / Grup E",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 164
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_peny._inventaris_pabrik_gol_2_proyeksi_dari_register_fa_r6_grup_e.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Peny. Inventaris Pabrik Gol 2 - proyeksi dari Register FA (R6) / Grup E",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 165
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_peny._inventaris_pabrik_gol_1_value_proyeksi_dari_register_fa_r6_grup_e.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Peny. Inventaris Pabrik Gol 1 (Value) - proyeksi dari Register FA (R6) / Grup E",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 166
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_peny._mesin_gol_1_value_proyeksi_dari_register_fa_r6_grup_d.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Peny. Mesin Gol 1 (Value) - proyeksi dari Register FA (R6) / Grup D",
+   "pool": "D",
+   "fixed_pct": null,
+   "bp_row": 167
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_peny._mesin_gol_2_value_proyeksi_dari_register_fa_r6_grup_d.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Peny. Mesin Gol 2 (Value) - proyeksi dari Register FA (R6) / Grup D",
+   "pool": "D",
+   "fixed_pct": null,
+   "bp_row": 168
+  },
+  {
+   "bp_row_code": "4.1_pool_biaya_pabrik_per_laba_rugi_akun.biaya_pabrikasi_dan_pengiriman_grup_e.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.1  Pool biaya pabrik per Laba Rugi - akun > Biaya Pabrikasi & Pengiriman / Grup E",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 171
+  },
+  {
+   "bp_row_code": "4.3_pengelompokan_pool_per_driver.grup_a_tenaga_kerja_langsung_driver_upah_langsung_dibebankan_di_kartu.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.3  Pengelompokan pool per driver > Grup A   Tenaga kerja langsung   [driver: upah langsung dibebankan di kartu]",
+   "pool": "A",
+   "fixed_pct": null,
+   "bp_row": 184
+  },
+  {
+   "bp_row_code": "4.3_pengelompokan_pool_per_driver.grup_b_tenaga_kerja_tidak_langsung_thr_pesangon_dan_jamsostek_driver_alokasi_grup_a.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.3  Pengelompokan pool per driver > Grup B   Tenaga kerja tidak langsung, THR, pesangon & jamsostek   [driver: alokasi Grup A]",
+   "pool": "B",
+   "fixed_pct": null,
+   "bp_row": 185
+  },
+  {
+   "bp_row_code": "4.3_pengelompokan_pool_per_driver.grup_c_energi_dan_utilitas_pabrik_driver_volume_produksi.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.3  Pengelompokan pool per driver > Grup C   Energi & utilitas pabrik   [driver: volume produksi]",
+   "pool": "C",
+   "fixed_pct": null,
+   "bp_row": 186
+  },
+  {
+   "bp_row_code": "4.3_pengelompokan_pool_per_driver.grup_d_pemeliharaan_dan_penyusutan_mesin_driver_biaya_listrik_dan_air_di_kartu.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.3  Pengelompokan pool per driver > Grup D   Pemeliharaan & penyusutan mesin   [driver: biaya listrik & air di kartu]",
+   "pool": "D",
+   "fixed_pct": null,
+   "bp_row": 187
+  },
+  {
+   "bp_row_code": "4.3_pengelompokan_pool_per_driver.grup_e_pabrik_umum_dan_penyusutan_inventaris_driver_pemakaian_bahan_baku.idr_mil",
+   "bp_label": "4 Pool Biaya Pabrik & Alokasi > 4.3  Pengelompokan pool per driver > Grup E   Pabrik umum & penyusutan inventaris   [driver: pemakaian bahan baku]",
+   "pool": "E",
+   "fixed_pct": null,
+   "bp_row": 188
+  }
+ ]
+}

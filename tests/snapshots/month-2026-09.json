@@ -1,0 +1,32 @@
+{
+ "engineVersion": "0.1.0",
+ "fixtures": {
+  "fixtures/SOURCES.json": "15c641e8432089cf6f44dc85f55d11846a214246f9d8499559e79566cf84e82e",
+  "fixtures/budget-v1/budget_line.json": "549e9c2ac3f5e97936ec674f41f7519134d451c753ce0347d75c9bde339258e9",
+  "fixtures/budget-v1/budget_pool_map.json": "98ac69e9311b47c15c3ae98e8329b0e37887fa2e8c5662016b68296baa196f10",
+  "fixtures/master/assumption.json": "d3473154cc395269a0a604f8f531c6cb05c1aab0cff2b1582114cc64423da518",
+  "fixtures/master/coa_pool_map.json": "4e46d0d56f5cf1a229569113c75345dab027c24d879e22d4ae64c71a02addb2b",
+  "fixtures/master/material_item.json": "7654f843686726887191cdb6039358e2503dbd2397ebe067076acb7135ab5c07",
+  "fixtures/master/others_group.json": "1de79db9a9052cedb8357698022e0c55d510a52d0c74f4088f9d17d839119a43",
+  "fixtures/master/payroll_group.json": "d83bb98a8dd70de687fdfe2d967d048d255c8c27064b58b99adde3cd0bd46bf3",
+  "fixtures/master/product.json": "650aa07a9ccf31692b04459ac2c26996f66a27a72b97c0af8ac290766353f48e",
+  "fixtures/master/sku.json": "2231cb8d1b4331eb763483bdac0b59e534a21a90bd0458c368eca78349f97e5d",
+  "fixtures/month-2026-08/bridge_input.json": "539de01e4202455f8e8c733ea9246055c700e42e7d1d8c07a2d2be6b86b28115",
+  "fixtures/month-2026-08/cells.csv": "03c1625b569f7fad1abc0fa9621cf0a8e6f5d1fba838f2704fdffee5b31f35f5",
+  "fixtures/month-2026-08/pool.json": "f7e3bc7aeb3e002efa5b6da07940e65f5a3bb6138e4cf2ea79da726ade22f85b",
+  "fixtures/month-2026-08/summary.json": "b057d7e419fd31d0d3bffd6e1b6707cca1b4e1e16e7ee07eddc199767e0b1f94",
+  "fixtures/month-2026-09/bridge.json": "e74287b017c138be529bddfda90a08a668fddedde8405206c451ba1b86bd07fe",
+  "fixtures/month-2026-09/cells.csv": "c5b5d18e6f396fc047a7976a714da43cd4f64c964b5c7a247a41d09357d41b27",
+  "fixtures/month-2026-09/fcc.json": "18dddb8a33a3ad14afebef0447ef4d711ace3afebca50f6005c6b235e35ade95",
+  "fixtures/month-2026-09/inventory.json": "34ebf2720fc8b4e758276335414fdac14875760617b63a1405fd59fa5552502d",
+  "fixtures/month-2026-09/others.json": "c0e71920f41ffc1446d3c00b15e7fd2c449c760c23635cafc4efe2acf57ccb6e",
+  "fixtures/month-2026-09/pool.json": "717543654ea45adbf03f21f8cde4cbe22b37f32dfa1ec91bfe8577063a20cb37",
+  "fixtures/month-2026-09/prd_targets.json": "887b07704aa400d5c707b43717f3b8d7b91cb343d32121ca6dafbab9574acca1",
+  "fixtures/month-2026-09/reasonableness.json": "aac194aeb9e3d865eae640ce35f0fbb8a7e4d985423a75780efd7a2d098e0d84",
+  "fixtures/month-2026-09/recon.json": "a28a1d8a238b985221ccd49e443f75a87e956a2b6c17998f07d9fc9258746329",
+  "fixtures/month-2026-09/summary.json": "6e8663084b34fea1cf8f258034cf6c6a6a6f06e914a4025907407bce3d3b1193",
+  "fixtures/month-2026-09/uo.json": "c081d1e7582d125edf3b0a1d4ee07da039aa8fb2f51731e4f22e2d270dac27e6",
+  "fixtures/month-2026-09/uu.json": "ba90866324aa364f0e429aa5b38d1ff96b2adafb220b80b3d4448c8e119a3b02"
+ },
+ "modules": {}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@bmg/engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Engine perhitungan murni BMG-OS (PRD v1 §3). Tanpa I/O kecuali loader fixture di fixtures.ts (Node, untuk tes).",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./fixtures": "./src/fixtures.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "decimal.js": "10.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

@@ -1,0 +1,579 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa",
+  "range": "BRIDGE GP!A7:E77",
+  "note": "Kolom C = nilai Agu dari 'DI - WP Costing BMG Agu26_6' menurut WP Sep26_4 (file Agu26_6 tidak ada di reference/)."
+ },
+ "unit": "Rp juta; kg",
+ "inputs": [
+  {
+   "row": 7,
+   "code": "REV_T",
+   "label": "Pendapatan total (= GL 4101-007)",
+   "aug": "9793.125452",
+   "sep": "7462.3601526600005",
+   "address": "REKON & KONTROL!F15"
+  },
+  {
+   "row": 8,
+   "code": "REV_F",
+   "label": "Pendapatan FCC premium + KW 2 tawar",
+   "aug": "8672.097702",
+   "sep": "5901.31314207",
+   "address": "REKON & KONTROL!B15"
+  },
+  {
+   "row": 9,
+   "code": "REV_U",
+   "label": "Pendapatan Ubi Ungu",
+   "aug": "349.70925",
+   "sep": "321.7005",
+   "address": "REKON & KONTROL!C15"
+  },
+  {
+   "row": 10,
+   "code": "REV_O",
+   "label": "Pendapatan Ubi Orange",
+   "aug": "354.6037",
+   "sep": "321.67245",
+   "address": "REKON & KONTROL!D15"
+  },
+  {
+   "row": 11,
+   "code": "REV_L",
+   "label": "Pendapatan Lain-lain",
+   "aug": "416.7148",
+   "sep": "917.6740605900001",
+   "address": "REKON & KONTROL!E15"
+  },
+  {
+   "row": 12,
+   "code": "Q_F",
+   "label": "Kg terjual FCC premium + KW 2 tawar",
+   "aug": "307137.5",
+   "sep": "210907.5",
+   "address": "FCC!C203 + FCC!C208"
+  },
+  {
+   "row": 13,
+   "code": "Q_U",
+   "label": "Kg terjual Ubi Ungu",
+   "aug": "7210.5",
+   "sep": "6633",
+   "address": "UU!C203"
+  },
+  {
+   "row": 14,
+   "code": "Q_O",
+   "label": "Kg terjual Ubi Orange",
+   "aug": "7403",
+   "sep": "6715.5",
+   "address": "UO!C199"
+  },
+  {
+   "row": 15,
+   "code": "P_F",
+   "label": "Kg produksi FCC (masuk proses)",
+   "aug": "338754",
+   "sep": "236923",
+   "address": "REKON & KONTROL!B6"
+  },
+  {
+   "row": 16,
+   "code": "P_U",
+   "label": "Kg produksi Ubi Ungu",
+   "aug": "13376",
+   "sep": "467.5",
+   "address": "REKON & KONTROL!C6"
+  },
+  {
+   "row": 17,
+   "code": "P_O",
+   "label": "Kg produksi Ubi Orange",
+   "aug": "7403",
+   "sep": "6715.5",
+   "address": "REKON & KONTROL!D6"
+  },
+  {
+   "row": 18,
+   "code": "P_L",
+   "label": "Kg output Lain-lain",
+   "aug": "17571.48",
+   "sep": "45653.42",
+   "address": "REKON & KONTROL!E6"
+  },
+  {
+   "row": 19,
+   "code": "MAT_F",
+   "label": "Material eksternal FCC (termasuk ongkos kirim)",
+   "aug": "6011.740541",
+   "sep": "4275.542046459444",
+   "address": "REKON & KONTROL!B7"
+  },
+  {
+   "row": 20,
+   "code": "MAT_U",
+   "label": "Material eksternal Ubi Ungu",
+   "aug": "379.68621",
+   "sep": "12.447449363263678",
+   "address": "REKON & KONTROL!C7"
+  },
+  {
+   "row": 21,
+   "code": "MAT_O",
+   "label": "Material eksternal Ubi Orange",
+   "aug": "193.246669",
+   "sep": "173.60070219353085",
+   "address": "REKON & KONTROL!D7"
+  },
+  {
+   "row": 22,
+   "code": "MAT_L",
+   "label": "Material eksternal Lain-lain",
+   "aug": "12.6336",
+   "sep": "76.67361851843954",
+   "address": "REKON & KONTROL!E7"
+  },
+  {
+   "row": 23,
+   "code": "SGK",
+   "label": "FCC: singkong kulit + daging",
+   "aug": "3103.985929",
+   "sep": "2309.9755730717798",
+   "address": "FCC!E41 + FCC!E42 (Rp → Rp juta)"
+  },
+  {
+   "row": 24,
+   "code": "ONG",
+   "label": "FCC: ongkos kirim singkong",
+   "aug": "87.513676",
+   "sep": "41.897465",
+   "address": "FCC!E43 (Rp → Rp juta)"
+  },
+  {
+   "row": 25,
+   "code": "OLE",
+   "label": "FCC: minyak olein",
+   "aug": "1362.13925",
+   "sep": "1013.4280919558713",
+   "address": "FCC!E46 (Rp → Rp juta)"
+  },
+  {
+   "row": 26,
+   "code": "CNG",
+   "label": "FCC: CNG",
+   "aug": "1156.69903",
+   "sep": "774.6622586113679",
+   "address": "FCC!E47 (Rp → Rp juta)"
+  },
+  {
+   "row": 27,
+   "code": "OTH",
+   "label": "FCC: material lain (kemasan, HDPE, dll.)",
+   "aug": "301.402656",
+   "sep": "135.57865782042484",
+   "address": "FCC!E55 (Rp → Rp juta)"
+  },
+  {
+   "row": 28,
+   "code": "PT_A",
+   "label": "Pool Grup A – DL: total",
+   "aug": "609.924316",
+   "sep": "469.3145567522302",
+   "address": "BIAYA BERSAMA!C81 (Rp → Rp juta)"
+  },
+  {
+   "row": 29,
+   "code": "PF_A",
+   "label": "Pool Grup A – DL: bagian tetap",
+   "aug": "117.145496",
+   "sep": "100.03077477325684",
+   "address": "BIAYA BERSAMA!D81 (Rp → Rp juta)"
+  },
+  {
+   "row": 30,
+   "code": "AL_A_F",
+   "label": "Alokasi Grup A – DL ke FCC",
+   "aug": "520.033122",
+   "sep": "384.8565492002359",
+   "address": "BIAYA BERSAMA!C115 (Rp → Rp juta)"
+  },
+  {
+   "row": 31,
+   "code": "AL_A_U",
+   "label": "Alokasi Grup A – DL ke UU",
+   "aug": "42.346605",
+   "sep": "1.976184740843103",
+   "address": "BIAYA BERSAMA!D115 (Rp → Rp juta)"
+  },
+  {
+   "row": 32,
+   "code": "AL_A_O",
+   "label": "Alokasi Grup A – DL ke UO",
+   "aug": "22.507798",
+   "sep": "24.08339425928573",
+   "address": "BIAYA BERSAMA!E115 (Rp → Rp juta)"
+  },
+  {
+   "row": 33,
+   "code": "AL_A_L",
+   "label": "Alokasi Grup A – DL ke Lain-lain",
+   "aug": "25.03679",
+   "sep": "58.39842855186545",
+   "address": "BIAYA BERSAMA!F115 (Rp → Rp juta)"
+  },
+  {
+   "row": 34,
+   "code": "PT_K",
+   "label": "Pool Kupas: total",
+   "aug": "106.092403",
+   "sep": "53.59862496108998",
+   "address": "BIAYA BERSAMA!C82 (Rp → Rp juta)"
+  },
+  {
+   "row": 35,
+   "code": "PF_K",
+   "label": "Pool Kupas: bagian tetap",
+   "aug": "0",
+   "sep": "0",
+   "address": "BIAYA BERSAMA!D82 (Rp → Rp juta)"
+  },
+  {
+   "row": 36,
+   "code": "AL_K_F",
+   "label": "Alokasi Kupas ke FCC",
+   "aug": "106.092403",
+   "sep": "53.59862496108998",
+   "address": "BIAYA BERSAMA!C116 (Rp → Rp juta)"
+  },
+  {
+   "row": 37,
+   "code": "AL_K_U",
+   "label": "Alokasi Kupas ke UU",
+   "aug": "0",
+   "sep": "0",
+   "address": "BIAYA BERSAMA!D116 (Rp → Rp juta)"
+  },
+  {
+   "row": 38,
+   "code": "AL_K_O",
+   "label": "Alokasi Kupas ke UO",
+   "aug": "0",
+   "sep": "0",
+   "address": "BIAYA BERSAMA!E116 (Rp → Rp juta)"
+  },
+  {
+   "row": 39,
+   "code": "AL_K_L",
+   "label": "Alokasi Kupas ke Lain-lain",
+   "aug": "0",
+   "sep": "0",
+   "address": "BIAYA BERSAMA!F116 (Rp → Rp juta)"
+  },
+  {
+   "row": 40,
+   "code": "PT_B",
+   "label": "Pool Grup B – IDL: total",
+   "aug": "420.583908",
+   "sep": "419.5672132866798",
+   "address": "BIAYA BERSAMA!C83 (Rp → Rp juta)"
+  },
+  {
+   "row": 41,
+   "code": "PF_B",
+   "label": "Pool Grup B – IDL: bagian tetap",
+   "aug": "272.738971",
+   "sep": "282.7766502267432",
+   "address": "BIAYA BERSAMA!D83 (Rp → Rp juta)"
+  },
+  {
+   "row": 42,
+   "code": "AL_B_F",
+   "label": "Alokasi Grup B – IDL ke FCC",
+   "aug": "358.597874",
+   "sep": "344.0617546161456",
+   "address": "BIAYA BERSAMA!C117 (Rp → Rp juta)"
+  },
+  {
+   "row": 43,
+   "code": "AL_B_U",
+   "label": "Alokasi Grup B – IDL ke UU",
+   "aug": "29.200837",
+   "sep": "1.766709156419662",
+   "address": "BIAYA BERSAMA!D117 (Rp → Rp juta)"
+  },
+  {
+   "row": 44,
+   "code": "AL_B_O",
+   "label": "Alokasi Grup B – IDL ke UO",
+   "aug": "15.520643",
+   "sep": "21.53055444471874",
+   "address": "BIAYA BERSAMA!E117 (Rp → Rp juta)"
+  },
+  {
+   "row": 45,
+   "code": "AL_B_L",
+   "label": "Alokasi Grup B – IDL ke Lain-lain",
+   "aug": "17.264554",
+   "sep": "52.208195069395806",
+   "address": "BIAYA BERSAMA!F117 (Rp → Rp juta)"
+  },
+  {
+   "row": 46,
+   "code": "PT_C",
+   "label": "Pool Grup C – energi: total",
+   "aug": "56.645114",
+   "sep": "46.73726",
+   "address": "BIAYA BERSAMA!C84 (Rp → Rp juta)"
+  },
+  {
+   "row": 47,
+   "code": "PF_C",
+   "label": "Pool Grup C – energi: bagian tetap",
+   "aug": "0",
+   "sep": "0",
+   "address": "BIAYA BERSAMA!D84 (Rp → Rp juta)"
+  },
+  {
+   "row": 48,
+   "code": "AL_C_F",
+   "label": "Alokasi Grup C – energi ke FCC",
+   "aug": "49.949242",
+   "sep": "35.25331406903919",
+   "address": "BIAYA BERSAMA!C118 (Rp → Rp juta)"
+  },
+  {
+   "row": 49,
+   "code": "AL_C_U",
+   "label": "Alokasi Grup C – energi ke UU",
+   "aug": "0.917546",
+   "sep": "0.027926782660179054",
+   "address": "BIAYA BERSAMA!D118 (Rp → Rp juta)"
+  },
+  {
+   "row": 50,
+   "code": "AL_C_O",
+   "label": "Alokasi Grup C – energi ke UO",
+   "aug": "0.552489",
+   "sep": "0.4963923026229416",
+   "address": "BIAYA BERSAMA!E118 (Rp → Rp juta)"
+  },
+  {
+   "row": 51,
+   "code": "AL_C_L",
+   "label": "Alokasi Grup C – energi ke Lain-lain",
+   "aug": "5.225836",
+   "sep": "10.959626845677693",
+   "address": "BIAYA BERSAMA!F118 (Rp → Rp juta)"
+  },
+  {
+   "row": 52,
+   "code": "PT_D",
+   "label": "Pool Grup D – mesin: total",
+   "aug": "261.76245",
+   "sep": "313.48576927",
+   "address": "BIAYA BERSAMA!C85 (Rp → Rp juta)"
+  },
+  {
+   "row": 53,
+   "code": "PF_D",
+   "label": "Pool Grup D – mesin: bagian tetap",
+   "aug": "154.327776",
+   "sep": "154.3277757",
+   "address": "BIAYA BERSAMA!D85 (Rp → Rp juta)"
+  },
+  {
+   "row": 54,
+   "code": "AL_D_F",
+   "label": "Alokasi Grup D – mesin ke FCC",
+   "aug": "196.21071",
+   "sep": "214.9726080976878",
+   "address": "BIAYA BERSAMA!C119 (Rp → Rp juta)"
+  },
+  {
+   "row": 55,
+   "code": "AL_D_U",
+   "label": "Alokasi Grup D – mesin ke UU",
+   "aug": "25.84213",
+   "sep": "1.261824927294265",
+   "address": "BIAYA BERSAMA!D119 (Rp → Rp juta)"
+  },
+  {
+   "row": 56,
+   "code": "AL_D_O",
+   "label": "Alokasi Grup D – mesin ke UO",
+   "aug": "15.560525",
+   "sep": "22.428655272909626",
+   "address": "BIAYA BERSAMA!E119 (Rp → Rp juta)"
+  },
+  {
+   "row": 57,
+   "code": "AL_D_L",
+   "label": "Alokasi Grup D – mesin ke Lain-lain",
+   "aug": "24.149086",
+   "sep": "74.82268097210826",
+   "address": "BIAYA BERSAMA!F119 (Rp → Rp juta)"
+  },
+  {
+   "row": 58,
+   "code": "PT_E",
+   "label": "Pool Grup E – pabrik umum: total",
+   "aug": "251.278914",
+   "sep": "270.06331292000004",
+   "address": "BIAYA BERSAMA!C86 (Rp → Rp juta)"
+  },
+  {
+   "row": 59,
+   "code": "PF_E",
+   "label": "Pool Grup E – pabrik umum: bagian tetap",
+   "aug": "242.552887",
+   "sep": "269.19191292",
+   "address": "BIAYA BERSAMA!D86 (Rp → Rp juta)"
+  },
+  {
+   "row": 60,
+   "code": "AL_E_F",
+   "label": "Alokasi Grup E – pabrik umum ke FCC",
+   "aug": "228.675967",
+   "sep": "254.28356855408387",
+   "address": "BIAYA BERSAMA!C120 (Rp → Rp juta)"
+  },
+  {
+   "row": 61,
+   "code": "AL_E_U",
+   "label": "Alokasi Grup E – pabrik umum ke UU",
+   "aug": "14.65594",
+   "sep": "0.7476257826054519",
+   "address": "BIAYA BERSAMA!D120 (Rp → Rp juta)"
+  },
+  {
+   "row": 62,
+   "code": "AL_E_O",
+   "label": "Alokasi Grup E – pabrik umum ke UO",
+   "aug": "7.459348",
+   "sep": "10.426904103047859",
+   "address": "BIAYA BERSAMA!E120 (Rp → Rp juta)"
+  },
+  {
+   "row": 63,
+   "code": "AL_E_L",
+   "label": "Alokasi Grup E – pabrik umum ke Lain-lain",
+   "aug": "0.487659",
+   "sep": "4.60521448026283",
+   "address": "BIAYA BERSAMA!F120 (Rp → Rp juta)"
+  },
+  {
+   "row": 64,
+   "code": "HPP_WP",
+   "label": "HPP semua kartu (WP)",
+   "aug": "7926.647918",
+   "sep": "6463.1668937891245",
+   "address": "REKON & KONTROL!F14"
+  },
+  {
+   "row": 65,
+   "code": "HPP_GL",
+   "label": "HPP menurut GL (Laba Rugi)",
+   "aug": "7842.145714",
+   "sep": "6375.41230437",
+   "address": "REKON & KONTROL!C45"
+  },
+  {
+   "row": 66,
+   "code": "L38",
+   "label": "REKON: varian material GL − kartu",
+   "aug": "203.730535",
+   "sep": "-121.14819029890805",
+   "address": "REKON & KONTROL!C38"
+  },
+  {
+   "row": 67,
+   "code": "L39",
+   "label": "REKON: kenaikan persediaan WP",
+   "aug": "356.656415",
+   "sep": "-326.5394441128789",
+   "address": "REKON & KONTROL!C39"
+  },
+  {
+   "row": 68,
+   "code": "L40",
+   "label": "REKON: − kenaikan persediaan GL",
+   "aug": "-478.030926",
+   "sep": "409.30549090000096",
+   "address": "REKON & KONTROL!C40"
+  },
+  {
+   "row": 69,
+   "code": "L41",
+   "label": "REKON: KW 2 pada NRV",
+   "aug": "20.289793",
+   "sep": "-25.596895951567248",
+   "address": "REKON & KONTROL!C41"
+  },
+  {
+   "row": 70,
+   "code": "L42",
+   "label": "REKON: − penyesuaian bagian 8",
+   "aug": "-187.148022",
+   "sep": "-23.775557170000017",
+   "address": "REKON & KONTROL!C42"
+  },
+  {
+   "row": 71,
+   "code": "L43",
+   "label": "REKON: jam menganggur",
+   "aug": "0",
+   "sep": "0",
+   "address": "REKON & KONTROL!C43"
+  },
+  {
+   "row": 72,
+   "code": "OLD",
+   "label": "Olein ditahan di WIP-022: Δ (WP − GL)",
+   "aug": "-166.957712",
+   "sep": "91.41686404000002",
+   "address": "REKON PERSEDIAAN!E17 (Rp → Rp juta)"
+  },
+  {
+   "row": 73,
+   "code": "B8_OPEX",
+   "label": "Bagian 8: biaya pabrik di opex",
+   "aug": "116.503292",
+   "sep": "108.87595917",
+   "address": "BIAYA BERSAMA!C144 + BIAYA BERSAMA!C145 + BIAYA BERSAMA!C146 + BIAYA BERSAMA!C147 (Rp → Rp juta)"
+  },
+  {
+   "row": 74,
+   "code": "B8_THR",
+   "label": "Bagian 8: THR tertukar",
+   "aug": "0",
+   "sep": "34.774256",
+   "address": "BIAYA BERSAMA!C148 + BIAYA BERSAMA!C149 (Rp → Rp juta)"
+  },
+  {
+   "row": 75,
+   "code": "B8_TALI",
+   "label": "Bagian 8: tali asih per bulan jasa",
+   "aug": "-16.868946",
+   "sep": "-32.360982",
+   "address": "BIAYA BERSAMA!C150 + BIAYA BERSAMA!C151 (Rp → Rp juta)"
+  },
+  {
+   "row": 76,
+   "code": "B8_ONG",
+   "label": "Bagian 8: ongkos kirim (keluar pool + ke material)",
+   "aug": "87.513676",
+   "sep": "-87.513676",
+   "address": "BIAYA BERSAMA!C152 + BIAYA BERSAMA!C153 (Rp → Rp juta)"
+  },
+  {
+   "row": 77,
+   "code": "B8_PIS",
+   "label": "Bagian 8: pisau Urschel (netral)",
+   "aug": "0",
+   "sep": "0",
+   "address": "BIAYA BERSAMA!C154 + BIAYA BERSAMA!C155 (Rp → Rp juta)"
+  }
+ ]
+}

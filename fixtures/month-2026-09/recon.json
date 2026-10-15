@@ -1,0 +1,3091 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "sheets": {
+  "REKON & KONTROL": {
+   "header": {
+    "title": "REKAP, REKONSILIASI KE GL, DAN KONTROL – September 2026",
+    "first_row": 1,
+    "rows": [
+     {
+      "r": 1,
+      "c": {
+       "A": "REKAP, REKONSILIASI KE GL, DAN KONTROL – September 2026"
+      }
+     }
+    ],
+    "last_row": 1
+   },
+   "1": {
+    "title": "1. Rekap semua produk (Rp juta)",
+    "first_row": 4,
+    "rows": [
+     {
+      "r": 4,
+      "c": {
+       "A": "1. Rekap semua produk (Rp juta)"
+      }
+     },
+     {
+      "r": 5,
+      "c": {
+       "A": "Pos",
+       "B": "FCC",
+       "C": "Ubi Ungu",
+       "D": "Ubi Orange",
+       "E": "Lain-lain",
+       "F": "Total",
+       "H": "Budget total",
+       "I": "Selisih"
+      }
+     },
+     {
+      "r": 6,
+      "c": {
+       "A": "Produksi (kg)",
+       "B": "236923",
+       "C": "467.5",
+       "D": "6715.5",
+       "E": "45653.42",
+       "F": "289759.42"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 7,
+      "c": {
+       "A": "Material eksternal (FCC termasuk ongkos kirim singkong)",
+       "B": "4275.542046459444",
+       "C": "12.447449363263678",
+       "D": "173.60070219353085",
+       "E": "76.67361851843954",
+       "F": "4538.263816534678"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 8,
+      "c": {
+       "A": "Bahan antarproduk (FCC premium, KW 2)",
+       "B": "0",
+       "C": "0",
+       "D": "0",
+       "E": "593.3103132342532",
+       "F": "593.3103132342532"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 9,
+      "c": {
+       "A": "Upah kupas",
+       "B": "53.59862496108998",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "53.59862496108998"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 10,
+      "c": {
+       "A": "Direct labour (Grup A)",
+       "B": "384.8565492002359",
+       "C": "1.976184740843103",
+       "D": "24.08339425928573",
+       "E": "58.39842855186545",
+       "F": "469.3145567522302"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 11,
+      "c": {
+       "A": "Factory overhead (Grup B–E)",
+       "B": "848.5712453369565",
+       "C": "3.804086648979558",
+       "D": "54.882506123299166",
+       "E": "142.59571736744456",
+       "F": "1049.85355547668"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 12,
+      "c": {
+       "A": "Total biaya produksi",
+       "B": "5562.5684659577255",
+       "C": "18.227720753086338",
+       "D": "252.56660257611577",
+       "E": "870.9780776720027",
+       "F": "6704.340866958932"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 13,
+      "c": {
+       "A": "Rp per kg produksi",
+       "B": "23478.381018127093",
+       "C": "38989.77701194939",
+       "D": "37609.50079310785",
+       "E": "19078.04667584603",
+       "F": "23137.61142591648"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 14,
+      "c": {
+       "A": "HPP",
+       "B": "5106.312148257679",
+       "C": "232.70641734778275",
+       "D": "252.56660257611577",
+       "E": "871.5817256075468",
+       "F": "6463.1668937891245",
+       "H": "0",
+       "I": "6463.1668937891245"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "H",
+       "I"
+      ]
+     },
+     {
+      "r": 15,
+      "c": {
+       "A": "Pendapatan (dikelompokkan sejalan dengan biaya)",
+       "B": "5901.31314207",
+       "C": "321.7005",
+       "D": "321.67245",
+       "E": "917.6740605900001",
+       "F": "7462.3601526600005"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 16,
+      "c": {
+       "A": "Margin kotor per produk (%)",
+       "B": "0.13471594790400485",
+       "C": "0.2766364449300428",
+       "D": "0.2148329688286462",
+       "E": "0.050227348643612245",
+       "F": "0.1338977533153111"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     }
+    ],
+    "last_row": 16
+   },
+   "2": {
+    "title": "2. Material semua produk vs pemakaian GL, dan varian per akun (Rp juta)",
+    "first_row": 20,
+    "rows": [
+     {
+      "r": 20,
+      "c": {
+       "A": "2. Material semua produk vs pemakaian GL, dan varian per akun (Rp juta)"
+      }
+     },
+     {
+      "r": 21,
+      "c": {
+       "A": "Produk / lini",
+       "B": "Material kartu",
+       "C": "Porsi",
+       "D": "Varian sementara",
+       "E": "Akun varian mulai Okt-26"
+      }
+     },
+     {
+      "r": 22,
+      "c": {
+       "A": "FCC",
+       "B": "4233.6445814594435",
+       "C": "0.9415702036855685",
+       "D": "-114.06952621588087"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 23,
+      "c": {
+       "A": "Ubi Ungu IFM",
+       "B": "12.447449363263678",
+       "C": "0.002768335226735956",
+       "D": "-0.3353788028597784"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 24,
+      "c": {
+       "A": "Ubi Orange IFM",
+       "B": "173.60070219353085",
+       "C": "0.03860910980580537",
+       "D": "-4.677423782025146"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 25,
+      "c": {
+       "A": "Lain-lain lini singkong (termasuk maklon)",
+       "B": "76.67361851843954",
+       "C": "0.017052351281890026",
+       "D": "-2.0658614981422416"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 26,
+      "c": {
+       "A": "Lain-lain lini ubi ungu",
+       "B": "0",
+       "C": "0",
+       "D": "0"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 27,
+      "c": {
+       "A": "Lain-lain lini ubi orange",
+       "B": "0",
+       "C": "0",
+       "D": "0"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 28,
+      "c": {
+       "A": "Total material kartu",
+       "B": "4496.366351534678",
+       "D": "-121.14819029890803"
+      },
+      "n": [
+       "B",
+       "D"
+      ]
+     },
+     {
+      "r": 29,
+      "c": {
+       "A": "Pemakaian bahan baku menurut GL",
+       "B": "4375.21816123577",
+       "E": "LK Sep-26 sheet Income Statement, baris Pemakaian Bahan Baku (kolom Sep)"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 30,
+      "c": {
+       "A": "Varian material (GL − kartu)",
+       "B": "-121.14819029890805"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 31,
+      "c": {
+       "A": "  5101-301 Varian Produksi Singkong",
+       "D": "-116.13538771402311"
+      },
+      "n": [
+       "D"
+      ]
+     },
+     {
+      "r": 32,
+      "c": {
+       "A": "  5101-302 Varian Produksi Ubi Ungu",
+       "D": "-0.3353788028597784"
+      },
+      "n": [
+       "D"
+      ]
+     },
+     {
+      "r": 33,
+      "c": {
+       "A": "  5101-303 Varian Produksi Ubi Orange",
+       "D": "-4.677423782025146"
+      },
+      "n": [
+       "D"
+      ]
+     },
+     {
+      "r": 34,
+      "c": {
+       "A": "Pembagian ke lini sementara memakai porsi kartu, karena GL belum memisahkan pemakaian per jenis bahan. Mulai Okt-26 dihitung per jenis bahan (akun 5101-201 s/d 207)."
+      }
+     }
+    ],
+    "last_row": 34
+   },
+   "3": {
+    "title": "3. Rekonsiliasi HPP semua produk ke HPP GL (Rp juta)",
+    "first_row": 36,
+    "rows": [
+     {
+      "r": 36,
+      "c": {
+       "A": "3. Rekonsiliasi HPP semua produk ke HPP GL (Rp juta)"
+      }
+     },
+     {
+      "r": 37,
+      "c": {
+       "A": "Total HPP kartu baru, semua produk",
+       "C": "6463.1668937891245"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 38,
+      "c": {
+       "A": "+ Varian material (GL − kartu)",
+       "C": "-121.14819029890805"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 39,
+      "c": {
+       "A": "+ Kenaikan persediaan WIP & FG menurut kartu baru (FCC, UU, UO, Lain-lain per SKU)",
+       "C": "-326.5394441128789"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 40,
+      "c": {
+       "A": "− Kenaikan persediaan WIP & FG menurut GL (1106-002, 1106-003)",
+       "C": "409.30549090000096"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 41,
+      "c": {
+       "A": "+ Kenaikan persediaan KW 2 pada NRV (tidak dicatat di GL)",
+       "C": "-25.596895951567248"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 42,
+      "c": {
+       "A": "− Penyesuaian aturan DL/FOH dan cut-off yang masuk kartu (BIAYA BERSAMA bagian 8: reklas opex, THR, tali asih, ongkos kirim)",
+       "C": "-23.775557170000017"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 43,
+      "c": {
+       "A": "+ Biaya jam menganggur dibebankan ke periode (BIAYA BERSAMA bagian 5)",
+       "C": "0"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 44,
+      "c": {
+       "A": "HPP menurut rekonsiliasi",
+       "C": "6375.412297155771"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 45,
+      "c": {
+       "A": "HPP blended menurut GL (BP baris 87)",
+       "C": "6375.41230437",
+       "E": "GL Accurate Sep-26: 5101-001 s/d 5101-016, 5102, 6500-006/007 (= LK Income Statement Total COGS)"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 46,
+      "c": {
+       "A": "Cek: HPP GL − HPP rekonsiliasi (harus nol)",
+       "C": "0.0000072142292992793955"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 47,
+      "c": {
+       "A": "Informasi: selisih kenaikan persediaan kartu baru vs GL",
+       "C": "82.76604678712204"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 47
+   },
+   "4": {
+    "title": "4. Aliran KW 2 pada NRV – memo produk sampingan (Rp juta)",
+    "first_row": 50,
+    "rows": [
+     {
+      "r": 50,
+      "c": {
+       "A": "4. Aliran KW 2 pada NRV – memo produk sampingan (Rp juta)"
+      }
+     },
+     {
+      "r": 51,
+      "c": {
+       "A": "Pos",
+       "C": "Kg",
+       "D": "Rp jt"
+      }
+     },
+     {
+      "r": 52,
+      "c": {
+       "A": "Masuk: KW 2 dari produksi FCC",
+       "C": "7581",
+       "D": "74.12149282231898"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 53,
+      "c": {
+       "A": "Keluar: bahan Lain-lain (koperasi, Maicih keripik)",
+       "C": "-4242.000000000003",
+       "D": "-41.475184349330874"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 54,
+      "c": {
+       "A": "Keluar: KW 2 tawar terjual ke KGS (HPP pada NRV)",
+       "C": "-5957",
+       "D": "-58.24320442455536"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 55,
+      "c": {
+       "A": "Kenaikan persediaan KW 2 (hitungan)",
+       "C": "-2618.0000000000027",
+       "D": "-25.596895951567248"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     }
+    ],
+    "last_row": 55
+   },
+   "5": {
+    "title": "5. Semua kontrol",
+    "first_row": 57,
+    "rows": [
+     {
+      "r": 57,
+      "c": {
+       "A": "5. Semua kontrol"
+      }
+     },
+     {
+      "r": 58,
+      "c": {
+       "A": "Cek",
+       "C": "Nilai",
+       "D": "Status"
+      }
+     },
+     {
+      "r": 59,
+      "c": {
+       "A": "Konversi di semua kartu = total pool − jam menganggur",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 60,
+      "c": {
+       "A": "Material kartu tanpa ongkos kirim singkong + varian = pemakaian GL",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 61,
+      "c": {
+       "A": "Rekonsiliasi HPP ke GL",
+       "C": "0.0000072142292992793955",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 62,
+      "c": {
+       "A": "Lini Lain-lain = material eksternal Lain-lain",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 63,
+      "c": {
+       "A": "Pendapatan semua produk = pendapatan GL (sel C72)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 64,
+      "c": {
+       "A": "Sheet BIAYA BERSAMA",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 65,
+      "c": {
+       "A": "Sheet FCC",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 66,
+      "c": {
+       "A": "Sheet UU",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 67,
+      "c": {
+       "A": "Sheet UO",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 68,
+      "c": {
+       "A": "Sheet LAIN-LAIN",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 69,
+      "c": {
+       "A": "STATUS SEMUA SHEET",
+       "D": "LULUS"
+      }
+     }
+    ],
+    "last_row": 69
+   },
+   "6": {
+    "title": "6. Input GL dan penjualan bulan ini (Rp) – sel biru",
+    "first_row": 71,
+    "rows": [
+     {
+      "r": 71,
+      "c": {
+       "A": "6. Input GL dan penjualan bulan ini (Rp) – sel biru"
+      }
+     },
+     {
+      "r": 72,
+      "c": {
+       "A": "Pos",
+       "C": "Nilai (Rp)",
+       "E": "Sumber"
+      }
+     },
+     {
+      "r": 73,
+      "c": {
+       "A": "Pendapatan total menurut GL (4101-007)",
+       "C": "7462360152.66",
+       "E": "GL Accurate Sep-26 akun 4101-007 (= total Sales By Item Sep)"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 74,
+      "c": {
+       "A": "Pendapatan Lain-lain (Sales by Item di luar FCC tanpa bumbu, 2nd Grade Tawar, WIP-QKSP, WIP-QKSO)",
+       "C": "917674060.59",
+       "E": "LK Sep-26 Sales By Item: total dikurangi FCC tanpa bumbu, 2nd Grade Tawar, WIP-QKSP, WIP-QKSO"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 75,
+      "c": {
+       "A": "Kenaikan persediaan barang setengah jadi menurut GL (1106-002)",
+       "C": "-196152066.81",
+       "E": "GL Accurate Sep-26 mutasi neto 1106-002"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 76,
+      "c": {
+       "A": "Kenaikan persediaan barang jadi menurut GL (1106-003)",
+       "C": "-213153424.090001",
+       "E": "GL Accurate Sep-26 mutasi neto 1106-003"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 77,
+      "c": {
+       "A": "Tidak ada sel error di RINGKASAN dan REKON & KONTROL",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 78,
+      "c": {
+       "A": "Sheet REKON MATERIAL (pemakaian material per item kartu vs GL)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 79,
+      "c": {
+       "A": "Sheet REKON PERSEDIAAN (WIP & FG per item, Accurate vs WP)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 80,
+      "c": {
+       "A": "Sheet BRIDGE GP (bridge margin GL Agu → Sep)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 80
+   }
+  },
+  "REKON MATERIAL": {
+   "header": {
+    "title": "REKONSILIASI PEMAKAIAN MATERIAL PER ITEM: KARTU CoGM vs GL 1106-001 – September 2026",
+    "first_row": 1,
+    "rows": [
+     {
+      "r": 1,
+      "c": {
+       "A": "REKONSILIASI PEMAKAIAN MATERIAL PER ITEM: KARTU CoGM vs GL 1106-001 – September 2026"
+      }
+     },
+     {
+      "r": 2,
+      "c": {
+       "A": "Kartu = pemakaian per item menurut kartu CoGM (nilai kartu; item tanpa nilai dinilai harga rata-rata sheet Average Price). Accurate = saldo awal + penerimaan GL − saldo akhir per item. Selisih positif: Accurate mengeluarkan lebih banyak dari yang tercatat di kartu."
+      }
+     },
+     {
+      "r": 3,
+      "c": {
+       "A": "Rp penuh. Sel biru = input (angka dari sumber); hitam = rumus; hijau = tautan ke sheet lain."
+      }
+     }
+    ],
+    "last_row": 3
+   },
+   "1": {
+    "title": "1. Pemakaian per item",
+    "first_row": 5,
+    "rows": [
+     {
+      "r": 5,
+      "c": {
+       "A": "1. Pemakaian per item"
+      }
+     },
+     {
+      "r": 6,
+      "c": {
+       "A": "Item (nama Average Price)",
+       "B": "Satuan",
+       "C": "Qty kartu",
+       "D": "Kartu FCC",
+       "E": "Kartu UU",
+       "F": "Kartu UO",
+       "G": "Kartu Lain-lain",
+       "H": "Total kartu",
+       "I": "Saldo awal Accurate",
+       "J": "Penerimaan GL",
+       "K": "Saldo akhir Accurate",
+       "L": "Pemakaian Accurate",
+       "M": "Selisih Accurate − kartu",
+       "N": "Saldo akhir implisit kartu",
+       "O": "Keterangan"
+      }
+     },
+     {
+      "r": 7,
+      "c": {
+       "A": "Singkong Daging Premium",
+       "B": "kg",
+       "C": "280280",
+       "D": "1288542000",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "1288542000",
+       "I": "0",
+       "J": "1288542000",
+       "K": "18.06",
+       "L": "1288541981.94",
+       "M": "-18.05999994277954",
+       "N": "0",
+       "O": "saldo akhir: Inventory Valuation BB-004"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 8,
+      "c": {
+       "A": "Minyak Olein",
+       "B": "kg",
+       "C": "59854",
+       "D": "1013428091.96",
+       "E": "2241555.14",
+       "F": "32502549.48",
+       "G": "0",
+       "H": "1048172196.58",
+       "I": "86289988.97",
+       "J": "1050949000",
+       "K": "183877533.72",
+       "L": "953361455.25",
+       "M": "-94810741.33000004",
+       "N": "89066792.38999999",
+       "O": "saldo akhir: Inventory Valuation BB-014"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 9,
+      "c": {
+       "A": "Singkong Kulit Premium",
+       "B": "kg",
+       "C": "347092.257142857",
+       "D": "1021433573.07",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "1021433573.07",
+       "I": "0",
+       "J": "1012361248",
+       "K": "-681.88",
+       "L": "1012361929.88",
+       "M": "-9071643.190000057",
+       "N": "-9072325.070000052",
+       "O": "saldo akhir: Inventory Valuation BB-001; pembelian di Average Price 1.031.371.931; GL 1.012.361.248"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 10,
+      "c": {
+       "A": "CNG",
+       "B": "m3",
+       "C": "78864.0728832586",
+       "D": "774662258.61",
+       "E": "1443202.88",
+       "F": "23315034.51",
+       "G": "575163.72",
+       "H": "799995659.72",
+       "I": "0",
+       "J": "799995630.8",
+       "K": "-7.08",
+       "L": "799995637.88",
+       "M": "-21.8400000333786",
+       "N": "-28.920000076293945",
+       "O": "saldo akhir: Inventory Valuation BB-015; pembelian di Average Price 724.611.143; GL 799.995.631"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 11,
+      "c": {
+       "A": "HDPE Ukuran IFL Warna Putih Tebal 0,07",
+       "B": "Kg",
+       "C": "1520",
+       "D": "44812434.58",
+       "E": "326145.81",
+       "F": "4435583.04",
+       "G": "0",
+       "H": "49574163.43",
+       "I": "70979674.41",
+       "J": "129600000",
+       "K": "161442177.77",
+       "L": "39137496.639999986",
+       "M": "-10436666.790000014",
+       "N": "151005510.98",
+       "O": "saldo akhir: Inventory Valuation BB-022"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 12,
+      "c": {
+       "A": "HDPE Ukuran IFL Warna Putih Tebal 0,05",
+       "B": "kg",
+       "C": "1861",
+       "D": "63982187.7",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "63982187.7",
+       "I": "166547627.06",
+       "J": "32000000",
+       "K": "141819732.76",
+       "L": "56727894.30000001",
+       "M": "-7254293.399999991",
+       "N": "134565439.36",
+       "O": "saldo akhir: Inventory Valuation BB-020"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 13,
+      "c": {
+       "A": "Karton Polos IFL",
+       "B": "pcs",
+       "C": "100",
+       "D": "976176.71",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "976176.71",
+       "I": "149056788.5",
+       "J": "21578900",
+       "K": "170635687.38",
+       "L": "1.1200000047683716",
+       "M": "-976175.5899999952",
+       "N": "169659511.79",
+       "O": "saldo akhir: Inventory Valuation BB-026"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 14,
+      "c": {
+       "A": "Ubi Orange Kulit Merah",
+       "B": "kg",
+       "C": "24028",
+       "D": "0",
+       "E": "0",
+       "F": "113015300",
+       "G": "0",
+       "H": "113015300",
+       "I": "0",
+       "J": "113015300",
+       "K": "4.4",
+       "L": "113015295.6",
+       "M": "-4.4000000059604645",
+       "N": "0",
+       "O": "saldo akhir: Inventory Valuation BB-322; pembelian di Average Price 115.235.344; GL 113.015.300"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 15,
+      "c": {
+       "A": "Ubi Putih ACE",
+       "B": "Kg",
+       "C": "16242",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "68748451.94",
+       "H": "68748451.94",
+       "I": "0",
+       "J": "69865900",
+       "K": "1.1",
+       "L": "69865898.9",
+       "M": "1117446.9600000083",
+       "N": "1117448.0600000024",
+       "O": "saldo akhir: Inventory Valuation BB-329; pembelian di Average Price 73.946.279; GL 69.865.900"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 16,
+      "c": {
+       "A": "Plastik Singkong HD 60*100*0,07",
+       "B": "kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "62031117.81",
+       "J": "0",
+       "K": "62031117.81",
+       "L": "0",
+       "M": "0",
+       "N": "62031117.81",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 17,
+      "c": {
+       "A": "Polyfilm Umbis Ubi Ungu Rasa Ubi Bakar",
+       "B": "roll",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "60870606.06",
+       "J": "0",
+       "K": "60870606.06",
+       "L": "0",
+       "M": "0",
+       "N": "60870606.06",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 18,
+      "c": {
+       "A": "HDPE Ukuran IFL Warna Putih Tipis  0,03",
+       "B": "kg",
+       "C": "252.7",
+       "D": "8256654.7",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "8256654.7",
+       "I": "12111977.71",
+       "J": "32115200",
+       "K": "34425054.91",
+       "L": "9802122.800000004",
+       "M": "1545468.1000000043",
+       "N": "35970523.01",
+       "O": "saldo akhir: Inventory Valuation BB-021"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 19,
+      "c": {
+       "A": "Ammonium Bicarbonate (TI)",
+       "B": "kg",
+       "C": "1700",
+       "D": "7885597.25",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "7885597.25",
+       "I": "22381180.44",
+       "J": "0",
+       "K": "14495583.23",
+       "L": "7885597.210000001",
+       "M": "-0.03999999910593033",
+       "N": "14495583.190000001",
+       "O": "saldo akhir: Inventory Valuation BB-017"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 20,
+      "c": {
+       "A": "Bumbu Ubi Bakar Neo 321209",
+       "B": "kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "19129032.26",
+       "J": "0",
+       "K": "19120424.2",
+       "L": "8608.060000002384",
+       "M": "8608.060000002384",
+       "N": "19129032.26",
+       "O": "saldo akhir: Inventory Valuation BB-129"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 21,
+      "c": {
+       "A": "Gula Rafinasi",
+       "B": "kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "18838411.08",
+       "J": "0",
+       "K": "18838411.08",
+       "L": "0",
+       "M": "0",
+       "N": "18838411.08",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 22,
+      "c": {
+       "A": "Plakban Ukuran 100 Yard",
+       "B": "roll",
+       "C": "851",
+       "D": "4415400",
+       "E": "13200",
+       "F": "171600",
+       "G": "1016400",
+       "H": "5616600",
+       "I": "4276800",
+       "J": "13305600",
+       "K": "12077999.75",
+       "L": "5504400.25",
+       "M": "-112199.75",
+       "N": "11965800",
+       "O": "saldo akhir: Inventory Valuation BB-031"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 23,
+      "c": {
+       "A": "Bumbu Balado FII-A-01014",
+       "B": "kg",
+       "C": "101.7",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "3399317.7",
+       "H": "3399317.7",
+       "I": "3259981.11",
+       "J": "10110000",
+       "K": "11364484.03",
+       "L": "2005497.08",
+       "M": "-1393820.62",
+       "N": "9970663.41",
+       "O": "saldo akhir: Inventory Valuation BB-114"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 24,
+      "c": {
+       "A": "Plastik HDPE 4 kg",
+       "B": "kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "11810370.27",
+       "J": "0",
+       "K": "11762016.31",
+       "L": "48353.95999999903",
+       "M": "48353.95999999903",
+       "N": "11810370.27",
+       "O": "saldo akhir: Inventory Valuation BB-024"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 25,
+      "c": {
+       "A": "Bumbu BBQ Pachira",
+       "B": "kg",
+       "C": "66.08",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "1756180.58",
+       "H": "1756180.58",
+       "I": "11693696.32",
+       "J": "0",
+       "K": "10630633.06",
+       "L": "1063063.2599999998",
+       "M": "-693117.3200000003",
+       "N": "9937515.74",
+       "O": "saldo akhir: Inventory Valuation BB-101"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 26,
+      "c": {
+       "A": "Ubi Ungu",
+       "B": "Kg",
+       "C": "1424",
+       "D": "0",
+       "E": "8401600",
+       "F": "0",
+       "G": "0",
+       "H": "8401600",
+       "I": "0",
+       "J": "8401600",
+       "K": "8.76",
+       "L": "8401591.24",
+       "M": "-8.759999999776483",
+       "N": "0",
+       "O": "saldo akhir: Inventory Valuation BB-007; pembelian di Average Price 8.673.000; GL 8.401.600"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 27,
+      "c": {
+       "A": "Plastik PP 1 kg",
+       "B": "kg",
+       "C": "13.05",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "514661.61",
+       "H": "514661.61",
+       "I": "7741614.91",
+       "J": "0",
+       "K": "7032525.6",
+       "L": "709089.3100000005",
+       "M": "194427.70000000054",
+       "N": "7226953.3",
+       "O": "saldo akhir: Inventory Valuation BB-229"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 28,
+      "c": {
+       "A": "Tali Rafia 1 kg",
+       "B": "roll",
+       "C": "97.5",
+       "D": "2271181.22",
+       "E": "3595.54",
+       "F": "62322.65",
+       "G": "0",
+       "H": "2337099.41",
+       "I": "6232265.1",
+       "J": "0",
+       "K": "4074942.55",
+       "L": "2157322.55",
+       "M": "-179776.86000000034",
+       "N": "3895165.6899999995",
+       "O": "saldo akhir: Inventory Valuation BB-030"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 29,
+      "c": {
+       "A": "Plastik Suka Suka 40",
+       "B": "kg",
+       "C": "7",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "281407.86",
+       "H": "281407.86",
+       "I": "5483352.76",
+       "J": "0",
+       "K": "5272296.87",
+       "L": "211055.88999999966",
+       "M": "-70351.97000000032",
+       "N": "5201944.899999999",
+       "O": "saldo akhir: Inventory Valuation BB-233"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 30,
+      "c": {
+       "A": "Bumbu Jagung Manis",
+       "B": "kg",
+       "C": "14.28",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "379541.35",
+       "H": "379541.35",
+       "I": "5315705.25",
+       "J": "0",
+       "K": "4784134.61",
+       "L": "531570.6399999997",
+       "M": "152029.2899999997",
+       "N": "4936163.9",
+       "O": "saldo akhir: Inventory Valuation BB-126"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 31,
+      "c": {
+       "A": "Label FCC Hijau",
+       "B": "rim",
+       "C": "39.105",
+       "D": "2979025.65",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "2979025.65",
+       "I": "1904627.19",
+       "J": "0",
+       "K": "838104.78",
+       "L": "1066522.41",
+       "M": "-1912503.24",
+       "N": "-1074398.46",
+       "O": "saldo akhir: Inventory Valuation BB-035"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 32,
+      "c": {
+       "A": "Label FCC Putih",
+       "B": "rim",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "992694.81",
+       "J": "1550000",
+       "K": "1078699.92",
+       "L": "1463994.8900000001",
+       "M": "1463994.8900000001",
+       "N": "2542694.81",
+       "O": "saldo akhir: Inventory Valuation BB-034"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 33,
+      "c": {
+       "A": "Garam",
+       "B": "kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "1935000",
+       "J": "0",
+       "K": "1889850.02",
+       "L": "45149.97999999998",
+       "M": "45149.97999999998",
+       "N": "1935000",
+       "O": "saldo akhir: Inventory Valuation BB-064"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 34,
+      "c": {
+       "A": "Tepung Beras Sujiwangi",
+       "B": "kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "1687500",
+       "J": "0",
+       "K": "562500",
+       "L": "1125000",
+       "M": "1125000",
+       "N": "1687500",
+       "O": "saldo akhir: Inventory Valuation BB-050"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 35,
+      "c": {
+       "A": "Karton Umbis Ubi Ungu",
+       "B": "pcs",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "1650780",
+       "J": "0",
+       "K": "1650780",
+       "L": "0",
+       "M": "0",
+       "N": "1650780",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 36,
+      "c": {
+       "A": "Label WIP QKSO",
+       "B": "rim",
+       "C": "1.3",
+       "D": "0",
+       "E": "0",
+       "F": "98312.5",
+       "G": "0",
+       "H": "98312.5",
+       "I": "1058750",
+       "J": "0",
+       "K": "983125",
+       "L": "75625",
+       "M": "-22687.5",
+       "N": "960437.5",
+       "O": "saldo akhir: Inventory Valuation BB-315"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 37,
+      "c": {
+       "A": "Label WIP QKSP",
+       "B": "rim",
+       "C": "0.24",
+       "D": "0",
+       "E": "18150",
+       "F": "0",
+       "G": "0",
+       "H": "18150",
+       "I": "983125",
+       "J": "0",
+       "K": "983125",
+       "L": "0",
+       "M": "-18150",
+       "N": "964975",
+       "O": "saldo akhir: Inventory Valuation BB-316"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 38,
+      "c": {
+       "A": "Plastik PE Gusset 23*(4+4)*32*0,1",
+       "B": "Ca",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "955800",
+       "J": "0",
+       "K": "955800",
+       "L": "0",
+       "M": "0",
+       "N": "955800",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 39,
+      "c": {
+       "A": "Label FCC Biru",
+       "B": "rim",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "942709.16",
+       "J": "0",
+       "K": "870209.77",
+       "L": "72499.39000000001",
+       "M": "72499.39000000001",
+       "N": "942709.16",
+       "O": "saldo akhir: Inventory Valuation BB-036"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 40,
+      "c": {
+       "A": "Garam-KI CYCL",
+       "B": "kg",
+       "C": "0.4375",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "2493.75",
+       "H": "2493.75",
+       "I": "855000",
+       "J": "0",
+       "K": "852506.25",
+       "L": "2493.75",
+       "M": "0",
+       "N": "852506.25",
+       "O": "tidak ada di Inventory Valuation BB → saldo akhir = awal + terima − kartu (asumsi, selisih 0)"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 41,
+      "c": {
+       "A": "Karton Maxfres",
+       "B": "pcs",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "792222.15",
+       "J": "0",
+       "K": "792222.15",
+       "L": "0",
+       "M": "0",
+       "N": "792222.15",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 42,
+      "c": {
+       "A": "Hot Ink Ukuran 36*40",
+       "B": "roll",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "427500",
+       "J": "0",
+       "K": "393300",
+       "L": "34200",
+       "M": "34200",
+       "N": "427500",
+       "O": "saldo akhir: Inventory Valuation BB-295"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 43,
+      "c": {
+       "A": "Hot Ink Putih",
+       "B": "roll",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "264000",
+       "J": "0",
+       "K": "264000",
+       "L": "0",
+       "M": "0",
+       "N": "264000",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 44,
+      "c": {
+       "A": "Plastik PE Gusset 23*(4+4)*40*0,1",
+       "B": "Ca",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "183600",
+       "J": "0",
+       "K": "183600",
+       "L": "0",
+       "M": "0",
+       "N": "183600",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 45,
+      "c": {
+       "A": "Benang Merah",
+       "B": "Kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "177750",
+       "J": "0",
+       "K": "177750",
+       "L": "0",
+       "M": "0",
+       "N": "177750",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 46,
+      "c": {
+       "A": "Garam Krosok",
+       "B": "kg",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "112000",
+       "J": "0",
+       "K": "112000",
+       "L": "0",
+       "M": "0",
+       "N": "112000",
+       "O": "saldo akhir: Inventory Valuation BB-018"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 47,
+      "c": {
+       "A": "Coding Tape",
+       "B": "roll",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "34000",
+       "J": "0",
+       "K": "34000",
+       "L": "0",
+       "M": "0",
+       "N": "34000",
+       "O": "tidak ada di Inventory Valuation BB; tanpa mutasi Sep → saldo akhir = saldo awal"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 48,
+      "c": {
+       "A": "Basreng Bumbu Level 10 Maichi",
+       "B": "Kg",
+       "C": "580",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "tidak ada di Inventory Valuation BB → saldo akhir = awal + terima − kartu (asumsi, selisih 0); harga rata-rata 0 (bahan titipan/maklon), nilai 0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 49,
+      "c": {
+       "A": "Bumbu BBQ SSF-01110",
+       "B": "kg",
+       "C": "671.55",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "tidak ada di Inventory Valuation BB → saldo akhir = awal + terima − kartu (asumsi, selisih 0); tidak ada di sheet Average Price, nilai 0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 50,
+      "c": {
+       "A": "Bumbu Maicih Level 5",
+       "B": "kg",
+       "C": "119.76",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-289"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 51,
+      "c": {
+       "A": "Polyfilm Maichi Basreng Level 5",
+       "B": "roll",
+       "C": "44.84",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "tidak ada di Inventory Valuation BB → saldo akhir = awal + terima − kartu (asumsi, selisih 0); harga rata-rata 0 (bahan titipan/maklon), nilai 0"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 52,
+      "c": {
+       "A": "Basreng Bumbu Level 5 Maichi",
+       "B": "Kg",
+       "C": "360",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-327"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 53,
+      "c": {
+       "A": "Polyfilm Maichi Keripik Singkong Level-5",
+       "B": "roll",
+       "C": "171.6",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-292"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 54,
+      "c": {
+       "A": "Bumbu Maicih Level 10",
+       "B": "kg",
+       "C": "149",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-290"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 55,
+      "c": {
+       "A": "Polyfilm Maichi Keripik Singkong Level-3",
+       "B": "roll",
+       "C": "197.01",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-291"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 56,
+      "c": {
+       "A": "Bumbu Seors 132003",
+       "B": "kg",
+       "C": "622.55",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-324"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 57,
+      "c": {
+       "A": "Bumbu Maicih Level 3",
+       "B": "kg",
+       "C": "146.1",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-288"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 58,
+      "c": {
+       "A": "Polyfilm Maichi Basreng Level 10",
+       "B": "roll",
+       "C": "71.06",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-296"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 59,
+      "c": {
+       "A": "Karton Maicih",
+       "B": "pcs",
+       "C": "3281",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-294"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 60,
+      "c": {
+       "A": "Polyfilm Maichi Keripik Singkong Level-10",
+       "B": "roll",
+       "C": "210.54",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "0",
+       "L": "0",
+       "M": "0",
+       "N": "0",
+       "O": "harga rata-rata 0 (bahan titipan/maklon), nilai 0; saldo akhir: Inventory Valuation BB-293"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 61,
+      "c": {
+       "A": "Pembulatan Inventory Valuation vs GL 1106-001",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "0",
+       "J": "0",
+       "K": "3187.940000295639",
+       "L": "-3187.940000295639",
+       "M": "-3187.940000295639",
+       "N": "0",
+       "O": "Sisa pembulatan nilai per item Accurate; harus kecil (kontrol ≤ Rp 10.000)"
+      },
+      "n": [
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     },
+     {
+      "r": 62,
+      "c": {
+       "A": "Total",
+       "D": "4233644581.45",
+       "E": "12447449.37",
+       "F": "173600702.18",
+       "G": "76673618.50999999",
+       "H": "4496366351.509997",
+       "I": "739007248.33",
+       "J": "4583390378.8",
+       "K": "947179465.89",
+       "L": "4375218161.240002",
+       "M": "-121148190.27000037",
+       "N": "826031275.6199996"
+      },
+      "n": [
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L",
+       "M",
+       "N"
+      ]
+     }
+    ],
+    "last_row": 62
+   },
+   "2": {
+    "title": "2. Pembanding GL 1106-001 dan LK sheet PL HPP (Rp)",
+    "first_row": 65,
+    "rows": [
+     {
+      "r": 65,
+      "c": {
+       "A": "2. Pembanding GL 1106-001 dan LK sheet PL HPP (Rp)"
+      }
+     },
+     {
+      "r": 66,
+      "c": {
+       "A": "Pos",
+       "C": "GL Accurate",
+       "E": "LK PL HPP",
+       "F": "Selisih",
+       "H": "Sumber"
+      }
+     },
+     {
+      "r": 67,
+      "c": {
+       "A": "Saldo awal 1106-001",
+       "C": "739007248.34",
+       "E": "739007248.34",
+       "F": "0",
+       "H": "LK PL HPP \"Saldo Bahan Baku - Awal\" (saldo awal tidak ada di file GL mutasi)"
+      },
+      "n": [
+       "C",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 68,
+      "c": {
+       "A": "Penerimaan (Penerimaan Barang)",
+       "C": "4583390378.8",
+       "E": "4583390378.79",
+       "F": "0.010000228881835938",
+       "H": "GL 1106-001 sumber Penerimaan Barang, Sep 2026"
+      },
+      "n": [
+       "C",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 69,
+      "c": {
+       "A": "Pemakaian (Penyesuaian Persediaan, neto)",
+       "C": "4375218168.45",
+       "E": "4375218161.24",
+       "F": "7.210000038146973",
+       "H": "GL 1106-001 sumber Penyesuaian Persediaan (kredit − debit), Sep 2026"
+      },
+      "n": [
+       "C",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 70,
+      "c": {
+       "A": "Saldo akhir 1106-001",
+       "C": "947179458.6900005",
+       "E": "947179465.89",
+       "F": "-7.199999451637268",
+       "H": "LK PL HPP \"Saldo Bahan Baku - Akhir\""
+      },
+      "n": [
+       "C",
+       "E",
+       "F"
+      ]
+     }
+    ],
+    "last_row": 70
+   },
+   "3": {
+    "title": "3. Kontrol (toleransi Rp 1 kecuali disebut lain)",
+    "first_row": 73,
+    "rows": [
+     {
+      "r": 73,
+      "c": {
+       "A": "3. Kontrol (toleransi Rp 1 kecuali disebut lain)"
+      }
+     },
+     {
+      "r": 74,
+      "c": {
+       "A": "Cek",
+       "C": "Nilai",
+       "D": "Status"
+      }
+     },
+     {
+      "r": 75,
+      "c": {
+       "A": "Kartu FCC per item = material FCC di WP (REKON B22)",
+       "C": "-0.00944375991821289",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 76,
+      "c": {
+       "A": "Kartu UU per item = material UU di WP (REKON B23)",
+       "C": "0.006736321374773979",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 77,
+      "c": {
+       "A": "Kartu UO per item = material UO di WP (REKON B24)",
+       "C": "-0.013530850410461426",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 78,
+      "c": {
+       "A": "Kartu Lain-lain per item = material Lain-lain di WP (REKON B25:B27)",
+       "C": "-0.008439555764198303",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 79,
+      "c": {
+       "A": "Saldo awal per item (Average Price) = saldo awal GL",
+       "C": "-0.009999990463256836",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 80,
+      "c": {
+       "A": "Penerimaan per item = penerimaan GL",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 81,
+      "c": {
+       "A": "Saldo akhir per item (Average Price bulan berikutnya / Inventory Valuation) = saldo akhir LK PL HPP",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 82,
+      "c": {
+       "A": "Pembulatan Inventory Valuation vs GL kecil (≤ Rp 10.000)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 83,
+      "c": {
+       "A": "Penerimaan GL = LK PL HPP (pembulatan Accurate, toleransi Rp 100)",
+       "C": "0.010000228881835938",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 84,
+      "c": {
+       "A": "Pemakaian GL = LK PL HPP (pembulatan Accurate, toleransi Rp 100)",
+       "C": "7.210000038146973",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 85,
+      "c": {
+       "A": "Saldo akhir GL = LK PL HPP (pembulatan Accurate, toleransi Rp 100)",
+       "C": "-7.199999451637268",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 86,
+      "c": {
+       "A": "Pemakaian Accurate (total) = pemakaian GL di REKON B29",
+       "C": "0.004231452941894531",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 87,
+      "c": {
+       "A": "Selisih Accurate − kartu (total) = varian material REKON B30",
+       "C": "0.028907686471939087",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 88,
+      "c": {
+       "A": "Tidak ada sel error",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 89,
+      "c": {
+       "A": "STATUS SHEET",
+       "D": "LULUS"
+      }
+     }
+    ],
+    "last_row": 89
+   }
+  }
+ }
+}

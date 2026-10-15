@@ -1,0 +1,9 @@
+{
+ "reference": {
+  "DI - WP Costing BMG Sep26_4.xlsx": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa",
+  "DI - WP Costing BMG Agu26_3.xlsx": "06ab1c61bfb85373844fbf503c13567071d2b7c2b864333706acf4d8ec8e38d5",
+  "WP Costing BMG Agu26.xlsx": "53eb97f5870d897a5d20704b8eff3d505acb2d68a1f39311ec4ed6ce5fb9fe27",
+  "BMG_Business_Plan_-_Oct26_to_Dec27.xlsx": "19b230326591252bbfb5baf58862730c1edf56e585f87ae94d6c6629e70c8b5d"
+ },
+ "extractor": "scripts/extract_fixtures.py"
+}

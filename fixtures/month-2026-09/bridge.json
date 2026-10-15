@@ -1,0 +1,2167 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "sheets": {
+  "BRIDGE GP": {
+   "header": {
+    "title": "BRIDGE GP MARGIN Agustus → September 2026 – dekomposisi margin dalam pp (basis HPP GL = Laba Rugi)",
+    "first_row": 1,
+    "rows": [
+     {
+      "r": 1,
+      "c": {
+       "A": "BRIDGE GP MARGIN Agustus → September 2026 – dekomposisi margin dalam pp (basis HPP GL = Laba Rugi)"
+      }
+     },
+     {
+      "r": 2,
+      "c": {
+       "A": "Metode: rasio biaya terhadap pendapatan, berurutan. Bar harga memakai pendapatan Sep pada harga rata-rata Agu per produk; bar lain dihitung pada pendapatan itu. Biaya variabel diukur pada tarif Agu per kg produksi lalu efek tarif per komponen; biaya tetap dipecah efek volume (biaya tetap Agu dibagi pendapatan lebih kecil) dan perubahan belanja. Rp juta kecuali disebut lain."
+      }
+     },
+     {
+      "r": 3,
+      "c": {
+       "A": "Status kontrol (bagian 4)",
+       "C": "LULUS"
+      }
+     }
+    ],
+    "last_row": 3
+   },
+   "1": {
+    "title": "1. Input (Rp juta; kg). Agu = nilai dari DI - WP Costing BMG Agu26_6 (sel biru, alamat di kolom E); Sep = tautan langsung (hijau)",
+    "first_row": 5,
+    "rows": [
+     {
+      "r": 5,
+      "c": {
+       "A": "1. Input (Rp juta; kg). Agu = nilai dari DI - WP Costing BMG Agu26_6 (sel biru, alamat di kolom E); Sep = tautan langsung (hijau)"
+      }
+     },
+     {
+      "r": 6,
+      "c": {
+       "A": "Kode",
+       "B": "Pos",
+       "C": "Agu-26",
+       "D": "Sep-26",
+       "E": "Sumber (alamat sama di kedua WP)"
+      }
+     },
+     {
+      "r": 7,
+      "c": {
+       "A": "REV_T",
+       "B": "Pendapatan total (= GL 4101-007)",
+       "C": "9793.125452",
+       "D": "7462.3601526600005",
+       "E": "REKON & KONTROL!F15"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 8,
+      "c": {
+       "A": "REV_F",
+       "B": "Pendapatan FCC premium + KW 2 tawar",
+       "C": "8672.097702",
+       "D": "5901.31314207",
+       "E": "REKON & KONTROL!B15"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 9,
+      "c": {
+       "A": "REV_U",
+       "B": "Pendapatan Ubi Ungu",
+       "C": "349.70925",
+       "D": "321.7005",
+       "E": "REKON & KONTROL!C15"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 10,
+      "c": {
+       "A": "REV_O",
+       "B": "Pendapatan Ubi Orange",
+       "C": "354.6037",
+       "D": "321.67245",
+       "E": "REKON & KONTROL!D15"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 11,
+      "c": {
+       "A": "REV_L",
+       "B": "Pendapatan Lain-lain",
+       "C": "416.7148",
+       "D": "917.6740605900001",
+       "E": "REKON & KONTROL!E15"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 12,
+      "c": {
+       "A": "Q_F",
+       "B": "Kg terjual FCC premium + KW 2 tawar",
+       "C": "307137.5",
+       "D": "210907.5",
+       "E": "FCC!C203 + FCC!C208"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 13,
+      "c": {
+       "A": "Q_U",
+       "B": "Kg terjual Ubi Ungu",
+       "C": "7210.5",
+       "D": "6633",
+       "E": "UU!C203"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 14,
+      "c": {
+       "A": "Q_O",
+       "B": "Kg terjual Ubi Orange",
+       "C": "7403",
+       "D": "6715.5",
+       "E": "UO!C199"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 15,
+      "c": {
+       "A": "P_F",
+       "B": "Kg produksi FCC (masuk proses)",
+       "C": "338754",
+       "D": "236923",
+       "E": "REKON & KONTROL!B6"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 16,
+      "c": {
+       "A": "P_U",
+       "B": "Kg produksi Ubi Ungu",
+       "C": "13376",
+       "D": "467.5",
+       "E": "REKON & KONTROL!C6"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 17,
+      "c": {
+       "A": "P_O",
+       "B": "Kg produksi Ubi Orange",
+       "C": "7403",
+       "D": "6715.5",
+       "E": "REKON & KONTROL!D6"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 18,
+      "c": {
+       "A": "P_L",
+       "B": "Kg output Lain-lain",
+       "C": "17571.48",
+       "D": "45653.42",
+       "E": "REKON & KONTROL!E6"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 19,
+      "c": {
+       "A": "MAT_F",
+       "B": "Material eksternal FCC (termasuk ongkos kirim)",
+       "C": "6011.740541",
+       "D": "4275.542046459444",
+       "E": "REKON & KONTROL!B7"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 20,
+      "c": {
+       "A": "MAT_U",
+       "B": "Material eksternal Ubi Ungu",
+       "C": "379.68621",
+       "D": "12.447449363263678",
+       "E": "REKON & KONTROL!C7"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 21,
+      "c": {
+       "A": "MAT_O",
+       "B": "Material eksternal Ubi Orange",
+       "C": "193.246669",
+       "D": "173.60070219353085",
+       "E": "REKON & KONTROL!D7"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 22,
+      "c": {
+       "A": "MAT_L",
+       "B": "Material eksternal Lain-lain",
+       "C": "12.6336",
+       "D": "76.67361851843954",
+       "E": "REKON & KONTROL!E7"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 23,
+      "c": {
+       "A": "SGK",
+       "B": "FCC: singkong kulit + daging",
+       "C": "3103.985929",
+       "D": "2309.9755730717798",
+       "E": "FCC!E41 + FCC!E42 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 24,
+      "c": {
+       "A": "ONG",
+       "B": "FCC: ongkos kirim singkong",
+       "C": "87.513676",
+       "D": "41.897465",
+       "E": "FCC!E43 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 25,
+      "c": {
+       "A": "OLE",
+       "B": "FCC: minyak olein",
+       "C": "1362.13925",
+       "D": "1013.4280919558713",
+       "E": "FCC!E46 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 26,
+      "c": {
+       "A": "CNG",
+       "B": "FCC: CNG",
+       "C": "1156.69903",
+       "D": "774.6622586113679",
+       "E": "FCC!E47 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 27,
+      "c": {
+       "A": "OTH",
+       "B": "FCC: material lain (kemasan, HDPE, dll.)",
+       "C": "301.402656",
+       "D": "135.57865782042484",
+       "E": "FCC!E55 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 28,
+      "c": {
+       "A": "PT_A",
+       "B": "Pool Grup A – DL: total",
+       "C": "609.924316",
+       "D": "469.3145567522302",
+       "E": "BIAYA BERSAMA!C81 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 29,
+      "c": {
+       "A": "PF_A",
+       "B": "Pool Grup A – DL: bagian tetap",
+       "C": "117.145496",
+       "D": "100.03077477325684",
+       "E": "BIAYA BERSAMA!D81 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 30,
+      "c": {
+       "A": "AL_A_F",
+       "B": "Alokasi Grup A – DL ke FCC",
+       "C": "520.033122",
+       "D": "384.8565492002359",
+       "E": "BIAYA BERSAMA!C115 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 31,
+      "c": {
+       "A": "AL_A_U",
+       "B": "Alokasi Grup A – DL ke UU",
+       "C": "42.346605",
+       "D": "1.976184740843103",
+       "E": "BIAYA BERSAMA!D115 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 32,
+      "c": {
+       "A": "AL_A_O",
+       "B": "Alokasi Grup A – DL ke UO",
+       "C": "22.507798",
+       "D": "24.08339425928573",
+       "E": "BIAYA BERSAMA!E115 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 33,
+      "c": {
+       "A": "AL_A_L",
+       "B": "Alokasi Grup A – DL ke Lain-lain",
+       "C": "25.03679",
+       "D": "58.39842855186545",
+       "E": "BIAYA BERSAMA!F115 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 34,
+      "c": {
+       "A": "PT_K",
+       "B": "Pool Kupas: total",
+       "C": "106.092403",
+       "D": "53.59862496108998",
+       "E": "BIAYA BERSAMA!C82 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 35,
+      "c": {
+       "A": "PF_K",
+       "B": "Pool Kupas: bagian tetap",
+       "C": "0",
+       "D": "0",
+       "E": "BIAYA BERSAMA!D82 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 36,
+      "c": {
+       "A": "AL_K_F",
+       "B": "Alokasi Kupas ke FCC",
+       "C": "106.092403",
+       "D": "53.59862496108998",
+       "E": "BIAYA BERSAMA!C116 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 37,
+      "c": {
+       "A": "AL_K_U",
+       "B": "Alokasi Kupas ke UU",
+       "C": "0",
+       "D": "0",
+       "E": "BIAYA BERSAMA!D116 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 38,
+      "c": {
+       "A": "AL_K_O",
+       "B": "Alokasi Kupas ke UO",
+       "C": "0",
+       "D": "0",
+       "E": "BIAYA BERSAMA!E116 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 39,
+      "c": {
+       "A": "AL_K_L",
+       "B": "Alokasi Kupas ke Lain-lain",
+       "C": "0",
+       "D": "0",
+       "E": "BIAYA BERSAMA!F116 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 40,
+      "c": {
+       "A": "PT_B",
+       "B": "Pool Grup B – IDL: total",
+       "C": "420.583908",
+       "D": "419.5672132866798",
+       "E": "BIAYA BERSAMA!C83 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 41,
+      "c": {
+       "A": "PF_B",
+       "B": "Pool Grup B – IDL: bagian tetap",
+       "C": "272.738971",
+       "D": "282.7766502267432",
+       "E": "BIAYA BERSAMA!D83 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 42,
+      "c": {
+       "A": "AL_B_F",
+       "B": "Alokasi Grup B – IDL ke FCC",
+       "C": "358.597874",
+       "D": "344.0617546161456",
+       "E": "BIAYA BERSAMA!C117 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 43,
+      "c": {
+       "A": "AL_B_U",
+       "B": "Alokasi Grup B – IDL ke UU",
+       "C": "29.200837",
+       "D": "1.766709156419662",
+       "E": "BIAYA BERSAMA!D117 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 44,
+      "c": {
+       "A": "AL_B_O",
+       "B": "Alokasi Grup B – IDL ke UO",
+       "C": "15.520643",
+       "D": "21.53055444471874",
+       "E": "BIAYA BERSAMA!E117 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 45,
+      "c": {
+       "A": "AL_B_L",
+       "B": "Alokasi Grup B – IDL ke Lain-lain",
+       "C": "17.264554",
+       "D": "52.208195069395806",
+       "E": "BIAYA BERSAMA!F117 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 46,
+      "c": {
+       "A": "PT_C",
+       "B": "Pool Grup C – energi: total",
+       "C": "56.645114",
+       "D": "46.73726",
+       "E": "BIAYA BERSAMA!C84 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 47,
+      "c": {
+       "A": "PF_C",
+       "B": "Pool Grup C – energi: bagian tetap",
+       "C": "0",
+       "D": "0",
+       "E": "BIAYA BERSAMA!D84 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 48,
+      "c": {
+       "A": "AL_C_F",
+       "B": "Alokasi Grup C – energi ke FCC",
+       "C": "49.949242",
+       "D": "35.25331406903919",
+       "E": "BIAYA BERSAMA!C118 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 49,
+      "c": {
+       "A": "AL_C_U",
+       "B": "Alokasi Grup C – energi ke UU",
+       "C": "0.917546",
+       "D": "0.027926782660179054",
+       "E": "BIAYA BERSAMA!D118 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 50,
+      "c": {
+       "A": "AL_C_O",
+       "B": "Alokasi Grup C – energi ke UO",
+       "C": "0.552489",
+       "D": "0.4963923026229416",
+       "E": "BIAYA BERSAMA!E118 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 51,
+      "c": {
+       "A": "AL_C_L",
+       "B": "Alokasi Grup C – energi ke Lain-lain",
+       "C": "5.225836",
+       "D": "10.959626845677693",
+       "E": "BIAYA BERSAMA!F118 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 52,
+      "c": {
+       "A": "PT_D",
+       "B": "Pool Grup D – mesin: total",
+       "C": "261.76245",
+       "D": "313.48576927",
+       "E": "BIAYA BERSAMA!C85 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 53,
+      "c": {
+       "A": "PF_D",
+       "B": "Pool Grup D – mesin: bagian tetap",
+       "C": "154.327776",
+       "D": "154.3277757",
+       "E": "BIAYA BERSAMA!D85 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 54,
+      "c": {
+       "A": "AL_D_F",
+       "B": "Alokasi Grup D – mesin ke FCC",
+       "C": "196.21071",
+       "D": "214.9726080976878",
+       "E": "BIAYA BERSAMA!C119 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 55,
+      "c": {
+       "A": "AL_D_U",
+       "B": "Alokasi Grup D – mesin ke UU",
+       "C": "25.84213",
+       "D": "1.261824927294265",
+       "E": "BIAYA BERSAMA!D119 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 56,
+      "c": {
+       "A": "AL_D_O",
+       "B": "Alokasi Grup D – mesin ke UO",
+       "C": "15.560525",
+       "D": "22.428655272909626",
+       "E": "BIAYA BERSAMA!E119 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 57,
+      "c": {
+       "A": "AL_D_L",
+       "B": "Alokasi Grup D – mesin ke Lain-lain",
+       "C": "24.149086",
+       "D": "74.82268097210826",
+       "E": "BIAYA BERSAMA!F119 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 58,
+      "c": {
+       "A": "PT_E",
+       "B": "Pool Grup E – pabrik umum: total",
+       "C": "251.278914",
+       "D": "270.06331292000004",
+       "E": "BIAYA BERSAMA!C86 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 59,
+      "c": {
+       "A": "PF_E",
+       "B": "Pool Grup E – pabrik umum: bagian tetap",
+       "C": "242.552887",
+       "D": "269.19191292",
+       "E": "BIAYA BERSAMA!D86 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 60,
+      "c": {
+       "A": "AL_E_F",
+       "B": "Alokasi Grup E – pabrik umum ke FCC",
+       "C": "228.675967",
+       "D": "254.28356855408387",
+       "E": "BIAYA BERSAMA!C120 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 61,
+      "c": {
+       "A": "AL_E_U",
+       "B": "Alokasi Grup E – pabrik umum ke UU",
+       "C": "14.65594",
+       "D": "0.7476257826054519",
+       "E": "BIAYA BERSAMA!D120 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 62,
+      "c": {
+       "A": "AL_E_O",
+       "B": "Alokasi Grup E – pabrik umum ke UO",
+       "C": "7.459348",
+       "D": "10.426904103047859",
+       "E": "BIAYA BERSAMA!E120 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 63,
+      "c": {
+       "A": "AL_E_L",
+       "B": "Alokasi Grup E – pabrik umum ke Lain-lain",
+       "C": "0.487659",
+       "D": "4.60521448026283",
+       "E": "BIAYA BERSAMA!F120 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 64,
+      "c": {
+       "A": "HPP_WP",
+       "B": "HPP semua kartu (WP)",
+       "C": "7926.647918",
+       "D": "6463.1668937891245",
+       "E": "REKON & KONTROL!F14"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 65,
+      "c": {
+       "A": "HPP_GL",
+       "B": "HPP menurut GL (Laba Rugi)",
+       "C": "7842.145714",
+       "D": "6375.41230437",
+       "E": "REKON & KONTROL!C45"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 66,
+      "c": {
+       "A": "L38",
+       "B": "REKON: varian material GL − kartu",
+       "C": "203.730535",
+       "D": "-121.14819029890805",
+       "E": "REKON & KONTROL!C38"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 67,
+      "c": {
+       "A": "L39",
+       "B": "REKON: kenaikan persediaan WP",
+       "C": "356.656415",
+       "D": "-326.5394441128789",
+       "E": "REKON & KONTROL!C39"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 68,
+      "c": {
+       "A": "L40",
+       "B": "REKON: − kenaikan persediaan GL",
+       "C": "-478.030926",
+       "D": "409.30549090000096",
+       "E": "REKON & KONTROL!C40"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 69,
+      "c": {
+       "A": "L41",
+       "B": "REKON: KW 2 pada NRV",
+       "C": "20.289793",
+       "D": "-25.596895951567248",
+       "E": "REKON & KONTROL!C41"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 70,
+      "c": {
+       "A": "L42",
+       "B": "REKON: − penyesuaian bagian 8",
+       "C": "-187.148022",
+       "D": "-23.775557170000017",
+       "E": "REKON & KONTROL!C42"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 71,
+      "c": {
+       "A": "L43",
+       "B": "REKON: jam menganggur",
+       "C": "0",
+       "D": "0",
+       "E": "REKON & KONTROL!C43"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 72,
+      "c": {
+       "A": "OLD",
+       "B": "Olein ditahan di WIP-022: Δ (WP − GL)",
+       "C": "-166.957712",
+       "D": "91.41686404000002",
+       "E": "REKON PERSEDIAAN!E17 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 73,
+      "c": {
+       "A": "B8_OPEX",
+       "B": "Bagian 8: biaya pabrik di opex",
+       "C": "116.503292",
+       "D": "108.87595917",
+       "E": "BIAYA BERSAMA!C144 + BIAYA BERSAMA!C145 + BIAYA BERSAMA!C146 + BIAYA BERSAMA!C147 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 74,
+      "c": {
+       "A": "B8_THR",
+       "B": "Bagian 8: THR tertukar",
+       "C": "0",
+       "D": "34.774256",
+       "E": "BIAYA BERSAMA!C148 + BIAYA BERSAMA!C149 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 75,
+      "c": {
+       "A": "B8_TALI",
+       "B": "Bagian 8: tali asih per bulan jasa",
+       "C": "-16.868946",
+       "D": "-32.360982",
+       "E": "BIAYA BERSAMA!C150 + BIAYA BERSAMA!C151 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 76,
+      "c": {
+       "A": "B8_ONG",
+       "B": "Bagian 8: ongkos kirim (keluar pool + ke material)",
+       "C": "87.513676",
+       "D": "-87.513676",
+       "E": "BIAYA BERSAMA!C152 + BIAYA BERSAMA!C153 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 77,
+      "c": {
+       "A": "B8_PIS",
+       "B": "Bagian 8: pisau Urschel (netral)",
+       "C": "0",
+       "D": "0",
+       "E": "BIAYA BERSAMA!C154 + BIAYA BERSAMA!C155 (Rp → Rp juta)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     }
+    ],
+    "last_row": 77
+   },
+   "2": {
+    "title": "2. Komponen HPP GL = variabel + tetap + persediaan/KW 2 (WP) + pos rekonsiliasi GL",
+    "first_row": 79,
+    "rows": [
+     {
+      "r": 79,
+      "c": {
+       "A": "2. Komponen HPP GL = variabel + tetap + persediaan/KW 2 (WP) + pos rekonsiliasi GL"
+      }
+     },
+     {
+      "r": 80,
+      "c": {
+       "A": "Kode",
+       "B": "Pos",
+       "C": "Agu-26",
+       "D": "Sep-26",
+       "E": "Rumus"
+      }
+     },
+     {
+      "r": 81,
+      "c": {
+       "A": "FS_A",
+       "B": "Porsi tetap Grup A – DL",
+       "C": "0.19206562671293795",
+       "D": "0.21314228023416512",
+       "E": "tetap ÷ total pool"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 82,
+      "c": {
+       "A": "FS_K",
+       "B": "Porsi tetap Kupas",
+       "C": "0",
+       "D": "0",
+       "E": "tetap ÷ total pool"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 83,
+      "c": {
+       "A": "FS_B",
+       "B": "Porsi tetap Grup B – IDL",
+       "C": "0.6484769526655308",
+       "D": "0.6739722296497199",
+       "E": "tetap ÷ total pool"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 84,
+      "c": {
+       "A": "FS_C",
+       "B": "Porsi tetap Grup C – energi",
+       "C": "0",
+       "D": "0",
+       "E": "tetap ÷ total pool"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 85,
+      "c": {
+       "A": "FS_D",
+       "B": "Porsi tetap Grup D – mesin",
+       "C": "0.5895718656361904",
+       "D": "0.4922959535272559",
+       "E": "tetap ÷ total pool"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 86,
+      "c": {
+       "A": "FS_E",
+       "B": "Porsi tetap Grup E – pabrik umum",
+       "C": "0.9652735406202847",
+       "D": "0.9967733492173437",
+       "E": "tetap ÷ total pool"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 87,
+      "c": {
+       "A": "VC_F",
+       "B": "Konversi variabel FCC",
+       "C": "790.7211992743675",
+       "D": "613.815919778569",
+       "E": "Σ alokasi × (1 − porsi tetap)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 88,
+      "c": {
+       "A": "FC_F",
+       "B": "Konversi tetap FCC",
+       "C": "668.8381187256326",
+       "D": "673.2104997197134",
+       "E": "Σ alokasi × porsi tetap"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 89,
+      "c": {
+       "A": "V_F",
+       "B": "Biaya variabel FCC",
+       "C": "6802.461740274368",
+       "D": "4889.3579662380125",
+       "E": "material eksternal + konversi variabel"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 90,
+      "c": {
+       "A": "VC_U",
+       "B": "Konversi variabel Ubi Ungu",
+       "C": "56.51087708743547",
+       "D": "2.801945197645",
+       "E": "Σ alokasi × (1 − porsi tetap)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 91,
+      "c": {
+       "A": "FC_U",
+       "B": "Konversi tetap Ubi Ungu",
+       "C": "56.452180912564536",
+       "D": "2.9783261921776614",
+       "E": "Σ alokasi × porsi tetap"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 92,
+      "c": {
+       "A": "V_U",
+       "B": "Biaya variabel Ubi Ungu",
+       "C": "436.1970870874355",
+       "D": "15.249394560908677",
+       "E": "material eksternal + konversi variabel"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 93,
+      "c": {
+       "A": "VC_O",
+       "B": "Konversi variabel Ubi Orange",
+       "C": "30.83869038594477",
+       "D": "37.88691867100631",
+       "E": "Σ alokasi × (1 − porsi tetap)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 94,
+      "c": {
+       "A": "FC_O",
+       "B": "Konversi tetap Ubi Orange",
+       "C": "30.762112614055237",
+       "D": "41.07898171157858",
+       "E": "Σ alokasi × porsi tetap"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 95,
+      "c": {
+       "A": "V_O",
+       "B": "Biaya variabel Ubi Orange",
+       "C": "224.08535938594477",
+       "D": "211.48762086453718",
+       "E": "material eksternal + konversi variabel"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 96,
+      "c": {
+       "A": "VC_L",
+       "B": "Konversi variabel Lain-lain",
+       "C": "41.45120685474613",
+       "D": "111.93483992277974",
+       "E": "Σ alokasi × (1 − porsi tetap)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 97,
+      "c": {
+       "A": "FC_L",
+       "B": "Konversi tetap Lain-lain",
+       "C": "30.712718145253874",
+       "D": "89.05930599653027",
+       "E": "Σ alokasi × porsi tetap"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 98,
+      "c": {
+       "A": "V_L",
+       "B": "Biaya variabel Lain-lain",
+       "C": "54.084806854746134",
+       "D": "188.60845844121928",
+       "E": "material eksternal + konversi variabel"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 99,
+      "c": {
+       "A": "V",
+       "B": "Biaya variabel total",
+       "C": "7516.828993602494",
+       "D": "5304.703440104678"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 100,
+      "c": {
+       "A": "FX",
+       "B": "Biaya tetap total",
+       "C": "786.7651303975064",
+       "D": "806.3271136199999",
+       "E": "sama dengan Σ bagian tetap pool (kontrol bagian 4)"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 101,
+      "c": {
+       "A": "INV",
+       "B": "Persediaan, KW 2 dan transfer antarproduk (WP)",
+       "C": "-376.94620600000064",
+       "D": "352.13634006444704",
+       "E": "HPP WP − variabel − tetap"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 102,
+      "c": {
+       "A": "E1",
+       "B": "GL: material GL vs kartu (termasuk olein di WIP-022)",
+       "C": "36.77282300000002",
+       "D": "-29.731326258908027",
+       "E": "varian material + olein"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 103,
+      "c": {
+       "A": "E2",
+       "B": "GL: beda penilaian persediaan WP vs Accurate (tanpa olein)",
+       "C": "45.583200999999946",
+       "D": "-8.650817252877985"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 104,
+      "c": {
+       "A": "E3",
+       "B": "GL: KW 2 pada NRV",
+       "C": "20.289793",
+       "D": "-25.596895951567248"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 105,
+      "c": {
+       "A": "E4",
+       "B": "GL: biaya pabrik di opex (tidak ada di HPP GL)",
+       "C": "-116.503292",
+       "D": "-108.87595917"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 106,
+      "c": {
+       "A": "E5",
+       "B": "GL: waktu pencatatan (THR, tali asih, ongkos kirim, pisau)",
+       "C": "-70.64473000000001",
+       "D": "85.100402"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 107,
+      "c": {
+       "A": "CHK",
+       "B": "Cek: V + tetap + persediaan + E1..E5 − HPP GL (harus nol)",
+       "C": "-0.000000999999429041054",
+       "D": "-0.0000072142292992793955"
+      },
+      "n": [
+       "C",
+       "D"
+      ]
+     }
+    ],
+    "last_row": 107
+   },
+   "3": {
+    "title": "3. Bridge margin GL (pp; positif = menaikkan margin)",
+    "first_row": 109,
+    "rows": [
+     {
+      "r": 109,
+      "c": {
+       "A": "3. Bridge margin GL (pp; positif = menaikkan margin)"
+      }
+     },
+     {
+      "r": 110,
+      "c": {
+       "A": "Kode",
+       "B": "Pos",
+       "C": "pp",
+       "D": "Kelompok",
+       "E": "Rumus / catatan"
+      }
+     },
+     {
+      "r": 111,
+      "c": {
+       "A": "RA",
+       "B": "Pendapatan Agu",
+       "C": "9793.125452"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 112,
+      "c": {
+       "A": "RS",
+       "B": "Pendapatan Sep",
+       "C": "7462.3601526600005"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 113,
+      "c": {
+       "A": "Ra",
+       "B": "Pendapatan Sep pada harga rata-rata Agu per produk (Lain-lain tidak disajikan ulang)",
+       "C": "7516.068608683899"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 114,
+      "c": {
+       "A": "mA",
+       "B": "Margin GL Agu",
+       "C": "0.19921931436113294"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 115,
+      "c": {
+       "A": "mS",
+       "B": "Margin GL Sep",
+       "C": "0.14565738265829364"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 117,
+      "c": {
+       "A": "start",
+       "B": "Margin GL Agustus 2026",
+       "C": "19.921931436113294"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 118,
+      "c": {
+       "A": "b1",
+       "B": "Harga jual rata-rata (FCC: mix tier dan KW 2; harga per tier tetap)",
+       "C": "-0.6104976588402145",
+       "D": "Harga"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 119,
+      "c": {
+       "A": "b2",
+       "B": "Volume dan mix produksi (biaya variabel pada tarif Agu; basis produksi)",
+       "C": "8.680008136127093",
+       "D": "Volume & persediaan"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 120,
+      "c": {
+       "A": "b3",
+       "B": "FCC: tarif singkong (harga dan pemakaian)",
+       "C": "-1.8501959222374489",
+       "D": "Tarif variabel"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 121,
+      "c": {
+       "A": "b4",
+       "B": "FCC: ongkos kirim singkong",
+       "C": "0.2569055871210971",
+       "D": "Tarif variabel"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 122,
+      "c": {
+       "A": "b5",
+       "B": "FCC: minyak olein (harga dan pemakaian)",
+       "C": "-0.8083231621687755",
+       "D": "Tarif variabel"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 123,
+      "c": {
+       "A": "b6",
+       "B": "FCC: CNG",
+       "C": "0.4567249232321309",
+       "D": "Tarif variabel"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 124,
+      "c": {
+       "A": "b7",
+       "B": "FCC: material lain (kemasan, HDPE, dll.)",
+       "C": "1.0008022377408954",
+       "D": "Tarif variabel"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 125,
+      "c": {
+       "A": "b8",
+       "B": "FCC: tarif konversi variabel",
+       "C": "-0.8087888573971849",
+       "D": "Tarif variabel"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 126,
+      "c": {
+       "A": "b9",
+       "B": "Ubi Ungu, Ubi Orange, Lain-lain: tarif variabel",
+       "C": "-0.7491198121332552",
+       "D": "Tarif variabel"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 127,
+      "c": {
+       "A": "b10",
+       "B": "Biaya tetap: efek volume (biaya tetap Agu ÷ pendapatan lebih kecil)",
+       "C": "-2.4339234901748203",
+       "D": "Tetap"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 128,
+      "c": {
+       "A": "b11",
+       "B": "Biaya tetap: perubahan belanja",
+       "C": "-0.26026882191964046",
+       "D": "Tetap"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 129,
+      "c": {
+       "A": "b12",
+       "B": "Perubahan persediaan, KW 2 dan transfer antarproduk (produksi vs penjualan)",
+       "C": "-8.534203367636806",
+       "D": "Volume & persediaan"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 130,
+      "c": {
+       "A": "b13",
+       "B": "GL: material GL vs kartu (termasuk olein di WIP-022)",
+       "C": "0.7710664743713345",
+       "D": "GL lain"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 131,
+      "c": {
+       "A": "b14",
+       "B": "GL: beda penilaian persediaan WP vs Accurate",
+       "C": "0.5805588534295468",
+       "D": "GL lain"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 132,
+      "c": {
+       "A": "b15",
+       "B": "GL: KW 2 pada NRV",
+       "C": "0.5477463381875245",
+       "D": "GL lain"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 133,
+      "c": {
+       "A": "b16",
+       "B": "GL: biaya pabrik di opex",
+       "C": "0.25893229042158755",
+       "D": "GL lain"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 134,
+      "c": {
+       "A": "b17",
+       "B": "GL: waktu pencatatan (THR tertukar, tali asih, ongkos kirim)",
+       "C": "-1.8536168326341913",
+       "D": "Waktu pencatatan"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 135,
+      "c": {
+       "A": "end",
+       "B": "Margin GL September 2026",
+       "C": "14.565738351602166"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 137,
+      "c": {
+       "B": "Ringkasan per kelompok (pp)"
+      }
+     },
+     {
+      "r": 138,
+      "c": {
+       "B": "Harga",
+       "C": "-0.6104976588402145"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 139,
+      "c": {
+       "B": "Volume & persediaan",
+       "C": "0.14580476849028656"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 140,
+      "c": {
+       "B": "Tarif variabel",
+       "C": "-2.5019950058425406"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 141,
+      "c": {
+       "B": "Tetap",
+       "C": "-2.6941923120944606"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 142,
+      "c": {
+       "B": "GL lain",
+       "C": "2.1583039564099935"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 143,
+      "c": {
+       "B": "Waktu pencatatan",
+       "C": "-1.8536168326341913"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 144,
+      "c": {
+       "B": "Total perubahan margin",
+       "C": "-5.356193084511127"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 145,
+      "c": {
+       "B": "Catatan: b2 dan b12 saling meniadakan sebagian karena Agu membangun persediaan (produksi > penjualan) dan Sep melepasnya; keduanya dibaca bersama."
+      }
+     },
+     {
+      "r": 147,
+      "c": {
+       "B": "Memo, tidak masuk bridge: indikasi karton FCC Sep belum dikeluarkan (lihat CEK KEWAJARAN bagian 4), pp terhadap pendapatan Sep",
+       "C": "-0.8266444547664744"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 147
+   },
+   "4": {
+    "title": "4. Kontrol",
+    "first_row": 149,
+    "rows": [
+     {
+      "r": 149,
+      "c": {
+       "A": "4. Kontrol"
+      }
+     },
+     {
+      "r": 150,
+      "c": {
+       "A": "Cek",
+       "C": "Nilai",
+       "D": "Status"
+      }
+     },
+     {
+      "r": 151,
+      "c": {
+       "A": "Margin Agu (bridge) = 1 − HPP GL ÷ pendapatan GL Agu (input)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 152,
+      "c": {
+       "A": "Margin Sep (bridge) = LK Laba Rugi Sep (dalam pp)",
+       "C": "0.00000008577281285226945",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 153,
+      "c": {
+       "A": "Σ bar = margin Sep − margin Agu",
+       "C": "0.00000008577280219412842",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 154,
+      "c": {
+       "A": "Komponen Agu = HPP GL (bagian 2)",
+       "C": "-0.000000999999429041054",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 155,
+      "c": {
+       "A": "Komponen Sep = HPP GL (bagian 2)",
+       "C": "-0.0000072142292992793955",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 156,
+      "c": {
+       "A": "Biaya tetap Sep = Σ bagian tetap pool",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     },
+     {
+      "r": 157,
+      "c": {
+       "A": "Pendapatan input = GL (RINGKASAN C40)",
+       "C": "0",
+       "D": "LULUS"
+      },
+      "n": [
+       "C"
+      ]
+     }
+    ],
+    "last_row": 157
+   },
+   "5": {
+    "title": "5. Data waterfall (pp) – bar dikelompokkan",
+    "first_row": 159,
+    "rows": [
+     {
+      "r": 159,
+      "c": {
+       "A": "5. Data waterfall (pp) – bar dikelompokkan"
+      }
+     },
+     {
+      "r": 160,
+      "c": {
+       "A": "Bar",
+       "B": "Nilai",
+       "C": "Dasar",
+       "D": "Naik",
+       "E": "Turun",
+       "F": "Total",
+       "G": "Kumulatif"
+      }
+     },
+     {
+      "r": 161,
+      "c": {
+       "A": "Margin Agu",
+       "B": "19.921931436113294",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "19.92",
+       "G": "19.921931436113294"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 162,
+      "c": {
+       "A": "Harga jual rata-rata",
+       "B": "-0.6104976588402145",
+       "C": "19.31",
+       "D": "0",
+       "E": "0.61",
+       "F": "0",
+       "G": "19.31143377727308"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 163,
+      "c": {
+       "A": "Volume, mix & persediaan",
+       "B": "0.14580476849028656",
+       "C": "19.31",
+       "D": "0.15",
+       "E": "0",
+       "F": "0",
+       "G": "19.457238545763367"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 164,
+      "c": {
+       "A": "Material FCC",
+       "B": "-0.9440863363121008",
+       "C": "18.51",
+       "D": "0",
+       "E": "0.94",
+       "F": "0",
+       "G": "18.513152209451267"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 165,
+      "c": {
+       "A": "Konversi variabel",
+       "B": "-1.55790866953044",
+       "C": "16.96",
+       "D": "0",
+       "E": "1.56",
+       "F": "0",
+       "G": "16.955243539920826"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 166,
+      "c": {
+       "A": "Tetap: efek volume",
+       "B": "-2.4339234901748203",
+       "C": "14.52",
+       "D": "0",
+       "E": "2.43",
+       "F": "0",
+       "G": "14.521320049746006"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 167,
+      "c": {
+       "A": "Tetap: belanja",
+       "B": "-0.26026882191964046",
+       "C": "14.26",
+       "D": "0",
+       "E": "0.26",
+       "F": "0",
+       "G": "14.261051227826366"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 168,
+      "c": {
+       "A": "GL lain",
+       "B": "2.1583039564099935",
+       "C": "14.26",
+       "D": "2.16",
+       "E": "0",
+       "F": "0",
+       "G": "16.41935518423636"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 169,
+      "c": {
+       "A": "Waktu pencatatan",
+       "B": "-1.8536168326341913",
+       "C": "14.57",
+       "D": "0",
+       "E": "1.85",
+       "F": "0",
+       "G": "14.565738351602167"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     },
+     {
+      "r": 170,
+      "c": {
+       "A": "Margin Sep",
+       "B": "14.565738351602166",
+       "C": "0",
+       "D": "0",
+       "E": "0",
+       "F": "14.57",
+       "G": "14.565738351602166"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G"
+      ]
+     }
+    ],
+    "last_row": 170
+   }
+  }
+ }
+}
