@@ -1,0 +1,68 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "rows": [
+  {
+   "product": "FCC",
+   "role": "fg",
+   "item_code": "FG-001",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx FCC bagian 3 (judul)"
+  },
+  {
+   "product": "FCC",
+   "role": "wip",
+   "item_code": "WIP-067",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON PERSEDIAAN!A55, T55"
+  },
+  {
+   "product": "FCC",
+   "role": "sales",
+   "item_code": "FG-001",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx FCC!E203, REKON PERSEDIAAN!A92:B92"
+  },
+  {
+   "product": "FCC",
+   "role": "kw2_sales",
+   "item_code": "FG-015",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx FCC!E208, REKON PERSEDIAAN!A134:B134"
+  },
+  {
+   "product": "UU",
+   "role": "fg",
+   "item_code": "FG-101",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx UU bagian 3 (judul)"
+  },
+  {
+   "product": "UU",
+   "role": "wip",
+   "item_code": "WIP-139",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON PERSEDIAAN!A57, T57"
+  },
+  {
+   "product": "UU",
+   "role": "sales",
+   "item_code": "WIP-139",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx UU!E203 (WIP-QKSP = WIP produk), REKON PERSEDIAAN!A57"
+  },
+  {
+   "product": "UO",
+   "role": "fg",
+   "item_code": "FG-102",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx UO bagian 3 (judul)"
+  },
+  {
+   "product": "UO",
+   "role": "wip",
+   "item_code": "WIP-138",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON PERSEDIAAN!A56, T56"
+  },
+  {
+   "product": "UO",
+   "role": "sales",
+   "item_code": "WIP-138",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx UO!E199 (WIP-QKSO = WIP produk), REKON PERSEDIAAN!A56"
+  }
+ ]
+}

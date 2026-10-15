@@ -5,6 +5,7 @@ Extract golden fixtures and master seed data from the workpapers in reference/ (
     python3 -I scripts/extract_fixtures.py            # write fixtures/ (month-2026-09, month-2026-08, budget-v1, master)
     python3 -I scripts/extract_fixtures.py --check    # extract to a temp dir and fail if fixtures/ differs (CI)
     python3 -I scripts/extract_fixtures.py --seed-sql supabase/migrations/<ts>_master_seed.sql
+    python3 -I scripts/extract_fixtures.py --seed-sql <file> --tables product_item   # seed of one master (Fase 2)
 
 Rules:
 - Every workbook is read twice with openpyxl: data_only=True (Excel's cached values) and data_only=False (formulas).
@@ -656,13 +657,55 @@ def extract_master(out: str, sep: Book, agu: Book, agu_asumsi: Book) -> dict:
     for key, vn, vt, unit, note, source in prd:
         assumptions.append({"key": key, "value_num": vn, "value_text": vt, "unit": unit, "effective_from": "2026-08-01", "owner": "Finance",
                             "status": "Default PRD", "used_in": None, "note": note, "source": source})
+    product_items = extract_product_items(sep, products)
     data = {
         "product": products, "others_group": groups, "sku": skus, "material_item": materials, "payroll_group": payroll,
-        "coa_pool_map": coa, "assumption": assumptions,
+        "coa_pool_map": coa, "assumption": assumptions, "product_item": product_items,
     }
     for k, rows in data.items():
         write_json(os.path.join(d, f"{k}.json"), {"source": {"file": sep.name, "sha256": sep.sha256}, "rows": rows})
     return {k: len(v) for k, v in data.items()}
+
+
+def extract_product_items(sep: Book, products: list[dict]) -> list[dict]:
+    """Fase 2: product ↔ Accurate item code (roles fg, wip, sales, kw2_sales), read from the WP:
+    fg = product sheet bagian 3 title; wip = REKON PERSEDIAAN K1 row whose source names the product sheet;
+    sales / kw2_sales = the Sales By Item item named in LAMPIRAN A ("WIP-…" = the product's WIP item)."""
+    src = sep.name
+    rp = sep.sheet("REKON PERSEDIAAN")
+    by_name, wip_of = {}, {}
+    for r in range(55, rp.max_row + 1):
+        code, name, note = rp.cell(r, 1).value, rp.cell(r, 2).value, str(rp.cell(r, 20).value or "")
+        if not isinstance(code, str) or not code.startswith(("WIP-", "FG-")):
+            continue
+        by_name.setdefault(str(name).strip(), (code, r))
+        m = re.search(r"WP: sheet (\w+)", note)
+        if m and code.startswith("WIP-"):
+            wip_of[m.group(1)] = (code, r)
+    rows = []
+    for p in products:
+        sheet = p["code"]
+        rows.append({"product": sheet, "role": "fg", "item_code": p["fg_item_code"], "source": f"{src} {sheet} bagian 3 (judul)"})
+        code, r = wip_of[sheet]
+        rows.append({"product": sheet, "role": "wip", "item_code": code, "source": f"{src} REKON PERSEDIAAN!A{r}, T{r}"})
+        ws = sep.sheet(sheet)
+        for r in range(1, ws.max_row + 1):
+            label = str(ws.cell(r, 1).value or "")
+            role = "sales" if label.startswith("Penjualan") else "kw2_sales" if label.startswith("KW 2 tawar terjual") else None
+            if not role:
+                continue
+            m = re.search(r"Sales By Item:\s*(.+?)\s*(?:\(|$)", str(ws.cell(r, 5).value or ""))
+            if not m:
+                raise ValueError(f"{sheet}!E{r}: Sales By Item item not found")
+            name = m.group(1).strip()
+            if name.startswith("WIP-"):
+                code, rr = wip_of[sheet]
+                where = f"{sheet}!E{r} ({name} = WIP produk), REKON PERSEDIAAN!A{rr}"
+            else:
+                code, rr = by_name[name]
+                where = f"{sheet}!E{r}, REKON PERSEDIAAN!A{rr}:B{rr}"
+            rows.append({"product": sheet, "role": role, "item_code": code, "source": f"{src} {where}"})
+    return rows
 
 
 # ----------------------------------------------------------------------------------------------- seed SQL
@@ -675,9 +718,10 @@ SEED_COLUMNS = {
     "payroll_group": ["code", "name", "dept", "kind", "pool", "unit", "wp_row", "sort_order", "source"],
     "coa_pool_map": ["account", "account_name", "effective_from", "effective_to", "pool", "fixed_flag", "confirmed", "note", "source"],
     "assumption": ["key", "value_num", "value_text", "unit", "effective_from", "owner", "status", "used_in", "note", "source"],
+    "product_item": ["product", "role", "item_code", "source"],
 }
 CONFLICT = {"product": "(code)", "others_group": "(code)", "sku": "(code)", "material_item": "(name)", "payroll_group": "(code)",
-            "coa_pool_map": "(account, effective_from)", "assumption": "(key, effective_from)"}
+            "coa_pool_map": "(account, effective_from)", "assumption": "(key, effective_from)", "product_item": "(product, role, item_code)"}
 
 
 def sql_lit(v) -> str:
@@ -690,12 +734,12 @@ def sql_lit(v) -> str:
     return "'" + str(v).replace("'", "''") + "'"
 
 
-def seed_sql(master_dir: str) -> str:
+def seed_sql(master_dir: str, tables: list[str] | None = None) -> str:
     out = io.StringIO()
     out.write("-- BMG-OS master seed (PLAN v1 Fase 0 step 2). Generated by `python3 -I scripts/extract_fixtures.py --seed-sql`\n")
     out.write("-- from fixtures/master/*.json (extracted from reference/ workpapers). Insert-only: on conflict do nothing.\n")
     out.write("-- Changing master data later = a new migration or the app (audited), never an edit of this file.\n")
-    for table in ["product", "others_group", "sku", "material_item", "payroll_group", "coa_pool_map", "assumption"]:
+    for table in tables or ["product", "others_group", "sku", "material_item", "payroll_group", "coa_pool_map", "assumption"]:
         with open(os.path.join(master_dir, f"{table}.json"), encoding="utf-8") as f:
             rows = json.load(f)["rows"]
         cols = SEED_COLUMNS[table]
@@ -703,6 +747,8 @@ def seed_sql(master_dir: str) -> str:
         out.write(f"insert into public.{table} ({', '.join(cols)}) values\n")
         out.write(",\n".join("  (" + ", ".join(sql_lit(r.get(c)) for c in cols) + ")" for r in rows))
         out.write(f"\non conflict {CONFLICT[table]} do nothing;\n")
+    if tables:
+        return out.getvalue()
     out.write("""
 -- budget version v1 (PRD Q4): frozen as-is; lines are loaded in Fase 1 through the budget_bp upload.
 insert into public.budget_version (name, status, note, source) values
@@ -746,7 +792,8 @@ def dirs_equal(a: str, b: str) -> list[str]:
 def main(argv: list[str]) -> int:
     if "--seed-sql" in argv:
         path = argv[argv.index("--seed-sql") + 1]
-        sql = seed_sql(os.path.join(ROOT, "fixtures", "master"))
+        tables = argv[argv.index("--tables") + 1].split(",") if "--tables" in argv else None
+        sql = seed_sql(os.path.join(ROOT, "fixtures", "master"), tables)
         with open(path, "w", encoding="utf-8", newline="\n") as f:
             f.write(sql)
         print(f"wrote {path}")

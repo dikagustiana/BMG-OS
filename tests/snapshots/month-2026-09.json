@@ -10,6 +10,7 @@
   "fixtures/master/others_group.json": "1de79db9a9052cedb8357698022e0c55d510a52d0c74f4088f9d17d839119a43",
   "fixtures/master/payroll_group.json": "d83bb98a8dd70de687fdfe2d967d048d255c8c27064b58b99adde3cd0bd46bf3",
   "fixtures/master/product.json": "650aa07a9ccf31692b04459ac2c26996f66a27a72b97c0af8ac290766353f48e",
+  "fixtures/master/product_item.json": "59a401f6468c54eab6cf123089fd445ec72f18a09c97c2b4f64e6d4c8f39594a",
   "fixtures/master/sku.json": "2231cb8d1b4331eb763483bdac0b59e534a21a90bd0458c368eca78349f97e5d",
   "fixtures/month-2026-08/bridge_input.json": "539de01e4202455f8e8c733ea9246055c700e42e7d1d8c07a2d2be6b86b28115",
   "fixtures/month-2026-08/cells.csv": "03c1625b569f7fad1abc0fa9621cf0a8e6f5d1fba838f2704fdffee5b31f35f5",
