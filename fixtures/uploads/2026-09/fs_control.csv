@@ -1,0 +1,10 @@
+Kunci,Pos,Nilai,Sumber WP
+revenue_4101_007,Pendapatan 4101-007,7462360152.66,"RINGKASAN!B58; LK Sep-26 sheet Income Statement, 4101-007, kolom Sep"
+material_usage,Pemakaian Bahan Baku,4375218161.24,"RINGKASAN!B59; LK Sep-26 sheet Income Statement, baris Pemakaian Bahan Baku, kolom Sep"
+conversion_16,"Biaya konversi pabrik (16 akun 5101-002 s/d 5101-016, 6500-006/007)",1590888645.02,"RINGKASAN!B60; LK Sep-26 sheet Income Statement, jumlah 16 akun, kolom Sep"
+cogs,Total Cost of Goods Sold,6375412304.37,"RINGKASAN!B61; LK Sep-26 sheet Income Statement, baris Total Cost of Goods Sold, kolom Sep"
+inv_1106_001_close,"Persediaan bahan baku 1106-001, akhir bulan",947179402.89,"RINGKASAN!B62; LK Sep-26 sheet Balance Sheet, 1106-001, kolom September"
+inv_1106_002_open,"Persediaan barang setengah jadi 1106-002, awal bulan",494002773.03,"RINGKASAN!B63; LK Sep-26 sheet Balance Sheet, 1106-002, kolom Agustus"
+inv_1106_002_close,"Persediaan barang setengah jadi 1106-002, akhir bulan",297850706.22,"RINGKASAN!B64; LK Sep-26 sheet Balance Sheet, 1106-002, kolom September"
+inv_1106_003_open,"Persediaan barang jadi 1106-003, awal bulan",499690063.73,"RINGKASAN!B65; LK Sep-26 sheet Balance Sheet, 1106-003, kolom Agustus"
+inv_1106_003_close,"Persediaan barang jadi 1106-003, akhir bulan",286536639.64,"RINGKASAN!B66; LK Sep-26 sheet Balance Sheet, 1106-003, kolom September"

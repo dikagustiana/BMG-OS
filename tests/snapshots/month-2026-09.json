@@ -26,7 +26,16 @@
   "fixtures/month-2026-09/recon.json": "a28a1d8a238b985221ccd49e443f75a87e956a2b6c17998f07d9fc9258746329",
   "fixtures/month-2026-09/summary.json": "6e8663084b34fea1cf8f258034cf6c6a6a6f06e914a4025907407bce3d3b1193",
   "fixtures/month-2026-09/uo.json": "c081d1e7582d125edf3b0a1d4ee07da039aa8fb2f51731e4f22e2d270dac27e6",
-  "fixtures/month-2026-09/uu.json": "ba90866324aa364f0e429aa5b38d1ff96b2adafb220b80b3d4448c8e119a3b02"
+  "fixtures/month-2026-09/uu.json": "ba90866324aa364f0e429aa5b38d1ff96b2adafb220b80b3d4448c8e119a3b02",
+  "fixtures/uploads/2026-09/average_price.xlsx": "6ed16bee7292e7822d992419e7445433c789d9f895242c59ebccc02320ea8cd9",
+  "fixtures/uploads/2026-09/cogm_card.xlsx": "c8a43692c6ed531c06f93291fd95aa5712d0b20121e66ce5b45e10e0898e5e04",
+  "fixtures/uploads/2026-09/fs_control.csv": "ef26724c94621e2d4320e08eab84e7aaae2dfd3567580307a5d8a17f490e58b9",
+  "fixtures/uploads/2026-09/gl_month.xlsx": "5c7d7557ec0c0b612f4aa38c04ae322ee46b0bfa2ef7e2d8dd2f05b75a10e468",
+  "fixtures/uploads/2026-09/gl_voucher_tag.csv": "a8d3e5371fe23cdbfdcf8ba2ee5ffec9951cbe53556e523ed45773f1c54e9197",
+  "fixtures/uploads/2026-09/inventory_valuation.xlsx": "08ad067b98d099e11e23ee191406b9e6b070db9dc5851528dbbc51b9bec7be43",
+  "fixtures/uploads/2026-09/payroll_month.xlsx": "7b96a4fb781438635b685f3a133b31e8bc0507d9f21f94fe6931508f3973b556",
+  "fixtures/uploads/2026-09/sales_by_item.xlsx": "ea51f2be156290935b76169247181bb37e2db3f7c5e828f0494ce61a25a403d5",
+  "fixtures/uploads/2026-09/std_master.xlsx": "aa8cc3d9b48d028aa625930687574d18c8957ffadf154d257e0c7ad98075872c"
  },
  "modules": {}
 }

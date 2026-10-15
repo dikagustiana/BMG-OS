@@ -57,8 +57,8 @@ describe("generic header detection", () => {
   it("line keys number repeated keys", () => {
     expect(lineKeys(["a", "b", "a"], (x) => x)).toEqual(["a|1", "b|1", "a|2"]);
   });
-  it("no upload kind is registered before Fase 1", () => {
-    expect(KINDS).toEqual([]);
-    expect(() => kindDef("gl_month")).toThrow(/belum tersedia/);
+  it("kinds are registered by Fase 1; unknown kinds are refused", () => {
+    expect(KINDS.length).toBeGreaterThan(0);
+    expect(() => kindDef("plant_daily")).toThrow(/belum tersedia/);
   });
 });

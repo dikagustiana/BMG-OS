@@ -128,13 +128,13 @@ create table if not exists public.average_price (
 );
 
 -------------------------------------------------------------------------------- CoGM card (cost accounting)
--- line: FCC | UU | UO | others_group code | SKU code.
+-- line: FCC | UU | UO | others_group code | SKU code. Lain-lain lines: output/sample in kg, output_fg/sample_fg in FG units (bag or kg).
 create table if not exists public.cogm_card (
   id       uuid primary key default gen_random_uuid(),
   month    date not null check (extract(day from month) = 1),
   line     text not null,
   row_kind text not null check (row_kind in ('wip_open','input','premium','kw2','waste','wip_close','sample','output',
-                                             'input_fcc_premium','input_kw2_fcc','input_kw2_ubi')),
+                                             'output_fg','sample_fg','input_fcc_premium','input_kw2_fcc','input_kw2_ubi')),
   qty      numeric(14,3) not null,
   unit     text not null default 'kg',
   line_key text not null,

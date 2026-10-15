@@ -19,12 +19,20 @@ export function text(v: Cell | undefined): string | null {
   return String(v).trim();
 }
 
-/** Shortest round-trip decimal string without exponent. */
+/** Shortest round-trip decimal string without exponent (the digits of String(n), decimal point shifted exactly). */
 export function numberToString(n: number): string {
   if (!Number.isFinite(n)) throw new Error(`Angka tidak valid: ${n}`);
-  let s = String(n);
-  if (/e/i.test(s)) s = n.toFixed(12).replace(/\.?0+$/, "");
-  return s;
+  const s = String(n);
+  const m = s.match(/^(-?)(\d+)(?:\.(\d+))?e([+-]\d+)$/i);
+  if (!m) return s === "-0" ? "0" : s;
+  const [, sign, int, frac = "", exp] = m;
+  const digits = int + frac;
+  const point = int.length + Number(exp);
+  const out = point <= 0 ? `0.${"0".repeat(-point)}${digits}`
+    : point >= digits.length ? digits + "0".repeat(point - digits.length)
+    : `${digits.slice(0, point)}.${digits.slice(point)}`;
+  const clean = out.includes(".") ? out.replace(/0+$/, "").replace(/\.$/, "") : out;
+  return sign && !/^0(\.0*)?$/.test(clean) ? `-${clean}` : clean;
 }
 
 /**
