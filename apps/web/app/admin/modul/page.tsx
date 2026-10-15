@@ -35,7 +35,7 @@ export default async function ModulesPage() {
                   <td>{m.phase}</td>
                   <td className="muted">{m.description}</td>
                   <td><Badge s={on ? "ON" : "OFF"}>{on ? "aktif" : "nonaktif"}</Badge></td>
-                  <td className="muted">{s?.updated_at ? `${new Date(s.updated_at as string).toLocaleString("id-ID", { timeZone: "Asia/Jakarta" })} · ${s.updated_by ?? ""}` : "—"}</td>
+                  <td className="muted">{s?.updated_at ? `${new Date(s.updated_at as string).toLocaleString("id-ID", { timeZone: "Asia/Jakarta" })}${s.updated_by ? ` · ${s.updated_by}` : ""}` : "—"}</td>
                   <td>
                     <ActionForm action={setModule} submit={on ? "Nonaktifkan" : "Aktifkan"} danger={on}
                       confirm={on ? `Nonaktifkan ${m.label}? Halamannya akan hilang untuk semua pengguna.` : undefined}>

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     serverActions: { bodySizeLimit: "8mb" },
   },
   poweredByHeader: false,
+  devIndicators: false,
   async headers() {
     return [
       {
