@@ -83,7 +83,7 @@ Isu yang diuji (PLAN): item tak terpeta, akun tanpa mapping aktif, Σ GL ≠ LK.
 ## 5. Bukti dan DoD
 
 - DoD PLAN: PRD §8 B1 dengan Sep-26. Diuji **lokal**, karena aturan F melarang Claude mengunggah data bisnis ke remote:
-  - `scripts/e2e_b1.ts` (atau langkah Playwright) mengunggah semua fixture Sep-26 lewat server action / RPC yang sama dengan wizard;
+  - skrip Playwright (di luar repo; tanpa dependensi baru) mengunggah semua fixture Sep-26 lewat wizard, server action dan RPC yang sama dengan produksi;
   - hasilnya: semua tabel §4.2 terisi; `fs_control` 9 angka = RINGKASAN B58:B66; B01, B02, B44 LULUS; `budget_line` 23.024 baris.
 - Golden tetap (fixture WP tidak berubah). Golden parser baru: `budget_bp` TS = `fixtures/budget-v1`; total fixture upload = sel WP.
 - Snapshot: `modules` tetap kosong (belum ada data mart). Fixture upload ikut manifest SHA.

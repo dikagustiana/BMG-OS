@@ -49,5 +49,8 @@ pnpm test:golden -- --fixture month-2026-09
 pnpm snapshot:diff
 pnpm build
 python3 -I scripts/extract_fixtures.py --check
+python3 -I scripts/make_upload_fixtures.py --check   # fixture upload Fase 1 (sintetis dari sel WP)
 pnpm test:rls            # DB lokal saja
 ```
+
+Catatan Fase 1: upload melalui API dibatasi `statement_timeout` 8 s peran `authenticated`. Satu transaksi besar (> ±5.000 baris dengan trigger stamp/audit) harus dipecah. Pola yang dipakai: `UploadHandler.chunk` (lihat `apps/web/lib/upload-handlers.ts`, B-012).

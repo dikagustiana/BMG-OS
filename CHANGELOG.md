@@ -1,5 +1,22 @@
 # Changelog
 
+## v1 F1 — B1 ingest bulanan (2026-10-15)
+
+Branch `v1/f1-ingest` (ditumpuk di atas `v1/f0-foundation`). Lihat `docs/v1/F1-design.md`, `docs/v1/README.md` (bukti Fase 1), `docs/v1/F1-summary.md`.
+
+### Ditambahkan
+- Migrasi `20261015000500_b1_inputs`: 11 tabel input bulanan PRD §4.2 (`gl_month`, `gl_voucher_tag`, `payroll_month`, `payroll_journal`, `inventory_valuation`, `sales_by_item`, `average_price`, `cogm_card`, `cogm_material`, `driver_month`, `fs_control`) dengan `line_key` unik per bulan, stamp, audit, RLS (baca: admin/finance/cost_accounting; tulis per kind). Guard BP: versi terkunci setelah `imported_at`. `upload_tables()` diperluas.
+- `@bmg/parsers`: 10 parser upload (`gl_month`, `gl_voucher_tag`, `payroll_month`, `inventory_valuation`, `sales_by_item`, `average_price`, `cogm_card`, `fs_control`, `budget_bp`, `std_master`), satu fungsi murni per kind dengan isu per baris dan peringatan (item tak terpeta, akun tanpa mapping, angka LK belum lengkap).
+- `@bmg/engine/controls.ts`: B01 (Σ GL konversi = LK), B02 (GL 5101-002 = jurnal payroll), B44 (mapping akun aktif; memblok commit GL dengan akun tanpa mapping).
+- Web: `/m/[month]/input` (kontrol, status per kind, wizard, mapping akun, editor tag voucher, impor BP per versi), `/standar` (versi standar, rincian, upload, approve), nav modul `b1_ingest`.
+- `scripts/make_upload_fixtures.py` → `fixtures/uploads/2026-09/` (9 file sintetis dari sel WP, deterministik, `--check` di CI).
+
+### Diubah
+- `numberToString` eksak untuk angka berotasi eksponen; sel error SheetJS dibaca sebagai teks.
+- Upload: plan punya `blockers` (dicek ulang saat commit); `budget_line` ditulis bertahap 2.500 baris sebelum transaksi akhir `apply_upload` (batas `statement_timeout` 8 s, B-012).
+- Snapshot: 9 key fixture baru; key Fase 0 tidak berubah.
+
+
 ## v1 F0 — fondasi, fixture, keputusan data (2026-10-15)
 
 PR: https://github.com/dikagustiana/BMG-OS/pull/1 (`v1/f0-foundation`). Lihat `docs/v1/F0-design.md`, `docs/v1/README.md` (bukti), `docs/v1/F0-summary.md`.
