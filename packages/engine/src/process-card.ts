@@ -170,6 +170,7 @@ export function processCard(x: ProcessCardInput): ProcessCardResult {
     total_cost: totalCost, cost_per_kg_input: div(totalCost, card.inputKg), wip_open_value: wipOpenValue, kw2_nrv_per_kg: nrv,
     kw2_nrv_credit: kw2Credit, cost_to_account: toAccount, equivalent_kg: equivalent, rate_per_kg: rate, premium_value: premiumValue,
     waste_value: wasteValue, wip_close_value: wipCloseValue,
+    premium_pct: div(premium, card.inputKg), kw2_pct: div(card.kw2Kg, card.inputKg), waste_pct: div(card.wasteKg, card.inputKg),
     per_kg: perKg(x.material.material, conversion, card.inputKg, totalCost),
     rule_id: PROCESS_CARD_RULE,
     inputs: [...card.refs, ...x.material.inputs, ...x.conversionInputs, ...(x.wipOpen ? [x.wipOpen.ref] : []), product.ref],
