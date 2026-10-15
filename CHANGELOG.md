@@ -1,5 +1,22 @@
 # Changelog
 
+## v2 F3–F4 engine — rekon, kontrol, kewajaran, varian budget, bridge (2026-10-15)
+
+Branch `v2/f34-engine` (dari `v2/f1b-fs`). Engine saja; migrasi data mart, halaman §7.1–§7.3, §7.6, §7.7 dan server action menyusul. Lihat `docs/v2/F34-engine-notes.md`.
+
+### Ditambahkan
+- `@bmg/engine/recon.ts` (B3): rekon HPP kartu → GL (6 pos, sisa Rp 7,21), REKON MATERIAL per item, REKON PERSEDIAAN per item dengan K1–K6 (K2 WIP-022 225.691.966,25), RINGKASAN bagian 5 (9 baris WP vs GL vs LK); kontrol B17–B20, B23–B30; baris `recon_month`, `inventory_recon`.
+- `@bmg/engine/reasonableness.ts` (B4): CEK KEWAJARAN bagian 1 (15 KPI kartu lama FCC, DALAM/DI LUAR RENTANG, catatan WP), bagian 2 (13 KPI, 6 CEK), `kpi_series` (Jan–Sep = tabel PRD v2 §1), B33 (karton PERIKSA).
+- `@bmg/engine/variance.ts` (B4): varian vs flex budget per komponen FCC/UU/UO (harga, pemakaian, volume, metode, cek = 0), Lain-lain total; BP v1 lewat kode driver (`BP_V1_MAP`); B42, B43.
+- `@bmg/engine/bridge.ts` (B4): BRIDGE GP Agu → Sep 17 bar (19,9219 → 14,5657 pp), B31, B32, tampilan direksi b2 + b12 (+0,1458 pp), waterfall WP bagian 5, perakitan input bulan berjalan dari keluaran Fase 2/3.
+- `@bmg/engine/mart-row.ts`: kolom jejak data mart `rule_id`, `inputs`, `source_ref` (PRD v2 §5.4).
+- Golden suite `f3-recon` (1.047 sel WP) dan `f4-analysis` (1.068 sel WP), semuanya lulus; adapter sel WP → input di `wp-f34.ts`; laporan `docs/v1/golden-f34.md`.
+- Tes: 64 tes baru (recon 23, kewajaran 14, varian 18, bridge 9): status dan teks vs sel WP, rule test per cabang.
+
+### Diubah
+- Snapshot `tests/snapshots/month-2026-09.json`: key baru `f3.recon` dan `f4.analysis`; key fixture tidak berubah.
+- `docs/open-questions.md`: §B B-030 … B-034 (15 KPI vs "14" di PRD, sisa Rp 7,21, ongkir di luar varian komponen, sheet BUDGET kosong, sel GL/LK tanpa kunci B1), catatan B-006 untuk B33; §C keputusan F34-01 … F34-12.
+
 ## v1 F1 — B1 ingest bulanan (2026-10-15)
 
 PR: https://github.com/dikagustiana/BMG-OS/pull/2 (`v1/f1-ingest`, ditumpuk di atas `v1/f0-foundation`). Lihat `docs/v1/F1-design.md`, `docs/v1/README.md` (bukti Fase 1), `docs/v1/F1-summary.md`.
