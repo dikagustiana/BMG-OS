@@ -13,7 +13,7 @@ import { isBlank, norm, parseDate, parseNumber, text, type Cell } from "./values
 export type UploadKind =
   | "gl_month" | "gl_voucher_tag" | "payroll_month" | "inventory_valuation" | "sales_by_item" | "average_price"
   | "cogm_card" | "fs_control" | "budget_bp" | "std_master" | "sales_forecast" | "material_price" | "plant_daily"
-  | "tb_month" | "bp_fs" | "plan_override";
+  | "tb_month" | "bp_fs" | "plan_override" | "wp_opening" | "cogm_legacy" | "history_cost";
 
 export interface FieldDef {
   field: string;

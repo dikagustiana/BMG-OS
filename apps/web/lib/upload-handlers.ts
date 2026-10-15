@@ -39,6 +39,7 @@ export const TABLE_LABEL: Record<string, string> = {
   cogm_material: "Kartu CoGM — material", driver_month: "Driver bulanan", fs_control: "Angka kontrol LK", budget_version: "Versi budget",
   budget_line: "Baris budget", budget_pool_map: "Mapping pool budget (draft)", std_version: "Versi standar (draft)", bom_line: "BOM",
   output_mix: "Komposisi output", routing: "Routing", rate_card: "Tarif", capacity: "Kapasitas",
+  wp_opening: "Saldo awal WIP dan barang jadi", cogm_legacy: "Total kartu CoGM lama", history_cost_line: "Riwayat biaya",
   tb_month: "Neraca saldo per akun", history_fs_line: "Riwayat neraca dan laba rugi (aktual BP)", budget_fs_line: "Neraca dan laba rugi BP",
 };
 
@@ -228,9 +229,23 @@ const bpFs: UploadHandler = {
   after: fsAfter,
 };
 
+/** history_cost: rows carry their own months; the months present in the file are replaced (kind + key), others stay. */
+const historyCost: UploadHandler = {
+  parser: kindParser("history_cost"),
+  parse: (sheets, ctx) => kindParser("history_cost").parse(sheets, ctx),
+  async plan(sb, _period, sets) {
+    const rows = rowsOf(sets, "history_cost_line");
+    const months = [...new Set(rows.map((r) => String(r.month)))];
+    const existing = months.length ? await fetchAll<Row>((f, t) => sb.from("history_cost_line").select("*").in("month", months).is("deleted_at", null).range(f, t)) : [];
+    const target = await planByKey("history_cost_line", TABLE_LABEL.history_cost_line, existing, rows, (r) => `${String(r.month).slice(0, 10)}|${r.line_key}`, fieldsOf(rows, ["line_key"]));
+    return { targets: [target], issues: months.length ? [`Riwayat bulan ${months.map((m) => m.slice(0, 7)).join(", ")} diganti dengan isi file.`] : [], blockers: [] };
+  },
+};
+
 export const HANDLERS: UploadHandler[] = [
   monthly("gl_month", glChecks), monthly("gl_voucher_tag", tagChecks), monthly("payroll_month", payrollChecks),
   monthly("inventory_valuation"), monthly("sales_by_item", salesChecks), monthly("average_price"), monthly("cogm_card"),
   monthly("fs_control", fsChecks), budgetBp, stdMaster,
   { ...monthly("tb_month", tbChecks), after: fsAfter }, bpFs,
+  monthly("wp_opening"), monthly("cogm_legacy"), historyCost,
 ];

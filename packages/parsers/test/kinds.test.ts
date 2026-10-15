@@ -33,9 +33,9 @@ function aoa(sheets: Record<string, unknown[][]>): Sheet[] {
 }
 
 describe("registry", () => {
-  it("registers the 10 B1 kinds with PRD §5 roles", () => {
+  it("registers the B1 kinds, the FS kinds and the Fase 2 inputs with PRD §5 roles", () => {
     expect(KINDS.map((k) => k.kind)).toEqual(["gl_month", "gl_voucher_tag", "payroll_month", "inventory_valuation", "sales_by_item",
-      "average_price", "cogm_card", "fs_control", "budget_bp", "std_master", "tb_month", "bp_fs"]);
+      "average_price", "cogm_card", "fs_control", "budget_bp", "std_master", "tb_month", "bp_fs", "wp_opening", "cogm_legacy", "history_cost"]);
     expect(KINDS.find((k) => k.kind === "cogm_card")!.roles).toEqual(["admin", "cost_accounting"]);
     expect(KINDS.find((k) => k.kind === "std_master")!.roles).toEqual(["admin", "finance", "ppic"]);
   });

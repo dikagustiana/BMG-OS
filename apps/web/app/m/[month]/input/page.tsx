@@ -6,7 +6,7 @@ import { requirePage } from "@/lib/modules-server";
 import { monthParam } from "@/lib/month";
 import { supabaseServer } from "@/lib/supabase";
 import { kindsFor } from "@/lib/upload";
-import { KIND_TABLES, loadBudgetVersions, loadInputMonth } from "@/lib/b1";
+import { KIND_TABLES, loadBudgetVersions, loadInputMonth, OPTIONAL_KINDS } from "@/lib/b1";
 import { can } from "@/lib/roles";
 import { bulan, num, waktu } from "@/lib/fmt";
 import { Shell } from "@/components/Shell";
@@ -51,12 +51,13 @@ export default async function InputPage({ params }: { params: Promise<{ month: s
   const kindLabel = (k: string) => KINDS.find((d) => d.kind === k)?.label ?? "Upload";
   const rowsOf = (k: string) => (KIND_TABLES[k] ?? []).reduce((s, t) => s + (data.counts[t] ?? 0), 0);
   const visibleKinds = Object.keys(KIND_TABLES).filter((k) => monthly.some((m) => m.kind === k) || viewer.role === "admin");
-  const stored = visibleKinds.filter((k) => latest(k)).length;
+  const required = visibleKinds.filter((k) => !OPTIONAL_KINDS.has(k));
+  const stored = required.filter((k) => latest(k)).length;
   const open = data.controls.filter((c) => c.status !== "LULUS").length + data.gaps.length + data.fsGaps.length;
   return (
     <Shell ctx={ctx} active="input">
       <PageHeader title={`Input bulanan ${label}`}
-        sub={<>{stored} dari {visibleKinds.length} jenis data tersimpan; {open ? `${open} hal perlu tindakan di bawah` : "tidak ada kontrol atau mapping yang tertunda"}. Upload ulang untuk bulan yang sama mengganti data bulan itu.</>} />
+        sub={<>{stored} dari {required.length} jenis data tersimpan; {open ? `${open} hal perlu tindakan di bawah` : "tidak ada kontrol atau mapping yang tertunda"}. Upload ulang untuk bulan yang sama mengganti data bulan itu.</>} />
       <div className="chip-row"><PeriodChips items={months.map((m) => ({ label: bulan(m), href: `/m/${m}/input`, on: m === month }))} label="Bulan" /></div>
 
       {monthly.length ? (
@@ -76,7 +77,7 @@ export default async function InputPage({ params }: { params: Promise<{ month: s
                   const w = waiting(k);
                   return (
                     <tr key={k}>
-                      <td>{kindLabel(k)}</td>
+                      <td>{kindLabel(k)}{OPTIONAL_KINDS.has(k) ? <span className="muted small"> · opsional</span> : null}</td>
                       <td>{w.length ? <InputStateChip state="menunggu">Menunggu ({w.length})</InputStateChip> : u ? <InputStateChip state="tersimpan" /> : <InputStateChip state="kosong" />}</td>
                       <td className="n">{rowsOf(k) ? num(rowsOf(k)) : ""}</td>
                       <td className="muted small">{u ? `${waktu(u.committed_at ?? u.uploaded_at)}${u.uploaded_by_name ? ` · ${u.uploaded_by_name}` : ""}` : "belum ada"}</td>

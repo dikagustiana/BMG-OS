@@ -25,16 +25,30 @@ export const FS_KEYS = {
   inv_1106_003_open: ["persediaan barang jadi 1106-003, awal bulan", "persediaan barang jadi awal"],
   inv_1106_003_close: ["persediaan barang jadi 1106-003, akhir bulan", "persediaan barang jadi akhir"],
 };
+
+/** Optional keys for the F3 recon (WP blue cells: GL 1106-xxx movements, LK sheet PL HPP). Not required for a complete upload. */
+export const FS_KEYS_RECON = {
+  gl_revenue_4101_007: ["pendapatan gl 4101-007", "gl pendapatan 4101-007"],
+  gl_1106_001_receipts: ["gl 1106-001 penerimaan", "penerimaan bahan baku gl"],
+  gl_1106_001_usage: ["gl 1106-001 pemakaian", "pemakaian bahan baku gl"],
+  gl_1106_002_movement: ["gl 1106-002 mutasi", "mutasi wip gl"],
+  gl_1106_003_movement: ["gl 1106-003 mutasi", "mutasi barang jadi gl"],
+  pl_hpp_open: ["lk pl hpp saldo bahan baku awal", "hpp saldo awal"],
+  pl_hpp_receipts: ["lk pl hpp penerimaan", "hpp penerimaan"],
+  pl_hpp_usage: ["lk pl hpp pemakaian", "hpp pemakaian"],
+  pl_hpp_close: ["lk pl hpp saldo bahan baku akhir", "hpp saldo akhir"],
+};
 export type FsKey = keyof typeof FS_KEYS;
+const ALL_KEYS: Record<string, string[]> = { ...FS_KEYS, ...FS_KEYS_RECON };
 
 export const fsControl: KindParser = {
   def,
   parse(sheets, ctx) {
     const month = assertMonth(ctx.period);
     const { detected, rows } = table(sheets, fields, { mapping: ctx.mapping });
-    const keyOf = new Map<number, FsKey>();
+    const keyOf = new Map<number, string>();
     for (const r of rows) {
-      const k = pick(r.values.key, FS_KEYS) ?? pick(r.values.label, FS_KEYS);
+      const k = pick(r.values.key, ALL_KEYS) ?? pick(r.values.label, ALL_KEYS);
       if (!k) r.issues.push(`Pos LK tidak dikenal: "${r.values.key ?? r.values.label}"`);
       else if ([...keyOf.values()].includes(k)) r.issues.push(`Pos LK ganda: ${k}`);
       else keyOf.set(r.rowNo, k);

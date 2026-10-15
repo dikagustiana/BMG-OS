@@ -8,6 +8,7 @@ import { fetchAll } from "./write";
 export const MONTHLY_TABLES = [
   "gl_month", "gl_voucher_tag", "payroll_month", "payroll_journal", "inventory_valuation", "sales_by_item",
   "average_price", "cogm_card", "cogm_material", "driver_month", "fs_control", "tb_month",
+  "wp_opening", "cogm_legacy",
 ] as const;
 
 /** Tables each monthly upload kind fills (status block of Input bulanan). */
@@ -15,7 +16,11 @@ export const KIND_TABLES: Record<string, (typeof MONTHLY_TABLES)[number][]> = {
   gl_month: ["gl_month"], gl_voucher_tag: ["gl_voucher_tag"], payroll_month: ["payroll_month", "payroll_journal"],
   inventory_valuation: ["inventory_valuation"], sales_by_item: ["sales_by_item"], average_price: ["average_price"],
   cogm_card: ["cogm_card", "cogm_material", "driver_month"], fs_control: ["fs_control"], tb_month: ["tb_month"],
+  wp_opening: ["wp_opening"], cogm_legacy: ["cogm_legacy"],
 };
+
+/** Monthly kinds that are not part of the "10 upload" gate: the first platform month only (opening values) or a comparison. */
+export const OPTIONAL_KINDS: ReadonlySet<string> = new Set(["wp_opening", "cogm_legacy"]);
 
 export interface UploadInfo {
   id: string;

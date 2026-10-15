@@ -13,6 +13,9 @@ import { salesByItem } from "./sales_by_item";
 import { stdMaster } from "./std_master";
 import { tbMonth } from "./tb_month";
 import { bpFs } from "./bp_fs";
+import { wpOpening } from "./wp_opening";
+import { cogmLegacy } from "./cogm_legacy";
+import { historyCost } from "./history_cost";
 
 export { accountOfItem } from "./inventory_valuation";
 export { expandBp, parseBp, slug, type BpMonth, type BpPoolRow, type BpRow } from "./budget_bp";
@@ -25,7 +28,7 @@ export { readBpFsSheet } from "./bp_fs";
 /** Registered upload kinds of Fase 1 (B1). Later phases append theirs. */
 export const KIND_PARSERS: KindParser[] = [
   glMonth, glVoucherTag, payrollMonth, inventoryValuation, salesByItem, averagePrice, cogmCard, fsControl, budgetBp, stdMaster,
-  tbMonth, bpFs,
+  tbMonth, bpFs, wpOpening, cogmLegacy, historyCost,
 ];
 
 export const KINDS: KindDef[] = KIND_PARSERS.map((k) => k.def);
