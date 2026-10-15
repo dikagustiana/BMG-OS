@@ -172,7 +172,7 @@ export const OKT26_DRAFTS: { account: string; name: string; code: string }[] = [
   ...["301", "302", "303"].map((x) => ({ account: `5101-${x}`, name: "Varian produksi per lini", code: "pl.cogm_material" })),
 ];
 
-const SRC = "BMG_Business_Plan_-_Oct26_to_Dec27.xlsx";
+const SRC = "BP v1";
 
 export function coaFsSeed(accounts: readonly MtmAccount[]): { rows: CoaFsSeedRow[]; skipped: string[] } {
   const rows: CoaFsSeedRow[] = [];
@@ -191,8 +191,8 @@ export function coaFsSeed(accounts: readonly MtmAccount[]): { rows: CoaFsSeedRow
     rows.push({
       account: a.account, account_name: a.name, effective_from: "2026-01-01", effective_to: null,
       fs_line_code: code, sign: fsSign(code), accurate_code: a.kode, confirmed: !!mapped,
-      note: decided ? "Keputusan K2-F (BP tidak menjumlah label ini apa adanya)" : mapped ? `BP v1 Mapping: ${a.mapping}` : "Draft: tidak dipetakan di BP v1 (nol Jan–Agu 2026)",
-      source: `${SRC} ${a.sheet}`,
+      note: decided ? "Keputusan K2-F" : mapped ? "BP v1" : "Draft: nol di BP v1",
+      source: `${SRC} ${a.sheet.slice(0, 2)}`,
     });
   }
   for (const d of OKT26_DRAFTS) {
@@ -200,7 +200,7 @@ export function coaFsSeed(accounts: readonly MtmAccount[]): { rows: CoaFsSeedRow
     seen.add(d.account);
     rows.push({
       account: d.account, account_name: d.name, effective_from: "2026-10-01", effective_to: null, fs_line_code: d.code,
-      sign: fsSign(d.code), accurate_code: null, confirmed: false, note: "Draft COA Okt-26 (D10); konfirmasi Finance", source: "PRD v2 D10; coa_pool_map Okt-26",
+      sign: fsSign(d.code), accurate_code: null, confirmed: false, note: "Draft COA Okt-26 (D10)", source: "PRD v2 D10",
     });
   }
   return { rows, skipped };
