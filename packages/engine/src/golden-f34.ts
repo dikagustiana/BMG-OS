@@ -1,5 +1,5 @@
 /**
- * Golden suites and snapshot runs of Fase 3 (B3 recon) on the golden month.
+ * Golden suites and snapshot runs of Fase 3–4 (B3 recon, B4 kewajaran / varian / bridge) on the golden month.
  * Node only (reads fixtures). Inputs come from WP cells through wp-f34.ts; each target compares an engine output with
  * the WP cell that holds the same number (tolerance ±Rp 1 for money, ±0,0001 for pp / ratios / Rp per kg, ±0,01 kg).
  */
@@ -7,7 +7,20 @@ import { D, Decimal, type Num } from "./decimal";
 import { checkTargets, type CellIndex, type GoldenResult, type GoldenTarget } from "./golden";
 import { loadCells, readFixtureJson } from "./fixtures";
 import { reconMonth, type ReconMonthResult } from "./recon";
-import { reconInputsFromWp, wpReader, type MaterialMasterRow } from "./wp-f34";
+import {
+  MOM_KPIS, TREND_KPIS, kpiSeries, monthOverMonth, momValues, reasonablenessRows, trendKpis, usageMonthsFromHistory, usageRatioControl,
+  type KpiSeriesRow, type MomKpiResult, type ReasonablenessRow, type TrendKpiResult,
+} from "./reasonableness";
+import { VARIANCE_PRODUCTS, budgetFromBp, varianceMonth, type BudgetLineInput, type BudgetPoolMapInput, type VarianceMonthResult } from "./variance";
+import {
+  BRIDGE_INPUT_CODES, bridgeDisplayBars, bridgeMonthInputs, bridgeMonthRows, bridgeWaterfallWp, computeBridge,
+  type BridgeComponents, type BridgeMonthInputs, type BridgeResult,
+} from "./bridge";
+import {
+  GOLDEN_MONTH, bridgeCurrentFromWp, bridgeCurrentRefs, bridgePriorFromFixture, bridgeSourcesFromWp, kpiHistoryFromWp, momPriorFromWp,
+  momSourceFromWp, poolFixedShareFromWp, reconInputsFromWp, trendNotesFromWp, varianceActualFromWp, wpReader, type MaterialMasterRow,
+} from "./wp-f34";
+import type { ControlMonthRow } from "./mart-row";
 
 export const F34_FIXTURE = "month-2026-09";
 const MILLION = new Decimal(1_000_000);
@@ -22,16 +35,57 @@ export interface F3Run {
   recon: ReconMonthResult;
 }
 
-const cache = new Map<string, { f3: F3Run }>();
+export interface F4Run {
+  cells: CellIndex;
+  trend: TrendKpiResult[];
+  series: KpiSeriesRow[];
+  mom: MomKpiResult[];
+  reasonableness: ReasonablenessRow[];
+  b33: ControlMonthRow;
+  /** WP budget (BUDGET sheet empty) */
+  varianceWp: VarianceMonthResult;
+  /** BP v1 */
+  varianceBp: VarianceMonthResult;
+  bridge: BridgeResult;
+  /** current month bridge inputs assembled from the Fase 2 / recon sources */
+  bridgeAssembled: BridgeMonthInputs;
+}
 
-export function runF34(fixture = F34_FIXTURE): { f3: F3Run } {
+const cache = new Map<string, { f3: F3Run; f4: F4Run }>();
+
+export function runF34(fixture = F34_FIXTURE): { f3: F3Run; f4: F4Run } {
   const hit = cache.get(fixture);
   if (hit) return hit;
   const cells = loadCells(fixture);
+  const w = wpReader(cells);
   const materials = readFixtureJson<{ rows: MaterialMasterRow[] }>("master", "material_item.json").rows;
   const recon = reconMonth(reconInputsFromWp(cells, materials));
 
-  const out = { f3: { cells, recon } };
+  const history = kpiHistoryFromWp(cells);
+  const notes = trendNotesFromWp(cells);
+  const trend = trendKpis(history, GOLDEN_MONTH, notes);
+  const series = kpiSeries(history, { [GOLDEN_MONTH]: notes });
+  const pr = momPriorFromWp(cells);
+  const mom = monthOverMonth(momValues(momSourceFromWp(cells)), pr.prior, { thresholds: pr.thresholds, explanations: pr.explanations });
+  const reasonableness = reasonablenessRows(GOLDEN_MONTH, trend, mom);
+  const b33 = usageRatioControl(usageMonthsFromHistory(history), GOLDEN_MONTH).control;
+
+  const actual = { FCC: varianceActualFromWp(cells, "FCC"), UU: varianceActualFromWp(cells, "UU"), UO: varianceActualFromWp(cells, "UO") };
+  const others = { actualKg: w.n("LAIN-LAIN!C43"), actualCost: w.n("LAIN-LAIN!G68") };
+  const varianceWp = varianceMonth({ month: GOLDEN_MONTH, actual, budget: null, others });
+  const bl = readFixtureJson<{ budget_version: { name: string }; rows: { driver_code_base: string; values: Record<string, string> }[] }>("budget-v1", "budget_line.json");
+  const lines: BudgetLineInput[] = bl.rows.flatMap((r) => Object.entries(r.values).map(([m, v]) => ({ driver_code: `${r.driver_code_base}|${m}`, value: v })));
+  const poolMap = readFixtureJson<{ rows: BudgetPoolMapInput[] }>("budget-v1", "budget_pool_map.json").rows;
+  const varianceBp = varianceMonth({ month: GOLDEN_MONTH, actual, budget: budgetFromBp(lines, poolMap, GOLDEN_MONTH, bl.budget_version.name, poolFixedShareFromWp(cells)), others });
+
+  const prior = bridgePriorFromFixture(readFixtureJson("month-2026-08", "bridge_input.json"));
+  const bridge = computeBridge({
+    month: GOLDEN_MONTH, prior, current: bridgeCurrentFromWp(cells),
+    lk: { revenue: w.n("RINGKASAN!D40"), cogs: w.n("RINGKASAN!D43") }, glRevenue: w.n("RINGKASAN!C40"),
+  });
+  const bridgeAssembled = bridgeMonthInputs(bridgeSourcesFromWp(cells, recon.hpp, recon.inventory.table.k2.wipDelta));
+
+  const out = { f3: { cells, recon }, f4: { cells, trend, series, mom, reasonableness, b33, varianceWp, varianceBp, bridge, bridgeAssembled } };
   cache.set(fixture, out);
   return out;
 }
@@ -140,11 +194,85 @@ export function f3Targets(run: F3Run): GoldenTarget[] {
   return t.list;
 }
 
+const bridgeComponentCells = (c: BridgeComponents, col: "C" | "D"): [string, Decimal][] => [
+  [`${col}81`, c.fixedShare.A], [`${col}82`, c.fixedShare.K], [`${col}83`, c.fixedShare.B], [`${col}84`, c.fixedShare.C], [`${col}85`, c.fixedShare.D], [`${col}86`, c.fixedShare.E],
+  [`${col}87`, c.variableConversion.F], [`${col}88`, c.fixedConversion.F], [`${col}89`, c.variable.F],
+  [`${col}90`, c.variableConversion.U], [`${col}91`, c.fixedConversion.U], [`${col}92`, c.variable.U],
+  [`${col}93`, c.variableConversion.O], [`${col}94`, c.fixedConversion.O], [`${col}95`, c.variable.O],
+  [`${col}96`, c.variableConversion.L], [`${col}97`, c.fixedConversion.L], [`${col}98`, c.variable.L],
+  [`${col}99`, c.variableTotal], [`${col}100`, c.fixedTotal], [`${col}101`, c.inventory],
+  [`${col}102`, c.glItems[0]], [`${col}103`, c.glItems[1]], [`${col}104`, c.glItems[2]], [`${col}105`, c.glItems[3]], [`${col}106`, c.glItems[4]], [`${col}107`, c.check],
+];
+
+export function f4Targets(run: F4Run): GoldenTarget[] {
+  const t = new Targets("engine reasonableness.ts / variance.ts / bridge.ts (Fase 4)");
+  // CEK KEWAJARAN bagian 1 (Sep, min, max) and kpi_series Jan–Sep
+  for (const k of run.trend) {
+    const row = TREND_KPIS.find((d) => d.code === k.code)!.wpRow;
+    t.add(`B4.trend.${k.code}.min`, `${k.label}: min Jan–Agu`, `CEK KEWAJARAN!K${row}`, k.min, TOL.ratio);
+    t.add(`B4.trend.${k.code}.max`, `${k.label}: maks Jan–Agu`, `CEK KEWAJARAN!L${row}`, k.max, TOL.ratio);
+  }
+  for (const s of run.series) if (s.source_ref) t.add(`B4.kpi.${s.kpi_code}.${s.month.slice(0, 7)}`, `${s.label} ${s.month.slice(0, 7)}`, s.source_ref, s.value, TOL.ratio);
+  // bagian 2
+  for (const m of run.mom) {
+    const row = MOM_KPIS.find((d) => d.code === m.code)!.wpRow;
+    t.add(`B4.mom.${m.code}.value`, `${m.label}: Sep`, `CEK KEWAJARAN!C${row}`, m.current, TOL.ratio);
+    t.add(`B4.mom.${m.code}.delta`, `${m.label}: Δ %`, `CEK KEWAJARAN!D${row}`, m.deltaPct, TOL.ratio);
+  }
+  // varian per komponen (WP: budget kosong) + RINGKASAN bagian 2
+  const colOf = { actualPerKg: "F", budgetPerKg: "G", diff: "H", price: "I", usage: "J", volume: "K", method: "L", check: "M", qtyPerKgAct: "B", qtyPerKgBud: "C", priceAct: "D", priceBud: "E" } as const;
+  for (const p of VARIANCE_PRODUCTS) {
+    for (const r of run.varianceWp.products[p].rows) {
+      const [sheet, cell] = r.source_ref.split("!");
+      const rowN = cell.slice(1);
+      for (const [k, c] of Object.entries(colOf)) {
+        const v = r[k as keyof typeof colOf];
+        if (v === null) continue;
+        t.add(`B4.var.${p}.${r.component ?? r.group ?? "total"}.${c}`, `${p} ${r.label} (${c})`, `${sheet}!${c}${rowN}`, v, TOL.ratio);
+      }
+    }
+    const tot = run.varianceWp.products[p].total;
+    const sr = { FCC: 16, UU: 17, UO: 18 }[p];
+    const sum: [string, Decimal][] = [["B", tot.actualPerKg], ["C", tot.budgetPerKg], ["D", tot.diff], ["E", tot.price], ["F", tot.usage], ["G", tot.volume], ["H", tot.method]];
+    for (const [c, v] of sum) t.add(`B4.var.summary.${p}.${c}`, `RINGKASAN varian ${p} (${c})`, `RINGKASAN!${c}${sr}`, v, TOL.ratio);
+  }
+  // BRIDGE GP
+  const b = run.bridge;
+  t.add("B4.bridge.RA", "Pendapatan Agu", "BRIDGE GP!C111", b.revenuePrior, TOL.jt);
+  t.add("B4.bridge.RS", "Pendapatan Sep", "BRIDGE GP!C112", b.revenueCurrent, TOL.jt);
+  t.add("B4.bridge.Ra", "Pendapatan Sep pada harga Agu", "BRIDGE GP!C113", b.revenueAtPriorPrice, TOL.jt);
+  t.add("B4.bridge.mA", "Margin GL Agu", "BRIDGE GP!C114", b.marginPrior, "0.000001");
+  t.add("B4.bridge.mS", "Margin GL Sep", "BRIDGE GP!C115", b.marginCurrent, "0.000001");
+  t.add("B4.bridge.start", "Margin GL Agustus 2026 (pp)", "BRIDGE GP!C117", b.start, TOL.pp);
+  for (const bar of b.bars) t.add(`B4.bridge.${bar.code}`, bar.label, bar.source_ref, bar.pp, TOL.pp);
+  t.add("B4.bridge.end", "Margin GL September 2026 (pp)", "BRIDGE GP!C135", b.end, TOL.pp);
+  for (const g of b.groups) t.add(`B4.bridge.group.${g.group}`, `Kelompok ${g.group}`, g.source_ref, g.pp, TOL.pp);
+  t.add("B4.bridge.total_change", "Total perubahan margin", "BRIDGE GP!C144", b.groups.reduce((a, x) => a.plus(x.pp), D(0)), TOL.pp);
+  for (const c of b.checks) t.add(`B4.bridge.check.${c.key}`, c.label, c.source_ref, c.value, c.tolerance.toFixed());
+  for (const [cell, v] of bridgeComponentCells(b.priorComponents, "C")) t.add(`B4.bridge.comp.${cell}`, `Komponen HPP Agu ${cell}`, `BRIDGE GP!${cell}`, v, TOL.jt);
+  for (const [cell, v] of bridgeComponentCells(b.currentComponents, "D")) t.add(`B4.bridge.comp.${cell}`, `Komponen HPP Sep ${cell}`, `BRIDGE GP!${cell}`, v, TOL.jt);
+  bridgeWaterfallWp(b).forEach((d, i) => {
+    t.add(`B4.bridge.wf.${d.code}`, `Waterfall ${d.label}`, `BRIDGE GP!B${161 + i}`, d.pp, TOL.pp);
+    t.add(`B4.bridge.wf.${d.code}.cum`, `Waterfall kumulatif ${d.label}`, `BRIDGE GP!G${161 + i}`, d.cumulative, TOL.pp);
+  });
+  const merged = bridgeDisplayBars(b).find((d) => d.code === "b2_b12")!;
+  t.add("B4.bridge.display.b2_b12", "Volume, mix, dan persediaan (b2 + b12)", "BRIDGE GP!B163", merged.pp, TOL.pp);
+  // bridge inputs of the current month assembled from Fase 2 / recon outputs = BRIDGE GP column D
+  const refs = bridgeCurrentRefs(run.cells);
+  for (const code of BRIDGE_INPUT_CODES) t.add(`B4.bridge.input.${code}`, `Input bridge ${code} (dirakit dari keluaran Fase 2/3)`, refs[code], run.bridgeAssembled[code] as Num, code.startsWith("Q_") || code.startsWith("P_") ? TOL.kg : TOL.jt);
+  return t.list;
+}
+
 export const F34_SUITES = [
   {
     id: "f3-recon", phase: "F3",
     description: "B3 rekon dan kontrol (recon.ts) = sel WP: REKON & KONTROL bagian 2–5, REKON MATERIAL, REKON PERSEDIAAN, RINGKASAN bagian 4–5",
     run: (fixture: string): GoldenResult[] => (fixture === F34_FIXTURE ? checkTargets(loadCells(fixture), f3Targets(runF34(fixture).f3)) : []),
+  },
+  {
+    id: "f4-analysis", phase: "F4",
+    description: "B4 kewajaran, varian (budget WP kosong), bridge GP (reasonableness.ts, variance.ts, bridge.ts) = sel WP: CEK KEWAJARAN, FCC/UU/UO bagian 4, RINGKASAN bagian 2, BRIDGE GP",
+    run: (fixture: string): GoldenResult[] => (fixture === F34_FIXTURE ? checkTargets(loadCells(fixture), f4Targets(runF34(fixture).f4)) : []),
   },
 ];
 
@@ -156,4 +284,13 @@ function slim<T extends { inputs?: unknown }>(rows: readonly T[]): Omit<T, "inpu
 export function f3Snapshot(fixture = F34_FIXTURE) {
   const r = runF34(fixture).f3.recon;
   return { status: r.status, controls: slim(r.controls), recon_month: slim(r.reconMonthRows), inventory_recon: slim(r.inventoryReconRows) };
+}
+
+export function f4Snapshot(fixture = F34_FIXTURE) {
+  const f = runF34(fixture).f4;
+  return {
+    reasonableness: slim(f.reasonableness), kpi_series: slim(f.series), b33: (({ inputs: _i, ...rest }) => rest)(f.b33),
+    variance_wp: slim(f.varianceWp.rows), variance_bp_v1: slim(f.varianceBp.rows), variance_controls: slim(f.varianceBp.controls),
+    bridge_month: slim(bridgeMonthRows(f.bridge)), bridge_controls: slim(f.bridge.controls),
+  };
 }
