@@ -1,0 +1,218 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "rows": [
+  {
+   "code": "CEMCEM_ORI",
+   "name": "Cem-cem ORI",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "bag",
+   "wp_row": 22,
+   "sort_order": 1,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A22:B22"
+  },
+  {
+   "code": "CEMCEM_BBQ",
+   "name": "Cem-cem BBQ",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "bag",
+   "wp_row": 23,
+   "sort_order": 2,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A23:B23"
+  },
+  {
+   "code": "KOPERASI",
+   "name": "Koperasi (KW 2 berbumbu, 11 SKU)",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "bag",
+   "wp_row": 24,
+   "sort_order": 3,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A24:B24"
+  },
+  {
+   "code": "MCH_BASRENG",
+   "name": "Maicih basreng (maklon, 3 SKU)",
+   "main_line": "maklon",
+   "main_line_note": "Singkong (maklon)",
+   "fg_unit": "bag",
+   "wp_row": 25,
+   "sort_order": 4,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A25:B25"
+  },
+  {
+   "code": "MCH_KERIPIK_LV3_10",
+   "name": "Maicih keripik (LV 3 & 10)",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "bag",
+   "wp_row": 26,
+   "sort_order": 5,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A26:B26"
+  },
+  {
+   "code": "MCH_KERIPIK_LV5",
+   "name": "Maicih keripik LV 5",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "bag",
+   "wp_row": 27,
+   "sort_order": 6,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A27:B27"
+  },
+  {
+   "code": "FCC_MAICIH",
+   "name": "FCC Maicih",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "kg",
+   "wp_row": 28,
+   "sort_order": 7,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A28:B28"
+  },
+  {
+   "code": "FCC_PUTIH",
+   "name": "FCC Putih",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "kg",
+   "wp_row": 29,
+   "sort_order": 8,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A29:B29"
+  },
+  {
+   "code": "KECIMPRING",
+   "name": "Kecimpring (goreng & bagging)",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "kg",
+   "wp_row": 30,
+   "sort_order": 9,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A30:B30"
+  },
+  {
+   "code": "WHOLE_CHIPS_REMPAH",
+   "name": "Whole chips rempah 15/90 gr",
+   "main_line": "singkong",
+   "main_line_note": "Singkong",
+   "fg_unit": "kg",
+   "wp_row": 31,
+   "sort_order": 10,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A31:B31"
+  },
+  {
+   "code": "MAXI",
+   "name": "Maxi (pellet & goreng)",
+   "main_line": null,
+   "main_line_note": "Singkong – cek bahan",
+   "fg_unit": "kg",
+   "wp_row": 32,
+   "sort_order": 11,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A32:B32"
+  },
+  {
+   "code": "PELLET_UU",
+   "name": "Pellet ubi ungu FG (1,2x1,5 & 3x3)",
+   "main_line": "ubi_ungu",
+   "main_line_note": "Ubi Ungu",
+   "fg_unit": "kg",
+   "wp_row": 33,
+   "sort_order": 12,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A33:B33"
+  },
+  {
+   "code": "KERIPIK_UU_RETAIL",
+   "name": "Keripik ubi ungu retail (goreng, bagging bakar/ori, NYEE)",
+   "main_line": "ubi_ungu",
+   "main_line_note": "Ubi Ungu",
+   "fg_unit": "kg",
+   "wp_row": 34,
+   "sort_order": 13,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A34:B34"
+  },
+  {
+   "code": "WHOLE_CHIPS_UU",
+   "name": "Whole chips ubi ungu 15/90 gr",
+   "main_line": "ubi_ungu",
+   "main_line_note": "Ubi Ungu",
+   "fg_unit": "kg",
+   "wp_row": 35,
+   "sort_order": 14,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A35:B35"
+  },
+  {
+   "code": "UMBIIS",
+   "name": "Umbiis (goreng & bagging)",
+   "main_line": null,
+   "main_line_note": "Ubi Ungu – cek bahan",
+   "fg_unit": "kg",
+   "wp_row": 36,
+   "sort_order": 15,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A36:B36"
+  },
+  {
+   "code": "UU_CHIPS",
+   "name": "Ubi ungu chips",
+   "main_line": "ubi_ungu",
+   "main_line_note": "Ubi Ungu",
+   "fg_unit": "kg",
+   "wp_row": 37,
+   "sort_order": 16,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A37:B37"
+  },
+  {
+   "code": "PELLET_UO",
+   "name": "Pellet ubi orange FG 3x3",
+   "main_line": "ubi_orange",
+   "main_line_note": "Ubi Orange",
+   "fg_unit": "kg",
+   "wp_row": 38,
+   "sort_order": 17,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A38:B38"
+  },
+  {
+   "code": "UO_CHIPS",
+   "name": "Ubi orange chips",
+   "main_line": "ubi_orange",
+   "main_line_note": "Ubi Orange",
+   "fg_unit": "kg",
+   "wp_row": 39,
+   "sort_order": 18,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A39:B39"
+  },
+  {
+   "code": "PELLET_LAIN",
+   "name": "Pellet lainnya",
+   "main_line": null,
+   "main_line_note": "Cek bahan",
+   "fg_unit": "kg",
+   "wp_row": 40,
+   "sort_order": 19,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A40:B40"
+  },
+  {
+   "code": "UBI_PUTIH_ACE",
+   "name": "Ubi putih ACE (Sweet Potato N110), ubi putih & talas chips",
+   "main_line": "singkong",
+   "main_line_note": "Singkong (lain)",
+   "fg_unit": "kg",
+   "wp_row": 41,
+   "sort_order": 20,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A41:B41"
+  },
+  {
+   "code": "WRP_MAKLON",
+   "name": "WRP (Delichips, Mixfruit, chips) – maklon",
+   "main_line": "maklon",
+   "main_line_note": "Singkong (maklon)",
+   "fg_unit": "kg",
+   "wp_row": 42,
+   "sort_order": 21,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx LAIN-LAIN!A42:B42"
+  }
+ ]
+}

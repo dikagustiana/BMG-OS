@@ -1,0 +1,162 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "rows": [
+  {
+   "code": "OPERATOR_UNIT_I",
+   "name": "Operator harian",
+   "dept": "Unit I",
+   "kind": "operator",
+   "pool": "A",
+   "unit": "I",
+   "wp_row": 28,
+   "sort_order": 1,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A28:D28"
+  },
+  {
+   "code": "OPERATOR_UNIT_II",
+   "name": "Operator harian",
+   "dept": "Unit II",
+   "kind": "operator",
+   "pool": "A",
+   "unit": "II",
+   "wp_row": 29,
+   "sort_order": 2,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A29:D29"
+  },
+  {
+   "code": "OPERATOR_UNIT_III",
+   "name": "Operator harian",
+   "dept": "Unit III",
+   "kind": "operator",
+   "pool": "A",
+   "unit": "III",
+   "wp_row": 30,
+   "sort_order": 3,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A30:D30"
+  },
+  {
+   "code": "SUPPORT_QC",
+   "name": "Support harian",
+   "dept": "QC",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 31,
+   "sort_order": 4,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A31:D31"
+  },
+  {
+   "code": "SUPPORT_FORMULASI",
+   "name": "Support harian",
+   "dept": "Formulasi",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 32,
+   "sort_order": 5,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A32:D32"
+  },
+  {
+   "code": "SUPPORT_RND",
+   "name": "Support harian",
+   "dept": "RnD",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 33,
+   "sort_order": 6,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A33:D33"
+  },
+  {
+   "code": "SUPPORT_ENGINEERING",
+   "name": "Support harian",
+   "dept": "Engineering",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 34,
+   "sort_order": 7,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A34:D34"
+  },
+  {
+   "code": "SUPPORT_PPIC",
+   "name": "Support harian",
+   "dept": "PPIC",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 35,
+   "sort_order": 8,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A35:D35"
+  },
+  {
+   "code": "SUPPORT_GUDANG",
+   "name": "Support harian",
+   "dept": "Gudang",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 36,
+   "sort_order": 9,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A36:D36"
+  },
+  {
+   "code": "SUPPORT_HRGA",
+   "name": "Support harian",
+   "dept": "HRGA",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 37,
+   "sort_order": 10,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A37:D37"
+  },
+  {
+   "code": "SUPPORT_AGRO",
+   "name": "Support harian",
+   "dept": "Agro",
+   "kind": "support",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 38,
+   "sort_order": 11,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A38:D38"
+  },
+  {
+   "code": "KUPAS_SINGKONG",
+   "name": "Borongan kupas",
+   "dept": "Kupas singkong",
+   "kind": "kupas",
+   "pool": "KUPAS",
+   "unit": null,
+   "wp_row": 39,
+   "sort_order": 12,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A39:D39"
+  },
+  {
+   "code": "KUPAS_UBI",
+   "name": "Borongan kupas",
+   "dept": "Kupas ubi",
+   "kind": "kupas",
+   "pool": "KUPAS",
+   "unit": null,
+   "wp_row": 40,
+   "sort_order": 13,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A40:D40"
+  },
+  {
+   "code": "STAF_PABRIK",
+   "name": "Staf bulanan pabrik",
+   "dept": "Semua departemen pabrik",
+   "kind": "staf",
+   "pool": "B",
+   "unit": null,
+   "wp_row": 41,
+   "sort_order": 14,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx BIAYA BERSAMA!A41:D41"
+  }
+ ]
+}

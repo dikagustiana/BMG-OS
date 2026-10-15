@@ -1,0 +1,494 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "rows": [
+  {
+   "code": "BB-004",
+   "name": "Singkong Daging Premium",
+   "unit": "kg",
+   "category": "singkong_daging",
+   "line_default": "FCC",
+   "sort_order": 1,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A7:O7"
+  },
+  {
+   "code": "BB-014",
+   "name": "Minyak Olein",
+   "unit": "kg",
+   "category": "olein",
+   "line_default": "FCC",
+   "sort_order": 2,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A8:O8"
+  },
+  {
+   "code": "BB-001",
+   "name": "Singkong Kulit Premium",
+   "unit": "kg",
+   "category": "singkong_kulit",
+   "line_default": "FCC",
+   "sort_order": 3,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A9:O9"
+  },
+  {
+   "code": "BB-015",
+   "name": "CNG",
+   "unit": "m3",
+   "category": "cng",
+   "line_default": "FCC",
+   "sort_order": 4,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A10:O10"
+  },
+  {
+   "code": "BB-022",
+   "name": "HDPE Ukuran IFL Warna Putih Tebal 0,07",
+   "unit": "Kg",
+   "category": "hdpe",
+   "line_default": "FCC",
+   "sort_order": 5,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A11:O11"
+  },
+  {
+   "code": "BB-020",
+   "name": "HDPE Ukuran IFL Warna Putih Tebal 0,05",
+   "unit": "kg",
+   "category": "hdpe",
+   "line_default": "FCC",
+   "sort_order": 6,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A12:O12"
+  },
+  {
+   "code": "BB-026",
+   "name": "Karton Polos IFL",
+   "unit": "pcs",
+   "category": "karton",
+   "line_default": "FCC",
+   "sort_order": 7,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A13:O13"
+  },
+  {
+   "code": "BB-322",
+   "name": "Ubi Orange Kulit Merah",
+   "unit": "kg",
+   "category": "ubi_orange",
+   "line_default": "UO",
+   "sort_order": 8,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A14:O14"
+  },
+  {
+   "code": "BB-329",
+   "name": "Ubi Putih ACE",
+   "unit": "Kg",
+   "category": "ubi_putih",
+   "line_default": "LAIN",
+   "sort_order": 9,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A15:O15"
+  },
+  {
+   "code": null,
+   "name": "Plastik Singkong HD 60*100*0,07",
+   "unit": "kg",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 10,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A16:O16"
+  },
+  {
+   "code": null,
+   "name": "Polyfilm Umbis Ubi Ungu Rasa Ubi Bakar",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 11,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A17:O17"
+  },
+  {
+   "code": "BB-021",
+   "name": "HDPE Ukuran IFL Warna Putih Tipis  0,03",
+   "unit": "kg",
+   "category": "hdpe",
+   "line_default": "FCC",
+   "sort_order": 12,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A18:O18"
+  },
+  {
+   "code": "BB-017",
+   "name": "Ammonium Bicarbonate (TI)",
+   "unit": "kg",
+   "category": "amonium",
+   "line_default": "FCC",
+   "sort_order": 13,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A19:O19"
+  },
+  {
+   "code": "BB-129",
+   "name": "Bumbu Ubi Bakar Neo 321209",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": null,
+   "sort_order": 14,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A20:O20"
+  },
+  {
+   "code": null,
+   "name": "Gula Rafinasi",
+   "unit": "kg",
+   "category": "other",
+   "line_default": null,
+   "sort_order": 15,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A21:O21"
+  },
+  {
+   "code": "BB-031",
+   "name": "Plakban Ukuran 100 Yard",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": "FCC",
+   "sort_order": 16,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A22:O22"
+  },
+  {
+   "code": "BB-114",
+   "name": "Bumbu Balado FII-A-01014",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": "LAIN",
+   "sort_order": 17,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A23:O23"
+  },
+  {
+   "code": "BB-024",
+   "name": "Plastik HDPE 4 kg",
+   "unit": "kg",
+   "category": "hdpe",
+   "line_default": null,
+   "sort_order": 18,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A24:O24"
+  },
+  {
+   "code": "BB-101",
+   "name": "Bumbu BBQ Pachira",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": "LAIN",
+   "sort_order": 19,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A25:O25"
+  },
+  {
+   "code": "BB-007",
+   "name": "Ubi Ungu",
+   "unit": "Kg",
+   "category": "ubi_ungu",
+   "line_default": "UU",
+   "sort_order": 20,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A26:O26"
+  },
+  {
+   "code": "BB-229",
+   "name": "Plastik PP 1 kg",
+   "unit": "kg",
+   "category": "kemasan",
+   "line_default": "LAIN",
+   "sort_order": 21,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A27:O27"
+  },
+  {
+   "code": "BB-030",
+   "name": "Tali Rafia 1 kg",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": "FCC",
+   "sort_order": 22,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A28:O28"
+  },
+  {
+   "code": "BB-233",
+   "name": "Plastik Suka Suka 40",
+   "unit": "kg",
+   "category": "kemasan",
+   "line_default": "LAIN",
+   "sort_order": 23,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A29:O29"
+  },
+  {
+   "code": "BB-126",
+   "name": "Bumbu Jagung Manis",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": "LAIN",
+   "sort_order": 24,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A30:O30"
+  },
+  {
+   "code": "BB-035",
+   "name": "Label FCC Hijau",
+   "unit": "rim",
+   "category": "kemasan",
+   "line_default": "FCC",
+   "sort_order": 25,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A31:O31"
+  },
+  {
+   "code": "BB-034",
+   "name": "Label FCC Putih",
+   "unit": "rim",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 26,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A32:O32"
+  },
+  {
+   "code": "BB-064",
+   "name": "Garam",
+   "unit": "kg",
+   "category": "other",
+   "line_default": null,
+   "sort_order": 27,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A33:O33"
+  },
+  {
+   "code": "BB-050",
+   "name": "Tepung Beras Sujiwangi",
+   "unit": "kg",
+   "category": "other",
+   "line_default": null,
+   "sort_order": 28,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A34:O34"
+  },
+  {
+   "code": null,
+   "name": "Karton Umbis Ubi Ungu",
+   "unit": "pcs",
+   "category": "karton",
+   "line_default": null,
+   "sort_order": 29,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A35:O35"
+  },
+  {
+   "code": "BB-315",
+   "name": "Label WIP QKSO",
+   "unit": "rim",
+   "category": "kemasan",
+   "line_default": "UO",
+   "sort_order": 30,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A36:O36"
+  },
+  {
+   "code": "BB-316",
+   "name": "Label WIP QKSP",
+   "unit": "rim",
+   "category": "kemasan",
+   "line_default": "UU",
+   "sort_order": 31,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A37:O37"
+  },
+  {
+   "code": null,
+   "name": "Plastik PE Gusset 23*(4+4)*32*0,1",
+   "unit": "Ca",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 32,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A38:O38"
+  },
+  {
+   "code": "BB-036",
+   "name": "Label FCC Biru",
+   "unit": "rim",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 33,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A39:O39"
+  },
+  {
+   "code": null,
+   "name": "Garam-KI CYCL",
+   "unit": "kg",
+   "category": "other",
+   "line_default": "LAIN",
+   "sort_order": 34,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A40:O40"
+  },
+  {
+   "code": null,
+   "name": "Karton Maxfres",
+   "unit": "pcs",
+   "category": "karton",
+   "line_default": null,
+   "sort_order": 35,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A41:O41"
+  },
+  {
+   "code": "BB-295",
+   "name": "Hot Ink Ukuran 36*40",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 36,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A42:O42"
+  },
+  {
+   "code": null,
+   "name": "Hot Ink Putih",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 37,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A43:O43"
+  },
+  {
+   "code": null,
+   "name": "Plastik PE Gusset 23*(4+4)*40*0,1",
+   "unit": "Ca",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 38,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A44:O44"
+  },
+  {
+   "code": null,
+   "name": "Benang Merah",
+   "unit": "Kg",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 39,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A45:O45"
+  },
+  {
+   "code": "BB-018",
+   "name": "Garam Krosok",
+   "unit": "kg",
+   "category": "other",
+   "line_default": null,
+   "sort_order": 40,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A46:O46"
+  },
+  {
+   "code": null,
+   "name": "Coding Tape",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 41,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A47:O47"
+  },
+  {
+   "code": null,
+   "name": "Basreng Bumbu Level 10 Maichi",
+   "unit": "Kg",
+   "category": "bahan_maklon",
+   "line_default": null,
+   "sort_order": 42,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A48:O48"
+  },
+  {
+   "code": null,
+   "name": "Bumbu BBQ SSF-01110",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": null,
+   "sort_order": 43,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A49:O49"
+  },
+  {
+   "code": "BB-289",
+   "name": "Bumbu Maicih Level 5",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": null,
+   "sort_order": 44,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A50:O50"
+  },
+  {
+   "code": null,
+   "name": "Polyfilm Maichi Basreng Level 5",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 45,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A51:O51"
+  },
+  {
+   "code": "BB-327",
+   "name": "Basreng Bumbu Level 5 Maichi",
+   "unit": "Kg",
+   "category": "bahan_maklon",
+   "line_default": null,
+   "sort_order": 46,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A52:O52"
+  },
+  {
+   "code": "BB-292",
+   "name": "Polyfilm Maichi Keripik Singkong Level-5",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 47,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A53:O53"
+  },
+  {
+   "code": "BB-290",
+   "name": "Bumbu Maicih Level 10",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": null,
+   "sort_order": 48,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A54:O54"
+  },
+  {
+   "code": "BB-291",
+   "name": "Polyfilm Maichi Keripik Singkong Level-3",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 49,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A55:O55"
+  },
+  {
+   "code": "BB-324",
+   "name": "Bumbu Seors 132003",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": null,
+   "sort_order": 50,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A56:O56"
+  },
+  {
+   "code": "BB-288",
+   "name": "Bumbu Maicih Level 3",
+   "unit": "kg",
+   "category": "bumbu",
+   "line_default": null,
+   "sort_order": 51,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A57:O57"
+  },
+  {
+   "code": "BB-296",
+   "name": "Polyfilm Maichi Basreng Level 10",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 52,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A58:O58"
+  },
+  {
+   "code": "BB-294",
+   "name": "Karton Maicih",
+   "unit": "pcs",
+   "category": "karton",
+   "line_default": null,
+   "sort_order": 53,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A59:O59"
+  },
+  {
+   "code": "BB-293",
+   "name": "Polyfilm Maichi Keripik Singkong Level-10",
+   "unit": "roll",
+   "category": "kemasan",
+   "line_default": null,
+   "sort_order": 54,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx REKON MATERIAL!A60:O60"
+  }
+ ]
+}

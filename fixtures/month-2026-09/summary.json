@@ -1,0 +1,808 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "sheets": {
+  "RINGKASAN": {
+   "header": {
+    "title": "RINGKASAN WP COSTING",
+    "first_row": 1,
+    "rows": [
+     {
+      "r": 1,
+      "c": {
+       "A": "RINGKASAN WP COSTING"
+      }
+     },
+     {
+      "r": 3,
+      "c": {
+       "A": "Status kontrol semua sheet + kontrol ke GL/LK (bagian 5)",
+       "C": "LULUS"
+      }
+     },
+     {
+      "r": 4,
+      "c": {
+       "A": "  di dalamnya: kontrol ke GL, Neraca, Laba Rugi (bagian 5)",
+       "C": "LULUS"
+      }
+     }
+    ],
+    "last_row": 4
+   },
+   "1": {
+    "title": "1. Biaya produksi dan HPP per produk (Rp juta; Rp/kg per kg produksi)",
+    "first_row": 5,
+    "rows": [
+     {
+      "r": 5,
+      "c": {
+       "A": "1. Biaya produksi dan HPP per produk (Rp juta; Rp/kg per kg produksi)"
+      }
+     },
+     {
+      "r": 6,
+      "c": {
+       "A": "Pos",
+       "B": "FCC",
+       "C": "Ubi Ungu",
+       "D": "Ubi Orange",
+       "E": "Lain-lain",
+       "F": "Total"
+      }
+     },
+     {
+      "r": 7,
+      "c": {
+       "A": "Produksi (kg)",
+       "B": "236923",
+       "C": "467.5",
+       "D": "6715.5",
+       "E": "45653.42",
+       "F": "289759.42"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 8,
+      "c": {
+       "A": "Total biaya produksi",
+       "B": "5562.5684659577255",
+       "C": "18.227720753086338",
+       "D": "252.56660257611577",
+       "E": "870.9780776720027",
+       "F": "6704.340866958932"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 9,
+      "c": {
+       "A": "Biaya produksi per kg (Rp)",
+       "B": "23478.381018127093",
+       "C": "38989.77701194939",
+       "D": "37609.50079310785",
+       "E": "19078.04667584603",
+       "F": "23137.61142591648"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 10,
+      "c": {
+       "A": "HPP",
+       "B": "5106.312148257679",
+       "C": "232.70641734778275",
+       "D": "252.56660257611577",
+       "E": "871.5817256075468",
+       "F": "6463.1668937891245"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 11,
+      "c": {
+       "A": "Pendapatan (total = GL)",
+       "B": "5901.31314207",
+       "C": "321.7005",
+       "D": "321.67245",
+       "E": "917.6740605900001",
+       "F": "7462.3601526600005"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     },
+     {
+      "r": 12,
+      "c": {
+       "A": "Margin kotor (%)",
+       "B": "0.13471594790400485",
+       "C": "0.2766364449300428",
+       "D": "0.2148329688286462",
+       "E": "0.050227348643612245",
+       "F": "0.1338977533153111"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ]
+     }
+    ],
+    "last_row": 12
+   },
+   "2": {
+    "title": "2. FCC, UU, UO: Rp/kg aktual vs budget dan penyebab selisih (Rp/kg)",
+    "first_row": 14,
+    "rows": [
+     {
+      "r": 14,
+      "c": {
+       "A": "2. FCC, UU, UO: Rp/kg aktual vs budget dan penyebab selisih (Rp/kg)"
+      }
+     },
+     {
+      "r": 15,
+      "c": {
+       "A": "Produk",
+       "B": "Rp/kg aktual",
+       "C": "Rp/kg budget",
+       "D": "Selisih",
+       "E": "Harga / belanja",
+       "F": "Pemakaian / yield",
+       "G": "Volume",
+       "H": "Metode alokasi",
+       "I": "Bulan budget"
+      }
+     },
+     {
+      "r": 16,
+      "c": {
+       "A": "FCC",
+       "B": "23301.54101103618",
+       "C": "0",
+       "D": "23301.54101103618",
+       "E": "23958.869329838977",
+       "F": "40.79640591786712",
+       "G": "0",
+       "H": "-698.1247247206625",
+       "I": "Sep-26"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 17,
+      "c": {
+       "A": "UU",
+       "B": "38989.77701194939",
+       "C": "0",
+       "D": "38989.77701194939",
+       "E": "32383.525494079207",
+       "F": "74.74981296046529",
+       "G": "0",
+       "H": "6531.501704909711",
+       "I": "Sep-26"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 18,
+      "c": {
+       "A": "UO",
+       "B": "37609.50079310786",
+       "C": "0",
+       "D": "37609.50079310786",
+       "E": "31682.571212191277",
+       "F": "49.47288377975884",
+       "G": "0",
+       "H": "5877.456697136817",
+       "I": "Sep-26"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     }
+    ],
+    "last_row": 18
+   },
+   "3": {
+    "title": "3. Biaya yang tidak terlihat di margin (memo)",
+    "first_row": 21,
+    "rows": [
+     {
+      "r": 21,
+      "c": {
+       "A": "3. Biaya yang tidak terlihat di margin (memo)"
+      }
+     },
+     {
+      "r": 22,
+      "c": {
+       "A": "Pos",
+       "B": "FCC",
+       "C": "Ubi Ungu",
+       "D": "Ubi Orange",
+       "F": "Catatan"
+      }
+     },
+     {
+      "r": 23,
+      "c": {
+       "A": "Biaya waste (kerugian normal) yang terserap ke HPP (Rp jt)",
+       "B": "155.53504963916546",
+       "C": "0",
+       "D": "0"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 24,
+      "c": {
+       "A": "KW 2 dikreditkan pada NRV (Rp jt)",
+       "B": "74.12149282231898",
+       "C": "0",
+       "D": "0"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 25,
+      "c": {
+       "A": "Kenaikan WIP + FG (Rp jt)",
+       "B": "-111.4570995826385",
+       "C": "-214.4786965946964",
+       "D": "0"
+      },
+      "n": [
+       "B",
+       "C",
+       "D"
+      ]
+     },
+     {
+      "r": 26,
+      "c": {
+       "A": "Biaya jam operator tidak terpakai untuk produk (Rp jt; % jam)",
+       "B": "61.5946328541493",
+       "C": "0.13124381498072207"
+      },
+      "n": [
+       "B",
+       "C"
+      ]
+     }
+    ],
+    "last_row": 26
+   },
+   "4": {
+    "title": "4. Rekonsiliasi ke GL (Rp juta)",
+    "first_row": 28,
+    "rows": [
+     {
+      "r": 28,
+      "c": {
+       "A": "4. Rekonsiliasi ke GL (Rp juta)"
+      }
+     },
+     {
+      "r": 29,
+      "c": {
+       "A": "Total HPP kartu baru",
+       "B": "6463.1668937891245"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 30,
+      "c": {
+       "A": "Varian material (GL − kartu)",
+       "B": "-121.14819029890805"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 31,
+      "c": {
+       "A": "Selisih kenaikan persediaan kartu baru vs GL",
+       "B": "82.76604678712204"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 32,
+      "c": {
+       "A": "Kenaikan persediaan KW 2 pada NRV",
+       "B": "-25.596895951567248"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 33,
+      "c": {
+       "A": "Jam menganggur dibebankan ke periode",
+       "B": "0"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 34,
+      "c": {
+       "A": "HPP menurut GL",
+       "B": "6375.41230437"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 35,
+      "c": {
+       "A": "Cek (harus nol)",
+       "B": "0.0000072142292992793955"
+      },
+      "n": [
+       "B"
+      ]
+     }
+    ],
+    "last_row": 35
+   },
+   "5": {
+    "title": "5. Kontrol ke GL Accurate dan LK: Laba Rugi dan Neraca (Rp juta; toleransi Rp 0,001 jt)",
+    "first_row": 37,
+    "rows": [
+     {
+      "r": 37,
+      "c": {
+       "A": "5. Kontrol ke GL Accurate dan LK: Laba Rugi dan Neraca (Rp juta; toleransi Rp 0,001 jt)"
+      }
+     },
+     {
+      "r": 38,
+      "c": {
+       "A": "Pos",
+       "B": "Menurut WP",
+       "C": "GL Accurate",
+       "D": "LK (LR / Neraca)",
+       "E": "Selisih WP − GL",
+       "F": "Dijelaskan pos rekon",
+       "G": "Sisa WP − GL",
+       "H": "Selisih GL − LK",
+       "I": "Status",
+       "J": "Penjelasan / sumber"
+      }
+     },
+     {
+      "r": 39,
+      "c": {
+       "A": "Laba rugi bulan ini"
+      }
+     },
+     {
+      "r": 40,
+      "c": {
+       "A": "Pendapatan",
+       "B": "7462.3601526600005",
+       "C": "7462.36015266",
+       "D": "7462.36015266",
+       "E": "0",
+       "F": "0",
+       "G": "0",
+       "H": "0",
+       "I": "LULUS",
+       "J": "WP: REKON F15 (pendapatan per produk). GL: 4101-007 (REKON C72)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 41,
+      "c": {
+       "A": "Pemakaian bahan baku",
+       "B": "4496.366351534678",
+       "C": "4375.21816845",
+       "D": "4375.21816124",
+       "E": "121.14818308467784",
+       "F": "121.14819029890805",
+       "G": "-0.000007214230208774097",
+       "H": "0.000007210000148916151",
+       "I": "LULUS",
+       "J": "WP: material kartu semua produk (REKON B28). GL: 1106-001 Penyesuaian Persediaan neto (REKON MATERIAL). Sisa dijelaskan varian material GL − kartu (REKON B30; rincian per item di REKON MATERIAL)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 42,
+      "c": {
+       "A": "Biaya konversi (DL + FOH)",
+       "B": "1572.7667371900002",
+       "C": "1590.88864502",
+       "D": "1590.88864502",
+       "E": "-18.121907829999827",
+       "F": "-18.121907829999998",
+       "G": "0.00000000000017053025658242404",
+       "H": "0",
+       "I": "LULUS",
+       "J": "WP: upah kupas + DL + FOH di semua kartu (REKON F9:F11) + jam menganggur dibebankan ke periode. GL: 16 akun (BIAYA BERSAMA C23). Dijelaskan: penyesuaian BIAYA BERSAMA bagian 8 ke pool dan THR (reklas opex pabrik, THR tertukar, tali asih per bulan jasa, ongkos kirim singkong keluar ke material, pisau Urschel)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 43,
+      "c": {
+       "A": "HPP",
+       "B": "6463.1668937891245",
+       "C": "6375.41230437",
+       "D": "6375.41230437",
+       "E": "87.75458941912439",
+       "F": "87.75459663335327",
+       "G": "-0.000007214228887164609",
+       "H": "0",
+       "I": "LULUS",
+       "J": "WP: HPP semua kartu (REKON F14). GL: 5101/5102/6500-006/007 (REKON C44). Pos rekon: REKON C38:C42 (varian material, beda kenaikan persediaan kartu vs GL, KW 2 pada NRV, jam menganggur). Ditambah REKON C42: penyesuaian bagian 8 yang masuk kartu (tanda dibalik)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 44,
+      "c": {
+       "A": "Laba kotor",
+       "B": "999.193258870876",
+       "C": "1086.9478482899995",
+       "D": "1086.9478482899995",
+       "E": "-87.75458941912348",
+       "F": "-87.75459663335327",
+       "G": "0.0000072142297966593105",
+       "H": "0",
+       "I": "LULUS",
+       "J": "Pendapatan − HPP. Pos rekon sama dengan baris HPP, tanda dibalik."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 45,
+      "c": {
+       "A": "Neraca akhir bulan"
+      }
+     },
+     {
+      "r": 46,
+      "c": {
+       "A": "Persediaan bahan baku 1106-001",
+       "B": "826.0312756199996",
+       "C": "947.1794586900005",
+       "D": "947.17940289",
+       "E": "-121.14818307000087",
+       "F": "-121.14819029890805",
+       "G": "0.000007228907179523958",
+       "H": "0.000055800000495764834",
+       "I": "LULUS",
+       "J": "WP: saldo awal + penerimaan GL − pemakaian kartu (REKON MATERIAL kolom N). GL: saldo awal + penerimaan − penyesuaian. Sisa dijelaskan varian material."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 47,
+      "c": {
+       "A": "Persediaan barang setengah jadi 1106-002",
+       "B": "51.98459928324415",
+       "C": "297.85070621999995",
+       "D": "297.85070622",
+       "E": "-245.86610693675578",
+       "F": "-245.8661069367561",
+       "G": "0.0000000000003126388037344441",
+       "H": "0",
+       "I": "LULUS",
+       "J": "WP: WIP akhir kartu baru FCC + UU + UO. GL: saldo awal LK + mutasi GL (REKON C74). Selisih dijelaskan per item di REKON PERSEDIAAN: beda penilaian kartu baru vs kartu lama (K1), olein ditahan di WIP-022 (K2), bahan/kemasan di WIP (K3), beda konstan subledger vs GL."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 48,
+      "c": {
+       "A": "Persediaan barang jadi 1106-003",
+       "B": "14.171280852956015",
+       "C": "286.53663963999907",
+       "D": "286.53663964",
+       "E": "-272.3653587870431",
+       "F": "-272.36535878704404",
+       "G": "0.0000000000009663381206337363",
+       "H": "-0.0000000000009094947017729282",
+       "I": "LULUS",
+       "J": "WP: FG akhir kartu baru FCC + UU + UO + sheet SKU Lain-lain. GL: saldo awal LK + mutasi GL (REKON C75). Selisih dijelaskan per item di REKON PERSEDIAAN: beda penilaian (K1), FG tanpa mutasi (K4), FG tanpa sheet WP (K5), beda konstan subledger vs GL."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 49,
+      "c": {
+       "A": "Kenaikan persediaan WIP + FG",
+       "B": "-326.5394441128789",
+       "C": "-409.30549090000096",
+       "D": "-409.3054909",
+       "E": "82.76604678712204",
+       "F": "82.76604678712204",
+       "G": "0",
+       "H": "-0.0000000000009663381206337363",
+       "I": "LULUS",
+       "J": "WP: kenaikan menurut kartu baru (REKON C39). GL: mutasi 1106-002 + 1106-003 (REKON C74:C75). Sisa dijelaskan REKON C46 (pos rekon HPP). Rincian per kategori: REKON PERSEDIAAN kolom Δ."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ]
+     },
+     {
+      "r": 50,
+      "c": {
+       "A": "Status bagian 5 (semua baris harus LULUS; persediaan WIP/FG dirinci per item di REKON PERSEDIAAN)",
+       "I": "LULUS"
+      }
+     }
+    ],
+    "last_row": 50
+   },
+   "6": {
+    "title": "6. Input LK (Rp) – sel biru",
+    "first_row": 56,
+    "rows": [
+     {
+      "r": 56,
+      "c": {
+       "A": "6. Input LK (Rp) – sel biru"
+      }
+     },
+     {
+      "r": 57,
+      "c": {
+       "A": "Pos",
+       "B": "Nilai (Rp)",
+       "C": "Sumber"
+      }
+     },
+     {
+      "r": 58,
+      "c": {
+       "A": "Pendapatan 4101-007",
+       "B": "7462360152.66",
+       "C": "LK Sep-26 sheet Income Statement, 4101-007, kolom Sep"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 59,
+      "c": {
+       "A": "Pemakaian Bahan Baku",
+       "B": "4375218161.24",
+       "C": "LK Sep-26 sheet Income Statement, baris Pemakaian Bahan Baku, kolom Sep"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 60,
+      "c": {
+       "A": "Biaya konversi pabrik (16 akun 5101-002 s/d 5101-016, 6500-006/007)",
+       "B": "1590888645.02",
+       "C": "LK Sep-26 sheet Income Statement, jumlah 16 akun, kolom Sep"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 61,
+      "c": {
+       "A": "Total Cost of Goods Sold",
+       "B": "6375412304.37",
+       "C": "LK Sep-26 sheet Income Statement, baris Total Cost of Goods Sold, kolom Sep"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 62,
+      "c": {
+       "A": "Persediaan bahan baku 1106-001, akhir bulan",
+       "B": "947179402.89",
+       "C": "LK Sep-26 sheet Balance Sheet, 1106-001, kolom September"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 63,
+      "c": {
+       "A": "Persediaan barang setengah jadi 1106-002, awal bulan",
+       "B": "494002773.03",
+       "C": "LK Sep-26 sheet Balance Sheet, 1106-002, kolom Agustus"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 64,
+      "c": {
+       "A": "Persediaan barang setengah jadi 1106-002, akhir bulan",
+       "B": "297850706.22",
+       "C": "LK Sep-26 sheet Balance Sheet, 1106-002, kolom September"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 65,
+      "c": {
+       "A": "Persediaan barang jadi 1106-003, awal bulan",
+       "B": "499690063.73",
+       "C": "LK Sep-26 sheet Balance Sheet, 1106-003, kolom Agustus"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 66,
+      "c": {
+       "A": "Persediaan barang jadi 1106-003, akhir bulan",
+       "B": "286536639.64",
+       "C": "LK Sep-26 sheet Balance Sheet, 1106-003, kolom September"
+      },
+      "n": [
+       "B"
+      ]
+     }
+    ],
+    "last_row": 66
+   }
+  }
+ }
+}

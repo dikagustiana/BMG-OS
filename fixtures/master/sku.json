@@ -1,0 +1,208 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "rows": [
+  {
+   "code": "FG-180",
+   "others_group_code": "CEMCEM_ORI",
+   "name": "Keripik Singkong Original (Cem-Cem Cazva)",
+   "fg_unit": "bag",
+   "kg_per_unit": "0.06",
+   "wp_sheet": "CEM-CEM ORI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx CEM-CEM ORI!A45, B13:C13",
+   "sort_order": 1
+  },
+  {
+   "code": "FG-181",
+   "others_group_code": "CEMCEM_BBQ",
+   "name": "Keripik Singkong BBQ (Cem-Cem Cazva)",
+   "fg_unit": "bag",
+   "kg_per_unit": "0.06",
+   "wp_sheet": "CEM-CEM BBQ",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx CEM-CEM BBQ!A45, B13:C13",
+   "sort_order": 2
+  },
+  {
+   "code": "FG-138",
+   "others_group_code": "MCH_BASRENG",
+   "name": "Maicih Basreng 80GR Level.0",
+   "fg_unit": "bag",
+   "kg_per_unit": null,
+   "wp_sheet": "MCH BASRENG L0",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx MCH BASRENG L0!A45, B13:C13",
+   "sort_order": 3
+  },
+  {
+   "code": "FG-137",
+   "others_group_code": "MCH_BASRENG",
+   "name": "Maicih Basreng 80GR Level.5",
+   "fg_unit": "bag",
+   "kg_per_unit": "0.08",
+   "wp_sheet": "MCH BASRENG L5",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx MCH BASRENG L5!A45, B13:C13",
+   "sort_order": 4
+  },
+  {
+   "code": "FG-153",
+   "others_group_code": "MCH_BASRENG",
+   "name": "Maicih Basreng 80 Gr-Level 10",
+   "fg_unit": "bag",
+   "kg_per_unit": "0.08",
+   "wp_sheet": "MCH BASRENG L10",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx MCH BASRENG L10!A45, B13:C13",
+   "sort_order": 5
+  },
+  {
+   "code": "FG-110",
+   "others_group_code": "MCH_KERIPIK_LV3_10",
+   "name": "Maicih Keripik Singkong 80gr-Level 3",
+   "fg_unit": "bag",
+   "kg_per_unit": "0.08",
+   "wp_sheet": "MCH KERIPIK LV3",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx MCH KERIPIK LV3!A45, B13:C13",
+   "sort_order": 6
+  },
+  {
+   "code": "FG-111",
+   "others_group_code": "MCH_KERIPIK_LV3_10",
+   "name": "Maicih Keripik Singkong 80gr-Level 10",
+   "fg_unit": "bag",
+   "kg_per_unit": "0.08",
+   "wp_sheet": "MCH KERIPIK LV10",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx MCH KERIPIK LV10!A45, B13:C13",
+   "sort_order": 7
+  },
+  {
+   "code": "FG-112",
+   "others_group_code": "MCH_KERIPIK_LV5",
+   "name": "Maicih Keripik Singkong 80gr-Level 5",
+   "fg_unit": "bag",
+   "kg_per_unit": "0.08",
+   "wp_sheet": "MCH KERIPIK LV5",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx MCH KERIPIK LV5!A45, B13:C13",
+   "sort_order": 8
+  },
+  {
+   "code": "FG-182",
+   "others_group_code": "UBI_PUTIH_ACE",
+   "name": "Sweet Potato N110",
+   "fg_unit": "kg",
+   "kg_per_unit": "1",
+   "wp_sheet": "UBI PUTIH ACE",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx UBI PUTIH ACE!A45, B13:C13",
+   "sort_order": 9
+  },
+  {
+   "code": "FG-014",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Kw 2 Bumbu BBQ 1kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "1",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!B6, A139",
+   "sort_order": 10
+  },
+  {
+   "code": "FG-013",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Kw 2 Bumbu Balado 1kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "1",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!C6, A139",
+   "sort_order": 11
+  },
+  {
+   "code": "FG-016",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Kw 2 Bumbu Jagung Manis 1kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "1",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!D6, A139",
+   "sort_order": 12
+  },
+  {
+   "code": "FG-018",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Kw 2 Bumbu Asin 1kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "1",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!E6, A139",
+   "sort_order": 13
+  },
+  {
+   "code": "FG-012",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Kw2 Suka-Suka Bumbu BBQ 2,5kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "2.5",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!F6, A139",
+   "sort_order": 14
+  },
+  {
+   "code": "FG-009",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Kw2 Suka-suka Bumbu Balado 2,5kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "2.5",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!G6, A139",
+   "sort_order": 15
+  },
+  {
+   "code": "FG-010",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Kw2 Suka-suka Bumbu Jagung Manis 2,5kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "2.5",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!H6, A139",
+   "sort_order": 16
+  },
+  {
+   "code": "FG-011",
+   "others_group_code": "KOPERASI",
+   "name": "FCC KW2 Suka-suka Bumbu Asin 2,5kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "2.5",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!I6, A139",
+   "sort_order": 17
+  },
+  {
+   "code": "FG-190",
+   "others_group_code": "KOPERASI",
+   "name": "FCC Premium Bumbu Asin 250gr",
+   "fg_unit": "bag",
+   "kg_per_unit": "1",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!J6, A139",
+   "sort_order": 18
+  },
+  {
+   "code": "FG-167",
+   "others_group_code": "KOPERASI",
+   "name": "Keripik Ubi Mix Kw2 Rasa Balado 1 Kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "1",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!K6, A139",
+   "sort_order": 19
+  },
+  {
+   "code": "FG-170",
+   "others_group_code": "KOPERASI",
+   "name": "Keripik Ubi Mix Kw2 Rasa BBQ 1 Kg",
+   "fg_unit": "bag",
+   "kg_per_unit": "1",
+   "wp_sheet": "KOPERASI",
+   "source": "DI - WP Costing BMG Sep26_4.xlsx KOPERASI!L6, A139",
+   "sort_order": 20
+  }
+ ]
+}

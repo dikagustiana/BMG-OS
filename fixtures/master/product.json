@@ -1,0 +1,35 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "rows": [
+  {
+   "code": "FCC",
+   "name": "FCC (Flat Cassava Chips)",
+   "fg_item_code": "FG-001",
+   "kw2_nrv_per_kg": "9777.27118088893",
+   "wip_completion_pct": "1",
+   "sort_order": 1,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx FCC!A1; NRV FCC!C209"
+  },
+  {
+   "code": "UU",
+   "name": "UBI UNGU IFM (QKSP)",
+   "fg_item_code": "FG-101",
+   "kw2_nrv_per_kg": "0",
+   "wip_completion_pct": "1",
+   "sort_order": 2,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx UU!A1; NRV LAIN-LAIN!C7 (KW 2 ubi)"
+  },
+  {
+   "code": "UO",
+   "name": "UBI ORANGE IFM (QKSO)",
+   "fg_item_code": "FG-102",
+   "kw2_nrv_per_kg": "0",
+   "wip_completion_pct": "1",
+   "sort_order": 3,
+   "source": "DI - WP Costing BMG Sep26_4.xlsx UO!A1; NRV LAIN-LAIN!C7 (KW 2 ubi)"
+  }
+ ]
+}

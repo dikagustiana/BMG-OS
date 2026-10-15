@@ -1,0 +1,1348 @@
+{
+ "source": {
+  "file": "DI - WP Costing BMG Sep26_4.xlsx",
+  "sha256": "9089f5a393a737546fd23dd57cba75fbbfdeb824ad1033c18cca15d077c1a3aa"
+ },
+ "sheets": {
+  "CEK KEWAJARAN": {
+   "header": {
+    "title": "CEK KEWAJARAN – tarif, rendemen dan biaya per kg (FCC Jan–Sep kartu lama; semua produk Agu vs Sep kartu baru)",
+    "first_row": 1,
+    "rows": [
+     {
+      "r": 1,
+      "c": {
+       "A": "CEK KEWAJARAN – tarif, rendemen dan biaya per kg (FCC Jan–Sep kartu lama; semua produk Agu vs Sep kartu baru)"
+      }
+     },
+     {
+      "r": 2,
+      "c": {
+       "A": "Status: DALAM RENTANG / DI LUAR RENTANG terhadap min–maks Jan–Agu (bagian 1); |Δ| > batas = CEK (bagian 2). Status tidak memblok; setiap CEK punya penjelasan di kolom terakhir."
+      }
+     }
+    ],
+    "last_row": 2
+   },
+   "1": {
+    "title": "1. Tren FCC Jan–Sep (kartu lama; hitungan dari bagian 3)",
+    "first_row": 4,
+    "rows": [
+     {
+      "r": 4,
+      "c": {
+       "A": "1. Tren FCC Jan–Sep (kartu lama; hitungan dari bagian 3)"
+      }
+     },
+     {
+      "r": 5,
+      "c": {
+       "A": "KPI",
+       "B": "Jan",
+       "C": "Feb",
+       "D": "Mar",
+       "E": "Apr",
+       "F": "Mei",
+       "G": "Jun",
+       "H": "Jul",
+       "I": "Agu",
+       "J": "Sep",
+       "K": "Min Jan–Agu",
+       "L": "Maks Jan–Agu",
+       "M": "Status Sep",
+       "N": "Catatan"
+      }
+     },
+     {
+      "r": 6,
+      "c": {
+       "A": "Masuk proses (ton)",
+       "B": "358.31713",
+       "C": "317.541",
+       "D": "246.9396",
+       "E": "248.9925",
+       "F": "277.0255",
+       "G": "278.40909999999997",
+       "H": "294.716",
+       "I": "338.754",
+       "J": "236.923",
+       "K": "246.9396",
+       "L": "358.31713",
+       "M": "DI LUAR RENTANG",
+       "N": "Volume terendah Jan–Sep; menjadi bar efek volume biaya tetap (BRIDGE GP b10)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 7,
+      "c": {
+       "A": "Barang jadi premium ÷ masuk proses",
+       "B": "0.9296796109078012",
+       "C": "1.0056339181397047",
+       "D": "0.9459224036970985",
+       "E": "0.9251764611383877",
+       "F": "0.9251657338403866",
+       "G": "0.9429472671690688",
+       "H": "0.9193986753348987",
+       "I": "0.9378856043028274",
+       "J": "0.9329064717228804",
+       "K": "0.9193986753348987",
+       "L": "1.0056339181397047",
+       "M": "DALAM RENTANG"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 8,
+      "c": {
+       "A": "KW 2 ÷ masuk proses",
+       "B": "0.022340545091997135",
+       "C": "0.02916473778189273",
+       "D": "0.02945659586392786",
+       "E": "0.03976224183459341",
+       "F": "0.0376752320634743",
+       "G": "0.03897142729889217",
+       "H": "0.04398132439365355",
+       "I": "0.040604686586726654",
+       "J": "0.03199773766160314",
+       "K": "0.022340545091997135",
+       "L": "0.04398132439365355",
+       "M": "DALAM RENTANG"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 9,
+      "c": {
+       "A": "Waste ÷ masuk proses",
+       "B": "0.026736092689735487",
+       "C": "0.030499998425400184",
+       "D": "0.029342802855435092",
+       "E": "0.03152705402773176",
+       "F": "0.032632374997969504",
+       "G": "0.02740571339083385",
+       "H": "0.03357808873627492",
+       "I": "0.02763067004374856",
+       "J": "0.027435073842556442",
+       "K": "0.026736092689735487",
+       "L": "0.03357808873627492",
+       "M": "DALAM RENTANG"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 10,
+      "c": {
+       "A": "Harga singkong kulit (Rp/kg)",
+       "B": "1868.9025652846583",
+       "C": "1886.7560611478234",
+       "D": "1906.3189213526941",
+       "E": "2001.6040324504909",
+       "F": "2202.971968980205",
+       "G": "2600.1174401980697",
+       "H": "2757.9522868243507",
+       "I": "2673.5488886887993",
+       "J": "2942.8301901052664",
+       "K": "1868.9025652846583",
+       "L": "2757.9522868243507",
+       "M": "DI LUAR RENTANG",
+       "N": "Naik terus sejak Jan; Sep tertinggi. Masuk bar tarif singkong di BRIDGE GP (b3)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 11,
+      "c": {
+       "A": "Harga singkong daging (Rp/kg)",
+       "B": "0",
+       "C": "0",
+       "D": "0",
+       "E": "2950",
+       "F": "0",
+       "G": "0",
+       "H": "4450.61295971979",
+       "I": "4526.804514843972",
+       "J": "4597.338375909804",
+       "K": "0",
+       "L": "4526.804514843972",
+       "M": "DI LUAR RENTANG",
+       "N": "Pembelian daging hanya Apr dan Jul–Sep; bulan tanpa pembelian = 0, jadi rentang min tidak bermakna."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 12,
+      "c": {
+       "A": "Singkong (kulit + daging) per kg masuk proses",
+       "B": "3.2144765169334772",
+       "C": "3.30292331204024",
+       "D": "3.38606803329351",
+       "E": "3.2808503985346666",
+       "F": "3.316174864768767",
+       "G": "3.2296819936663606",
+       "H": "3.0272097302390875",
+       "I": "2.7800465403044274",
+       "J": "2.6480006463823984",
+       "K": "2.7800465403044274",
+       "L": "3.38606803329351",
+       "M": "DI LUAR RENTANG",
+       "N": "Porsi singkong daging naik; kg daging tidak setara kg kulit (bandingkan memo ekuivalen kulit FCC baris 67)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 13,
+      "c": {
+       "A": "Olein per kg masuk proses (kg)",
+       "B": "0.269671729063023",
+       "C": "0.26904557206785895",
+       "D": "0.2668709271416978",
+       "E": "0.268379569665753",
+       "F": "0.2637843808602457",
+       "G": "0.25935574663328176",
+       "H": "0.2626850934458937",
+       "I": "0.23299503474497718",
+       "J": "0.24425657281057558",
+       "K": "0.23299503474497718",
+       "L": "0.269671729063023",
+       "M": "DALAM RENTANG"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 14,
+      "c": {
+       "A": "Harga olein (Rp/kg)",
+       "B": "15543.041330031048",
+       "C": "16240.054653028454",
+       "D": "16327.731217808985",
+       "E": "17165.665626502556",
+       "F": "17381.708880800958",
+       "G": "17437.81854350188",
+       "H": "17240.00601142171",
+       "I": "17257.997793724535",
+       "J": "17512.14950675428",
+       "K": "15543.041330031048",
+       "L": "17437.81854350188",
+       "M": "DI LUAR RENTANG",
+       "N": "Sedikit di atas maks Jun; masuk bar olein di BRIDGE GP (b5)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 15,
+      "c": {
+       "A": "CNG per kg masuk proses (m³)",
+       "B": "0.3211782442597679",
+       "C": "0.3336163425058308",
+       "D": "0.34158851040609445",
+       "E": "0.3463288054229806",
+       "F": "0.35390838481164477",
+       "G": "0.36042367091591837",
+       "H": "0.34663142409728687",
+       "I": "0.33563811639160274",
+       "J": "0.32232704441595417",
+       "K": "0.3211782442597679",
+       "L": "0.36042367091591837",
+       "M": "DALAM RENTANG"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 16,
+      "c": {
+       "A": "Harga CNG (Rp/m³)",
+       "B": "9627.44726688019",
+       "C": "9614.35782597472",
+       "D": "9697.123087059987",
+       "E": "9865.249922883539",
+       "F": "10106.737271020325",
+       "G": "10190.712192493052",
+       "H": "10328.13403970567",
+       "I": "10173.365884040237",
+       "J": "10143.981035713401",
+       "K": "9614.35782597472",
+       "L": "10328.13403970567",
+       "M": "DALAM RENTANG"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 17,
+      "c": {
+       "A": "Karton per ton masuk proses (pcs)",
+       "B": "29.1501553386521",
+       "C": "15.997934125042121",
+       "D": "14.416480791254218",
+       "E": "22.12918059780917",
+       "F": "24.365987968616608",
+       "G": "36.062039638790544",
+       "H": "8.516673679067305",
+       "I": "27.837309670144116",
+       "J": "0.42207805911625296",
+       "K": "8.516673679067305",
+       "L": "36.062039638790544",
+       "M": "DI LUAR RENTANG",
+       "N": "Sep jauh di bawah rentang: karton belum dikeluarkan (kartu dan Accurate), lihat bagian 4. Jul juga rendah lalu Agu tinggi: pola pengeluaran karton tidak bulanan."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 18,
+      "c": {
+       "A": "Direct labour per ton (jam)",
+       "B": "69.53058593654174",
+       "C": "70.56411612988559",
+       "D": "75.77156519246002",
+       "E": "81.19521672339529",
+       "F": "77.41525599628915",
+       "G": "72.27493641551229",
+       "H": "81.62434343571438",
+       "I": "73.04710793082886",
+       "J": "74.80067363658236",
+       "K": "69.53058593654174",
+       "L": "81.62434343571438",
+       "M": "DALAM RENTANG"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 19,
+      "c": {
+       "A": "Material kartu lama per kg masuk proses (Rp)",
+       "B": "11540.115326891655",
+       "C": "11854.114912639974",
+       "D": "12047.842025262493",
+       "E": "12554.414326126089",
+       "F": "13477.106722586368",
+       "G": "14593.37319323007",
+       "H": "14569.003438276985",
+       "I": "14398.49997403514",
+       "J": "14836.987957471752",
+       "K": "11540.115326891655",
+       "L": "14593.37319323007",
+       "M": "DI LUAR RENTANG",
+       "N": "Harga singkong naik; karton Sep yang belum dikeluarkan menekan angka ini."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     },
+     {
+      "r": 20,
+      "c": {
+       "A": "Kartu lama per kg barang baik (Rp)",
+       "B": "17277.230701073302",
+       "C": "17972.91949957685",
+       "D": "18460.56685011873",
+       "E": "19564.519363272244",
+       "F": "20632.09196153843",
+       "G": "21237.91219771334",
+       "H": "21439.468652812426",
+       "I": "20700.66730003187",
+       "J": "21489.80382676901",
+       "K": "17277.230701073302",
+       "L": "21439.468652812426",
+       "M": "DI LUAR RENTANG",
+       "N": "Tertinggi Jan–Sep: harga singkong dan volume terendah."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J",
+       "K",
+       "L"
+      ]
+     }
+    ],
+    "last_row": 20
+   },
+   "2": {
+    "title": "2. Semua produk, kartu baru: Agu vs Sep (Agu = input dari WP Agu; Sep = tautan)",
+    "first_row": 23,
+    "rows": [
+     {
+      "r": 23,
+      "c": {
+       "A": "2. Semua produk, kartu baru: Agu vs Sep (Agu = input dari WP Agu; Sep = tautan)"
+      }
+     },
+     {
+      "r": 24,
+      "c": {
+       "A": "KPI",
+       "B": "Agu-26",
+       "C": "Sep-26",
+       "D": "Δ %",
+       "E": "Batas |Δ|",
+       "F": "Status",
+       "G": "Penjelasan"
+      }
+     },
+     {
+      "r": 25,
+      "c": {
+       "A": "FCC biaya produksi per kg masuk proses (Rp)",
+       "B": "22055.2373",
+       "C": "23478.381018127093",
+       "D": "0.06452633897197257",
+       "E": "0.1",
+       "F": "WAJAR"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 26,
+      "c": {
+       "A": "FCC material per kg (Rp)",
+       "B": "17746.626",
+       "C": "18046.12488639534",
+       "D": "0.016876384637583453",
+       "E": "0.1",
+       "F": "WAJAR"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 27,
+      "c": {
+       "A": "FCC konversi per kg (Rp)",
+       "B": "4308.6113",
+       "C": "5432.256131731754",
+       "D": "0.260790485261865",
+       "E": "0.1",
+       "F": "CEK",
+       "G": "Efek volume pada biaya tetap."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 28,
+      "c": {
+       "A": "FCC Grup B per kg (Rp)",
+       "B": "1058.579",
+       "C": "1452.2091760451522",
+       "D": "0.37184770909412745",
+       "E": "0.1",
+       "F": "CEK",
+       "G": "Volume FCC −30%; pool B hampir tetap → efek volume."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 29,
+      "c": {
+       "A": "FCC Grup D per kg (Rp)",
+       "B": "579.213",
+       "C": "907.3522118903096",
+       "D": "0.5665259790272485",
+       "E": "0.1",
+       "F": "CEK",
+       "G": "Volume −30%, pisau Urschel 28,79 jt (Sep), porsi bagging kWh naik."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 30,
+      "c": {
+       "A": "FCC Grup E per kg (Rp)",
+       "B": "675.0502",
+       "C": "1073.2751508046238",
+       "D": "0.5899190175850977",
+       "E": "0.1",
+       "F": "CEK",
+       "G": "Volume −30%; Grup E mayoritas tetap (penyusutan, security, bangunan)."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 31,
+      "c": {
+       "A": "FCC material lain per kg (Rp)",
+       "B": "889.739",
+       "C": "572.247767504315",
+       "D": "-0.35683636717698675",
+       "E": "0.1",
+       "F": "CEK",
+       "G": "Karton FCC Sep 100 pcs (Agu 9.430 pcs) – lihat bagian 4."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 32,
+      "c": {
+       "A": "Ubi Ungu biaya per kg (Rp)",
+       "B": "36830.8364",
+       "C": "38989.77701194939",
+       "D": "0.05861774596977076",
+       "E": "0.1",
+       "F": "WAJAR",
+       "G": "Produksi Sep hanya 467,5 kg; jam mesin UU estimasi."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 33,
+      "c": {
+       "A": "Ubi Orange biaya per kg (Rp)",
+       "B": "34424.8918",
+       "C": "37609.50079310785",
+       "D": "0.09250890348790741",
+       "E": "0.1",
+       "F": "WAJAR",
+       "G": "Driver Grup D = jam mesin: porsi UO naik; volume −9%."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 34,
+      "c": {
+       "A": "Lain-lain biaya per kg output (Rp)",
+       "B": "20482.3412",
+       "C": "19078.046675846035",
+       "D": "-0.06856123088868205",
+       "E": "0.1",
+       "F": "WAJAR"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 35,
+      "c": {
+       "A": "Pool tetap (Rp juta)",
+       "B": "786.7651",
+       "C": "806.3271136200001",
+       "D": "0.02486385532352675",
+       "E": "0.1",
+       "F": "WAJAR"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 36,
+      "c": {
+       "A": "Pool variabel dan semi-variabel (Rp juta)",
+       "B": "919.522",
+       "C": "766.43962357",
+       "D": "-0.1664803848412545",
+       "E": "0.1",
+       "F": "CEK",
+       "G": "Volume lebih rendah; ongkos kirim keluar pool ke material."
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     },
+     {
+      "r": 37,
+      "c": {
+       "A": "Grup A per man-hour tercatat (Rp)",
+       "B": "21015.6849",
+       "C": "21716.31583344069",
+       "D": "0.03333847727421402",
+       "E": "0.1",
+       "F": "WAJAR"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E"
+      ]
+     }
+    ],
+    "last_row": 37
+   },
+   "3": {
+    "title": "3. Input kartu lama FCC (sel biru; sumber = file kartu CoGM dan sel di catatan sel)",
+    "first_row": 40,
+    "rows": [
+     {
+      "r": 40,
+      "c": {
+       "A": "3. Input kartu lama FCC (sel biru; sumber = file kartu CoGM dan sel di catatan sel)"
+      }
+     },
+     {
+      "r": 41,
+      "c": {
+       "A": "Pos",
+       "B": "Jan",
+       "C": "Feb",
+       "D": "Mar",
+       "E": "Apr",
+       "F": "Mei",
+       "G": "Jun",
+       "H": "Jul",
+       "I": "Agu",
+       "J": "Sep",
+       "K": "Sumber"
+      }
+     },
+     {
+      "r": 42,
+      "c": {
+       "A": "Masuk proses (kg)",
+       "B": "358317.13",
+       "C": "317541",
+       "D": "246939.6",
+       "E": "248992.5",
+       "F": "277025.5",
+       "G": "278409.1",
+       "H": "294716",
+       "I": "338754",
+       "J": "236923",
+       "K": "Label kolom B \"Current Process\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D7)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 43,
+      "c": {
+       "A": "KW 2 (kg)",
+       "B": "8005",
+       "C": "9261",
+       "D": "7274",
+       "E": "9900.5",
+       "F": "10437",
+       "G": "10850",
+       "H": "12962",
+       "I": "13755",
+       "J": "7581",
+       "K": "Label kolom B \"Second Grade\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D11)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 44,
+      "c": {
+       "A": "Waste (kg)",
+       "B": "9580",
+       "C": "9685",
+       "D": "7245.9",
+       "E": "7850",
+       "F": "9040",
+       "G": "7630",
+       "H": "9896",
+       "I": "9360",
+       "J": "6500",
+       "K": "Label kolom B \"Waste Product\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D12)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 45,
+      "c": {
+       "A": "Barang jadi premium (kg)",
+       "B": "333120.13",
+       "C": "319330",
+       "D": "233585.7",
+       "E": "230362",
+       "F": "256294.5",
+       "G": "262525.1",
+       "H": "270961.5",
+       "I": "317712.5",
+       "J": "221027",
+       "K": "Label kolom B \"Finished Goods Accounted For\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D13)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 46,
+      "c": {
+       "A": "Singkong kulit (kg)",
+       "B": "1151802",
+       "C": "1048813.57142857",
+       "D": "836154.285714286",
+       "E": "800377.142857143",
+       "F": "918665",
+       "G": "899172.857142857",
+       "H": "823647.142857143",
+       "I": "625461.885714286",
+       "J": "347092.257142857",
+       "K": "Label kolom B \"Singkong Kulit Premium\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D25)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 47,
+      "c": {
+       "A": "Singkong kulit (Rp)",
+       "B": "2152605712.5",
+       "C": "1978855362.90695",
+       "D": "1593976736.02729",
+       "E": "1602038116.62406",
+       "F": "2023793243.8832",
+       "G": "2337955027.60987",
+       "H": "2271579521.1792",
+       "I": "1672202929.46863",
+       "J": "1021433573.07178",
+       "K": "Label kolom B \"Singkong Kulit Premium\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!F25)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 48,
+      "c": {
+       "A": "Singkong daging (kg)",
+       "B": "0",
+       "C": "0",
+       "D": "0",
+       "E": "16530",
+       "F": "0",
+       "G": "0",
+       "H": "68520",
+       "I": "316290",
+       "J": "280280",
+       "K": "Label kolom B \"Singkong Daging Premium\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D26)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 49,
+      "c": {
+       "A": "Singkong daging (Rp)",
+       "B": "0",
+       "C": "0",
+       "D": "0",
+       "E": "48763500",
+       "F": "0",
+       "G": "0",
+       "H": "304956000",
+       "I": "1431783000",
+       "J": "1288542000",
+       "K": "Label kolom B \"Singkong Daging Premium\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!F26)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 50,
+      "c": {
+       "A": "Olein (kg)",
+       "B": "96628",
+       "C": "85433",
+       "D": "65901",
+       "E": "66824.5",
+       "F": "73075",
+       "G": "72207",
+       "H": "77417.5",
+       "I": "78928",
+       "J": "57870",
+       "K": "Label kolom B \"Minyak Olein\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D28)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 51,
+      "c": {
+       "A": "Olein (Rp)",
+       "B": "1501892997.63824",
+       "C": "1387436589.17218",
+       "D": "1076013814.98483",
+       "E": "1147087022.65822",
+       "F": "1270168376.46453",
+       "G": "1259132563.57064",
+       "H": "1334678165.38924",
+       "I": "1362139249.86309",
+       "J": "1013428091.95587",
+       "K": "Label kolom B \"Minyak Olein\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!F28)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 52,
+      "c": {
+       "A": "CNG (m³)",
+       "B": "115083.666701599",
+       "C": "105936.867015644",
+       "D": "84351.7301242768",
+       "E": "86233.2750842815",
+       "F": "98041.6472566383",
+       "G": "100345.229838397",
+       "H": "102157.826784256",
+       "I": "113698.754480121",
+       "J": "76366.6903441611",
+       "K": "Label kolom B \"Indirect Material - CNG\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D44)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 53,
+      "c": {
+       "A": "CNG (Rp)",
+       "B": "1107961932.44886",
+       "C": "1018514946.4511",
+       "D": "817969109.621578",
+       "E": "850712810.375203",
+       "F": "990881170.440894",
+       "G": "1022589357.17267",
+       "H": "1055099728.23283",
+       "I": "1156699029.88593",
+       "J": "774662258.611368",
+       "K": "Label kolom B \"Indirect Material - CNG\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!F44)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 54,
+      "c": {
+       "A": "Karton (pcs)",
+       "B": "10445",
+       "C": "5080",
+       "D": "3560",
+       "E": "5510",
+       "F": "6750",
+       "G": "10040",
+       "H": "2510",
+       "I": "9430",
+       "J": "100",
+       "K": "Label kolom B \"Karton Polos IFL\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D37)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 55,
+      "c": {
+       "A": "Direct labour (jam)",
+       "B": "24914",
+       "C": "22407",
+       "D": "18711",
+       "E": "20217",
+       "F": "21446",
+       "G": "20122",
+       "H": "24056",
+       "I": "24745",
+       "J": "17722",
+       "K": "Label kolom B \"Direct Labor\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!D41)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 56,
+      "c": {
+       "A": "Material kartu lama (Rp)",
+       "B": "4135021003.80083",
+       "C": "3764167503.47461",
+       "D": "2975089290.58151",
+       "E": "3125955009.09795",
+       "F": "3733502228.37785",
+       "G": "4062927896.69131",
+       "H": "4293718417.31524",
+       "I": "4877549460.2043",
+       "J": "3515223697.84808",
+       "K": "Label kolom B \"B.1. Material Cost\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!F24)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     },
+     {
+      "r": 57,
+      "c": {
+       "A": "Biaya ditambahkan kartu lama (Rp)",
+       "B": "5886907617.2781",
+       "C": "5366623897.97615",
+       "D": "4290599409.13454",
+       "E": "4524138586.6018",
+       "F": "5313764336.55628",
+       "G": "5520351403.43065",
+       "H": "5828491069.01628",
+       "I": "6533937925.91476",
+       "J": "4788830864.36486",
+       "K": "Label kolom B \"Current Cost Added\" di sheet FCCmm26 tiap kartu (mis. CoGM SEPTEMBER 2026 R1.xlsx FCC0926!F22)"
+      },
+      "n": [
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
+      ]
+     }
+    ],
+    "last_row": 57
+   },
+   "4": {
+    "title": "4. Memo karton FCC September (estimasi, tidak mengubah WP maupun GL)",
+    "first_row": 59,
+    "rows": [
+     {
+      "r": 59,
+      "c": {
+       "A": "4. Memo karton FCC September (estimasi, tidak mengubah WP maupun GL)"
+      }
+     },
+     {
+      "r": 60,
+      "c": {
+       "A": "Kg FCC premium terjual Agu",
+       "B": "301075.5",
+       "C": "DI - WP Costing BMG Agu26_6 FCC!C203"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 61,
+      "c": {
+       "A": "Karton FCC dipakai Agu (pcs)",
+       "B": "9430",
+       "C": "DI - WP Costing BMG Agu26_6 FCC!B53"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 62,
+      "c": {
+       "A": "Kg FCC premium terjual Sep",
+       "B": "204950.5",
+       "C": "FCC!C203"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 63,
+      "c": {
+       "A": "Karton FCC dicatat kartu Sep (pcs)",
+       "B": "100",
+       "C": "FCC!B53"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 64,
+      "c": {
+       "A": "Karton yang diperkirakan dipakai Sep (rasio kg/karton Agu)",
+       "B": "6419.264320743468"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 65,
+      "c": {
+       "A": "Harga karton Sep (Rp/pcs)",
+       "B": "9761.76707693236",
+       "C": "FCC!D53"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 66,
+      "c": {
+       "A": "Indikasi karton belum dikeluarkan (Rp juta)",
+       "B": "61.68718639666692",
+       "C": "Konfirmasi ke pabrik; stok karton Accurate naik 149,06 → 170,64 jt"
+      },
+      "n": [
+       "B"
+      ]
+     },
+     {
+      "r": 67,
+      "c": {
+       "A": "Dalam pp terhadap pendapatan Sep",
+       "B": "0.8266444547664744"
+      },
+      "n": [
+       "B"
+      ]
+     }
+    ],
+    "last_row": 67
+   }
+  }
+ }
+}
