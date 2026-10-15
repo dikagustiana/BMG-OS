@@ -368,7 +368,8 @@ def card(c: Cells) -> tuple[list[list], list[list], list[list]]:
             drv.append([p, drv_kind, c.num(p, f"C{r}"), "tidak", f"{p}!C{r}"])
         r = lamp_a_row(c, p, "Kg ")
         drv.append([p, "kg_peeled", c.num(p, f"C{r}"), "tidak", f"{p}!C{r}"])
-        drv.append([p, "machine_hour", c.num(BB, f"{machine_col[p]}171"), "tidak", f"BIAYA BERSAMA!{machine_col[p]}171"])
+        # D11 / Q16: UU machine hours are derived from its kWh share (BIAYA BERSAMA D171 = 27,15), not measured
+        drv.append([p, "machine_hour", c.num(BB, f"{machine_col[p]}171"), "ya" if p == "UU" else "tidak", f"BIAYA BERSAMA!{machine_col[p]}171"])
     drv.append(["PABRIK", "hours_paid", c.num(BB, "C105"), "tidak", "BIAYA BERSAMA!C105 (jam operator Unit I dibayar)"])
     drv.append(["LAIN", "machine_hour", c.num(BB, "F171"), "tidak", "BIAYA BERSAMA!F171 (Ubi putih ACE)"])
     # Lain-lain: one line per SKU sheet (line = SKU code); KOPERASI per column

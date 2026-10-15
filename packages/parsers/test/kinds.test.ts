@@ -160,6 +160,7 @@ describe("cogm_card", () => {
     expect(total(mat, "value_card", (r) => r.line === "FCC").minus(wp("FCC", "G229")).abs().lte(1)).toBe(true); // Rp per row, ±Rp 1
     expect(total(drv, "value", (r) => r.driver === "man_hour").toFixed(2)).toBe(wp("BIAYA BERSAMA", "G91").toFixed(2));
     expect(total(drv, "value", (r) => r.driver === "kwh").toFixed(2)).toBe(wp("BIAYA BERSAMA", "G93").toFixed(2));
+    expect(drv.filter((r) => r.estimated).map((r) => `${r.line}|${r.driver}`)).toEqual(["UU|machine_hour"]); // D11 / Q16
   });
   it("Lain-lain per SKU: output and material = LAIN-LAIN bagian 2 (C43, G43)", () => {
     const sku = new Set(master("sku").map((s) => String(s.code)));
