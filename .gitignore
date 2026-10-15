@@ -1,0 +1,16 @@
+node_modules/
+.next/
+dist/
+coverage/
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+.vercel
+.DS_Store
+out/
+__pycache__/
+*.pyc
+# Office lock files
+~$*
+docs/v1/golden-ci.md
