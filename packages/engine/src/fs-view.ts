@@ -51,13 +51,13 @@ export function relChange(a: Decimal | null | undefined, b: Decimal | null | und
 }
 
 /** `value` positions the bar (running total for start/subtotal/end); `shown` is the number printed next to it. */
-export interface BridgeBar { label: string; value: Decimal; kind: "start" | "delta" | "subtotal" | "end"; shown?: Decimal }
+export interface WaterfallBar { label: string; value: Decimal; kind: "start" | "delta" | "subtotal" | "end"; shown?: Decimal }
 
 /**
  * Cash bridge of a month (PRD §7.5): kas awal → laba → penyusutan → Δ piutang → Δ persediaan → Δ hutang → pos lain
  * → arus kas operasi → investasi → pendanaan → kas akhir. "Pos lain" closes CFO exactly.
  */
-export function cashBridge(l: Lines, cf: Lines): BridgeBar[] | null {
+export function cashBridge(l: Lines, cf: Lines): WaterfallBar[] | null {
   const need = ["cf.open", "cf.cfo", "cf.cfi", "cf.cff", "cf.close"];
   if (!need.every((c) => cf.has(c))) return null;
   const profit = l.get("pl.net_profit") ?? ZERO;
