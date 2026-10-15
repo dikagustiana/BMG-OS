@@ -28,7 +28,10 @@ export interface ModuleDef {
 }
 
 export const MODULES: ModuleDef[] = [
-  { key: "b1_ingest", label: "B1 Ingest dan master", phase: "Fase 1", description: "Upload GL, Inventory Valuation, Sales by Item, Average Price, kartu CoGM, payroll, BP; mapping akun bertanggal; master standar berversi.", nav: [] },
+  { key: "b1_ingest", label: "B1 Ingest dan master", phase: "Fase 1", description: "Upload GL, Inventory Valuation, Sales by Item, Average Price, kartu CoGM, payroll, BP; mapping akun bertanggal; master standar berversi.", nav: [
+    { href: "/m/[month]/input", label: "Input bulanan", roles: ["admin", "finance", "cost_accounting"] },
+    { href: "/standar", label: "Standar", roles: ["admin", "finance", "ppic"] },
+  ] },
   { key: "b2_costing", label: "B2 Costing bulanan", phase: "Fase 2", description: "Pool konversi → alokasi → kartu proses → barang jadi → Lain-lain per SKU (reproduksi WP).", nav: [] },
   { key: "b3_recon", label: "B3 Rekon dan kontrol", phase: "Fase 3", description: "Rekon HPP, material per item, persediaan K1–K6, kontrol ke GL/LK.", nav: [] },
   { key: "b4_analysis", label: "B4 Kewajaran, varian, bridge", phase: "Fase 4", description: "Cek kewajaran 8 bulan, varian per komponen vs flex budget BP, bridge margin 17 bar.", nav: [] },
@@ -51,6 +54,11 @@ export function parseFlags(rows: { key: string; value: unknown }[]): Flags {
   const flags = Object.fromEntries(MODULE_KEYS.map((k) => [k, false])) as Flags;
   for (const r of rows) if (isModuleKey(r.key)) flags[r.key] = r.value === true;
   return flags;
+}
+
+/** A nav route with its period filled in ("/m/[month]/input" → "/m/2026-09-01/input"). */
+export function hrefFor(href: string, month: string): string {
+  return href.replace("[month]", month);
 }
 
 /** Nav items the viewer sees: module on, page shipped, role allowed. */

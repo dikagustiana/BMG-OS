@@ -2,7 +2,7 @@ import Link from "next/link";
 import { appContext } from "@/lib/page";
 import { Shell } from "@/components/Shell";
 import { Card } from "@/components/ui";
-import { MODULES, navFor } from "@/lib/modules";
+import { hrefFor, MODULES, navFor } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +17,7 @@ export default async function Home() {
       <p className="muted">Costing bulanan, rencana dan varian mingguan, tutup bulan — PT Boga Makmur Gracia.</p>
       {items.length ? (
         <Card title="Halaman">
-          <ul>{items.map((n) => <li key={n.href}><Link href={n.href}>{n.label}</Link></li>)}</ul>
+          <ul>{items.map((n) => <li key={n.href}><Link href={hrefFor(n.href, ctx.month)}>{n.label}</Link></li>)}</ul>
         </Card>
       ) : (
         <Card>

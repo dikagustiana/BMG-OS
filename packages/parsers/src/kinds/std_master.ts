@@ -86,7 +86,20 @@ export const stdMaster: KindParser = {
     const cap = table(sheets, capFields, { sheet: /kapasitas|capacity/i });
     const prod = (r: ParsedRow) => { if (r.values.product && !PRODUCTS.includes(r.values.product)) r.issues.push(`Produk harus FCC, UU, atau UO: "${r.values.product}"`); };
     const pct = (r: ParsedRow, f: string) => { const v = r.values[f]; if (v !== null && (D(v).lt(0) || D(v).gt(1))) r.issues.push(`${f} harus 0–1: ${v}`); };
+    const dup = (rows: ParsedRow[], key: (r: ParsedRow) => string, what: string) => {
+      const seen = new Set<string>();
+      for (const r of rows) {
+        const k = key(r);
+        if (seen.has(k)) r.issues.push(`Baris ganda (${what}): ${k}`);
+        seen.add(k);
+      }
+    };
     for (const r of bom.rows) prod(r);
+    dup(bom.rows, (r) => `${r.values.product}|${r.values.material_category}`, "produk, kategori");
+    dup(mix.rows, (r) => `${r.values.product}`, "produk");
+    dup(routing.rows, (r) => `${r.values.product}|${r.values.dept}`, "produk, departemen");
+    dup(rate.rows, (r) => `${(r.values.pool ?? "").toUpperCase()}`, "pool");
+    dup(cap.rows, (r) => `${r.values.week_start}|${r.values.dept}`, "minggu, departemen");
     for (const r of mix.rows) {
       prod(r);
       for (const f of ["premium_pct", "kw2_pct", "waste_pct", "wip_pct"]) pct(r, f);
@@ -110,6 +123,7 @@ export const stdMaster: KindParser = {
     const m8 = (v: string | null) => scale(v, 8), m4 = (v: string | null) => scale(v, 4), m2 = (v: string | null) => scale(v, 2);
     const version: DbRow = { code, effective_from: head.effectiveFrom, status: "draft", note: `Upload std_master` };
     return {
+      period: code,
       detected: bom.detected, fields: bomFields, rows: [...bom.rows, ...mix.rows, ...routing.rows, ...rate.rows, ...cap.rows],
       sets: [
         { target: "std_version", rows: head.effectiveFrom ? [version] : [] },

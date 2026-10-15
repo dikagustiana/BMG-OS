@@ -204,6 +204,14 @@ describe("budget_bp (golden: fixtures/budget-v1 from the Fase 0 extractor)", () 
   });
 });
 
+describe("std_master duplicates", () => {
+  it("a repeated (product, category) row is an issue, not a database error", () => {
+    const r = kindParser("std_master").parse(aoa({ BOM: [["Kode versi", "X"], ["Berlaku mulai", "2026-10-05"], [], ["Produk", "Kategori material", "Qty per kg input"], ["FCC", "olein", 0.2], ["FCC", "olein", 0.3]] }), { period: "x" });
+    expect(set(r, "bom_line")).toHaveLength(1);
+    expect(r.rows[1].issues.join()).toMatch(/Baris ganda/);
+  });
+});
+
 describe("std_master", () => {
   it("draft version from the template header; capacity only for PPIC/Admin", () => {
     const sheets = up("std_master.xlsx");
@@ -215,6 +223,7 @@ describe("std_master", () => {
     expect(set(asPpic, "capacity")).toHaveLength(1);
     const asFinance = kindParser("std_master").parse(sheets, { period: "x", role: "finance" });
     expect(set(asFinance, "capacity")).toHaveLength(0);
+    expect(new Set(set(asPpic, "bom_line").map((r) => `${r.product}|${r.material_category}`)).size).toBe(set(asPpic, "bom_line").length);
     expect(asFinance.issues.join()).toMatch(/Kapasitas hanya bisa diunggah PPIC\/Admin/);
   });
 });

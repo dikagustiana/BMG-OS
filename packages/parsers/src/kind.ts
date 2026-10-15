@@ -42,6 +42,8 @@ export interface KindResult {
   sets: ParsedSet[];
   /** File-level issues and warnings. */
   issues: string[];
+  /** The upload's period when the file names it (std_master: the version code). */
+  period?: string;
 }
 
 export interface KindParser {

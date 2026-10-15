@@ -5,6 +5,7 @@ import { requireViewer } from "@/lib/session";
 import { supabaseServer } from "@/lib/supabase";
 import { assertModule } from "@/lib/modules-server";
 import { commitUpload, kindsFor, rejectUpload, stageUpload, type StageResult } from "@/lib/upload";
+import { storagePrefix } from "@/lib/period";
 
 /** Upload wizard actions (PRD §5). Every upload belongs to module B1 (ingest) or a later module that registers its kind. */
 export async function stage(input: {
@@ -14,7 +15,7 @@ export async function stage(input: {
     const v = await requireViewer();
     await assertModule("b1_ingest");
     if (!kindsFor(v.role).some((k) => k.kind === input.kind)) return { error: "Peran Anda tidak boleh mengunggah jenis ini" };
-    if (!input.path.startsWith(`${input.period}/`)) return { error: "Lokasi file tidak valid" };
+    if (!input.path.startsWith(`${storagePrefix(input.period)}/`)) return { error: "Lokasi file tidak valid" };
     const sb = await supabaseServer();
     if (input.replaces) await rejectUpload(sb, v, input.replaces);
     return await stageUpload(sb, v, input.kind, input.period, input.path, input.fileName, { mapping: input.mapping });

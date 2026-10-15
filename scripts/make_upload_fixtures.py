@@ -442,7 +442,7 @@ def std_example(c: Cells) -> list[tuple[str, list[list], list[str], list[list]]]
             qv = D(c.num(p, f"D{r}"))
             if qv == 0:
                 continue
-            bom.append([p, c.text(p, f"C{r}"), c.text(p, f"E{r}"), q(qv / prod, "0.00000001"), "0.85", "1.15"])
+            bom.append([p, c.text(p, f"A{r}"), c.text(p, f"E{r}"), q(qv / prod, "0.00000001"), "0.85", "1.15"])
     mix, routing = [], []
     for p in ("FCC", "UU", "UO"):
         prod = D(c.num(p, f"C{lamp_a_row(c, p, 'Produksi bulan ini')}"))
