@@ -6,12 +6,6 @@ type Row = Record<string, unknown>;
 /** A write that the user should see as a message (permission, validation, module off). */
 export class WriteError extends Error {}
 
-export function chunk<T>(xs: T[], n: number): T[][] {
-  const out: T[][] = [];
-  for (let i = 0; i < xs.length; i += n) out.push(xs.slice(i, i + n));
-  return out;
-}
-
 /** PostgREST returns at most 1000 rows per request; page through everything. */
 export async function fetchAll<T = Row>(
   page: (from: number, to: number) => PromiseLike<{ data: T[] | null; error: { message: string } | null }>,
@@ -41,30 +35,45 @@ export interface ChangeCounts {
 }
 
 /**
- * One RLS-checked transaction per call (RPC `apply_changes`, security invoker): inserts + updates + soft deletes
- * + supersedes. Only tables listed in `public.upload_tables()` are accepted.
+ * One RLS-checked transaction (RPC `apply_changes`, security invoker): inserts + updates + soft deletes + supersedes
+ * on one table. Only tables listed in `public.upload_tables()` are accepted. Not chunked: a chunked loop would commit
+ * each chunk separately and leave a half-applied table when a later chunk fails.
  */
 export async function applyChanges(
   sb: Supa, table: string, inserts: Row[], updates: Row[] = [], softDeletes: string[] = [], supersede: string[] = [],
 ): Promise<ChangeCounts> {
-  const total: ChangeCounts = { inserted: 0, updated: 0, deleted: 0, superseded: 0 };
-  // keep every key present on every insert row (jsonb_populate_recordset uses the first row's keys)
+  const { data, error } = await sb.rpc("apply_changes", {
+    p_table: table, p_inserts: normaliseInserts(inserts), p_updates: updates, p_soft_deletes: softDeletes, p_supersede: supersede,
+  });
+  if (error) throw new WriteError(`${table}: ${error.message}`);
+  return data as ChangeCounts;
+}
+
+export interface TableChanges {
+  table: string;
+  inserts: Row[];
+  updates: Row[];
+  softDeletes: string[];
+  supersede: string[];
+}
+
+/**
+ * Commit an upload atomically (RPC `apply_upload`): every target table and the upload's status change in one
+ * transaction. Only the uploader or Admin may commit (checked in the database too); on any error nothing is written.
+ */
+export async function applyUpload(sb: Supa, uploadId: string, changes: TableChanges[]): Promise<ChangeCounts> {
+  const { data, error } = await sb.rpc("apply_upload", {
+    p_upload_id: uploadId,
+    p_changes: changes.map((c) => ({
+      table: c.table, inserts: normaliseInserts(c.inserts), updates: c.updates, soft_deletes: c.softDeletes, supersede: c.supersede,
+    })),
+  });
+  if (error) throw new WriteError(error.message);
+  return data as ChangeCounts;
+}
+
+/** Keep every key present on every insert row (jsonb_populate_recordset takes the column list from the first row). */
+function normaliseInserts(inserts: Row[]): Row[] {
   const keys = [...new Set(inserts.flatMap((r) => Object.keys(r)))];
-  const norm = inserts.map((r) => Object.fromEntries(keys.map((k) => [k, r[k] ?? null])));
-  const insChunks = chunk(norm, 800);
-  const updChunks = chunk(updates, 400);
-  const n = Math.max(insChunks.length, updChunks.length, 1);
-  for (let i = 0; i < n; i++) {
-    const { data, error } = await sb.rpc("apply_changes", {
-      p_table: table,
-      p_inserts: insChunks[i] ?? [],
-      p_updates: updChunks[i] ?? [],
-      p_soft_deletes: i === 0 ? softDeletes : [],
-      p_supersede: i === 0 ? supersede : [],
-    });
-    if (error) throw new WriteError(`${table}: ${error.message}`);
-    const d = data as ChangeCounts;
-    total.inserted += d.inserted; total.updated += d.updated; total.deleted += d.deleted; total.superseded += d.superseded;
-  }
-  return total;
+  return inserts.map((r) => Object.fromEntries(keys.map((k) => [k, r[k] ?? null])));
 }

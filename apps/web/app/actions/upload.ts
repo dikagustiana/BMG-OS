@@ -16,7 +16,7 @@ export async function stage(input: {
     if (!kindsFor(v.role).some((k) => k.kind === input.kind)) return { error: "Peran Anda tidak boleh mengunggah jenis ini" };
     if (!input.path.startsWith(`${input.period}/`)) return { error: "Lokasi file tidak valid" };
     const sb = await supabaseServer();
-    if (input.replaces) await rejectUpload(sb, input.replaces);
+    if (input.replaces) await rejectUpload(sb, v, input.replaces);
     return await stageUpload(sb, v, input.kind, input.period, input.path, input.fileName, { mapping: input.mapping });
   } catch (e) {
     return { error: (e as Error).message };
@@ -38,9 +38,9 @@ export async function commit(uploadId: string): Promise<{ ok?: string; error?: s
 
 export async function discard(uploadId: string): Promise<{ ok?: string; error?: string }> {
   try {
-    await requireViewer();
+    const v = await requireViewer();
     const sb = await supabaseServer();
-    await rejectUpload(sb, uploadId);
+    await rejectUpload(sb, v, uploadId);
     return { ok: "Dibatalkan" };
   } catch (e) {
     return { error: (e as Error).message };

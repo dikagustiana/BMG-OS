@@ -5,7 +5,7 @@ import { readWorkbook, type Detected, type KindDef, type Mapping, type ParsedRow
 import type { Role } from "./roles";
 import type { Supa } from "./supabase";
 import type { Viewer } from "./session";
-import { applyChanges, fetchAll, WriteError, type ChangeCounts } from "./write";
+import { applyUpload, fetchAll, WriteError, type TableChanges } from "./write";
 
 /**
  * Upload wizard (PRD v1 §5): file → stage (parse, issues per row, plan of changes) → commit (one RLS-checked
@@ -164,10 +164,16 @@ export async function stageUpload(
   };
 }
 
-/** Commit a planned upload: re-plan against the current data, then apply every target. */
+/** Only the uploader or Admin may commit or reject an upload (the database checks it again in apply_upload). */
+function assertOwner(viewer: Viewer, uploadedBy: unknown): void {
+  if (viewer.role !== "admin" && uploadedBy !== viewer.email) throw new WriteError("Hanya pengunggah atau Admin yang bisa memproses upload ini");
+}
+
+/** Commit a planned upload: re-plan against the current data, then apply every target in one transaction. */
 export async function commitUpload(sb: Supa, viewer: Viewer, uploadId: string): Promise<string> {
   const { data: up, error } = await sb.from("upload").select("*").eq("id", uploadId).single();
   if (error || !up) throw new WriteError("Upload tidak ditemukan");
+  assertOwner(viewer, up.uploaded_by);
   if (up.status !== "planned" && up.status !== "staged") throw new WriteError(`Upload sudah ${up.status}`);
   const h = handlerFor(String(up.kind));
   if (!h.def.roles.includes(viewer.role)) throw new WriteError("Peran Anda tidak boleh mengunggah jenis ini");
@@ -175,21 +181,20 @@ export async function commitUpload(sb: Supa, viewer: Viewer, uploadId: string): 
   const sets = new Map<string, Row[]>();
   for (const r of rows) sets.set(r.target, [...(sets.get(r.target) ?? []), r.data]);
   const plan = await h.plan(sb, String(up.period), [...sets.entries()].map(([target, rs]) => ({ target, rows: rs })));
-  let counts: ChangeCounts = { inserted: 0, updated: 0, deleted: 0, superseded: 0 };
-  for (const t of plan.targets) {
-    const ins = t.inserts.map((r) => ({ ...clean(r), upload_id: uploadId, source: (r.source as string | undefined) ?? h.def.source }));
-    const r = await applyChanges(sb, t.table, ins, t.updates, t.deletes, t.supersede);
-    counts = { inserted: counts.inserted + r.inserted, updated: counts.updated + r.updated, deleted: counts.deleted + r.deleted, superseded: counts.superseded + r.superseded };
-  }
-  const done = await sb.from("upload").update({
-    status: "committed", committed_at: new Date().toISOString(), inserted: counts.inserted, updated: counts.updated, deleted: counts.deleted,
-  }).eq("id", uploadId);
-  if (done.error) throw new WriteError(done.error.message);
+  const changes: TableChanges[] = plan.targets.map((t) => ({
+    table: t.table,
+    inserts: t.inserts.map((r) => ({ ...clean(r), upload_id: uploadId, source: (r.source as string | undefined) ?? h.def.source })),
+    updates: t.updates, softDeletes: t.deletes, supersede: t.supersede,
+  }));
+  const counts = await applyUpload(sb, uploadId, changes);
   return `Disimpan: ${counts.inserted} baris baru, ${counts.updated} diubah, ${counts.deleted} dihapus (soft).`;
 }
 
 /** Drop a staged/planned upload (status rejected; staged rows removed). */
-export async function rejectUpload(sb: Supa, uploadId: string): Promise<void> {
+export async function rejectUpload(sb: Supa, viewer: Viewer, uploadId: string): Promise<void> {
+  const { data: up, error: e } = await sb.from("upload").select("uploaded_by").eq("id", uploadId).single();
+  if (e || !up) throw new WriteError("Upload tidak ditemukan");
+  assertOwner(viewer, up.uploaded_by);
   await sb.from("upload_row").delete().eq("upload_id", uploadId);
   const { error } = await sb.from("upload").update({ status: "rejected" }).eq("id", uploadId).in("status", ["staged", "planned"]);
   if (error) throw new WriteError(error.message);

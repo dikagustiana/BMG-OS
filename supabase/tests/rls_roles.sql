@@ -30,6 +30,9 @@ declare
     "product": ["admin","finance"]}'::jsonb;
   ins text;
   upd text;
+  up_fin uuid;
+  up_ppic uuid;
+  up_sales uuid;
 begin
   -- setup (as the migration owner)
   insert into public.app_user (email, role) select 't-' || x || '@x.test', x from unnest(roles) x;
@@ -194,6 +197,74 @@ begin
   insert into rls_result values (n = 1, 'finance apply_changes soft delete budget_line', 'deleted=' || n);
   select count(*) into n from public.budget_line where driver_code = 'F|1' and deleted_at is not null and deleted_by = 't-finance@x.test';
   insert into rls_result values (n = 1, 'soft delete stamps deleted_by', 'rows=' || n);
+  execute 'reset role';
+
+  ---------------------------------------------------------------- apply_upload: one transaction per upload, uploader or Admin only
+  select id into up_fin from public.upload where uploaded_by = 't-finance@x.test';
+  select id into up_ppic from public.upload where uploaded_by = 't-ppic@x.test';
+  select id into up_sales from public.upload where uploaded_by = 't-sales@x.test';
+  perform set_config('request.jwt.claims', '{"email":"t-ppic@x.test","role":"authenticated"}', true);
+  execute 'set local role authenticated';
+  begin
+    perform public.apply_upload(up_fin, '[]'::jsonb);
+    insert into rls_result values (false, 'ppic apply_upload of finance upload', 'allowed');
+  exception when others then
+    insert into rls_result values (sqlstate = '42501', 'ppic apply_upload of finance upload', 'denied: ' || sqlerrm);
+  end;
+  execute 'reset role';
+  perform set_config('request.jwt.claims', '{"role":"anon"}', true);
+  execute 'set local role anon';
+  begin
+    perform public.apply_upload(up_fin, '[]'::jsonb);
+    insert into rls_result values (false, 'anon apply_upload', 'allowed');
+  exception when others then
+    insert into rls_result values (true, 'anon apply_upload', 'denied: ' || sqlerrm);
+  end;
+  execute 'reset role';
+  perform set_config('request.jwt.claims', '{"email":"t-sales@x.test","role":"authenticated"}', true);
+  execute 'set local role authenticated';
+  begin
+    perform public.apply_upload(up_sales, '[]'::jsonb);  -- rejected above
+    insert into rls_result values (false, 'apply_upload of rejected upload', 'allowed');
+  exception when others then
+    insert into rls_result values (true, 'apply_upload of rejected upload', 'denied: ' || sqlerrm);
+  end;
+  execute 'reset role';
+  perform set_config('request.jwt.claims', '{"email":"t-finance@x.test","role":"authenticated"}', true);
+  execute 'set local role authenticated';
+  -- the second target is not an upload table: the whole call fails, the first target's insert does not survive
+  begin
+    perform public.apply_upload(up_fin, jsonb_build_array(
+      jsonb_build_object('table', 'budget_line', 'inserts',
+        jsonb_build_array(jsonb_build_object('budget_version_id', bv, 'month', '2026-10-01', 'component', 'u', 'driver_code', 'U|1'))),
+      jsonb_build_object('table', 'app_user', 'inserts', '[{"email":"x@x.test","role":"admin"}]'::jsonb)));
+    insert into rls_result values (false, 'apply_upload with a failing target', 'allowed');
+  exception when others then
+    insert into rls_result values (true, 'apply_upload with a failing target', 'denied: ' || sqlerrm);
+  end;
+  select count(*) into n from public.budget_line where driver_code = 'U|1';
+  insert into rls_result values (n = 0, 'apply_upload failure keeps no target rows', 'rows=' || n);
+  select count(*) into n from public.upload where id = up_fin and status = 'staged';
+  insert into rls_result values (n = 1, 'apply_upload failure leaves upload staged', 'rows=' || n);
+  select (public.apply_upload(up_fin, jsonb_build_array(
+      jsonb_build_object('table', 'budget_line', 'inserts',
+        jsonb_build_array(jsonb_build_object('budget_version_id', bv, 'month', '2026-10-01', 'component', 'u', 'driver_code', 'U|2')))))
+    ->> 'inserted')::int into n;
+  insert into rls_result values (n = 1, 'finance apply_upload own upload', 'inserted=' || n);
+  select count(*) into n from public.upload where id = up_fin and status = 'committed' and inserted = 1 and committed_at is not null;
+  insert into rls_result values (n = 1, 'apply_upload marks upload committed', 'rows=' || n);
+  begin
+    perform public.apply_upload(up_fin, '[]'::jsonb);
+    insert into rls_result values (false, 'apply_upload of committed upload', 'allowed');
+  exception when others then
+    insert into rls_result values (true, 'apply_upload of committed upload', 'denied: ' || sqlerrm);
+  end;
+  execute 'reset role';
+  perform set_config('request.jwt.claims', '{"email":"t-admin@x.test","role":"authenticated"}', true);
+  execute 'set local role authenticated';
+  select (public.apply_upload(up_ppic, '[]'::jsonb) ->> 'inserted')::int into n;
+  select count(*) into n from public.upload where id = up_ppic and status = 'committed';
+  insert into rls_result values (n = 1, 'admin apply_upload of another user upload', 'rows=' || n);
   execute 'reset role';
 
   ---------------------------------------------------------------- standard versions: PPIC drafts, Finance/Admin approve
