@@ -5,6 +5,7 @@
  */
 import { checkTargets, type GoldenResult } from "./golden";
 import { loadCells, loadTargets } from "./fixtures";
+import { F34_SUITES } from "./golden-f34";
 
 export interface GoldenSuite {
   id: string;
@@ -20,6 +21,8 @@ export const SUITES: GoldenSuite[] = [
     description: "Angka target PRD §8 = sel WP yang dirujuk (integritas fixture)",
     run: (fixture) => checkTargets(loadCells(fixture), loadTargets(fixture)),
   },
+  // Fase 3–4 (B3 rekon, B4 kewajaran / varian / bridge): engine outputs vs WP cells
+  ...F34_SUITES,
 ];
 
 export function numericCellCount(fixture: string): number {
