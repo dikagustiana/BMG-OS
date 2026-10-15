@@ -9,3 +9,4 @@ export * from "./fs-lines";
 export * from "./fs";
 export * from "./history";
 export * from "./fs-map-seed";
+export * from "./fs-view";

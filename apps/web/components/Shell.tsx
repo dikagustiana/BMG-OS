@@ -1,43 +1,49 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ROLE_LABEL } from "@/lib/roles";
-import { hrefFor, navFor } from "@/lib/modules";
+import { GROUP_LABEL, hrefFor, navFor, type NavGroup, type PageDef } from "@/lib/modules";
+import { bulan } from "@/lib/fmt";
 import type { AppCtx } from "@/lib/page";
 
-/** App chrome: brand, viewer, module nav (only modules that are on and allowed for the role), admin group. */
-export function Shell({ ctx, active, children, banner }: { ctx: AppCtx; active: string; children: ReactNode; banner?: ReactNode }) {
+/**
+ * App chrome (PRD v2 §7 Navigasi): top bar with app, entity, the viewer's full name and role, Akun, Keluar; side menu
+ * with only the pages that are on and allowed for the role, grouped, in the order of the viewer's user type.
+ */
+export function Shell({ ctx, active, children }: { ctx: AppCtx; active: string; children: ReactNode }) {
   const { viewer, flags } = ctx;
-  const mgmt = viewer.role === "management";
-  const items = navFor(viewer.role, flags);
-  const admin = viewer.role === "admin";
-  const audit = admin || viewer.role === "finance" || viewer.role === "cost_accounting";
+  const pages = navFor(viewer.role, flags);
+  const groups: { group: NavGroup; pages: PageDef[] }[] = [];
+  for (const p of pages) {
+    const g = groups.find((x) => x.group === p.group);
+    if (g) g.pages.push(p);
+    else groups.push({ group: p.group, pages: [p] });
+  }
   return (
     <>
       <header className="topbar">
         <Link href="/" className="brand">BMG-OS</Link>
-        <span className="who">PT Boga Makmur Gracia</span>
+        <span className="entity">PT Boga Makmur Gracia</span>
         <span className="spacer" />
-        <span className="who">{mgmt ? (viewer.fullName ?? "") : (viewer.fullName ?? viewer.email)} · {ROLE_LABEL[viewer.role]}</span>
-        <Link href="/akun" className="who">Akun</Link>
-        <form action="/auth/signout" method="post"><button className="b sec small">Keluar</button></form>
+        <span className="who"><b>{viewer.fullName ?? ROLE_LABEL[viewer.role]}</b>{viewer.fullName ? <span className="role"> · {ROLE_LABEL[viewer.role]}</span> : null}</span>
+        <Link href="/akun" className="tb-link">Akun</Link>
+        <form action="/auth/signout" method="post"><button type="submit">Keluar</button></form>
       </header>
-      {banner}
-      <nav className="nav">
-        <Link href="/" className={active === "home" ? "on" : ""}>Beranda</Link>
-        {items.map((n) => (
-          <Link key={n.href} href={hrefFor(n.href, ctx.month)} className={active === n.href ? "on" : ""}>{n.label}</Link>
-        ))}
-        {audit ? (
-          <>
-            <span className="sep inputs" />
-            <span className="grp">Admin</span>
-            {admin ? <Link href="/admin/modul" className={`inputs ${active === "admin/modul" ? "on" : ""}`}>Modul</Link> : null}
-            {admin ? <Link href="/admin/pengguna" className={`inputs ${active === "admin/pengguna" ? "on" : ""}`}>Pengguna</Link> : null}
-            <Link href="/admin/audit" className={`inputs ${active === "admin/audit" ? "on" : ""}`}>Audit</Link>
-          </>
-        ) : null}
-      </nav>
-      <main data-role={viewer.role}>{children}</main>
+      <div className="frame">
+        <nav className="side" aria-label="Menu">
+          {groups.map((g) => (
+            <div key={g.group} className="side-g">
+              <div className="grp">{GROUP_LABEL[g.group]}</div>
+              {g.pages.map((p) => (
+                <Link key={p.key} href={hrefFor(p.href, ctx.month, ctx.week)} className={active === p.key ? "on" : ""} aria-current={active === p.key ? "page" : undefined}>
+                  {p.label}
+                </Link>
+              ))}
+            </div>
+          ))}
+          {groups.length ? <div className="period">Bulan kerja {bulan(ctx.month)}</div> : null}
+        </nav>
+        <main className="content" data-role={viewer.role}>{children}</main>
+      </div>
     </>
   );
 }

@@ -11,20 +11,20 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   const google = process.env.NEXT_PUBLIC_AUTH_GOOGLE === "1";
   return (
     <div className="login">
-      <div className="card">
-        <h1>BMG-OS</h1>
-        <p className="muted">PT Boga Makmur Gracia · SAMB Group</p>
-        {sp.error ? <div className="msg err">{ERR[sp.error] ?? sp.error}</div> : null}
+      <div className="card stack">
+        <div>
+          <h1>BMG-OS</h1>
+          <p className="muted">PT Boga Makmur Gracia · costing, operasi, dan laporan bulanan</p>
+        </div>
+        {sp.error ? <div className="msg err" role="alert">{ERR[sp.error] ?? sp.error}</div> : null}
         <LoginForm next={next} />
         {google ? (
-          <form action={signInGoogle} style={{ marginTop: 10 }}>
+          <form action={signInGoogle}>
             <input type="hidden" name="next" value={next} />
             <button className="b sec">Masuk dengan Google Workspace</button>
           </form>
         ) : null}
-        <p className="muted" style={{ marginTop: 14, fontSize: 12 }}>
-          Akses hanya untuk e-mail yang didaftarkan Admin. Lupa kata sandi? Minta Admin mengatur ulang di menu Admin → Pengguna.
-        </p>
+        <p className="muted small">Akses hanya untuk e-mail yang didaftarkan Admin. Lupa kata sandi? Minta Admin mengatur kata sandi sementara di Pengaturan → Pengguna.</p>
       </div>
     </div>
   );

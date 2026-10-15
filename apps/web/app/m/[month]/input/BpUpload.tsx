@@ -3,28 +3,28 @@ import { useState } from "react";
 import type { UploadKind } from "@bmg/parsers";
 import { UploadWizard } from "@/components/UploadWizard";
 
-type Kind = { kind: UploadKind; label: string; description: string; target: string; source: string };
+type Kind = { kind: UploadKind; label: string; description: string };
 
-/** BP import: the period is the budget version name (an existing, not yet imported version, or a new name). */
-export function BpUpload({ versions, kind }: { versions: string[]; kind: Kind[] }) {
+/** BP import: the period is the budget version name (an existing version or a new name). */
+export function BpUpload({ versions, kinds }: { versions: string[]; kinds: Kind[] }) {
   const [name, setName] = useState(versions[0] ?? "");
   const [chosen, setChosen] = useState<string | null>(null);
   if (chosen) {
     return (
-      <div>
-        <p className="muted">Impor ke versi <b>{chosen}</b> · <button className="b sec small" onClick={() => setChosen(null)}>ganti versi</button></p>
-        <UploadWizard period={chosen} kinds={kind} />
+      <div className="stack">
+        <p className="muted">Versi <b>{chosen}</b> · <button className="b sec small" onClick={() => setChosen(null)}>Ganti versi</button></p>
+        <UploadWizard period={chosen} periodLabel={`versi ${chosen}`} kinds={kinds} long />
       </div>
     );
   }
   return (
-    <div className="row" style={{ alignItems: "flex-end", marginTop: 8 }}>
+    <div className="row">
       <div className="field">
-        <label>Nama versi budget (versi yang sudah diimpor tidak bisa diubah)</label>
-        <input className="in" list="bp-versions" value={name} onChange={(e) => setName(e.target.value)} placeholder="BP Okt-26 v1" style={{ minWidth: 280 }} />
+        <label htmlFor="bp-v">Nama versi budget</label>
+        <input id="bp-v" className="in" list="bp-versions" value={name} onChange={(e) => setName(e.target.value)} placeholder="BP Okt-26 v1" />
         <datalist id="bp-versions">{versions.map((v) => <option key={v} value={v} />)}</datalist>
       </div>
-      <button className="b" disabled={!name.trim()} onClick={() => setChosen(name.trim())}>Lanjut</button>
+      <div className="field"><label>&nbsp;</label><button className="b sec" disabled={!name.trim()} onClick={() => setChosen(name.trim())}>Pilih versi ini</button></div>
     </div>
   );
 }

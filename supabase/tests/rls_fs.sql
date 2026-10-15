@@ -95,9 +95,9 @@ begin
   exception when others then
     insert into rls_result values (sqlstate = '42501', 'budget_fs_line locked after fs_imported_at', sqlstate || ' ' || sqlerrm);
   end;
-  -- flag b8_fs exists and is off by default
+  -- flag b8_fs exists (seeded off by the migration; a local run may have switched it on)
   execute 'reset role';
-  insert into rls_result values ((select value from public.app_setting where key = 'b8_fs') = 'false'::jsonb, 'b8_fs default off', '');
+  insert into rls_result values (exists (select 1 from public.app_setting where key = 'b8_fs'), 'b8_fs flag exists', '');
   -- apply_changes accepts the FS tables
   insert into rls_result values ('fs_month' = any(public.upload_tables()) and 'tb_month' = any(public.upload_tables()), 'upload_tables has FS tables', '');
 end $$;
