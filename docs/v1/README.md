@@ -18,12 +18,14 @@ Branch `v1/f0-foundation` · PR https://github.com/dikagustiana/BMG-OS/pull/1 ·
 | `db167d0` | dokumen PRD/PLAN, design, open-questions, CHANGELOG, golden F0 |
 | `2cbd8e5` | pemeriksa migrasi aditif (gerbang D butir 4) |
 | `f2f98c1` | rapikan `/admin/modul`, screenshot per peran |
+| `d1435ec`, `ebff43b` | bukti fase, ringkasan, CHANGELOG |
+| `90ab951` | review PR #1 (Codex P1/P2): commit upload atomik lewat RPC `apply_upload` (migrasi `20261015000400`), cek pemilik upload di TS dan DB, +10 cek RLS |
 
 ### Verifikasi lokal (checklist PLAN "Verifikasi per PR")
 
 ```
 $ git rev-parse --short HEAD
-f2f98c1
+90ab951
 $ pnpm typecheck
 packages/engine typecheck: Done
 packages/parsers typecheck: Done
@@ -44,12 +46,14 @@ $ python3 -I scripts/check_migration.py supabase/migrations/*.sql
 supabase/migrations/20261015000100_foundation.sql: 46 statements, 0 violations
 supabase/migrations/20261015000200_master.sql: 50 statements, 0 violations
 supabase/migrations/20261015000300_master_seed.sql: 8 statements, 0 violations
+supabase/migrations/20261015000400_apply_upload.sql: 1 statements, 0 violations
 $ supabase db reset && pnpm test:rls
 Applying migration 20261015000100_foundation.sql...
 Applying migration 20261015000200_master.sql...
 Applying migration 20261015000300_master_seed.sql...
+Applying migration 20261015000400_apply_upload.sql...
 Finished supabase db reset on branch v1/f0-foundation.
-NOTICE:  RLS: all 587 checks passed
+NOTICE:  RLS: all 597 checks passed
 $ pnpm build
  ✓ Compiled successfully
  ✓ Generating static pages (7/7)
@@ -57,7 +61,7 @@ $ pnpm build
 
 - Sel golden gagal: **tidak ada** (50/50 target PRD §8 = sel WP; daftar lengkap di `docs/v1/golden-f0.md`). Ketidakcocokan sumber dicatat di `docs/open-questions.md` §B (B-001…B-010).
 - Snapshot `tests/snapshots/month-2026-09.json` sha256 `7e7f1ed4ae3bf9db9897e08200d459e23b359733cb60a8d6586b7f07a2d76cbe` (SHA-256 setiap file fixture; `modules: {}` di Fase 0).
-- Lingkungan uji database (prompt B): Supabase CLI 2.54.11 + Docker, `supabase/postgres:17.6.1.029` (image ditarik dari Docker Hub: `SUPABASE_INTERNAL_IMAGE_REGISTRY=docker.io`, karena CDN ECR diblokir proxy; `dockerd` dijalankan manual; realtime/studio/analytics dimatikan di `config.toml` karena container tanpa IPv6). Uji cadangan PG 16.15 + `supabase/tests/_stub_supabase.sql`: 3 migrasi + RLS 587/587 lulus. Idempotensi: setiap migrasi diterapkan dua kali → exit 0, jumlah baris tetap.
+- Lingkungan uji database (prompt B): Supabase CLI 2.54.11 + Docker, `supabase/postgres:17.6.1.029` (image ditarik dari Docker Hub: `SUPABASE_INTERNAL_IMAGE_REGISTRY=docker.io`, karena CDN ECR diblokir proxy; `dockerd` dijalankan manual; realtime/studio/analytics dimatikan di `config.toml` karena container tanpa IPv6). Uji cadangan PG 16.15 + `supabase/tests/_stub_supabase.sql`: 4 migrasi (dua kali) + RLS 597/597 lulus. Idempotensi: setiap migrasi diterapkan dua kali → exit 0, jumlah baris tetap.
 - SheetJS: `cdn.sheetjs.com` diblokir jaringan sesi ini (§B B-010). Lockfile tetap SheetJS 0.20.3 dari CDN (entri sama persis dengan KGR); verifikasi lokal memakai `xlsx@0.18.5` di `node_modules` (tidak di-commit).
 
 ### Login per peran dan screenshot (lokal)
@@ -91,16 +95,16 @@ Run CI pertama di branch ini (`38771591222`, `38771712170`) gagal ~3 detik denga
 
 ### Migrasi ke remote (project BMG-OS `btccexwuukrpushmharq`) — diterapkan, gerbang D lulus
 
-Tiga migrasi diterapkan lewat connector Supabase (`apply_migration`), berurutan, setelah gerbang D untuk masing-masing:
+Empat migrasi diterapkan lewat connector Supabase (`apply_migration`), berurutan, setelah gerbang D untuk masing-masing (0004 menyusul sebagai perbaikan review PR #1):
 
-| Butir gerbang D | `20261015000100_foundation` | `20261015000200_master` | `20261015000300_master_seed` |
-| --- | --- | --- | --- |
-| 1. Fase 0 atau 1 | Fase 0 ✓ | Fase 0 ✓ | Fase 0 ✓ |
-| 2. `upload` dan tabel §4.2–§4.4 = 0, tidak ada `committed` | tabel public = 0 (belum ada `upload` maupun tabel §4.2–§4.4) ✓ | `upload` 0, committed 0; tabel §4.2–§4.4: none ✓ | `upload` 0, committed 0; tabel §4.2–§4.4: none; master 0 baris sebelum seed ✓ |
-| 3. `list_migrations` = urutan repo, nama baru belum ada | `[]` ✓ | `[foundation]` ✓ | `[foundation, master]` ✓ |
-| 4. Isi aditif/idempoten | 46 pernyataan, 0 pelanggaran ✓ | 50 pernyataan, 0 pelanggaran ✓ | 8 pernyataan, 0 pelanggaran ✓ |
-| 5. Lulus B dan sudah di-commit | `d7c99eb` (push `2cbd8e5`), lokal PG17 + PG16 ✓ | idem ✓ (sha256 berkas = versi commit) | idem ✓ |
-| Hasil `apply_migration` | `{"success":true}` | `{"success":true}` | `{"success":true}` |
+| Butir gerbang D | `20261015000100_foundation` | `20261015000200_master` | `20261015000300_master_seed` | `20261015000400_apply_upload` |
+| --- | --- | --- | --- | --- |
+| 1. Fase 0 atau 1 | Fase 0 ✓ | Fase 0 ✓ | Fase 0 ✓ | Fase 0 ✓ |
+| 2. `upload` dan tabel §4.2–§4.4 = 0, tidak ada `committed` | tabel public = 0 (belum ada `upload` maupun tabel §4.2–§4.4) ✓ | `upload` 0, committed 0; tabel §4.2–§4.4: none ✓ | `upload` 0, committed 0; tabel §4.2–§4.4: none; master 0 baris sebelum seed ✓ | `upload` 0, committed 0, `upload_row` 0; tabel §4.2–§4.4: none (22 tabel public = foundation + master) ✓ |
+| 3. `list_migrations` = urutan repo, nama baru belum ada | `[]` ✓ | `[foundation]` ✓ | `[foundation, master]` ✓ | `[foundation, master, master_seed]`; `apply_upload` belum ada (juga di `pg_proc`) ✓ |
+| 4. Isi aditif/idempoten | 46 pernyataan, 0 pelanggaran ✓ | 50 pernyataan, 0 pelanggaran ✓ | 8 pernyataan, 0 pelanggaran ✓ | 1 pernyataan (`create or replace function`), 0 pelanggaran ✓ |
+| 5. Lulus B dan sudah di-commit | `d7c99eb` (push `2cbd8e5`), lokal PG17 + PG16 ✓ | idem ✓ (sha256 berkas = versi commit) | idem ✓ | `90ab951` (sudah di-push); sebelum apply: Supabase lokal PG17 `db reset` + terapkan ulang + RLS 597/597 (cadangan PG16 + stub dijalankan sesudahnya, juga 597/597) ✓ |
+| Hasil `apply_migration` | `{"success":true}` | `{"success":true}` | `{"success":true}` | `{"success":true}` |
 
 Bukti `execute_sql` (select saja), sebelum `foundation`:
 ```
@@ -117,19 +121,28 @@ Sebelum `master_seed`:
  {"table_name":"master rows before seed (…)","rows":0},{"table_name":"public tables","rows":22}]
 ```
 
+Sebelum `apply_upload`:
+```
+[{"table_name":"upload","rows":0,"committed":0},{"table_name":"upload_row","rows":0},
+ {"table_name":"public tables","rows":22},{"table_name":"non-master public tables (§4.2–§4.4 candidates)","rows":0},
+ {"table_name":"apply_upload function exists","rows":0}]
+```
+
 Setelah apply — `list_migrations`:
 ```
 {"version":"20261015164706","name":"20261015000100_foundation"}
 {"version":"20261015164816","name":"20261015000200_master"}
 {"version":"20261015165107","name":"20261015000300_master_seed"}
+{"version":"20261015171025","name":"20261015000400_apply_upload"}
 ```
+`apply_upload` di remote: `security_definer = false`, `search_path=""`, argumen `p_upload_id uuid, p_changes jsonb` (security invoker seperti `apply_changes`, jadi RLS tetap berlaku).
 Pemetaan berkas ↔ versi remote: connector memberi versi waktu-terap (`2026101516xxxx`), nama = nama berkas. Semua migrasi idempoten, jadi `supabase db push` kelak yang menerapkan ulang berkas dengan versi berkas aman (tidak mengubah apa pun).
 
-`list_tables` (public): 22 tabel, semua `rls_enabled: true` — app_user 0, audit_log 197, app_setting 11, rebuild_queue 0, upload 0, upload_row 0, product 3, others_group 21, sku 20, material_item 54, coa_pool_map 62, payroll_group 14, assumption 22, budget_version 1, budget_line 0, budget_pool_map 0, std_version 0, bom_line 0, output_mix 0, routing 0, rate_card 0, capacity 0. Cek tambahan: flag aktif 0 dari 11 setting; policy public 65; policy storage `bmg_*` 3; tabel tanpa RLS 0; trigger `bmg_allowlist` di `auth.users` 1; bucket privat `uploads`, `releases` 2.
+`list_tables` (public): 22 tabel, semua `rls_enabled: true` — app_user 0, audit_log 197, app_setting 11, rebuild_queue 0, upload 0, upload_row 0, product 3, others_group 21, sku 20, material_item 54, coa_pool_map 62, payroll_group 14, assumption 22, budget_version 1, budget_line 0, budget_pool_map 0, std_version 0, bom_line 0, output_mix 0, routing 0, rate_card 0, capacity 0. Cek tambahan: flag aktif 0 dari 11 setting; policy public 65; policy storage `bmg_*` 3; tabel tanpa RLS 0; trigger `bmg_allowlist` di `auth.users` 1; bucket privat `uploads`, `releases` 2. Setelah `apply_upload`: `list_tables` tidak berubah (22 tabel, RLS semua, jumlah baris sama).
 
 `get_advisors`:
-- **security**: 0 ERROR. 2 WARN (lint 0028/0029) — `public.admin_set_password` dan `public.app_role()` adalah SECURITY DEFINER yang bisa dipanggil `anon`/`authenticated`. Disengaja: `admin_set_password` menolak semua kecuali Admin (diuji RLS test: 9 peran non-admin ditolak), memanggil `private.provision_login` yang tidak terekspos; `app_role()` hanya mengembalikan peran pemanggil sendiri dan dipakai policy RLS (perlu definer agar tidak rekursif). Menghapus EXECUTE butuh `revoke` (dilarang gerbang D); kalau ingin dibersihkan, Dika bisa menjalankan `revoke execute on function public.admin_set_password(text, text) from anon;` di SQL Editor.
-- **performance**: 0 ERROR/WARN. INFO: 32 index belum dipakai (database baru, wajar); Auth memakai 10 koneksi absolut (pengaturan project, bukan migrasi).
+- **security** (sama sebelum dan sesudah `apply_upload`): 0 ERROR. 2 WARN (lint 0028/0029) — `public.admin_set_password` dan `public.app_role()` adalah SECURITY DEFINER yang bisa dipanggil `anon`/`authenticated`. Disengaja: `admin_set_password` menolak semua kecuali Admin (diuji RLS test: 9 peran non-admin ditolak), memanggil `private.provision_login` yang tidak terekspos; `app_role()` hanya mengembalikan peran pemanggil sendiri dan dipakai policy RLS (perlu definer agar tidak rekursif). Menghapus EXECUTE butuh `revoke` (dilarang gerbang D); kalau ingin dibersihkan, Dika bisa menjalankan `revoke execute on function public.admin_set_password(text, text) from anon;` di SQL Editor.
+- **performance**: 0 ERROR/WARN. INFO: 32 index belum dipakai (31 setelah `apply_upload`; database baru, wajar); Auth memakai 10 koneksi absolut (pengaturan project, bukan migrasi).
 
 Tidak ada migrasi yang menunggu Dika untuk Fase 0.
 

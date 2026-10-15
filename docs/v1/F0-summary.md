@@ -10,7 +10,7 @@ Fase 0 (fondasi, fixture, keputusan data) dari `docs/PLAN-v1-bmg-platform.md` �
 | Kriteria | Status |
 | --- | --- |
 | Repo berdiri (skeleton KGR baca-saja; nama KGR diganti; tanpa riwayat/migrasi/fixture/engine domain KGR) | ✓ |
-| Supabase berdiri: migrasi foundation + master + seed diterapkan ke remote lewat gerbang D | ✓ (3/3, bukti di README) |
+| Supabase berdiri: migrasi foundation + master + seed (+ `apply_upload` dari review PR) diterapkan ke remote lewat gerbang D | ✓ (4/4, bukti di README) |
 | Flag `b1…b7` (+ `b5_forms`, `b6_management`) ada dan off | ✓ (remote: 0 dari 11 setting aktif) |
 | `fixtures/month-2026-09/cells.csv` ≥ 2.500 sel bernilai | ✓ 8.422 sel angka (14.753 sel tak kosong, 22 sheet) |
 | Fixture terekstrak dengan angka target PRD §8 | ✓ 50/50 target (B2, B3, B4 ujung bridge, konteks §1) = sel WP ±Rp 1 / ±0,0001 |
@@ -26,8 +26,9 @@ Fase 0 (fondasi, fixture, keputusan data) dari `docs/PLAN-v1-bmg-platform.md` �
 | `supabase/migrations/20261015000100_foundation.sql` | diterapkan (gerbang D lulus) | `20261015164706` |
 | `supabase/migrations/20261015000200_master.sql` | diterapkan (gerbang D lulus) | `20261015164816` |
 | `supabase/migrations/20261015000300_master_seed.sql` | diterapkan (gerbang D lulus) | `20261015165107` |
+| `supabase/migrations/20261015000400_apply_upload.sql` | diterapkan (gerbang D lulus) — perbaikan review PR #1 | `20261015171025` |
 
-Advisor: 0 ERROR; 2 WARN keamanan disengaja (`admin_set_password`, `app_role` SECURITY DEFINER — alasan di README); INFO performa (index belum dipakai). Tidak ada migrasi yang menunggu Dika.
+RLS test 597/597 (PG17 lokal dan PG16 + stub). Advisor: 0 ERROR; 2 WARN keamanan disengaja (`admin_set_password`, `app_role` SECURITY DEFINER — alasan di README); INFO performa (index belum dipakai). Tidak ada migrasi yang menunggu Dika.
 
 ## Flag dan urutan
 
@@ -53,4 +54,4 @@ Q1, Q2, Q3 (`wp_is_book = false`), Q4 (BP v1 locked as-is), Q6 (standar = rata-r
 
 ## Konteks untuk sesi berikutnya
 
-Fase 0 selesai penuh; tidak ada pekerjaan tertunda di fase ini. Fase 1 mulai dari branch `v1/f0-foundation` (atau `main` setelah merge): `KINDS` di `packages/parsers/src/tables.ts` dan `HANDLERS` di `apps/web/lib/upload.ts` masih kosong; `public.upload_tables()` sudah memuat tabel master target upload; migrasi berikutnya bernomor setelah `20261015000300`. Lingkungan: jalankan `dockerd` lalu `SUPABASE_INTERNAL_IMAGE_REGISTRY=docker.io supabase start -x …` (lihat `CLAUDE.md`).
+Fase 0 selesai penuh; tidak ada pekerjaan tertunda di fase ini. Fase 1 mulai dari branch `v1/f0-foundation` (atau `main` setelah merge): `KINDS` di `packages/parsers/src/tables.ts` dan `HANDLERS` di `apps/web/lib/upload.ts` masih kosong; `public.upload_tables()` sudah memuat tabel master target upload; commit upload = satu panggilan RPC `apply_upload` (semua tabel target + status upload dalam satu transaksi, hanya pengunggah/Admin) — upload terbesar (GL bulanan, BP 23 ribu baris) perlu diuji terhadap `statement_timeout` peran `authenticated` di Fase 1; migrasi berikutnya bernomor setelah `20261015000400`. Lingkungan: jalankan `dockerd` lalu `SUPABASE_INTERNAL_IMAGE_REGISTRY=docker.io supabase start -x …` (lihat `CLAUDE.md`).

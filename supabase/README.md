@@ -6,6 +6,7 @@ Project **BMG-OS** (ref `btccexwuukrpushmharq`, ap-northeast-2, Postgres 17). Ti
   - `20261015000100_foundation.sql` — `app_user` (10 peran), audit trail, `app_setting` + flag modul, `module_enabled()`, `rebuild_queue`, `upload`/`upload_row`, `apply_changes()`, login allow-list di `auth.users`, bucket privat `uploads`/`releases`.
   - `20261015000200_master.sql` — tabel master PRD §4.1, guard versi standar, RLS per peran.
   - `20261015000300_master_seed.sql` — seed master dari WP (dibangkitkan `scripts/extract_fixtures.py --seed-sql`).
+  - `20261015000400_apply_upload.sql` — `apply_upload()`: commit upload atomik (semua tabel target lewat `apply_changes` + status `committed` dalam satu transaksi), hanya pengunggah atau Admin.
 - `tests/rls_roles.sql` — tes peran × tabel (selalu rollback; gagal bila ada ekspektasi meleset). `pnpm test:rls` (DB lokal saja).
 - `tests/_stub_supabase.sql` — permukaan Supabase minimal untuk menguji migrasi di PostgreSQL biasa bila Docker tidak tersedia.
 
