@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# pnpm test:rls — run supabase/tests/rls_roles.sql against a LOCAL database (never the remote project).
+# pnpm test:rls — run supabase/tests/rls_*.sql against a LOCAL database (never the remote project).
 # Uses $LOCAL_DB_URL, else the default `supabase start` database. Skips with a warning when no local database runs.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -13,4 +13,6 @@ fi
 if ! psql "$URL" -Atc "select 1" >/dev/null 2>&1; then
   echo "test:rls: SKIP (no local database at $URL — run 'supabase start' then 'supabase db reset')"; exit 0
 fi
-psql "$URL" -v ON_ERROR_STOP=1 -q -f supabase/tests/rls_roles.sql
+for f in supabase/tests/rls_*.sql; do
+  psql "$URL" -v ON_ERROR_STOP=1 -q -f "$f"
+done
