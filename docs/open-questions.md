@@ -43,11 +43,15 @@ Fase 0 tidak menghitung angka; semua 50 target PRD §8 cocok dengan sel WP (`doc
 | B-011 | File sumber Fase 1 (PLAN §0: `CoGM SEPTEMBER 2026 R1.xlsx`, GL Accurate Sep per voucher, Inventory Valuation 1 Agu–30 Sep 2026, LK Sep-26 IS/BS + Sales by Item) | **Tidak ada** di `reference/` (hanya WP Sep26_4, Agu26_3, Agu26, BP v1). | Tata letak ekspor Accurate dan kartu CoGM asli belum bisa diuji. Angka Sep-nya ada di WP (sel input biru dengan catatan sumber). | Fixture upload `fixtures/uploads/2026-09/` disintesis dari sel WP (`scripts/make_upload_fixtures.py`, sumber per baris). Parser mengenali header dari alias (label Accurate ID/EN), dan wizard bisa memetakan ulang kolom. `cogm_card` memakai template BMG 3 sheet, bukan tata letak kartu lama. **Untuk Dika:** taruh keempat file asli di `reference/`. Sesi berikutnya menambah fixture dari file asli, dan parser kartu CoGM asli bila template tidak dipakai. |
 | B-012 | Impor BP lewat API | Satu transaksi 23.024 baris melewati `statement_timeout` 8 s peran `authenticated` (diuji lokal: "canceling statement due to statement timeout"). | Batas API Supabase. Mengubah peran dilarang gerbang D. | `budget_line` ditulis bertahap (2.500 baris per transaksi), lalu `apply_upload` mengunci versi (`imported_at`). Versi baru dianggap ada setelah `imported_at` terisi. Bila tahap gagal, upload tetap `planned`, dan commit ulang hanya menambah baris yang belum ada (`driver_code`). Lokal: total ±95 detik. Di remote (compute lebih kecil) bisa lebih lama, tetapi tiap tahap jauh di bawah 8 s (2.000 baris ≈ 0,6 s lokal). |
 | B-013 | FCC!C211 "Pendapatan FCC premium IFM + KW 2 tawar" | WP hanya mencatat jumlah FG-001 + 2nd Grade Tawar (FG-015); pemisahan per item ada di LK Sales by Item yang tidak tersedia. | — | Fixture: FG-015 = kg × NRV (sintetis), FG-001 = sisanya; total = LK. Engine (Fase 2+) memakai jumlah keduanya seperti WP. Ganti dengan Sales by Item asli (B-011). |
+| B-101 | BP v1 sheet "BMG Business Plan" baris 226, 253, 262, 265 | F01 (aset − liabilitas − ekuitas) dan F03 selisih Rp 47–201 per bulan Jan–Agu 2026; F02 (kas arus kas − kas neraca) sampai Rp 85. Baris 265–266 BP tampil 0,0 hanya pada presisi Rp juta. Penyebab: laba tahun berjalan BP dihitung dari Model Details (`S120`, 1.070.355.076,29 untuk Agu), sedangkan GL "PL Actual MTM" memberi 1.070.354.998,28. Neraca saldo GL sendiri selisih Rp 1,78 (BS Actual MTM baris 201). | Pembulatan dan sumber laba berbeda di BP; bukan kesalahan engine (arus kas dari dua neraca = baris BP ±Rp 1, tes lulus). | Tes F01–F03 pada ±Rp 1 ditandai `todo`; batas Rp 1.000 dipakai dan residu dinyatakan. Neraca saldo Accurate asli harus seimbang pada Rp 1; F01 akan menunjukkannya. |
+| B-102 | PRD v2 §4.11 dan §10.1: "F06 PERIKSA Jun–Agu" | Rasio piutang pihak berelasi ÷ ekuitas: Mei 1,5%, Jun 8,6%, Jul 12,8%, Agu 15,8% (BP v1). Ambang 10% (Q27) → PERIKSA mulai Jul. | Teks PRD menghitung Jun. | Engine mengikuti ambang; tes menyatakan Jul–Agu. Ubah ambang di `assumption.related_party_pct` bila Jun harus PERIKSA. |
+| B-103 | `docs/v2/wp-verification.md` (D15) | Verifikasi independen WP Sep26_4: aritmetika terbukti, satu temuan tinggi (tiga versi Agustus dalam satu WP) dan enam sedang (sisa rekon Rp 7,21 bukan 0; ongkos kirim singkong tidak ada di tabel varian; premium adalah sisa sehingga kontrol kartu tidak bisa gagal; ±43 kontrol yang tidak bisa gagal; RINGKASAN tanpa baris penyesuaian bagian 8; Average Price singkong Rp 19,0 jt di atas GL). | Lihat dokumen. | D15 ditutup untuk penggunaan golden. Halaman manajemen dibuka untuk peran Manajemen hanya setelah versi Agustus diputuskan, atau angka HPP kartu dan UU berstatus Sementara. |
+| B-104 | Neraca saldo Accurate Sep-26 | Tidak ada di `reference/`. Fixture `fixtures/uploads-fs/2026-08/tb_month.xlsx` disintesis dari saldo GL Agu-26 di sheet "BS/PL Actual MTM" (`scripts/make_fs_fixtures.py`). | Tata letak ekspor TB/LK Accurate asli belum teruji. | Parser mengenali header dari alias (saldo bertanda atau pasangan debit/kredit) dan wizard bisa memetakan ulang kolom. **Untuk Dika:** unggah LK Sep-26. |
 | B-010 | `cdn.sheetjs.com` (SheetJS 0.20.3) | Host diblokir kebijakan jaringan sesi cloud ini (403 di proxy). | — | `package.json`/lockfile tetap SheetJS 0.20.3 dari CDN (sama dengan KGR; CI dan Vercel bisa mengunduh). Verifikasi lokal sesi ini memakai `xlsx@0.18.5` (API sama) yang **tidak** di-commit. **Untuk Dika:** izinkan `cdn.sheetjs.com` di network environment agar sesi berikutnya bisa `pnpm install --frozen-lockfile`. |
 
 ---
 
-## §C. Keputusan default yang dipakai (Fase 0)
+## §C. Keputusan default yang dipakai (Fase 0; Fase 1b di bawah)
 
 Format: ID — keputusan — default — di mana diubah — dampak kalau berubah.
 
@@ -85,6 +89,21 @@ Q7 (jam operator Lain-lain per kelompok) dan Q8 (template xlsx lalu form web; fl
 | K-05 | Upload bulanan = set lengkap bulan itu | Baris bulan yang tidak ada di file dihapus (soft). Bagian file yang kosong (mis. sheet Jurnal hilang) tidak menghapus apa pun | `apps/web/lib/upload-handlers.ts` | — |
 | K-06 | Versi standar dari upload | Selalu draft baru; kode yang sudah ada ditolak (tidak ditimpa); kapasitas hanya PPIC/Admin | handler `std_master` | — |
 | K-07 | Versi budget dari upload | Nama versi = periode; versi yang sudah diimpor (`imported_at`) tidak bisa diubah (guard DB) | handler `budget_bp`, `private.tg_budget_line_guard` | Revisi BP = versi baru (D9) |
+
+### Keputusan Fase 1b (tanpa menunggu Dika; PRD v2 Q21–Q30 dipakai apa adanya)
+
+Q21–Q30 dari PRD v2 §11 dipakai sebagai default; tidak ada yang diubah.
+
+| ID | Keputusan | Default yang dipakai | Di mana diubah |
+| --- | --- | --- | --- |
+| K2-A | Sumber neraca Jan–Agu | Kolom Actual sheet "BMG Business Plan" apa adanya (D13) | `history_fs_line` (impor `bp_fs`) |
+| K2-B | Tanda `coa_fs_map` | Aset +1, liabilitas dan ekuitas −1 (saldo TB debit-positif), laba rugi −1 (biaya negatif, pendapatan positif seperti BP) | `coa_fs_map.sign` |
+| K2-C | HPP dari TB | Total HPP = Σ baris biaya BP baris 66–86 tanpa baris 83 (selisih kartu vs GL, memo). Akun 5101-015 Varian Produksi masuk baris "Bahan" (grup Accurate PL 04) | `coa_fs_map` |
+| K2-D | Baris BP "Delivery Expenses" ganda | Akun 5101-016 → baris 84 (pabrikasi dan pengiriman); akun 6300-001…004 → baris 100 (ongkos kirim umum) | `coa_fs_map` |
+| K2-E | Arus kas bulan pertama TB | Kas awal = kas neraca bulan sebelumnya (bukan rantai kas BP) sehingga F02 menguji kesesuaian dua neraca | `fs.ts` `cashflow` |
+| K2-F | Label BP yang tidak dijumlah di mana pun | "Accrued Expenses - Third Parties" → Accrued Others; "Taxes Payable" (PPh 26, 29) → Hutang PPh 25; pajak 8300/8100 → Pajak penghasilan | `coa_fs_map` |
+| K2-G | Akun nol di BP yang belum dipetakan | Dipetakan draft berdasar grup Accurate (`confirmed = false`); 215 dari 288 baris terkonfirmasi; 27 akun COA Okt-26 draft | Input bulanan → Mapping akun |
+| K2-H | Flag di remote | Tidak diubah oleh sesi ini (`execute_sql` hanya `select`); `b8_fs` baru default mati | Pengaturan → Modul |
 
 ### Deviasi skema dari PRD §4 (Fase 1)
 
