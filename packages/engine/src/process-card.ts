@@ -106,6 +106,20 @@ export interface ProcessCardResult {
   issues: string[];
 }
 
+/** Rp per kg input of every card line (WP column F = column E ÷ kg input). */
+function perKg(m: ProcessMaterial, c: ProcessConversion, kg: Decimal, total: Decimal): Record<string, Decimal> {
+  return {
+    raw_materials: div(m.raw_materials, kg), oil: div(m.oil, kg), cng: div(m.cng, kg), others: div(m.others, kg), material: div(m.total, kg),
+    kupas: div(c.kupas, kg), A: div(c.A, kg), B: div(c.B, kg), C: div(c.C, kg), D: div(c.D, kg), E: div(c.E, kg), foh: div(c.foh, kg),
+    conversion: div(c.total, kg), total: div(total, kg),
+  };
+}
+
+const PER_KG_ROWS = (L: (typeof LAYOUT)[ProductCode]): Record<string, number> => ({
+  raw_materials: L.mat.raw, oil: L.mat.oil, cng: L.mat.cng, others: L.mat.others, material: L.mat.total,
+  kupas: L.conv.kupas, A: L.conv.A, B: L.conv.B, C: L.conv.C, D: L.conv.D, E: L.conv.E, foh: L.conv.foh, conversion: L.conv.total,
+});
+
 export function processCard(x: ProcessCardInput): ProcessCardResult {
   const { card, product } = x;
   const issues = [...x.material.issues];
@@ -147,6 +161,7 @@ export function processCard(x: ProcessCardInput): ProcessCardResult {
     "conversion.D": `${s}!E${L.conv.D}`, "conversion.E": `${s}!E${L.conv.E}`, "conversion.foh": `${s}!E${L.conv.foh}`, "conversion.total": `${s}!E${L.conv.total}`,
     total_cost: `${s}!E${L.conv.grand}`, cost_per_kg_input: `${s}!F${L.conv.grand}`,
     wip_open_value: `${s}!E${L.val.wipOpen}`, kw2_nrv_credit: `${s}!E${L.val.kw2} (−)`, cost_to_account: `${s}!E${L.val.toAccount}`, equivalent_kg: `${s}!B${L.val.toAccount}`,
+    ...Object.fromEntries(Object.entries(PER_KG_ROWS(L)).map(([k, r]) => [`per_kg.${k}`, `${s}!F${r}`])),
     rate_per_kg: `${s}!D${L.val.rate}`, premium_value: `${s}!E${L.val.premium}`, waste_value: `${s}!E${L.val.waste}`, wip_close_value: `${s}!E${L.val.wipClose}`,
   } : {};
   const row: ProcessCardMonthRow = {
@@ -155,6 +170,7 @@ export function processCard(x: ProcessCardInput): ProcessCardResult {
     total_cost: totalCost, cost_per_kg_input: div(totalCost, card.inputKg), wip_open_value: wipOpenValue, kw2_nrv_per_kg: nrv,
     kw2_nrv_credit: kw2Credit, cost_to_account: toAccount, equivalent_kg: equivalent, rate_per_kg: rate, premium_value: premiumValue,
     waste_value: wasteValue, wip_close_value: wipCloseValue,
+    per_kg: perKg(x.material.material, conversion, card.inputKg, totalCost),
     rule_id: PROCESS_CARD_RULE,
     inputs: [...card.refs, ...x.material.inputs, ...x.conversionInputs, ...(x.wipOpen ? [x.wipOpen.ref] : []), product.ref],
     source_ref: wp ? `${s}!E${L.conv.grand}` : null, source_refs: refs,

@@ -97,6 +97,7 @@ create table if not exists public.process_card_month (
   premium_value           numeric(28,10) not null,
   waste_value             numeric(28,10) not null,
   wip_close_value         numeric(28,10) not null,
+  per_kg                  jsonb not null default '{}'::jsonb,
   rule_id           text not null,
   inputs            jsonb,
   source_ref        text,

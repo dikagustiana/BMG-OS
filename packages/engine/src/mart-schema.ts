@@ -66,6 +66,7 @@ export const MART_SPECS: readonly MartSpec[] = [
       t("product", { in: ["FCC", "UU", "UO"] }),
       ...num("kg_input", "kg_premium", "kg_kw2", "kg_waste", "wip_open_kg", "wip_close_kg", "wip_completion_pct"), j("material"), j("conversion"),
       ...num("total_cost", "cost_per_kg_input", "wip_open_value", "kw2_nrv_per_kg", "kw2_nrv_credit", "cost_to_account", "equivalent_kg", "rate_per_kg", "premium_value", "waste_value", "wip_close_value"),
+      j("per_kg"),
     ],
   },
   {

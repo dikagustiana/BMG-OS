@@ -59,7 +59,7 @@ Angka target PRD §8 = sel WP yang dirujuk (integritas fixture)
 | CTX.revenue_jt | Pendapatan (Rp jt) | RINGKASAN!F11 | 7462.3602 | 7462.3601526600005 | -0.00004734 | 0.0001 | LULUS |
 | CTX.idle_hours | Jam menganggur Unit I | BIAYA BERSAMA!C107 | 3264.8168 | 3264.8167666666013 | -0.0000333334 | 0.0001 | LULUS |
 
-## f2-costing (F2) — 1482/1482 lulus
+## f2-costing (F2) — 1521/1521 lulus
 
 Data mart costing (pool, alokasi, kartu proses, barang jadi, Lain-lain, ringkasan) = sel WP yang dirujuk source_refs; target B2 PRD v2 §10.1
 
@@ -301,6 +301,19 @@ Data mart costing (pool, alokasi, kartu proses, barang jadi, Lain-lain, ringkasa
 | process_card_month:FCC:kw2_nrv_credit | process_card_month FCC kw2_nrv_credit | FCC!E74 | -74121492.82231898 | -74121492.82231899 | 1.167e-8 | 1 | LULUS |
 | process_card_month:FCC:cost_to_account | process_card_month FCC cost_to_account | FCC!E75 | 5496357405.32176778 | 5496357405.321767 | 7.84727e-7 | 1 | LULUS |
 | process_card_month:FCC:equivalent_kg | process_card_month FCC equivalent_kg | FCC!B75 | 229699.5 | 229699.5 | 0 | 0.01 | LULUS |
+| process_card_month:FCC:per_kg.raw_materials | process_card_month FCC per_kg.raw_materials | FCC!F44 | 9926.74007197 | 9926.74007197182 | 1.22462e-12 | 1 | LULUS |
+| process_card_month:FCC:per_kg.oil | process_card_month FCC per_kg.oil | FCC!F46 | 4277.45762107 | 4277.457621066217 | -1.27852e-13 | 1 | LULUS |
+| process_card_month:FCC:per_kg.cng | process_card_month FCC per_kg.cng | FCC!F47 | 3269.67942585 | 3269.6794258529894 | -3.21463e-14 | 1 | LULUS |
+| process_card_month:FCC:per_kg.others | process_card_month FCC per_kg.others | FCC!F55 | 572.2477675 | 572.247767504315 | -2.84692e-14 | 1 | LULUS |
+| process_card_month:FCC:per_kg.material | process_card_month FCC per_kg.material | FCC!F56 | 18046.1248864 | 18046.12488639534 | 2.43615e-12 | 1 | LULUS |
+| process_card_month:FCC:per_kg.kupas | process_card_month FCC per_kg.kupas | FCC!F58 | 226.22803595 | 226.2280359487681 | -2.48614e-14 | 1 | LULUS |
+| process_card_month:FCC:per_kg.A | process_card_month FCC per_kg.A | FCC!F59 | 1624.39505325 | 1624.3950532461429 | 1.99368e-13 | 1 | LULUS |
+| process_card_month:FCC:per_kg.B | process_card_month FCC per_kg.B | FCC!F60 | 1452.20917605 | 1452.2091760451522 | -9.54683e-14 | 1 | LULUS |
+| process_card_month:FCC:per_kg.C | process_card_month FCC per_kg.C | FCC!F61 | 148.7965038 | 148.79650379675755 | -2.36897e-15 | 1 | LULUS |
+| process_card_month:FCC:per_kg.D | process_card_month FCC per_kg.D | FCC!F62 | 907.35221189 | 907.3522118903096 | 9.86758e-14 | 1 | LULUS |
+| process_card_month:FCC:per_kg.E | process_card_month FCC per_kg.E | FCC!F63 | 1073.2751508 | 1073.2751508046238 | -9.69352e-14 | 1 | LULUS |
+| process_card_month:FCC:per_kg.foh | process_card_month FCC per_kg.foh | FCC!F64 | 3581.63304254 | 3581.6330425368433 | -2.46097e-13 | 1 | LULUS |
+| process_card_month:FCC:per_kg.conversion | process_card_month FCC per_kg.conversion | FCC!F65 | 5432.25613173 | 5432.256131731754 | 2.2841e-13 | 1 | LULUS |
 | process_card_month:FCC:rate_per_kg | process_card_month FCC rate_per_kg | FCC!D76 | 23928.46917526 | 23928.469175256225 | 2.30884e-12 | 0.01 | LULUS |
 | process_card_month:FCC:premium_value | process_card_month FCC premium_value | FCC!E77 | 5288837756.39935815 | 5288837756.399358 | 1.53392e-7 | 1 | LULUS |
 | process_card_month:FCC:waste_value | process_card_month FCC waste_value | FCC!E78 | 155535049.63916548 | 155535049.63916546 | 1.75075e-8 | 1 | LULUS |
@@ -332,6 +345,19 @@ Data mart costing (pool, alokasi, kartu proses, barang jadi, Lain-lain, ringkasa
 | process_card_month:UU:kw2_nrv_credit | process_card_month UU kw2_nrv_credit | UU!E72 | 0 | 0 | 0 | 1 | LULUS |
 | process_card_month:UU:cost_to_account | process_card_month UU cost_to_account | UU!E73 | 158853806.38832434 | 158853806.38832432 | 1.83798e-8 | 1 | LULUS |
 | process_card_month:UU:equivalent_kg | process_card_month UU equivalent_kg | UU!B73 | 4510 | 4510 | 0 | 0.01 | LULUS |
+| process_card_month:UU:per_kg.raw_materials | process_card_month UU per_kg.raw_materials | UU!F44 | 17971.3368984 | 17971.336898395723 | -1.07487e-12 | 1 | LULUS |
+| process_card_month:UU:per_kg.oil | process_card_month UU per_kg.oil | UU!F46 | 4794.77034623 | 4794.7703462343325 | -9.35829e-14 | 1 | LULUS |
+| process_card_month:UU:per_kg.cng | process_card_month UU per_kg.cng | UU!F47 | 3087.06497708 | 3087.0649770794134 | -1.37968e-13 | 1 | LULUS |
+| process_card_month:UU:per_kg.others | process_card_month UU per_kg.others | UU!F55 | 772.38791361 | 772.387913613907 | 1.49733e-14 | 1 | LULUS |
+| process_card_month:UU:per_kg.material | process_card_month UU per_kg.material | UU!F56 | 26625.56013532 | 26625.560135323376 | -1.39144e-12 | 1 | LULUS |
+| process_card_month:UU:per_kg.kupas | process_card_month UU per_kg.kupas | UU!F58 | 0 | 0 | 0 | 1 | LULUS |
+| process_card_month:UU:per_kg.A | process_card_month UU per_kg.A | UU!F59 | 4227.13313549 | 4227.133135493268 | 5.85995e-13 | 1 | LULUS |
+| process_card_month:UU:per_kg.B | process_card_month UU per_kg.B | UU!F60 | 3779.05701908 | 3779.057019079491 | -4.41705e-13 | 1 | LULUS |
+| process_card_month:UU:per_kg.C | process_card_month UU per_kg.C | UU!F61 | 59.7364335 | 59.73643349770921 | 3.35817e-15 | 1 | LULUS |
+| process_card_month:UU:per_kg.D | process_card_month UU per_kg.D | UU!F62 | 2699.09075357 | 2699.0907535706206 | -2.13445e-13 | 1 | LULUS |
+| process_card_month:UU:per_kg.E | process_card_month UU per_kg.E | UU!F63 | 1599.19953498 | 1599.1995349849237 | -1.44047e-13 | 1 | LULUS |
+| process_card_month:UU:per_kg.foh | process_card_month UU per_kg.foh | UU!F64 | 8137.08374113 | 8137.083741132745 | -1.28584e-12 | 1 | LULUS |
+| process_card_month:UU:per_kg.conversion | process_card_month UU per_kg.conversion | UU!F65 | 12364.21687663 | 12364.216876626013 | -6.99845e-13 | 1 | LULUS |
 | process_card_month:UU:rate_per_kg | process_card_month UU rate_per_kg | UU!D74 | 35222.57347856 | 35222.573478564154 | 8.51402e-13 | 0.01 | LULUS |
 | process_card_month:UU:premium_value | process_card_month UU premium_value | UU!E75 | 158853806.38832434 | 158853806.38832435 | -1.16202e-8 | 1 | LULUS |
 | process_card_month:UU:waste_value | process_card_month UU waste_value | UU!E76 | 0 | 0 | 0 | 1 | LULUS |
@@ -363,6 +389,19 @@ Data mart costing (pool, alokasi, kartu proses, barang jadi, Lain-lain, ringkasa
 | process_card_month:UO:kw2_nrv_credit | process_card_month UO kw2_nrv_credit | UO!E68 | 0 | 0 | 0 | 1 | LULUS |
 | process_card_month:UO:cost_to_account | process_card_month UO cost_to_account | UO!E69 | 252566602.57611576 | 252566602.57611576 | 3.5692e-10 | 1 | LULUS |
 | process_card_month:UO:equivalent_kg | process_card_month UO equivalent_kg | UO!B69 | 6715.5 | 6715.5 | 0 | 0.01 | LULUS |
+| process_card_month:UO:per_kg.raw_materials | process_card_month UO per_kg.raw_materials | UO!F40 | 16829.02241084 | 16829.022410840582 | 2.35128e-13 | 1 | LULUS |
+| process_card_month:UO:per_kg.oil | process_card_month UO per_kg.oil | UO!F42 | 4839.9299359 | 4839.929935899931 | -9.87343e-13 | 1 | LULUS |
+| process_card_month:UO:per_kg.cng | process_card_month UO per_kg.cng | UO!F43 | 3471.82406582 | 3471.824065820476 | 6.28397e-14 | 1 | LULUS |
+| process_card_month:UO:per_kg.others | process_card_month UO per_kg.others | UO!F51 | 709.97218301 | 709.9721830061131 | -1.04981e-15 | 1 | LULUS |
+| process_card_month:UO:per_kg.material | process_card_month UO per_kg.material | UO!F52 | 25850.74859557 | 25850.7485955671 | 1.40957e-12 | 1 | LULUS |
+| process_card_month:UO:per_kg.kupas | process_card_month UO per_kg.kupas | UO!F54 | 0 | 0 | 0 | 1 | LULUS |
+| process_card_month:UO:per_kg.A | process_card_month UO per_kg.A | UO!F55 | 3586.2399314 | 3586.2399313953883 | -2.35283e-13 | 1 | LULUS |
+| process_card_month:UO:per_kg.B | process_card_month UO per_kg.B | UO!F56 | 3206.09849523 | 3206.098495230249 | -1.72452e-13 | 1 | LULUS |
+| process_card_month:UO:per_kg.C | process_card_month UO per_kg.C | UO!F57 | 73.91740044 | 73.91740043525301 | 1.28535e-14 | 1 | LULUS |
+| process_card_month:UO:per_kg.D | process_card_month UO per_kg.D | UO!F58 | 3339.83400684 | 3339.8340068363677 | -4.02681e-14 | 1 | LULUS |
+| process_card_month:UO:per_kg.E | process_card_month UO per_kg.E | UO!F59 | 1552.66236364 | 1552.6623636434904 | -3.25245e-13 | 1 | LULUS |
+| process_card_month:UO:per_kg.foh | process_card_month UO per_kg.foh | UO!F60 | 8172.51226615 | 8172.512266145361 | -1.41511e-12 | 1 | LULUS |
+| process_card_month:UO:per_kg.conversion | process_card_month UO per_kg.conversion | UO!F61 | 11758.75219754 | 11758.752197540749 | -1.3504e-12 | 1 | LULUS |
 | process_card_month:UO:rate_per_kg | process_card_month UO rate_per_kg | UO!D70 | 37609.50079311 | 37609.50079310785 | -9.4082e-13 | 0.01 | LULUS |
 | process_card_month:UO:premium_value | process_card_month UO premium_value | UO!E71 | 252566602.57611576 | 252566602.57611576 | 3.5692e-10 | 1 | LULUS |
 | process_card_month:UO:waste_value | process_card_month UO waste_value | UO!E72 | 0 | 0 | 0 | 1 | LULUS |

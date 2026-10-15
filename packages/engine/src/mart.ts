@@ -129,6 +129,8 @@ export interface ProcessCardMonthRow extends Provenance {
   premium_value: Decimal;
   waste_value: Decimal;
   wip_close_value: Decimal;
+  /** Rp per kg of input by card line (WP column F): raw_materials (with freight), oil, cng, others, material, kupas, A–E, foh, conversion, total. */
+  per_kg: Record<string, Decimal>;
 }
 
 export interface FgMonthRow extends Provenance {

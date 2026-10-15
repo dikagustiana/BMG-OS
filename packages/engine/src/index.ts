@@ -6,6 +6,7 @@ export * from "./golden";
 export * from "./snapshot";
 export * from "./controls";
 export * from "./mart";
+export * from "./mart-schema";
 export * from "./inputs";
 export * from "./pool";
 export * from "./allocation";
