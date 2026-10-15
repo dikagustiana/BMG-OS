@@ -12,7 +12,8 @@ import { isBlank, norm, parseDate, parseNumber, text, type Cell } from "./values
 /** Upload kinds of PRD §5. A kind is only offered once its parser is registered in KINDS. */
 export type UploadKind =
   | "gl_month" | "gl_voucher_tag" | "payroll_month" | "inventory_valuation" | "sales_by_item" | "average_price"
-  | "cogm_card" | "fs_control" | "budget_bp" | "std_master" | "sales_forecast" | "material_price" | "plant_daily";
+  | "cogm_card" | "fs_control" | "budget_bp" | "std_master" | "sales_forecast" | "material_price" | "plant_daily"
+  | "tb_month" | "bp_fs" | "plan_override";
 
 export interface FieldDef {
   field: string;

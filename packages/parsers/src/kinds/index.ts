@@ -11,6 +11,8 @@ import { inventoryValuation } from "./inventory_valuation";
 import { payrollMonth } from "./payroll_month";
 import { salesByItem } from "./sales_by_item";
 import { stdMaster } from "./std_master";
+import { tbMonth } from "./tb_month";
+import { bpFs } from "./bp_fs";
 
 export { accountOfItem } from "./inventory_valuation";
 export { expandBp, parseBp, slug, type BpMonth, type BpPoolRow, type BpRow } from "./budget_bp";
@@ -18,10 +20,12 @@ export { FS_KEYS, type FsKey } from "./fs_control";
 export { DRIVERS as CARD_DRIVERS, ROW_KINDS } from "./cogm_card";
 export { TAGS, TAG_POOLS } from "./gl_voucher_tag";
 export { stdHeader } from "./std_master";
+export { readBpFsSheet } from "./bp_fs";
 
 /** Registered upload kinds of Fase 1 (B1). Later phases append theirs. */
 export const KIND_PARSERS: KindParser[] = [
   glMonth, glVoucherTag, payrollMonth, inventoryValuation, salesByItem, averagePrice, cogmCard, fsControl, budgetBp, stdMaster,
+  tbMonth, bpFs,
 ];
 
 export const KINDS: KindDef[] = KIND_PARSERS.map((k) => k.def);

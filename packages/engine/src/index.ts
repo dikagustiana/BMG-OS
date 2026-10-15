@@ -5,3 +5,8 @@ export * from "./types";
 export * from "./golden";
 export * from "./snapshot";
 export * from "./controls";
+export * from "./fs-lines";
+export * from "./fs";
+export * from "./history";
+export * from "./fs-map-seed";
+export * from "./fs-view";

@@ -14,3 +14,4 @@ __pycache__/
 # Office lock files
 ~$*
 docs/v1/golden-ci.md
+.claude/worktrees/

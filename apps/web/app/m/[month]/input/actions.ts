@@ -1,5 +1,6 @@
 "use server";
 import { revalidatePath } from "next/cache";
+import { FS_LINE_BY_CODE, fsSign } from "@bmg/engine";
 import { parseNumber, pick, TAG_POOLS, TAGS } from "@bmg/parsers";
 import { requireViewer } from "@/lib/session";
 import { supabaseServer } from "@/lib/supabase";
@@ -104,5 +105,40 @@ export async function addMapping(_: S, form: FormData): Promise<S> {
     if (error) throw new WriteError(error.code === "23505" ? `Mapping ${account} mulai ${month} sudah ada` : error.message);
     revalidatePath(`/m/${month}/input`);
     return `Mapping ${account} → ${pool} mulai ${month} ditambahkan`;
+  });
+}
+
+/** Add an account → FS line mapping (coa_fs_map; F07) effective from the month start. */
+export async function addFsMapping(_: S, form: FormData): Promise<S> {
+  return run(async () => {
+    await guard("coa_map");
+    const month = monthOfForm(form);
+    const account = String(form.get("account") ?? "").trim();
+    const code = String(form.get("fs_line_code") ?? "");
+    const def = FS_LINE_BY_CODE.get(code);
+    if (!/^\d{4}(-[0-9A-Za-z]+)?$|^\d{6}$/.test(account)) throw new WriteError("Nomor akun tidak dikenali");
+    if (!def || def.kind !== "leaf") throw new WriteError("Pilih baris neraca atau laba rugi");
+    const sb = await supabaseServer();
+    const { error } = await sb.from("coa_fs_map").insert({
+      account, account_name: String(form.get("account_name") ?? "").trim() || null, effective_from: month, fs_line_code: code,
+      sign: fsSign(code), confirmed: true, note: "Ditambahkan di Input bulanan", source: "Manual",
+    });
+    if (error) throw new WriteError(error.code === "23505" ? `Mapping ${account} mulai ${month} sudah ada` : error.message);
+    revalidatePath(`/m/${month}/input`);
+    return `${account} → ${def.label_id} mulai ${month}`;
+  });
+}
+
+/** Confirm a draft FS mapping (coa_fs_map.confirmed). */
+export async function confirmFsMapping(_: S, form: FormData): Promise<S> {
+  return run(async () => {
+    await guard("coa_map");
+    const month = monthOfForm(form);
+    const sb = await supabaseServer();
+    const { error, count } = await sb.from("coa_fs_map").update({ confirmed: true }, { count: "exact" }).eq("id", String(form.get("id") ?? "")).eq("confirmed", false);
+    if (error) throw new WriteError(error.message);
+    if (!count) throw new WriteError("Mapping tidak ditemukan atau sudah dikonfirmasi");
+    revalidatePath(`/m/${month}/input`);
+    return "Mapping dikonfirmasi";
   });
 }

@@ -1,5 +1,5 @@
 import "server-only";
-import { activeMapping, b01, b02, b44, mappingGaps, type CoaMapping, type ControlResult } from "@bmg/engine";
+import { activeFsMap, activeMapping, b01, b02, b44, D, leavesFromTb, mappingGaps, type CoaFsMapRow, type CoaMapping, type ControlResult } from "@bmg/engine";
 import type { Supa } from "./supabase";
 import { fetchAll } from "./write";
 
@@ -7,8 +7,15 @@ import { fetchAll } from "./write";
 
 export const MONTHLY_TABLES = [
   "gl_month", "gl_voucher_tag", "payroll_month", "payroll_journal", "inventory_valuation", "sales_by_item",
-  "average_price", "cogm_card", "cogm_material", "driver_month", "fs_control",
+  "average_price", "cogm_card", "cogm_material", "driver_month", "fs_control", "tb_month",
 ] as const;
+
+/** Tables each monthly upload kind fills (status block of Input bulanan). */
+export const KIND_TABLES: Record<string, (typeof MONTHLY_TABLES)[number][]> = {
+  gl_month: ["gl_month"], gl_voucher_tag: ["gl_voucher_tag"], payroll_month: ["payroll_month", "payroll_journal"],
+  inventory_valuation: ["inventory_valuation"], sales_by_item: ["sales_by_item"], average_price: ["average_price"],
+  cogm_card: ["cogm_card", "cogm_material", "driver_month"], fs_control: ["fs_control"], tb_month: ["tb_month"],
+};
 
 export interface UploadInfo {
   id: string;
@@ -16,6 +23,7 @@ export interface UploadInfo {
   status: string;
   file_name: string;
   uploaded_by: string | null;
+  uploaded_by_name: string | null;
   uploaded_at: string;
   committed_at: string | null;
   row_count: number;
@@ -46,11 +54,20 @@ export interface TagRow {
   source: string | null;
 }
 
+export interface FsGapRow {
+  account: string;
+  name: string | null;
+  state: "tanpa mapping" | "draft";
+  pending: boolean;
+  mapping: { id: string; fs_line_code: string } | null;
+}
+
 export interface InputMonth {
   uploads: UploadInfo[];
   counts: Record<string, number>;
   controls: ControlResult[];
   gaps: GapRow[];
+  fsGaps: FsGapRow[];
   tags: TagRow[];
 }
 
@@ -58,7 +75,7 @@ type MapRow = CoaMapping & { id: string; note: string | null };
 
 export async function loadInputMonth(sb: Supa, month: string): Promise<InputMonth> {
   const [uploads, maps, gl, fs, journals, tags, ...counts] = await Promise.all([
-    sb.from("upload").select("id, kind, status, file_name, uploaded_by, uploaded_at, committed_at, row_count, inserted, updated, deleted, issues")
+    sb.from("upload").select("id, kind, status, file_name, uploaded_by, uploaded_by_name, uploaded_at, committed_at, row_count, inserted, updated, deleted, issues")
       .eq("period", month).order("uploaded_at", { ascending: false }).limit(200),
     fetchAll<MapRow>((f, t) => sb.from("coa_pool_map").select("id, account, effective_from, effective_to, pool, confirmed, note").is("deleted_at", null).range(f, t)),
     fetchAll<{ account: string; account_name: string | null; net: string }>((f, t) => sb.from("gl_month").select("account, account_name, net").eq("month", month).is("deleted_at", null).range(f, t)),
@@ -90,15 +107,45 @@ export async function loadInputMonth(sb: Supa, month: string): Promise<InputMont
     counts: Object.fromEntries(MONTHLY_TABLES.map((t, i) => [t, counts[i].count ?? 0])),
     controls: [b01(month, gl, maps, fsRows), b02(month, gl, maps, jRows), b44(month, accounts, tagged, maps)],
     gaps,
+    fsGaps: await fsGaps(sb, month, (uploads.data ?? []) as UploadInfo[]),
     tags: tagRows,
   };
 }
 
-export interface BudgetVersionInfo { id: string; name: string; status: string; imported_at: string | null; note: string | null; lines: number }
+export interface BudgetVersionInfo { id: string; name: string; status: string; imported_at: string | null; fs_imported_at: string | null; note: string | null; lines: number }
 
 export async function loadBudgetVersions(sb: Supa): Promise<BudgetVersionInfo[]> {
-  const { data } = await sb.from("budget_version").select("id, name, status, imported_at, note").is("deleted_at", null).order("name");
+  const res = await sb.from("budget_version").select("id, name, status, imported_at, fs_imported_at, note").is("deleted_at", null).order("name");
+  // fs_imported_at arrives with the FS migration; before it, read the version without it
+  const data = res.error ? (await sb.from("budget_version").select("id, name, status, imported_at, note").is("deleted_at", null).order("name")).data?.map((v) => ({ ...v, fs_imported_at: null })) : res.data;
   const rows = (data ?? []) as Omit<BudgetVersionInfo, "lines">[];
   const counts = await Promise.all(rows.map((v) => sb.from("budget_line").select("id", { count: "exact", head: true }).eq("budget_version_id", v.id).is("deleted_at", null)));
   return rows.map((v, i) => ({ ...v, lines: counts[i].count ?? 0 }));
+}
+
+type TbData = { account?: string; account_name?: string | null; debit?: string; credit?: string; balance_close?: string; balance_open?: string | null };
+
+/** F07: accounts of the stored or waiting trial balance of the month without an active FS mapping, or with a draft one. */
+async function fsGaps(sb: Supa, month: string, uploads: UploadInfo[]): Promise<FsGapRow[]> {
+  const waiting = uploads.filter((u) => u.kind === "tb_month" && u.status === "planned").map((u) => u.id);
+  const [maps, stored, staged] = await Promise.all([
+    fetchAll<CoaFsMapRow & { id: string }>((f, t) => sb.from("coa_fs_map").select("id, account, effective_from, effective_to, fs_line_code, sign, confirmed").is("deleted_at", null).range(f, t)).catch(() => []),
+    fetchAll<TbData>((f, t) => sb.from("tb_month").select("account, account_name, debit, credit, balance_close, balance_open").eq("month", month).is("deleted_at", null).range(f, t)).catch(() => []),
+    waiting.length ? fetchAll<{ data: TbData }>((f, t) => sb.from("upload_row").select("data").in("upload_id", waiting).eq("target", "tb_month").range(f, t)) : Promise.resolve([]),
+  ]);
+  const rows = [...stored.map((r) => ({ r, pending: false })), ...staged.map((s) => ({ r: s.data, pending: true }))];
+  const tb = rows.map(({ r }) => ({
+    account: String(r.account ?? ""), balance_open: r.balance_open ? D(r.balance_open) : null, debit: D(r.debit ?? "0"), credit: D(r.credit ?? "0"), balance_close: D(r.balance_close ?? "0"),
+  }));
+  const t = leavesFromTb(month, tb, maps);
+  const name = new Map(rows.map(({ r }) => [String(r.account), r.account_name ?? null]));
+  const pend = new Set(rows.filter((x) => x.pending).map((x) => String(x.r.account)));
+  const storedSet = new Set(stored.map((r) => String(r.account)));
+  return [
+    ...t.unmapped.map((a) => ({ account: a, name: name.get(a) ?? null, state: "tanpa mapping" as const, pending: pend.has(a) && !storedSet.has(a), mapping: null })),
+    ...t.draft.map((a) => {
+      const m = activeFsMap(maps, a, month) as (CoaFsMapRow & { id: string }) | null;
+      return { account: a, name: name.get(a) ?? null, state: "draft" as const, pending: pend.has(a) && !storedSet.has(a), mapping: m ? { id: m.id, fs_line_code: m.fs_line_code } : null };
+    }),
+  ];
 }

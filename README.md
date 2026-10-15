@@ -2,8 +2,8 @@
 
 Platform costing dan operasi **PT Boga Makmur Gracia** (SAMB Group): costing bulanan yang mereproduksi workpaper (WP) costing ±Rp 1, engine mingguan (standar, rencana, varian), tutup bulan, outlook dan kas.
 
-- Spesifikasi: [`docs/PRD-v1-bmg-platform.md`](docs/PRD-v1-bmg-platform.md) · rencana fase: [`docs/PLAN-v1-bmg-platform.md`](docs/PLAN-v1-bmg-platform.md)
-- Status dan bukti per fase: [`docs/v1/README.md`](docs/v1/README.md) · keputusan/selisih: [`docs/open-questions.md`](docs/open-questions.md) · [`CHANGELOG.md`](CHANGELOG.md)
+- Spesifikasi: [`docs/PRD-v2-bmg-platform.md`](docs/PRD-v2-bmg-platform.md) · rencana fase: [`docs/PLAN-v2-bmg-platform.md`](docs/PLAN-v2-bmg-platform.md) · v1 di [`docs/archive/`](docs/archive/)
+- Status dan bukti per fase: [`docs/v1/README.md`](docs/v1/README.md) (Fase 0–1), [`docs/v2/README.md`](docs/v2/README.md) (Fase 1b dst.) · keputusan/selisih: [`docs/open-questions.md`](docs/open-questions.md) · [`CHANGELOG.md`](CHANGELOG.md)
 - Aturan kerja untuk Claude Code: [`CLAUDE.md`](CLAUDE.md)
 
 ## Struktur

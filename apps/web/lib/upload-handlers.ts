@@ -1,10 +1,11 @@
 import "server-only";
-import { D, b01, b02, mappingGaps, monthLabel, sum, type CoaMapping } from "@bmg/engine";
+import { D, b01, b02, leavesFromTb, mappingGaps, monthLabel, sum, type CoaFsMapRow, type CoaMapping } from "@bmg/engine";
 import { kindParser, type KindParser, type ParseCtx, type Sheet } from "@bmg/parsers";
 import type { Supa } from "./supabase";
 import type { Viewer } from "./session";
 import { fetchAll } from "./write";
 import { emptyTarget, fieldsOf, planByKey, planReplacePeriod, type PlanTarget } from "./plan";
+import { rebuildFsAll } from "./rebuild-fs";
 
 /**
  * Upload handlers of module B1 (PRD §5): parse with @bmg/parsers, then plan the database changes. Monthly kinds
@@ -28,6 +29,8 @@ export interface UploadHandler {
   chunk?: { table: string; size: number };
   parse(sheets: Sheet[], ctx: ParseCtx): ReturnType<KindParser["parse"]>;
   plan(sb: Supa, period: string, sets: StagedSet[], viewer: Viewer): Promise<Plan>;
+  /** Runs after a successful commit (rebuild of the data marts the upload feeds); returns a line for the user. */
+  after?(sb: Supa, period: string, viewer: Viewer): Promise<string>;
 }
 
 export const TABLE_LABEL: Record<string, string> = {
@@ -36,6 +39,7 @@ export const TABLE_LABEL: Record<string, string> = {
   cogm_material: "Kartu CoGM — material", driver_month: "Driver bulanan", fs_control: "Angka kontrol LK", budget_version: "Versi budget",
   budget_line: "Baris budget", budget_pool_map: "Mapping pool budget (draft)", std_version: "Versi standar (draft)", bom_line: "BOM",
   output_mix: "Komposisi output", routing: "Routing", rate_card: "Tarif", capacity: "Kapasitas",
+  tb_month: "Neraca saldo per akun", history_fs_line: "Riwayat neraca dan laba rugi (aktual BP)", budget_fs_line: "Neraca dan laba rugi BP",
 };
 
 const ok = (): { issues: string[]; blockers: string[] } => ({ issues: [], blockers: [] });
@@ -178,8 +182,55 @@ const stdMaster: UploadHandler = {
   },
 };
 
+/** F07 at upload time: every TB account with an amount needs an active coa_fs_map row; missing ones block. */
+async function tbChecks(sb: Supa, period: string, sets: StagedSet[]) {
+  const maps = await fetchAll<CoaFsMapRow>((f, t) => sb.from("coa_fs_map").select("account, effective_from, effective_to, fs_line_code, sign, confirmed").is("deleted_at", null).range(f, t));
+  const rows = rowsOf(sets, "tb_month").map((r) => ({
+    account: String(r.account), balance_open: r.balance_open === null || r.balance_open === undefined ? null : D(String(r.balance_open)),
+    debit: D(String(r.debit ?? 0)), credit: D(String(r.credit ?? 0)), balance_close: D(String(r.balance_close ?? 0)),
+  }));
+  const t = leavesFromTb(period, rows, maps);
+  return {
+    blockers: t.unmapped.length ? [`Akun tanpa baris neraca/laba rugi di ${monthLabel(period)}: ${t.unmapped.join(", ")}. Tambahkan di Input bulanan → Mapping akun, lalu simpan lagi.`] : [],
+    issues: t.draft.length ? [`Mapping draft belum dikonfirmasi: ${t.draft.join(", ")}`] : [],
+  };
+}
+
+const fsAfter = async (sb: Supa, _period: string, viewer: Viewer) => rebuildFsAll(sb, viewer, "upload");
+
+/** bp_fs: period = budget version name. History (Actual) replaces the months it carries; the BP lines fill the version once. */
+const bpFs: UploadHandler = {
+  parser: kindParser("bp_fs"),
+  chunk: { table: "budget_fs_line", size: 2500 },
+  parse: (sheets, ctx) => kindParser("bp_fs").parse(sheets, ctx),
+  async plan(sb, period, sets) {
+    const { data: v } = await sb.from("budget_version").select("id, fs_imported_at").eq("name", period).maybeSingle();
+    if (v?.fs_imported_at) {
+      return { targets: [], issues: [], blockers: [`Neraca dan laba rugi versi "${period}" sudah diimpor (${String(v.fs_imported_at).slice(0, 10)}); impor sebagai versi baru dengan nama lain.`] };
+    }
+    const id = (v?.id as string | undefined) ?? crypto.randomUUID();
+    const targets: PlanTarget[] = [];
+    if (!v) targets.push({ ...emptyTarget("budget_version", "Versi budget baru"), inserts: [{ id, name: period, status: "locked", note: "Impor bp_fs" }] });
+    const hist = rowsOf(sets, "history_fs_line");
+    const months = [...new Set(hist.map((r) => String(r.month)))];
+    const existingHist = months.length ? await fetchAll<Row>((f, t) => sb.from("history_fs_line").select("*").in("month", months).is("deleted_at", null).range(f, t)) : [];
+    targets.push(await planByKey("history_fs_line", TABLE_LABEL.history_fs_line, existingHist, hist, (r) => `${String(r.month).slice(0, 10)}|${r.line_key}`, fieldsOf(hist)));
+    const bud = rowsOf(sets, "budget_fs_line").map((r) => ({ ...r, budget_version_id: id }));
+    const existingBud = v ? await fetchAll<Row>((f, t) => sb.from("budget_fs_line").select("*").eq("budget_version_id", id).is("deleted_at", null).range(f, t)) : [];
+    targets.push(await planByKey("budget_fs_line", TABLE_LABEL.budget_fs_line, existingBud, bud, (r) => `${String(r.month).slice(0, 10)}|${r.line_key}`, fieldsOf(bud, ["line_key"])));
+    targets.push({ ...emptyTarget("budget_version", "Kunci neraca versi ini"), updates: [{ id, fs_imported_at: new Date().toISOString() }] });
+    return {
+      targets,
+      issues: [`Setelah disimpan, neraca dan laba rugi BP versi "${period}" terkunci; riwayat aktual bulan ${months.map((m) => m.slice(0, 7)).join(", ")} diganti dengan isi file.`],
+      blockers: [],
+    };
+  },
+  after: fsAfter,
+};
+
 export const HANDLERS: UploadHandler[] = [
   monthly("gl_month", glChecks), monthly("gl_voucher_tag", tagChecks), monthly("payroll_month", payrollChecks),
   monthly("inventory_valuation"), monthly("sales_by_item", salesChecks), monthly("average_price"), monthly("cogm_card"),
   monthly("fs_control", fsChecks), budgetBp, stdMaster,
+  { ...monthly("tb_month", tbChecks), after: fsAfter }, bpFs,
 ];
