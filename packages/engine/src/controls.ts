@@ -4,6 +4,7 @@
  */
 import { D, sum, type Num } from "./decimal";
 import { monthEnd } from "./dates";
+import { fixed } from "./format";
 import type { ControlResult } from "./types";
 
 export interface GlLine { account: string; net: Num }
@@ -49,7 +50,7 @@ export function b01(month: string, gl: readonly GlLine[], mappings: readonly Coa
   const diff = total.minus(D(lk.amount));
   return {
     code: "B01", label, value: diff, tolerance: RP1, status: diff.abs().lte(RP1) ? "LULUS" : "GAGAL",
-    note: `GL ${total.toFixed(2)} (${accounts.length} akun) − LK ${D(lk.amount).toFixed(2)}`,
+    note: `GL ${fixed(total, 2)} (${accounts.length} akun) − LK ${fixed(D(lk.amount), 2)}`,
   };
 }
 
@@ -68,7 +69,7 @@ export function b02(month: string, gl: readonly GlLine[], mappings: readonly Coa
   const diff = glTotal.minus(jTotal);
   return {
     code: "B02", label, value: diff, tolerance: RP1, status: diff.abs().lte(RP1) ? "LULUS" : "GAGAL",
-    note: `GL ${accounts.join(", ")} ${glTotal.toFixed(2)} − jurnal ${jTotal.toFixed(2)}`,
+    note: `GL ${accounts.join(", ")} ${fixed(glTotal, 2)} − jurnal ${fixed(jTotal, 2)}`,
   };
 }
 

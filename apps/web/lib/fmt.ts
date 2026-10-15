@@ -70,3 +70,50 @@ export function tglShort(iso: string | null | undefined): string {
   const [, m, d] = iso.split("-").map(Number);
   return `${d} ${MONTHS[m - 1]}`;
 }
+
+/** "Sep-26" (PRD v2 §8.3). */
+export function bulan(iso: string | null | undefined): string {
+  if (!iso) return "";
+  const [y, m] = iso.split("-").map(Number);
+  return `${MONTHS[m - 1]}-${String(y).slice(2)}`;
+}
+
+/** "Minggu 12 Okt" for a Monday. */
+export function minggu(iso: string | null | undefined): string {
+  return iso ? `Minggu ${tglShort(iso)}` : "";
+}
+
+/** Signed with an explicit plus: "+650,9 jt", "−5,4 pp". */
+export function signed(text: string, v: DecLike): string {
+  const n = toNum(v, 6);
+  if (n === null || text === "") return text;
+  if (n > 0.0000005) return `+${text}`;
+  return text.replace(/^-/, "−");
+}
+
+/** Rp juta, one decimal, signed when asked. */
+export function jtS(v: DecLike, dp = 1): string {
+  return signed(jt(v, dp), v);
+}
+
+/** Percentage points from a ratio difference: 0,054 → "5,4 pp". */
+export function pp(v: DecLike, dp = 1): string {
+  const n = toNum(v, 8);
+  return n === null ? "" : `${num(n * 100, dp)} pp`;
+}
+
+/** Change ratio a/b − 1, or null when b is zero or missing. */
+export function change(a: DecLike, b: DecLike): number | null {
+  const x = toNum(a, 6), y = toNum(b, 6);
+  if (x === null || y === null || y === 0) return null;
+  return x / y - 1;
+}
+
+/** Date-time "16 Okt 2026 08.15" (Asia/Jakarta). */
+export function waktu(ts: string | null | undefined): string {
+  if (!ts) return "";
+  const d = new Date(ts);
+  const j = new Date(d.getTime() + 7 * 3600_000);
+  const iso = j.toISOString();
+  return `${tgl(iso.slice(0, 10))} ${iso.slice(11, 13)}.${iso.slice(14, 16)}`;
+}

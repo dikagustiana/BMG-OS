@@ -2,7 +2,7 @@
 import { revalidatePath } from "next/cache";
 import { requireViewer } from "@/lib/session";
 import { supabaseServer } from "@/lib/supabase";
-import { isModuleKey } from "@/lib/modules";
+import { isModuleKey, MODULES } from "@/lib/modules";
 import { can } from "@/lib/roles";
 
 type S = { ok?: string; error?: string };
@@ -18,7 +18,7 @@ export async function setModule(_: S, form: FormData): Promise<S> {
   const { error } = await sb.from("app_setting").update({ value: on }).eq("key", key);
   if (error) return { error: error.message };
   revalidatePath("/", "layout");
-  return { ok: `${key} ${on ? "aktif" : "nonaktif"}` };
+  return { ok: `${MODULES.find((m) => m.key === key)?.label ?? "Modul"} ${on ? "menyala" : "mati"}` };
 }
 
 /** Queue a rebuild of one period (processed by the rebuild worker of the phase that ships the engine). */

@@ -430,6 +430,75 @@ def extract_budget(out: str, bp: Book) -> dict:
     return {"budget_rows": len(lines), "budget_lines": sum(len(x["values"]) for x in lines), "budget_pool_map": len(pool_map)}
 
 
+def extract_fs(out: str, bp: Book) -> dict:
+    """PRD v2 Fase 1b: the BP sheet "BMG Business Plan" (laba rugi, modal kerja, arus kas, neraca; Actual Jan–Agu 2026
+    and BP Sep-26–Des-27) and the account-level sheets "BS/PL Actual MTM - Aug 26" that map GL accounts to its rows."""
+    ws, wf = bp.sheet("BMG Business Plan"), bp.f["BMG Business Plan"]
+    cols = []
+    for c in range(10, 36):  # J (Dec-25) .. AI (Dec-27)
+        h = ws.cell(5, c).value
+        if not isinstance(h, dt.datetime):
+            continue
+        kind = str(ws.cell(4, c).value or "").strip().lower() or "opening"
+        cols.append((c, f"{h.year:04d}-{h.month:02d}", kind))
+    rows = []
+    for r in range(7, ws.max_row + 1):
+        label = " | ".join(str(ws.cell(r, c).value).strip() for c in range(1, 8)
+                           if ws.cell(r, c).value is not None and str(ws.cell(r, c).value).strip() != "")
+        vals = {m: num_str(ws.cell(r, c).value) for c, m, _ in cols
+                if isinstance(ws.cell(r, c).value, (int, float)) and not isinstance(ws.cell(r, c).value, bool)}
+        if not label and not vals:
+            continue
+        rows.append({"r": r, "label": label, "unit": ws.cell(r, 8).value, "values": vals,
+                     "formula_actual": formula_text(wf.cell(r, 19)) or None, "formula_bp": formula_text(wf.cell(r, 20)) or None})
+    d = os.path.join(out, "budget-v1")
+    write_json(os.path.join(d, "fs_sheet.json"), {
+        "source": {"file": bp.name, "sha256": bp.sha256, "sheet": "BMG Business Plan",
+                   "unit": "Rp juta (kolom H 'Rp m'); engine mengalikan 10^6",
+                   "formula_columns": {"formula_actual": "S (Agu-26, Actual)", "formula_bp": "T (Sep-26, BP)"}},
+        "columns": [{"month": f"{m}-01", "kind": k} for _, m, k in cols],
+        "rows": rows,
+    })
+    accounts = []
+    for sheet, code_col, map_cols, month_cols in (
+        ("BS Actual MTM - Aug 26", 4, (18,), range(5, 13)),
+        ("PL Actual MTM - Aug 26", 3, (19, 18), range(4, 12)),
+    ):
+        w = bp.sheet(sheet)
+        desc_col = 3 if sheet.startswith("BS") else 2
+        heads = [str(w.cell(5, c).value).strip() for c in month_cols]
+        for r in range(6, w.max_row + 1):
+            acc = w.cell(r, 1).value
+            if acc is None:
+                continue
+            acc = str(acc).strip()
+            if not re.match(r"^\d{4}(-[0-9A-Za-z]+)?$|^\d{6}$", acc):
+                continue
+            mapping = None
+            for mc in map_cols:
+                v = w.cell(r, mc).value
+                if isinstance(v, str) and v.strip() and v.strip() != "Cost of Sales":
+                    mapping = v.strip()
+                    break
+            accounts.append({
+                "sheet": sheet, "r": r, "account": acc, "name": str(w.cell(r, desc_col).value or "").strip(),
+                "kode": (str(w.cell(r, code_col).value).strip() if w.cell(r, code_col).value else None),
+                "mapping": mapping,
+                "values": {f"2026-{i + 1:02d}": num_str(w.cell(r, c).value) for i, c in enumerate(month_cols)
+                           if isinstance(w.cell(r, c).value, (int, float)) and not isinstance(w.cell(r, c).value, bool)},
+                "month_heads": heads if r == 6 else None,
+            })
+    for a in accounts:
+        if a["month_heads"] is None:
+            del a["month_heads"]
+    write_json(os.path.join(d, "coa_mtm.json"), {
+        "source": {"file": bp.name, "sha256": bp.sha256, "sheets": ["BS Actual MTM - Aug 26", "PL Actual MTM - Aug 26"],
+                   "note": "Saldo akun Jan–Agu 2026 dalam Rp (BS: saldo akhir; PL: mutasi bulan) dan kolom Mapping ke baris sheet BMG Business Plan"},
+        "accounts": accounts,
+    })
+    return {"fs_rows": len(rows), "fs_columns": len(cols), "coa_mtm_accounts": len(accounts)}
+
+
 # ----------------------------------------------------------------------------------------------- master data
 
 GROUP_CODES = {  # LAIN-LAIN row → stable code (name prefix asserted below)
@@ -766,7 +835,8 @@ on conflict (name) do nothing;
 def extract_all(out: str) -> dict:
     sep, agu, agu_asumsi, bp = Book(SEP), Book(AGU), Book(AGU_ASUMSI), Book(BP)
     report = {"month-2026-09": extract_month_09(out, sep), "month-2026-08": extract_month_08(out, agu, sep),
-              "budget-v1": extract_budget(out, bp), "master": extract_master(out, sep, agu, agu_asumsi)}
+              "budget-v1": extract_budget(out, bp), "budget-v1-fs": extract_fs(out, bp),
+              "master": extract_master(out, sep, agu, agu_asumsi)}
     # roll-forward sanity: Sep opening FCC WIP value = Agu26_3 closing (Sep FCC!C196 cites Agu26_3 FCC!E78)
     # (the Sep cell holds the pasted value, so compare at Rp 0,01 rather than bit-for-bit)
     if abs(Decimal(agu.num("FCC", "E78")) - Decimal(sep.num("FCC", "C196"))) > Decimal("0.01"):

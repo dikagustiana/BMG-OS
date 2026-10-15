@@ -89,7 +89,7 @@ export async function stageUpload(
   const plan = res.sets.some((s) => s.rows.length) ? await h.plan(sb, uploadPeriod, res.sets, viewer) : { targets: [], issues: [], blockers: [] };
   const issues = [...res.issues, ...plan.issues];
   const ins = await sb.from("upload").insert({
-    kind, period: uploadPeriod, file_name: fileName, sha256: sha, file_path: path, uploaded_by: viewer.email, status: "planned",
+    kind, period: uploadPeriod, file_name: fileName, sha256: sha, file_path: path, uploaded_by: viewer.email, uploaded_by_name: viewer.fullName, status: "planned",
     row_count: res.rows.length, issues: [...plan.blockers.map((b) => `DIBLOK: ${b}`), ...issues], mapping: res.detected?.mapping ?? null,
     plan: { targets: summary(plan), blockers: plan.blockers },
   }).select("id").single();
@@ -148,8 +148,14 @@ export async function commitUpload(sb: Supa, viewer: Viewer, uploadId: string): 
     }
   }
   const counts = await applyUpload(sb, uploadId, changes);
-  if (pre) await sb.from("upload").update({ inserted: counts.inserted + pre, message: `${pre} baris ${h.chunk!.table} ditulis bertahap sebelum transaksi akhir` }).eq("id", uploadId);
-  return `Disimpan: ${counts.inserted + pre} baris baru, ${counts.updated} diubah, ${counts.deleted} dihapus (soft).`;
+  if (pre) await sb.from("upload").update({ inserted: counts.inserted + pre, message: `${pre} baris ditulis bertahap sebelum transaksi akhir` }).eq("id", uploadId);
+  const saved = `Disimpan: ${counts.inserted + pre} baris baru, ${counts.updated} diubah, ${counts.deleted} dihapus.`;
+  if (!h.after) return saved;
+  try {
+    return `${saved} ${await h.after(sb, String(up.period), viewer)}`;
+  } catch (e) {
+    return `${saved} Hitung ulang gagal: ${(e as Error).message}. Ulangi dari tombol Hitung ulang.`;
+  }
 }
 
 /** Drop a staged/planned upload (status rejected; staged rows removed). */
